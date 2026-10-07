@@ -1,0 +1,925 @@
+                                                                                                                                                                                                                                                                                              Capítulo 8
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                Segurança no
+                                                                                                                                                                                                                                                 SO Windows:
+                                                                                                                                                                                                                                           AppLocket, Firewall
+                                                                                                                                                                                                                                             e outros serviços
+
+
+
+
+                                                                                                                                                                                                                                           Novas tecnologias e tendências requerem cuidado redobrado com
+                                                                                                                                                                                                                                         a segurança de uma rede. O propósito de implantar a segurança em
+                                                                                                                                                                                                                                         uma rede é criar e combinar camadas de proteção para proteger da-
+                                                                                                                                                                                                                                         dos, conexões para garantir a integridade e a sua usabilidade. Nesta
+                                                                                                                                                                                                                                         obra, apresentamos diversos tipos de proteção para que a sua rede
+
+                                                                                                                                                                                                                                                                                                          157
+fique mais confiável e segura. Passamos pelo AD DS até a GPO, e não
+
+
+
+
+                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+poderíamos finalizar sem falar um pouco mais de segurança, mos-
+trando a complementação das políticas de grupo com a aplicação do
+AppLocker e do Firewall. Já em administração do ambiente, também
+mostraremos duas ferramentas que auxiliam o dia a dia de um admi-
+nistrador: o RDP, protocolo multicanal que permite ao administrador
+conectar-se a qualquer equipamento do domínio, facilitando a manu-
+tenção remota; e a VPN, que nos permite fazer uma conexão mais se-
+gura com a rede da empresa. Esse tipo de conexão pode ser usado em
+ambientes home office, garantindo os mesmos privilégios que você
+teria no computador da empresa.
+
+
+1 Conceitos de AppLocker
+      O AppLocker é uma versão aprimorada das políticas de restrição de
+software do Windows Server 2003, que foi melhorada constantemen-
+te a partir do Windows Server 2008 R2 e disponibilizada no Windows
+Server 2019, que avança a funcionalidade do recurso de diretivas de
+restrição de software. Ele adota um procedimento para impedir a exe-
+cução de todos os aplicativos executáveis, exceto aqueles que tenham
+sido especificamente permitidos em uma lista.
+
+      O AppLocker ajuda os administradores a controlar quais aplicativos
+e arquivos o usuário pode executar. Nessa lista de bloqueios, também
+pode-se restringir arquivos executáveis, scripts, DLLs (bibliotecas de
+vínculo dinâmico), entre outros.
+
+      A ferramenta AppLocker, utilizada em conjunto com a GPO, comple-
+menta a segurança de uma rede, atingindo áreas que as políticas de
+grupos não alcançam. Para detalhar mais um pouco as aplicações do
+programa, podemos observar algumas funcionalidades representadas
+na figura 1, a seguir.
+
+
+
+
+158                                                        Sistema operacional I
+                                                                                                                                                                                                                                                                            Figura 1 — Funcionalidades do AppLocker
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                                                                 Definir regras
+                                                                                                                                                                                                                                                                                                 com base nas
+                                                                                                                                                                                                                                                                                                 propriedades
+                                                                                                                                                                                                                                                                                                    do tipo
+                                                                                                                                                                                                                                                                                                   de arquivo
+                                                                                                                                                                                                                                                                    Usar os cmdlets                                       Criar regras
+                                                                                                                                                                                                                                                                     do Windows                                          com base no
+                                                                                                                                                                                                                                                                    PowerShell para                                        caminho
+                                                                                                                                                                                                                                                                      AppLocker
+
+
+
+
+                                                                                                                                                                                                                                                              Criar regras em                                                  Atribuir uma
+                                                                                                                                                                                                                                                                um servidor                                                     regra a um
+                                                                                                                                                                                                                                                           intermediário, testar                                                 grupo de
+                                                                                                                                                                                                                                                             e exportar para o                                                segurança ou a
+                                                                                                                                                                                                                                                             seu ambiente de                      APPLOCKER                     um usuário
+                                                                                                                                                                                                                                                                  produção                                                       individual
+
+
+                                                                                                                                                                                                                                                                              Usar o modo
+                                                                                                                                                                                                                                                                           somente auditoria                       Criar
+                                                                                                                                                                                                                                                                            para implantar a                   exceções às
+                                                                                                                                                                                                                                                                           política e entender                regras (poder
+                                                                                                                                                                                                                                                                           seu impacto antes                     executar)
+                                                                                                                                                                                                                                                                               de aplicá-la
+
+
+
+
+                                                                                                                                                                                                                                         1.1 Aplicando o AppLocker no Server 2019
+
+                                                                                                                                                                                                                                             Vamos criar uma regra de negação para não deixar executar arqui-
+                                                                                                                                                                                                                                         vos com extensão EXE na unidade removível dos usuários. Para essa
+                                                                                                                                                                                                                                         ação, utilizaremos o DC-01. Proceda conforme os passos a seguir.
+
+                                                                                                                                                                                                                                             a. Inicie o servidor DC-01.
+
+                                                                                                                                                                                                                                             b. Abra o console do Gerenciamento de Políticas de Grupos (use as
+                                                                                                                                                                                                                                                  teclas  + R, e digite gpmc.msc).
+
+                                                                                                                                                                                                                                             c. No domínio Senac.Local, selecione a pasta de Objetos de Política
+                                                                                                                                                                                                                                                  de Grupo. Clique com o botão direito do mouse e selecione Novo
+                                                                                                                                                                                                                                                  para criar uma nova GPO (objeto de diretiva de grupo). Nesse
+                                                                                                                                                                                                                                                  caso, criaremos uma chamada Regras_do_AppLocker.
+
+
+                                                                                                                                                                                                                                         Segurança no SO Windows: AppLocket, Firewall e outros serviços                                        159
+                          Figura 2 — Criação da nova GPO
+
+
+
+
+                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+      d. Com a GPO criada, vamos editá-la. Pressione o botão da direita
+        sobre Regras_do_AppLocker. Em seguida, expanda a sequência:
+        Configurações do Computador > Políticas > Configurações do
+        Windows > Configurações de Segurança > Políticas de Controle
+        de Aplicativo — e será exibido o AppLocker, conforme mostrado
+        na figura 3.
+
+                          Figura 3 — Acesso ao AppLocker
+
+
+
+
+160                                                        Sistema operacional I
+                                                                                                                                                                                                                                         1.2 Criando um bloqueio utilizando o AppLocker
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             O AppLocker funcionará se você gerar algum tipo de regra. Até o mo-
+                                                                                                                                                                                                                                         mento, criamos a GPO, mas não bloqueamos nada. Imagine que na nos-
+                                                                                                                                                                                                                                         sa empresa não pudéssemos acessar o WORDPAD.EXE, pois não faz
+                                                                                                                                                                                                                                         parte dos softwares que o usuário pode utilizar. Vamos bloquear o aces-
+                                                                                                                                                                                                                                         so ao usuário do aplicativo, utilizando a GPO que acabamos de criar.
+
+                                                                                                                                                                                                                                             Com a política Regras_do_AppLocker aberta e editada, vamos até o
+                                                                                                                                                                                                                                         local do AppLocker. Proceda conforme os passos a seguir.
+
+                                                                                                                                                                                                                                             a. Expanda o menu AppLocker e clique com o botão da direita sobre
+                                                                                                                                                                                                                                                  a opção Regras Executáveis e, em seguida, em Criar Nova Regra.
+
+
+
+
+                                                                                                                                                                                                                                         Segurança no SO Windows: AppLocket, Firewall e outros serviços         161
+      b. Na tela de Criar Regras Executáveis, pressione Avançar.
+
+
+
+
+                                                                                     Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+      c. Em Permissões, existem duas opções: Permitir e Negar. No nosso
+         caso, como desejamos que o usuário não utilize o WordPad, es-
+         colheremos a opção Negar.
+
+
+
+
+      d. Na tela Condições, escolheremos a primeira opção, Fornecedor,
+         pois desejamos negar a ação para um arquivo. Em seguida, clique
+         em Avançar.
+
+
+
+
+162                                                          Sistema operacional I
+                                                                                                                                                                                                                                             e. A tela Fornecedor é a mais importante, pois nela especificamos o
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                arquivo que será negado. Nesse ambiente de trabalho, o Wordpad
+                                                                                                                                                                                                                                                está localizado no seguinte caminho: C:\Program Files\windows
+                                                                                                                                                                                                                                                nt\accessories\wordpad.exe — porém, pode estar em outro local
+                                                                                                                                                                                                                                                na sua máquina. Utilize o botão Procurar para localizar o aplicati-
+                                                                                                                                                                                                                                                vo. Após localizá-lo, pressione Avançar.
+
+
+
+
+                                                                                                                                                                                                                                             f. Em Exceções, não colocaremos nenhum usuário. Você pode utili-
+                                                                                                                                                                                                                                                  zar essa opção se desejar excluir algum usuário para essa regra.
+                                                                                                                                                                                                                                                  Clique em Avançar.
+
+
+
+
+                                                                                                                                                                                                                                         Segurança no SO Windows: AppLocket, Firewall e outros serviços         163
+      g. Na última tela, Nome e Descrição, coloque WORDPAD para nome-
+
+
+
+
+                                                                                        Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+         ar essa regra. Para finalizar, é só clicar no botão Criar. Na sequên-
+         cia, coloque SIM para criar a regra.
+
+
+
+
+      h. A regra será colocada com a palavra Negar. Para aplicar a regra,
+         utilize uma OU para testar.
+
+
+
+
+164                                                             Sistema operacional I
+                                                                                                                                                                                                                                         2 Conceitos de Firewall
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                            Desde o final da década de 1980, o assunto Firewall é tratado com
+                                                                                                                                                                                                                                         muita cautela dentro das empresas. A informação é, em grande parte, o
+                                                                                                                                                                                                                                         maior patrimônio de uma organização, e protegê-la é mais do que uma
+                                                                                                                                                                                                                                         prioridade, é uma obrigação. Com a internet, o aumento de acessos e o
+                                                                                                                                                                                                                                         crescente número de negócios, a segurança passou a desempenhar um
+                                                                                                                                                                                                                                         papel fundamental na conectividade. Portanto, a escolha de um Firewall
+                                                                                                                                                                                                                                         torna-se estratégica, pois precisa atender às demandas de proteção dos
+                                                                                                                                                                                                                                         ambientes computacionais.
+
+                                                                                                                                                                                                                                            O Firewall nos ajuda a proteger o perímetro da rede. A “parede de
+                                                                                                                                                                                                                                         fogo” (tradução literal de firewall) é um sistema que atua como principal
+                                                                                                                                                                                                                                         ponto de defesa entre a rede privada e a rede pública, controlando todas
+                                                                                                                                                                                                                                         as mensagens que passam por ele, barrando tudo que não está previsto
+                                                                                                                                                                                                                                         em suas regras. Além de controlar os acessos, o Firewall guarda regis-
+                                                                                                                                                                                                                                         tros (logs) detalhados dos usuários e de tráfego, ficando à disposição
+                                                                                                                                                                                                                                         do administrador a recuperação desse arquivo (THOMPSON, 2017).
+
+                                                                                                                                                                                                                                             Para acessar o Firewall do Windows Server 2019, pressione a
+                                                                                                                                                                                                                                         tecla  e digite a palavra Firewall. Escolha a opção Windows Defender
+                                                                                                                                                                                                                                         Firewall com Segurança Avançada e será exibida a tela da figura 4.
+
+                                                                                                                                                                                                                                                                        Figura 4 — Interface do Windows Server 2019
+
+
+
+
+                                                                                                                                                                                                                                         Segurança no SO Windows: AppLocket, Firewall e outros serviços               165
+      Na figura 4, temos, ao centro da tela, os perfis de configurações pos-
+
+
+
+
+                                                                                      Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+síveis, que são:
+
+      • Perfil domínio ativo: para ligações entre hosts do domínio.
+
+      • Perfil particular: para ligações de host interno, mas que não fa-
+         zem parte do domínio.
+
+      • Perfil público: para ligações externas.
+
+
+2.1 Criando uma regra de ICMP (internet control message
+protocol)
+
+      Ao instalar o Windows Server 2019, por default, o Firewall já é con-
+figurado, e com ele o ICMP é bloqueado, ou seja, de qualquer estação,
+não conseguimos dar o PING no servidor. PING é um comando que uti-
+liza o ICMP para testar a conectividade entre equipamentos.
+
+      Vamos, então, criar uma regra de exceção para o ICMP no DC-01.
+Com a tela do Firewall aberto, proceda conforme os passos a seguir.
+
+      a. Pressione o botão da direita do mouse em Regras de Entrada e
+         escolha a opção Nova Regra.
+
+
+
+
+166                                                           Sistema operacional I
+                                                                                                              c. Em Programa, escolha a opção Todos os programas e clique em
+
+
+
+
+                                                                                                                                                                                                                                         167
+b. Na tela Tipo de regra, clique em Personalizado. Em seguida, no
+                                                                                                                                                                                                                                  Segurança no SO Windows: AppLocket, Firewall e outros serviços
+                                                                    botão Avançar.
+                                                                                                                                                                               Avançar.
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+168
+
+
+
+
+                                                                                                              Avançar.
+
+
+
+
+                                                                                                                                                                                                                            opção ICMPv4 e clique no botão Personalizar.
+
+
+
+
+                                                                                                                         e. Selecione a opção Todos os tipos de ICMP, depois clique em OK e
+
+
+
+
+Sistema operacional I
+                                                                                                                                                                                                                                                                           d. Na tela Protocolo e Portas, no item Tipo de protocolo, escolha a
+
+
+
+
+   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         169
+f. Em Escopo, escolha Qualquer endereço IP e clique em Avançar.                                               g. Na tela Ação, escolha Permitir a conexão e clique em Avançar.
+                                                                                                                                                                                                                                  Segurança no SO Windows: AppLocket, Firewall e outros serviços
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+170
+
+
+
+
+                                                                                                                                                                                                                            clique em Avançar.
+
+
+
+
+                                                                                                              i. Para finalizar, dê o nome de Regra PING e clique em Concluir.
+
+
+
+
+Sistema operacional I
+                                                                                                                                                                                                                                                 h. Na tela Perfil, deixe selecionado Domínio, Particular e Público e
+
+
+
+
+   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             Para testar, acesse a VM CLI-01 e o prompt de comando. Digite PING
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         10.0.0.100, que é o IP do DC-01.
+
+
+                                                                                                                                                                                                                                         3 Serviço de RDP (remote desktop protocol)
+                                                                                                                                                                                                                                             O RDP é um protocolo proprietário desenvolvido pela Microsoft para
+                                                                                                                                                                                                                                         conectar-se a outro computador com uma interface gráfica em uma co-
+                                                                                                                                                                                                                                         nexão de rede. Esse protocolo proporciona canais virtuais separados
+                                                                                                                                                                                                                                         para o transporte de dados de apresentação, comunicação de disposi-
+                                                                                                                                                                                                                                         tivos em série, dados altamente criptografados (atividade do mouse e
+                                                                                                                                                                                                                                         teclado) (THOMPSON, 2017).
+
+                                                                                                                                                                                                                                            Vale ressaltar que a utilização do RDP deve ser feita com moderação,
+                                                                                                                                                                                                                                         pois abre a porta 3389, tornando-a pública para a conexão da “área de
+                                                                                                                                                                                                                                         trabalho remota”, que permite esse acesso entre dois computadores,
+                                                                                                                                                                                                                                         por meio de uma rede local ou da internet. Como segurança sempre foi
+                                                                                                                                                                                                                                         o nosso foco, ao habilitar o serviço, é importante monitorar essa porta
+                                                                                                                                                                                                                                         para evitar qualquer tentativa de invasão.
+
+
+                                                                                                                                                                                                                                         3.1 Implantando o RDP no Windows Server 2019
+
+                                                                                                                                                                                                                                            O RDP permite que os administradores de rede diagnostiquem e re-
+                                                                                                                                                                                                                                         solvam remotamente os problemas com os usuários. Em alguns ca-
+                                                                                                                                                                                                                                         sos, o administrador precisa acessar o servidor também para alguma
+                                                                                                                                                                                                                                         manutenção. Os procedimentos a seguir serão feitos no DC-01. Vamos
+                                                                                                                                                                                                                                         configurar o serviço de área de trabalho remota a partir da GUI do server
+                                                                                                                                                                                                                                         manager. Proceda conforme os passos a seguir.
+
+                                                                                                                                                                                                                                             a. Abra o Gerenciador do Servidor no menu Iniciar.
+
+                                                                                                                                                                                                                                             b. Clique em Servidor Local e localize, à direita, a opção Área de tra-
+                                                                                                                                                                                                                                                balho remoto. Clique no item Desconhecido.
+
+                                                                                                                                                                                                                                             c. Na tela de Propriedade do Sistema, clique em Permitir cone-
+                                                                                                                                                                                                                                                xões remotas com este computador. Para garantir a segurança,
+
+                                                                                                                                                                                                                                         Segurança no SO Windows: AppLocket, Firewall e outros serviços          171
+        pressione Selecionar usuário e, na sequência, adicione o usuário
+
+
+
+
+                                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+        Administrador.
+
+      Com essa ação, o servidor já pode ser acessado utilizando o RDP,
+conforme resumido pela figura 5.
+
+                 Figura 5 — Sequenciamento de tela para configurar o RDP
+
+
+
+
+172                                                                        Sistema operacional I
+                                                                                                                                                                                                                                         4 Serviço de VPN (virtual private network)
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             Em determinadas situações, o funcionário está fazendo um serviço
+                                                                                                                                                                                                                                         home office e precisa ter acesso ao computador do trabalho. Para ga-
+                                                                                                                                                                                                                                         rantir a segurança e a saúde da rede, normalmente, o administrador de
+                                                                                                                                                                                                                                         rede monta um serviço de conexão por meio de uma VPN (ou simples-
+                                                                                                                                                                                                                                         mente rede privada virtual).
+
+                                                                                                                                                                                                                                             O serviço de VPN vai emular um canal de ponto a ponto, onde os
+                                                                                                                                                                                                                                         dados serão encapsulados e prefixados com um cabeçalho. Esse cabe-
+                                                                                                                                                                                                                                         çalho fornecerá um roteamento que permitirá aos dados percorrer uma
+                                                                                                                                                                                                                                         rede (seja pública ou privada) para chegar ao seu destino. Nesse canal,
+                                                                                                                                                                                                                                         os dados são criptografados a fim de garantir a confidencialidade, não
+                                                                                                                                                                                                                                         podendo ser decifrados sem a chave da criptografia. Os pacotes inter-
+                                                                                                                                                                                                                                         ceptados na rede de trânsito são ilegíveis para quem não tem a chave
+                                                                                                                                                                                                                                         de criptografia correta. O tamanho da chave de criptografia é um parâ-
+                                                                                                                                                                                                                                         metro de segurança importante.
+
+                                                                                                                                                                                                                                             Para o serviço de VPN, existem dois tipos de conexões, que são:
+
+                                                                                                                                                                                                                                             • VPN de acesso remoto: o mais comum em uma rede. Esse acesso
+                                                                                                                                                                                                                                                  acontece quando um funcionário está fora da empresa e necessita
+                                                                                                                                                                                                                                                  de alguma informação que está armazenada no servidor, ou seja,
+                                                                                                                                                                                                                                                  acessar um servidor da rede privada da empresa utilizando a infra-
+                                                                                                                                                                                                                                                  estrutura de uma rede pública (como a internet). Esse tipo será o
+                                                                                                                                                                                                                                                  que utilizaremos para fazer a demonstração da VPN.
+
+                                                                                                                                                                                                                                             • VPN site a site: estrutura de conexão de roteador para roteador,
+                                                                                                                                                                                                                                                  que permite que a empresa possa conectar ambientes distantes
+                                                                                                                                                                                                                                                  por meio de roteadores. Normalmente, nessas conexões, o rotea-
+                                                                                                                                                                                                                                                  dor trabalha com link de WAN dedicado. A conexão VPN site a site
+                                                                                                                                                                                                                                                  fará a conexão de duas partes de uma rede privada.
+
+
+
+
+                                                                                                                                                                                                                                         Segurança no SO Windows: AppLocket, Firewall e outros serviços          173
+4.1 Protocolos de comunicação da VPN
+
+
+
+
+                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+      As conexões VPN usam o PPTP (point-to-point tunneling protocol),
+o L2TP/IPsec (layer 2 tunneling protocol with internet protocol security)
+ou SSTP (secure socket tunneling protocol). Os protocolos têm especi-
+ficações diferentes: enquanto alguns priorizam a velocidade, outros, a
+privacidade e a segurança. São algumas características dos protocolos:
+
+      • Protocolo PPTP: é utilizado desde Windows 95. O PPTP pode ser
+        configurado em praticamente todos os SOs. Permite criptografar
+        e encapsular um tráfego multiprotocolo de cabeçalho IP, que é
+        posteriormente enviado por meio de uma rede IP privada ou pú-
+        blica, como a internet.
+
+      • Protocolo VPN L2TP/IPsec: sucessor do PPTP. O L2TP sobre
+        IPsec (extensão de segurança do protocolo IP) é uma das conexões
+        VPNs mais seguras que existem. Permite que seja criptografado o
+        tráfego multiprotocolo a ser enviado por qualquer meio compatível
+        com a entrega de datagramas ponto a ponto, como o IP.
+
+      • Protocolo SSTP: é um protocolo de encapsulamento que usa o
+        protocolo HTTPS pela porta TCP 443 para passar o tráfego pelos
+        firewalls e proxies Web, que poderiam bloquear o tráfego PPTP e
+        L2TP/IPsec.
+
+
+4.2 Instalando a função de VPN no Windows Server 2019
+
+      Vamos instalar a função de VPN na VM DC-01. Inicie-a e desenvolva
+o procedimento de acordo com os passos a seguir.
+
+
+
+
+174                                                        Sistema operacional I
+                                                                                                                                                                                                                                             a. Abra o Gerenciador do Servidor e clique em Adicionar funções
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  e recursos.
+
+
+
+
+                                                                                                                                                                                                                                             b. Na tela Selecionar o tipo de instalação, escolha Instalação basea-
+                                                                                                                                                                                                                                                  da em função ou recurso e Próximo.
+
+
+
+
+                                                                                                                                                                                                                                         Segurança no SO Windows: AppLocket, Firewall e outros serviços        175
+176
+
+
+
+
+                                                                                                              Remoto e clique em Próximo.
+
+
+
+
+                                                                                                                                                                                                                            está selecionado e clique no botão Próximo.
+
+
+
+
+Sistema operacional I
+                                                                                                                                            d. Na tela Selecionar funções de servidor, marque a opção Acesso                                                              c. Em Selecionar servidor de destino, verifique se o servidor DC-01
+
+
+
+
+   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         177
+e. Na tela seguinte, Selecionar Recursos, não será selecionada ne-
+                                                                                                                    f. Na tela Acesso Remoto, clique no botão Próximo.
+                                                                     nhuma opção. Então, clique no botão Próximo.
+                                                                                                                                                                                                                                  Segurança no SO Windows: AppLocket, Firewall e outros serviços
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+178
+
+
+
+
+                                                                                                                                                                                                                            VPN (RAS). Em seguida, clique em Próximo.
+
+
+
+
+                                                                                                                     h. Na tela Função Servidor Web (IIS), pressione o botão Próximo.
+
+
+
+
+Sistema operacional I
+                                                                                                                                                                                                                                                                        g. Em Selecionar serviços de função, marque a opção DirectAccess e
+
+
+
+
+   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                       j. Na tela Confirmar seleções de instalação, pressione a opção
+
+
+
+
+                                                                                                                                                                                                                                         179
+i. Em Selecionar serviços de função, pressione Próximo.
+                                                                                                                                                                        Instalar.                                                 Segurança no SO Windows: AppLocket, Firewall e outros serviços
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+      Após a instalação do Serviço de VPN, precisamos configurá-lo para
+
+
+
+
+                                                                                       Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+se tornar operante, então proceda conforme os passos a seguir.
+
+      a. No Gerenciador do Servidor, pressione o botão Notificações e, em
+         seguida, clique no link Abrir o Assistente de Guia de Introdução.
+
+
+
+
+      b. Em Configurar Assistente Remoto, escolha a opção Implantar so-
+         mente VPN.
+
+
+
+
+180                                                            Sistema operacional I
+                                                                                                                                                                                                                                             c. Surgirá a console de gerenciamento do Roteamento e Acesso
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  Remoto. Observe que o item DC-01 está com o serviço parado,
+                                                                                                                                                                                                                                                  pois não configuramos o acesso. A partir desse console é que
+                                                                                                                                                                                                                                                  configuraremos a VPN em si. Então, pressione o botão da direita
+                                                                                                                                                                                                                                                  do mouse sobre o DC-01 e escolha a opção Configurar e Habilitar
+                                                                                                                                                                                                                                                  Roteamento e Acesso Remoto.
+
+
+
+
+                                                                                                                                                                                                                                             d. No Assistente para Configuração do Servidor de Roteamento e
+                                                                                                                                                                                                                                                  Acesso Remoto, pressione Avançar.
+
+
+
+
+                                                                                                                                                                                                                                         Segurança no SO Windows: AppLocket, Firewall e outros serviços       181
+182
+
+
+
+
+                                                                                                       clique em Avançar.
+
+
+
+
+                                                                                                                                                                                                                            lizada, e, em seguida, clique em Avançar.
+
+
+
+
+Sistema operacional I
+                                                                                                                            f. Na tela Configuração personalizada, escolha o item Acesso VPN e                                                                          e. Em Configuração, escolha a última opção, Configuração persona-
+
+
+
+
+   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             g. Na última tela, temos a conclusão do assistente. Pressione o bo-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  tão Concluir para finalizar essa etapa.
+
+
+
+
+                                                                                                                                                                                                                                             Nessa etapa, já temos o serviço e a habilitação da VPN; falta confi-
+                                                                                                                                                                                                                                         gurar uma faixa de IP para que o usuário externo possa acessar o servi-
+                                                                                                                                                                                                                                         dor. Observa-se que o IP não necessita estar na faixa do DHCP da rede.
+                                                                                                                                                                                                                                         Poderíamos configurar os IPs (públicos) das filiais da empresa, por
+                                                                                                                                                                                                                                         exemplo. É interessante fixar o IP para o melhor controle de segurança.
+                                                                                                                                                                                                                                         Vamos utilizar a faixa 10.0.1.1 até 10.0.1.5 como exemplo. Utilizaremos
+                                                                                                                                                                                                                                         para o acesso um usuário já criado que está no AD. Então, proceda con-
+                                                                                                                                                                                                                                         forme os passos a seguir.
+
+
+
+
+                                                                                                                                                                                                                                         Segurança no SO Windows: AppLocket, Firewall e outros serviços       183
+      a. No console de gerenciamento do Roteamento e Acesso Remoto, a
+
+
+
+
+                                                                                     Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+         seta verde indica que o serviço está ativo. Pressione o botão da
+         direita do mouse sobre o DC-01 e escolha a opção Propriedades.
+
+
+
+
+      b. Em Propriedades de DC-01, escolha a guia IPv4. No item Atribuição
+         de endereço IPv4, escolha a opção Pool de endereços estáticos e
+         adicione o intervalo de IP: 10.0.1.1 até 10.0.1.5. Finalize com a
+         opção OK.
+
+
+
+
+184                                                          Sistema operacional I
+                                                                                                                                                                                                                                             c. Precisaremos dar acesso a um usuário para fazer o teste. Abra o
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  console de gerenciamento de Usuários e computadores do Active
+                                                                                                                                                                                                                                                  Directory e lá estará um usuário criado chamado Caio Pimenta.
+                                                                                                                                                                                                                                                  Pressione o botão da direita do mouse sobre o usuário e escolha
+                                                                                                                                                                                                                                                  Propriedades. Acesse a guia Discagem e, no item Permissão de
+                                                                                                                                                                                                                                                  Acesso à Rede, escolha a opção Permitir acesso. Finalize com OK.
+
+
+
+
+                                                                                                                                                                                                                                         4.3 Habilitando o firewall do Windows
+
+                                                                                                                                                                                                                                             No servidor ainda está faltando a permissão da VPN no firewall.
+                                                                                                                                                                                                                                         Proceda conforme os passos a seguir para liberá-la.
+
+                                                                                                                                                                                                                                             a. Pressione a tecla  e digite a palavra Firewall. Escolha a opção
+                                                                                                                                                                                                                                                  Permitir um aplicativo pelo firewall do Windows.
+
+                                                                                                                                                                                                                                             b. Na tela de Aplicativos permitidos, role a tela e encontre a opção
+                                                                                                                                                                                                                                                  Roteamento e Acesso Remoto. Marque os itens Domínio, Privada
+                                                                                                                                                                                                                                                  e Público. Finalize com OK.
+
+
+
+
+                                                                                                                                                                                                                                         Segurança no SO Windows: AppLocket, Firewall e outros serviços        185
+4.4 Testando a VPN no cliente
+
+
+
+
+                                                                                    Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+      No lado do servidor, instalamos o serviço da VPN, configuramos e
+criamos o usuário para o acesso. Neste momento, vamos fazer a co-
+nexão utilizando o Windows Cliente (CLI-01) com o usuário. Para testar,
+vamos colocar o IP do CLI-01 em outra faixa, para demonstrar que o
+equipamento está em outra rede. Vamos utilizar o IP 172.16.0.120. Abra
+o CLI-01 e configure o IP. Proceda conforme os passos a seguir.
+
+      a. Na barra de tarefas, sobre o ícone de rede, pressione o botão da
+         direita do mouse. Escolha a opção Abrir central de Redes
+         e Compartilhamento.
+
+
+
+
+      b. Na tela de Central de Redes e Compartilhamento, clique no link
+         Configurar uma nova conexão ou rede.
+
+
+
+
+186                                                         Sistema operacional I
+                                                                                                                                                                                                                                             c. Em Configurar uma conexão ou uma Rede, escolha Conectar a um
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  local de trabalho e clique no botão Avançar.
+
+
+
+
+                                                                                                                                                                                                                                             d. Na tela Conectar a um local de trabalho, escolha Usar minha cone-
+                                                                                                                                                                                                                                                  xão com a internet (VPN).
+
+
+
+
+                                                                                                                                                                                                                                         Segurança no SO Windows: AppLocket, Firewall e outros serviços       187
+      e. Na tela Digite o endereço da internet com o qual se conectar, va-
+
+
+
+
+                                                                                     Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+         mos colocar o endereço do DC-01, ou seja, o IP 10.0.0.100, e o
+         nome VPN_DC-01. Finalize clicando no botão Criar.
+
+
+
+
+      f. Teste a conexão e, assim, a VM do cliente estará fazendo um tu-
+         nelamento com o DC-01.
+
+
+
+
+188                                                          Sistema operacional I
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         Considerações finais
+                                                                                                                                                                                                                                             A segurança dos dados é a principal razão de as empresas utiliza-
+                                                                                                                                                                                                                                         rem de estratégias para criar camadas de segurança. Nestes capítulos,
+                                                                                                                                                                                                                                         mostramos como sua rede pode ser construída com mais segurança.
+                                                                                                                                                                                                                                         Foram demonstrados inúmeros exemplos de administração de rede,
+                                                                                                                                                                                                                                         para que você pudesse conhecê-los um pouco mais e, principalmente,
+                                                                                                                                                                                                                                         perder o medo de implantar serviços. Este capítulo é finalizado com al-
+                                                                                                                                                                                                                                         gumas técnicas que, aplicadas em conjunto, criam um escudo para a
+                                                                                                                                                                                                                                         rede, atenuando e até mesmo eliminando esse risco.
+
+
+                                                                                                                                                                                                                                         Referências
+                                                                                                                                                                                                                                         THOMPSON, M. A. Microsoft Windows Server 2016: fundamentos. São Paulo:
+                                                                                                                                                                                                                                         Érica, 2017.
+
+
+
+
+                                                                                                                                                                                                                                         Segurança no SO Windows: AppLocket, Firewall e outros serviços      189
+Glossário de siglas e abreviações
+
+
+
+
+                                                                                          Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+AD: active cirectory
+
+ADDS: active directory domain services
+
+CN: nome comum
+
+DC: domain control
+
+DHCP: dynamic host configuration protocol
+
+DNS: sistema de nomes de domínio (domain name system)
+
+ESPS: entrada e saída por segundo
+
+FAT32: tabela de alocação de arquivos de 32 bits (file allocation table)
+
+FQDN: fully qualified domain name
+
+GPMC: console de gerenciamento de políticas de grupo (group policy
+management console)
+
+GPO: group policy object
+
+GPT: GUID partition table
+
+GPT: group policy template
+
+GUI: interface gráfica de usuário (graphical user interface)
+
+HDD: unidade de disco rígido (hard disk drive)
+
+ICMP: internet control message protocol
+
+IDE: integrated drive electronics
+
+IFM: install from media
+
+IOPS: input/output operations per second
+
+IP: internet protocol
+
+L2TP/IPsec: layer 2 tunneling protocol with internet protocol security
+
+LAN: rede local (local area network)
+
+
+190                                                               Sistema operacional I
+                                                                                                                                                                                                                                         MAC Address: endereço físico (media access control)
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         MBR: master boot record
+
+                                                                                                                                                                                                                                         NAT: network address translation
+
+                                                                                                                                                                                                                                         NTFS: nova tecnologia de sistema de arquivos (new technology file system)
+
+                                                                                                                                                                                                                                         OU: unidade organizacional (organizational unit)
+
+                                                                                                                                                                                                                                         PPTP: point-to-point tunneling protocol
+
+                                                                                                                                                                                                                                         RAID: redundant array of inexpensive disks
+
+                                                                                                                                                                                                                                         RDP: remote desktop control
+
+                                                                                                                                                                                                                                         ReFS: sistema de arquivos resiliente (resilient file system)
+
+                                                                                                                                                                                                                                         RODC: controlador de domínio somente leitura (read-only domain controller)
+
+                                                                                                                                                                                                                                         SAN: rede de área de armazenamento (storage area network)
+
+                                                                                                                                                                                                                                         SAS: serial attached SCSI
+
+                                                                                                                                                                                                                                         SATA: serial advanced technology attachment
+
+                                                                                                                                                                                                                                         SCSI: small computer system interface
+
+                                                                                                                                                                                                                                         SO: sistema operacional
+
+                                                                                                                                                                                                                                         SOR: sistema operacional de rede
+
+                                                                                                                                                                                                                                         SSD: unidade de estado sólido (solid-state drive)
+
+                                                                                                                                                                                                                                         SSTP: secure socket tunneling protocol
+
+                                                                                                                                                                                                                                         UDF: universal disk format
+
+                                                                                                                                                                                                                                         UOT: unidade organizacional de teste
+
+                                                                                                                                                                                                                                         UPN: nome principal do usuário (user principal name)
+
+                                                                                                                                                                                                                                         VM: máquina virtual (virtual machine)
+
+                                                                                                                                                                                                                                         VMM: virtual machine monitor
+
+                                                                                                                                                                                                                                         VPN: virtual private network
+
+
+                                                                                                                                                                                                                                         Segurança no SO Windows: AppLocket, Firewall e outros serviços              191
+                                                                                                                                                                                                                                         Sobre o autor
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                            Fábio Brussolo de Oliveira tem graduação em administração de
+                                                                                                                                                                                                                                         empresas com habilitação em análise de sistemas, é pós-graduado em
+                                                                                                                                                                                                                                         gestão de negócios com ERP e mestre em engenharia elétrica — área de
+                                                                                                                                                                                                                                         processamento de sinais e instrumentação – na Escola de Engenharia
+                                                                                                                                                                                                                                         de São Carlos da Universidade de São Paulo.
+
+                                                                                                                                                                                                                                            É professor universitário do Senac no curso de redes de computado-
+                                                                                                                                                                                                                                         res e gestão de tecnologia da informação, além de atuar na Fatec (Centro
+                                                                                                                                                                                                                                         Paula Souza) e na Etec (Escola técnica Estadual) como docente.
+
+                                                                                                                                                                                                                                            É consultor na área de TI e redes de computadores.
+
+
+
+
+                                                                                                                                                                                                                                                                                                              193
+

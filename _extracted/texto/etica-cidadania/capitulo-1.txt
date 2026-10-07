@@ -1,0 +1,1035 @@
+                              Ética, cidadania e
+Paulo Niccoli Ramirez
+                              sustentabilidade
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                         Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     Dados Internacionais de Catalogação na Publicação (CIP)
+                (Simone M. P. Vieira - CRB 8a/4771)
+
+Ramirez, Paulo Niccoli
+   Ética, cidadania e sustentabilidade / Paulo Niccoli Ramirez. – São
+Paulo : Editora Senac São Paulo, 2021. (Série Universitária)
+
+   Bibliografia.
+   e-ISBN 978-65-5536-777-5 (Epub/2021)
+   e-ISBN 978-65-5536-778-2 (PDF/2021)
+
+   1. Ética 2. Direitos humanos 3. Democracia – Brasil 4.
+Relações étnico-raciais – Brasil 5. Gênero e sexualidade : Ética 6.
+Desenvolvimento sustentável I. Título. II. Série.   
+
+21-1340t                                                     CDD – 170
+                                                      BISAC PHI005000
+
+                  Índice para catálogo sistemático:
+                           1. Ética 170
+                                                                 ÉTICA, CIDADANIA E
+                                                                                                                                          Paulo Niccoli Ramirez
+                                                                 SUSTENTABILIDADE
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                              Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+Administração Regional do Senac no Estado de São Paulo
+Presidente do Conselho Regional
+Abram Szajman
+
+Diretor do Departamento Regional
+Luiz Francisco de A. Salgado
+
+Superintendente Universitário e de Desenvolvimento
+Luiz Carlos Dourado
+
+
+
+
+Editora Senac São Paulo
+Conselho Editorial
+Luiz Francisco de A. Salgado
+Luiz Carlos Dourado
+Darcio Sayad Maia
+Lucila Mara Sbrana Sciotti
+Luís Américo Tousi Botelho
+Gerente/Publisher
+Luís Américo Tousi Botelho (luis.tbotelho@sp.senac.br)
+Coordenação Editorial/Prospecção
+Dolores Crisci Manzano (dolores.cmanzano@sp.senac.br)
+Administrativo
+grupoedsadministrativo@sp.senac.br
+Comercial
+comercial@editorasenacsp.com.br
+Acompanhamento Pedagógico
+Monica Rodrigues dos Santos
+Designer Educacional
+Estenio de Azevedo Neves
+Revisão Técnica
+Angela Pintor dos Reis
+Preparação e Revisão de Texto
+Camila Lins
+Projeto Gráfico
+Alexandre Lemes da Silva
+Emília Corrêa Abreu
+Capa                                                     Proibida a reprodução sem autorização expressa.
+Antonio Carlos De Angelis                                Todos os direitos desta edição reservados à
+Editoração Eletrônica                                    Editora Senac São Paulo
+Michel Iuiti Navarro Moreno
+                                                         Rua 24 de Maio, 208 – 3o andar
+Ilustrações                                              Centro – CEP 01041-000 – São Paulo – SP
+Michel Iuiti Navarro Moreno                              Caixa Postal 1120 – CEP 01032-970 – São Paulo – SP
+                                                         Tel. (11) 2187-4450 – Fax (11) 2187-4486
+Imagens
+                                                         E-mail: editora@sp.senac.br
+Adobe Stock Photos
+                                                         Home page: http://www.editorasenacsp.com.br
+E-pub
+Ricardo Diana                                            © Editora Senac São Paulo, 2021
+                                                                                                                                                                                                                                         Sumário
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         Capítulo 1                                Capítulo 4
+                                                                                                                                                                                                                                         Ética no Ocidente, 7                      Cidadania: bases históricas
+                                                                                                                                                                                                                                            1 Definição de ética, 8                e princípios, 75
+                                                                                                                                                                                                                                            2 Percurso histórico da ética no          1 Bases históricas da cidadania, 76
+                                                                                                                                                                                                                                              Ocidente, 12                            2 Concepções de cidadania, 88
+                                                                                                                                                                                                                                            3 Liberdade, igualdade e                  3 A cidadania no Brasil, 92
+                                                                                                                                                                                                                                              responsabilidade como questões
+                                                                                                                                                                                                                                                                                      Considerações finais, 95
+                                                                                                                                                                                                                                              da ética, 21
+                                                                                                                                                                                                                                                                                      Referências, 96
+                                                                                                                                                                                                                                            Considerações finais, 26
+                                                                                                                                                                                                                                            Referências, 27                        Capítulo 5
+                                                                                                                                                                                                                                                                                   Relações étnico-raciais
+                                                                                                                                                                                                                                         Capítulo 2
+                                                                                                                                                                                                                                                                                   no Brasil, 99
+                                                                                                                                                                                                                                         Direitos humanos, 29
+                                                                                                                                                                                                                                                                                      1 Formação da cultura brasileira: uma
+                                                                                                                                                                                                                                            1 O que são os direitos humanos, 30         visão histórico-crítica, 100
+                                                                                                                                                                                                                                            2 Afirmação histórica dos direitos        2 O processo de escravização de
+                                                                                                                                                                                                                                              humanos, 42                               indígenas e africanos e seus
+                                                                                                                                                                                                                                            3 As gerações dos direitos                  reflexos na formação da cultura
+                                                                                                                                                                                                                                              humanos, 44                               brasileira, 111
+                                                                                                                                                                                                                                            Considerações finais, 49                  3 Aspectos políticos e sociais da
+                                                                                                                                                                                                                                            Referências, 50                             cultura afro-brasileira, 115
+                                                                                                                                                                                                                                                                                      Considerações finais, 118
+                                                                                                                                                                                                                                         Capítulo 3                                   Referências, 119
+                                                                                                                                                                                                                                         Democracria no Brasil e grupos
+                                                                                                                                                                                                                                         minorizados, 51                           Capítulo 6
+                                                                                                                                                                                                                                            1 Princípios da democracia, 52         Relações de gênero, 121
+                                                                                                                                                                                                                                            2 Marcos históricos que contribuíram      1 Fundamentos das questões de
+                                                                                                                                                                                                                                              para a construção da democracia           gênero, 122
+                                                                                                                                                                                                                                              no Brasil, 62                           2 Questões de gênero no cenário
+                                                                                                                                                                                                                                            3 Afirmação política de grupos              internacional, 129
+                                                                                                                                                                                                                                              minorizados e movimentos sociais        3 Questões de gênero no Brasil, 136
+                                                                                                                                                                                                                                              e formação da democracia no
+                                                                                                                                                                                                                                                                                      Considerações finais, 140
+                                                                                                                                                                                                                                              Brasil, 68
+                                                                                                                                                                                                                                                                                      Referências, 141
+                                                                                                                                                                                                                                            Considerações finais, 71
+                                                                                                                                                                                                                                            Referências, 72
+Capítulo 7                                  Capítulo 8
+
+
+
+
+                                                                                               Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+Sustentabilidade: fundamentos               Desenvolvimento
+e definições, 143                           sustentável, 161
+    1 A formação da sustentabilidade           1 Concepções de desenvolvimento
+      como questão política e                    sustentável, 162
+      socioambiental, 144                      2 As possibilidades e os limites do
+    2 Concepções de sustentabilidade, 151        desenvolvimento sustentável, 170
+    Considerações finais, 158                  Considerações finais, 178
+    Referências, 158                           Referências, 178
+
+                                            Sobre o autor, 181
+
+
+
+
+6                                                        Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                                                                                Capítulo 1
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                   Ética no Ocidente
+
+
+
+
+                                                                                                                                                                                                                                            Neste capítulo estudaremos e compreenderemos os conceitos de
+                                                                                                                                                                                                                                         ética e moral, quais as suas diferenças e sua relevância para a vida em
+                                                                                                                                                                                                                                         sociedade. Em seguida, realizaremos um percurso histórico e filosófi-
+                                                                                                                                                                                                                                         co em torno das transformações da concepção de ética no Ocidente.
+                                                                                                                                                                                                                                         Veremos como essa noção varia de acordo com o período histórico e
+                                                                                                                                                                                                                                         as escolas de pensamento. É importante destacar que o estudo da ética
+                                                                                                                                                                                                                                         permite o entendimento da conduta humana na modernidade, que deve
+                                                                                                                                                                                                                                         buscar agir de forma responsável, em nome da igualdade jurídica-social
+                                                                                                                                                                                                                                         e das liberdades políticas.
+
+
+                                                                                                                                                                                                                                                                                                               7
+1 Definição de ética
+
+
+
+
+                                                                                               Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+    Do grego ethos, a palavra “ética” surgiu na Grécia antiga com a filoso-
+fia de Aristóteles (século IV a.C.). Ética significa conduta que envolve a
+ação racional, ou a ciência que estuda o comportamento dos indivíduos.
+Seu objetivo é promover a felicidade coletiva, a excelência humana ou
+o bem comum. Na obra Ética a Nicômaco, Aristóteles define o conceito
+com os seguintes termos:
+
+             [...] Parece que a felicidade, mais que qualquer outro bem, é tida
+             como este bem supremo, pois a escolhemos sempre por si mes-
+             ma, e nunca por causa de algo mais; mas as honrarias, o prazer,
+             a inteligência e todas as outras formas de excelência, embora as
+             escolhamos por si mesmas [...], escolhemo-las por causa da feli-
+             cidade, pensando que através delas seremos felizes. Ao contrário,
+             ninguém escolhe a felicidade por causa das várias formas de exce-
+             lência, nem, de um modo geral, por qualquer outra coisa além dela
+             mesma. (ARISTÓTELES, 1992, p. 23)
+
+
+    A ética exige o uso da racionalidade ou a presença de senso crítico e
+da reflexão, antes mesmo que qualquer ação seja tomada, pois sempre
+objetiva o que é melhor, ou a atitude mais equilibrada, para a coletivi-
+dade. A ética está relacionada à reflexão e ao uso da razão, ou seja, é
+expressa pela capacidade de cada indivíduo de especular e mensurar
+os prós e contras de cada atitude diante dos outros. Leva em considera-
+ção, portanto, quais as melhores formas de agir, os procedimentos e as
+virtudes que são necessários para a realização do bem comum. É nesse
+sentido que devemos entender a ética como uma possível direção para
+o estabelecimento da felicidade coletiva.
+
+    É comum a confusão entre as palavras “ética” e “moral”. Elas pos-
+suem significados diferentes e é necessário que compreendamos o que
+exatamente permite distinguir um comportamento ou valor moral dos
+princípios que permeiam o conceito de ética. “Moral” (em latim, moris)
+é uma palavra cuja origem está relacionada aos seguintes significados:
+
+8                                                        Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                         costume, tradição ou hábitos. Diferentemente da ética, a moral não exi-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         ge do indivíduo reflexões de teor mais filosófico, em que se analisam
+                                                                                                                                                                                                                                         os prós e contras de uma ação ou um comportamento. A moral está,
+                                                                                                                                                                                                                                         sim, carregada de juízos e justificativas fundamentadas em tradições e
+                                                                                                                                                                                                                                         temporalidades históricas específicas de uma sociedade, sem com isso
+                                                                                                                                                                                                                                         ter um caráter universal, uma vez que é composta essencialmente por
+                                                                                                                                                                                                                                         normas e regras que muitas vezes não passam por análises ou ques-
+                                                                                                                                                                                                                                         tionamentos, pois são transmitidas de geração a geração. Cada indiví-
+                                                                                                                                                                                                                                         duo é introduzido nesse conjunto de costumes como se estes fossem
+                                                                                                                                                                                                                                         normais ou como se sempre tivessem existido da mesma forma, com
+                                                                                                                                                                                                                                         poucas variações, sem que isso implique em nenhum estranhamento
+                                                                                                                                                                                                                                         ou questionamento sobre como esses padrões comportamentais, es-
+                                                                                                                                                                                                                                         sas visões de mundo e esses valores foram adquiridos ou como e por
+                                                                                                                                                                                                                                         quais motivos foram criados e devem ser seguidos.
+
+                                                                                                                                                                                                                                             Um exemplo interessante para observarmos como a moral está pre-
+                                                                                                                                                                                                                                         sente na vida dos indivíduos é o dado histórico de que, até meados da
+                                                                                                                                                                                                                                         década de 1960, as sociedades ocidentais percebiam as funções das
+                                                                                                                                                                                                                                         mulheres como restritas aos cuidados do lar. Embora hoje, em pleno sé-
+                                                                                                                                                                                                                                         culo XXI, ainda vejamos alguns grupos sociais defendo tal postura, com
+                                                                                                                                                                                                                                         o desenvolvimento do mercado de trabalho e dos movimentos feminis-
+                                                                                                                                                                                                                                         tas, as mulheres foram ocupando lugares estratégicos no mercado de
+                                                                                                                                                                                                                                         trabalho, na política e nos meios de comunicação, a ponto de ter se
+                                                                                                                                                                                                                                         tornado impossível imaginar empresas, universidades e emissoras de
+                                                                                                                                                                                                                                         rádio e TV, por exemplo, sem elas. O que deve ser destacado com esse
+                                                                                                                                                                                                                                         exemplo é que a moral sempre é modificada de tempos em tempos ou
+                                                                                                                                                                                                                                         de sociedade para sociedade, constituindo um conjunto de valores que,
+                                                                                                                                                                                                                                         embora particulares a um grupo, a uma sociedade ou a épocas especí-
+                                                                                                                                                                                                                                         ficas, é naturalizado por esses grupos.
+
+                                                                                                                                                                                                                                                             [...] O que vem a ser a moral? Um conjunto de valores e de regras
+                                                                                                                                                                                                                                                             de comportamento, um código de conduta que coletividades ado-
+                                                                                                                                                                                                                                                             tam, quer sejam uma nação, uma categoria social, uma comunida-
+                                                                                                                                                                                                                                                             de religiosa ou uma organização. Enquanto a ética diz respeito à
+
+
+
+                                                                                                                                                                                                                                         Ética no Ocidente                                                                       9
+             disciplina teórica, ao estudo sistemático, a moral corresponde às
+
+
+
+
+                                                                                               Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+             representações imaginárias que dizem aos agentes sociais o que
+             se espera deles, quais comportamentos são bem-vindos e quais
+             não. (SROUR, 2000, p. 29)
+
+
+     A ética é representada por condutas de alcance universal ou co-
+letivo, na medida em que procura produzir, por meio da reflexão e da
+razão, o bem e a felicidade coletiva, medindo os elementos favoráveis
+e desfavoráveis da conduta. A ética procura estabelecer condições de
+convivência entre grupos diversos e com morais distintas. Por isso,
+estuda a moral, ou seja, os hábitos e costumes humanos a fim de pro-
+duzir a melhor ação possível, considerando a presença de grupos e
+moralidades heterogêneas que devem se relacionar entre si a partir de
+condutas comuns para promover o bem coletivo. A moral é relativa,
+porque suas regras e normas muitas vezes são inconscientes aos que
+a praticam; podem valer para uma cultura ou sociedade, mas não ne-
+cessariamente para outras. Além disso, pode se transformar ao longo
+da história sem que os indivíduos que a compartilham tenham percep-
+ção disso, levando à crença de que seus hábitos e costumes sempre
+foram os mesmos ou são os mais verdadeiros, quando na verdade
+estão em permanente modificação. A moral é expressa por meio de
+valores (ou juízos morais) que permitem que o indivíduo seja norteado
+pelas noções do que é justo ou injusto, certo ou errado, bom ou mau,
+virtuoso e/ou que promove vícios.
+
+     Devemos ter em mente que a vida humana é formada sempre por
+ações morais e éticas. Governos, empresas, relações familiares, jogos,
+guerras, acordos de paz, enfim, todas as práticas humanas apresentam
+as características que acabamos de expor. Por isso, o estudo da ética
+deve ser aplicado ao cenário moderno e ocidental, considerando a teia
+de relações que são estabelecidas entre indivíduos, grupos humanos,
+nações, religiões e posicionamentos políticos. Cada ação ética deve
+pressupor impactos sobre diferentes grupos e comunidades humanas
+e levar em consideração o comportamento moral desses grupos para
+
+
+10                                                       Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                         que os resultados sejam os mais racionais possíveis e capazes de origi-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         nar benefícios ou ganhos coletivos.
+
+                                                                                                                                                                                                                                             Agora que diferenciamos a ética da moral, é preciso compreender
+                                                                                                                                                                                                                                         mais a fundo a forma como os indivíduos agem moralmente. Todos nós
+                                                                                                                                                                                                                                         temos, certas vezes, um forte sentimento, vontade ou impulso diante
+                                                                                                                                                                                                                                         de situações que nos fazem agir imediatamente. Às vezes, com indig-
+                                                                                                                                                                                                                                         nação, levantamos o tom de voz quando uma pergunta ou um aconteci-
+                                                                                                                                                                                                                                         mento chocante está diante de nós. Outras vezes, tecemos juízos sobre
+                                                                                                                                                                                                                                         determinadas ações que observamos; simplesmente julgamos ou co-
+                                                                                                                                                                                                                                         mentamos o acontecimento que atraiu a nossa atenção. Isso aconte-
+                                                                                                                                                                                                                                         ce, por exemplo, quando vemos uma criança com fome ou vivendo de
+                                                                                                                                                                                                                                         maneira precária e decidimos fornecer algum apoio. A isso chamamos
+                                                                                                                                                                                                                                         de senso moral. O senso moral representa nossos gestos positivos ou
+                                                                                                                                                                                                                                         negativos, percepções e expressões que legitimam ou criam oposições
+                                                                                                                                                                                                                                         a determinadas ações que se manifestam diante de nossos olhos. Não
+                                                                                                                                                                                                                                         há exigência de justificativa imediata quando se pratica o senso mo-
+                                                                                                                                                                                                                                         ral. Ele está relacionado à nossa formação moral, ou seja, a tradições e
+                                                                                                                                                                                                                                         costumes que fornecem atitudes imediatas perante situações que nem
+                                                                                                                                                                                                                                         sempre compreendemos totalmente ou que ocorrem de tal forma que
+                                                                                                                                                                                                                                         passam a influenciar nossos gestos mais impulsivos.
+
+                                                                                                                                                                                                                                                             [...] Em uma de suas obras capitais para a introdução ao pensa-
+                                                                                                                                                                                                                                                             mento filosófico, intitulada “Convite à filosofia”, Chaui (2000) escre-
+                                                                                                                                                                                                                                                             ve que esse sentimento prova que nós somos seres morais, do-
+                                                                                                                                                                                                                                                             tados de um senso de moralidade. O sentimento despertado em
+                                                                                                                                                                                                                                                             nós prova a existência de um universo moral e nos leva a pensar
+                                                                                                                                                                                                                                                             sobre o que é certo ou errado, justo ou injusto, bom ou mau diante
+                                                                                                                                                                                                                                                             de situações de sofrimento e dor, principalmente quando envolvem
+                                                                                                                                                                                                                                                             crianças, seres inocentes que nos comovem por conta de sua fra-
+                                                                                                                                                                                                                                                             gilidade. (BRAGA JUNIOR; MONTEIRO, 2016, p. 42)
+
+
+                                                                                                                                                                                                                                             No entanto, todos os nossos atos e posicionamentos, sejam eles con-
+                                                                                                                                                                                                                                         tra ou a favor do que pensa a maioria das pessoas, exigem de nós uma
+                                                                                                                                                                                                                                         justificativa. A essa justificativa damos o nome de consciência moral;
+
+
+                                                                                                                                                                                                                                         Ética no Ocidente                                                                             11
+são as explicações que são dadas para fundamentar o senso moral. A
+
+
+
+
+                                                                                                 Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+consciência moral é, portanto, a justificativa baseada na própria moral
+que permite dar sentido a todos os nossos atos e visões de mundo. Ao
+impulsivamente ajudar a criança faminta ou o idoso que atravessa a
+rua, exerço o meu senso moral. Quando penso e justifico a mim mesmo
+e aos demais essa minha ação, exerço a consciência moral.
+
+              Portanto, diante de um senso moral, temos emoções e sentimentos
+              que são suscitados pelos acontecimentos com base em nossa cren-
+              ça nos padrões morais que adotamos e que nos orientam. Mas é a
+              nossa consciência moral que nos leva a agir e a assumir a responsa-
+              bilidade por nossos atos. (BRAGA JUNIOR; MONTEIRO, 2016, p. 44)
+
+
+
+
+2 Percurso histórico da ética no Ocidente
+     Vimos, no tópico anterior, elementos que caracterizam, num sen-
+tido geral, o que é a ética. Cabe agora observar que o entendimento
+da expressão “ética” varia conforme o período histórico e a escola de
+pensamento. Vejamos a seguir como o pensamento grego clássico e
+depois o moderno e contemporâneo interpretaram a ética e os limites
+da conduta humana.
+
+     Aristóteles (384-322 a.C.) teria sido o inventor da palavra "ética". Mas
+o próprio filósofo considera que seus mestres e antecessores Sócrates
+(469-399 a.C.) e Platão (428-348 a.C.), mesmo não sendo os criadores
+da palavra, já haviam buscado compreender a importância da ética para
+a felicidade e o bem da vida em sociedade. A preocupação que surge na
+filosofia da Grécia antiga, sobretudo com Sócrates, é a de como deve-
+mos viver nossa vida de forma justa e em sociedade. Como promover
+o bem comum? Como estabelecer o que é verdadeiro e o que é falso
+para a conduta humana? Todas essas questões podem ser sintetizadas
+na conhecida alegoria da caverna, do livro VII de A República, de Platão.
+São questões que não se limitam mais apenas à filosofia, mas atingem
+
+
+
+12                                                         Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                         também as preocupações de sociólogos, economistas, psicólogos, bió-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         logos, entre outros profissionais.
+
+
+                                                                                                                                                                                                                                                        PARA SABER MAIS
+
+                                                                                                                                                                                                                                                       Na obra A política, Aristóteles define o homem como um “animal político
+                                                                                                                                                                                                                                                       por natureza” (Zoon Politikon). A política diferencia a humanidade dos
+                                                                                                                                                                                                                                                       demais animais, representa o agir, o pensar e o aprimorar a vida em
+                                                                                                                                                                                                                                                       sociedade. É a capacidade de criar, discernir, construir, refazer e viver
+                                                                                                                                                                                                                                                       intensamente em sociedade o que se entende como justo e injusto, o
+                                                                                                                                                                                                                                                       bem e o mal, normas e regras, por meio do uso da razão e das palavras
+                                                                                                                                                                                                                                                       (léxico). Zoon Politikon é o fundamento da vida moral e ética dos su-
+                                                                                                                                                                                                                                                       jeitos, sempre em sociedade, o que lhes permite a invenção de juízos,
+                                                                                                                                                                                                                                                       costumes, tradições, regras e leis.
+
+                                                                                                                                                                                                                                                                                                                                   
+
+                                                                                                                                                                                                                                             A filosofia antiga tem como preocupação o conhecimento das virtu-
+                                                                                                                                                                                                                                         des dos indivíduos, de seu espírito e de sua capacidade para conhecer a
+                                                                                                                                                                                                                                         verdade. Sócrates debatia a igualdade de todos os homens e mulheres
+                                                                                                                                                                                                                                         perante as leis, a importância e os problemas do direito de todos os ci-
+                                                                                                                                                                                                                                         dadãos de participarem diretamente do governo da cidade ateniense,
+                                                                                                                                                                                                                                         por meio de um modelo que permitisse o acesso de todos à política.
+                                                                                                                                                                                                                                         Nasciam, dessa forma, os questionamentos éticos. Esse período se
+                                                                                                                                                                                                                                         destacou por ter sido o primeiro na história da cultura ocidental em que
+                                                                                                                                                                                                                                         houve preocupações com questões morais e políticas. Baseou-se na
+                                                                                                                                                                                                                                         confiança no pensamento ou no homem como ser racional, capaz de co-
+                                                                                                                                                                                                                                         nhecer-se a si mesmo e, portanto, capaz de produzir reflexões e decidir o
+                                                                                                                                                                                                                                         destino, a felicidade e o bem da sociedade. Para tanto, tornou-se neces-
+                                                                                                                                                                                                                                         sário pensar sobre padrões de educação e formação do bom cidadão,
+                                                                                                                                                                                                                                         capaz de agir em público e convencer aos outros nos debates políticos.
+
+                                                                                                                                                                                                                                             Na Idade Média, os debates éticos estiveram nas mãos dos teólo-
+                                                                                                                                                                                                                                         gos da Igreja católica, que procuravam relacionar a conduta humana
+                                                                                                                                                                                                                                         com os textos bíblicos, considerando a salvação da alma. Destacam-se
+                                                                                                                                                                                                                                         Santo Agostinho (354-430 d.C.) e São Tomás de Aquino (1255-1274 d.C.).
+
+                                                                                                                                                                                                                                         Ética no Ocidente                                                                         13
+O primeiro foi pioneiro na compreensão da liberdade humana e da capaci-
+
+
+
+
+                                                                                          Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+dade do homem de produzir de maneira autônoma escolhas e responsa-
+bilidades, isto é, de exercer o livre-arbítrio. Compreendendo racionalmente
+que as ações virtuosas e o cultivo da fé conduziriam à salvação da alma
+após a morte e que o pecado, com o cultivo dos vícios carnais, conduziria
+ao distanciamento de Deus, Agostinho traça a relação entre a ética e a fé.
+Aquino, por sua vez, elabora tratados morais em que busca estabelecer
+quais virtudes (entre elas a temperança e a fé) devem acompanhar o com-
+portamento humano a fim de aperfeiçoá-lo e guiá-lo em direção a Deus.
+
+     Com o surgimento do pensamento moderno, por volta dos séculos
+XVI e XVII, as preocupações éticas passaram a ser outras, sobretudo
+com a figura de Maquiavel (1469-1527), na obra O príncipe. Enquanto
+os pensadores gregos da Antiguidade procuravam pelas virtudes e um
+estilo de ética em que todos encontrariam a felicidade por meio da ra-
+zão, o pensamento moderno, a partir de Maquiavel, passa a observar o
+ser humano como naturalmente dotado de avareza, individualismo e ne-
+nhum verdadeiro interesse pelo bem comum, de modo que na primeira
+oportunidade trai seu semelhante.
+
+     Partindo desse ponto de vista negativo sobre a natureza humana, os
+questionamentos de Maquiavel giravam em torno de como o príncipe
+(expressão que se refere a qualquer governante) pode manter a sobera-
+nia e o domínio sobre os súditos, como é possível persuadir os subor-
+dinados à autoridade de um governo e como o príncipe deve agir para
+conter permanentes conflitos internos e com outros governos. Embora
+Maquiavel nunca tenha escrito a conhecida frase “os fins justificam os
+meios”, sua obra permite tecer relações com ela, pois o filósofo julga
+que, para manter o poder, o príncipe tudo pode e deve fazer, mesmo
+matar, mentir, agir com hipocrisia, demitir e distorcer informações; ele
+deve ser amado pelo povo e temido pelos inimigos; tornar velhos inimi-
+gos novos amigos e vice-versa; usar a força quando julgar necessário
+ou enveredar pelo caminho da paz; tudo conforme as necessidades e
+circunstâncias.
+
+14                                                  Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                             É interessante notar que os filósofos se referem à existência de uma
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         ética maquiavélica. Nesse caso, devemos primeiro desmistificar o ter-
+                                                                                                                                                                                                                                         mo "maquiavélico", geralmente associado a fazer ou realizar o mal. Na
+                                                                                                                                                                                                                                         realidade, ser maquiavélico significa ser calculista, saber medir racio-
+                                                                                                                                                                                                                                         nalmente os prós e contras de uma ação; diz respeito à capacidade
+                                                                                                                                                                                                                                         de o príncipe perceber os jogos de forças políticas e se antecipar aos
+                                                                                                                                                                                                                                         inimigos. Maquiavel afirma que só é possível um príncipe se sustentar
+                                                                                                                                                                                                                                         no poder caso tenha como objetivo realizar tudo que lhe for possível
+                                                                                                                                                                                                                                         para manter o seu domínio, zelando pelo apoio e felicidade dos súditos,
+                                                                                                                                                                                                                                         pois sem esse apoio popular qualquer governo pode ser sabotado e até
+                                                                                                                                                                                                                                         derrubado. Isso significa que todo príncipe deve agir visando dois fins:
+                                                                                                                                                                                                                                         garantir a perpetuação de seu poder político e o bem-estar dos súditos.
+                                                                                                                                                                                                                                         A promoção do bem comum seria então apenas aparente, pois o verda-
+                                                                                                                                                                                                                                         deiro interesse seria manter o poder político. A ética maquiavélica reve-
+                                                                                                                                                                                                                                         la-se como uma forma de governo na qual o príncipe deve estar sempre
+                                                                                                                                                                                                                                         alerta e aparentar fazer o bem, mesmo quando suas ações possam ser
+                                                                                                                                                                                                                                         consideradas moralmente reprováveis.
+
+                                                                                                                                                                                                                                             Fica evidente que a ética maquiavélica está direcionada aos fins
+                                                                                                                                                                                                                                         (manter o poder e garantir o apoio popular), independentemente dos
+                                                                                                                                                                                                                                         meios empregados. A partir de Maquiavel, nos referimos a toda ação
+                                                                                                                                                                                                                                         ética que visa aos fins com a palavra "teleologia" (do grego telos, fim,
+                                                                                                                                                                                                                                         finalidade, objetivo; e logos, discurso, razão ou racionalidade). Teleologia
+                                                                                                                                                                                                                                         designa o estudo dos fins ou das finalidades. Trata-se, portanto, de um
+                                                                                                                                                                                                                                         modelo ético no qual os fins, os resultados ou as consequências são
+                                                                                                                                                                                                                                         sempre medidos e calculados pelo indivíduo.
+
+
+                                                                                                                                                                                                                                                        PARA SABER MAIS
+
+                                                                                                                                                                                                                                                       Para Maquiavel, o sucesso do príncipe se sustenta em dois princípios:
+                                                                                                                                                                                                                                                       virtú (deriva de vir, que quer dizer virilidade em latim), que não possui
+                                                                                                                                                                                                                                                       relação com as virtudes (sabedoria, honestidade, religiosidade, etc.) e
+                                                                                                                                                                                                                                                       vincula-se à expressão “maquiavélico”, dizendo respeito a ser calculista,
+                                                                                                                                                                                                                                                       dissimulado, à capacidade de agir e se antecipar aos inimigos conforme
+
+
+
+                                                                                                                                                                                                                                         Ética no Ocidente                                                                         15
+          as circunstâncias; e fortuna (originalmente, a deusa romana que repre-
+
+
+
+
+                                                                                                  Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+          senta a sorte ou o acaso), que fundamenta a contingência e imprevi-
+          sibilidade histórica, escapando à racionalidade humana, a exemplo de
+          catástrofes naturais ou declarações de guerra de outros reinos.
+
+                                                                                           
+
+     O desenvolvimento do capitalismo e da sociedade burguesa a partir
+dos séculos XVIII e XIX produziu modificações a respeito do que vem a
+ser a ética, vinculando-a com uma nova noção de trabalho. Adam Smith
+(1723-1790) é considerado o precursor da ética voltada ao trabalho e à
+economia. A palavra "economia", até antes do surgimento do capitalis-
+mo, estava restrita à administração privada do lar (envolvendo a família,
+a produção de alimentos e os escravos ou servos). Foi a partir da teoria
+econômica de Adam Smith que a noção de economia foi posta de pon-
+ta-cabeça, tornando-se um assunto público e, portanto, uma ética.
+
+             No século XVII, Adam Smith conseguiu demonstrar, na sua A rique-
+             za das nações, que o lucro não é um acréscimo indevido, mas um
+             vetor de distribuição de renda e de promoção do bem-estar social.
+             Com isso, logrou expor pela primeira vez a compatibilidade entre
+             ética e atividade lucrativa. (MOREIRA, 1999, p. 28)
+
+
+
+          PARA SABER MAIS
+
+          A palavra "economia", na Antiguidade e na Idade Média (oikos, em gre-
+          go), apenas designava cuidados ou a administração do próprio lar. Ou
+          seja, a economia significava, para um proprietário de terras, somente o
+          controle da produção de alimentos (geralmente com produção autossu-
+          ficiente), de seus escravos ou servos e de sua família. O trabalho, antes
+          do surgimento do capitalismo, sempre era visto como uma atividade de-
+          gradante restrita aos homens de pouco intelecto e reflexão. Escravos,
+          servos e comerciantes, por dedicarem sua vida ao trabalho, foram mar-
+          ginalizados da vida política, não eram dotados de privilégios e viviam à
+          mercê das decisões tomadas pelos legítimos cidadãos, nobres ou reis,
+          que podiam ser somente os proprietários das terras. Estes, dados ao
+          ócio, tinham tempo livre para discernir sobre as questões mais elevadas,
+
+
+
+16                                                          Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                                       como a política, os destinos da cidade ou de seu povo ou feudo. Assim,
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                       até o século XVII não existia vínculo algum entre a noção de economia
+                                                                                                                                                                                                                                                       e comércio, uma vez que se entendia por economia apenas o cuidado
+                                                                                                                                                                                                                                                       com a vida privada. A grande inovação do homem moderno, ou melhor,
+                                                                                                                                                                                                                                                       do burguês ou do comerciante, foi a conquista do poder político. Se em
+                                                                                                                                                                                                                                                       outros períodos da história ocidental os comerciantes estiveram ligeira
+                                                                                                                                                                                                                                                       ou drasticamente afastados das decisões políticas, as revoluções bur-
+                                                                                                                                                                                                                                                       guesas (1688 – Revolução Gloriosa, na Inglaterra; e 1789 – Revolução
+                                                                                                                                                                                                                                                       Francesa) foram responsáveis por alocarem definitivamente os comer-
+                                                                                                                                                                                                                                                       ciantes no poder dos Estados e de toda a burocracia oficial. Obviamente,
+                                                                                                                                                                                                                                                       o trabalho, antes visto como função não nobre, foi dignificado. A econo-
+                                                                                                                                                                                                                                                       mia, antes uma noção privada, passou a ser assunto coletivo e público.
+                                                                                                                                                                                                                                                       A economia enquanto uma questão pública e o trabalho racional, am-
+                                                                                                                                                                                                                                                       plamente difundido hoje como mãe de todas as relações sociais, são in-
+                                                                                                                                                                                                                                                       venções humanas recentes e se constituíram como porta-vozes da ética
+                                                                                                                                                                                                                                                       burguesa, a qual fundamenta a ética empresarial e enaltece o negócio,
+                                                                                                                                                                                                                                                       termo cuja etimologia em latim significa negar o ócio (negotium).
+
+                                                                                                                                                                                                                                                                                                                                   
+
+                                                                                                                                                                                                                                             Para Smith, o mercado deveria funcionar segundo princípios éticos
+                                                                                                                                                                                                                                         individualistas, o que ele designou de “mão invisível”. Esse conceito se
+                                                                                                                                                                                                                                         fundamenta em interesses econômicos privados ou individuais, compe-
+                                                                                                                                                                                                                                         titividade e uma sociedade guiada pela livre iniciativa, concorrência e lei
+                                                                                                                                                                                                                                         da oferta e da procura:
+
+                                                                                                                                                                                                                                                             [...] cada indivíduo procura, na medida do possível, empregar seu
+                                                                                                                                                                                                                                                             capital em fomentar a atividade nacional e dirigir de tal maneira
+                                                                                                                                                                                                                                                             essa atividade que seu produto tenha o máximo valor possível [...].
+                                                                                                                                                                                                                                                             Geralmente, na realidade, ele não tenciona promover o interesse
+                                                                                                                                                                                                                                                             público nem sabe até que ponto o está promovendo. Ao preferir
+                                                                                                                                                                                                                                                             fomentar a atividade do país e não de outros países ele tem em vis-
+                                                                                                                                                                                                                                                             ta apenas sua própria segurança; e orientando sua atividade de tal
+                                                                                                                                                                                                                                                             maneira que sua produção possa ser de maior valor, visa apenas a
+                                                                                                                                                                                                                                                             seu próprio ganho e, neste, como em muitos outros casos, é levado
+                                                                                                                                                                                                                                                             como que por mão invisível a promover um objetivo que não fazia
+                                                                                                                                                                                                                                                             parte de suas intenções. (SMITH, 1996, p. 438)
+
+
+
+
+                                                                                                                                                                                                                                         Ética no Ocidente                                                                         17
+    Smith cria a percepção de que a economia é uma esfera ética, na
+
+
+
+
+                                                                                                 Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+medida em que o mercado, aparentemente caótico, é, na realidade, or-
+ganizado e produz as espécies e quantidades dos bens mais desejados
+pela população. Quanto mais egoísta e competitivo for um indivíduo
+e quanto mais obtiver riquezas através de seu trabalho, indiretamente
+mais contribuirá com o progresso de outros indivíduos competitivos,
+por meio da compra de outros serviços ou mercadorias, de modo a ge-
+rar o progresso coletivo. Surge uma modalidade de ética que tem, como
+fim último, o progresso social a partir do individualismo exacerbado.
+
+   Outra interpretação sobre a ética presente nas relações mercantis
+modernas está na obra A ética protestante e o espírito do capitalismo,
+escrita por Max Weber nos primeiros anos do século XX. O pensador
+procura compreender qual é a origem da racionalidade e da burocracia
+presentes no capitalismo.
+
+
+           PARA SABER MAIS
+
+           Weber (1864-1920) é um dos principais intelectuais da passagem do
+           século XIX ao XX. Seus estudos se concentram na origem da raciona-
+           lidade moderna, a qual se desdobra não apenas no capitalismo, mas
+           também na burocracia e, portanto, em um maior controle sobre as rela-
+           ções sociais. Isso faz de Weber um dos precursores da teoria geral da
+           administração e da sociologia.
+
+                                                                                          
+
+     A Reforma Protestante (iniciada entre os séculos XVI e XVII), segun-
+do Weber, deu origem à ascese, entendida como a busca constante do
+domínio e controle do próprio corpo, disciplina rígida diante das paixões,
+visando finalmente ao controle da natureza por meio da ação metódica,
+racional e calculada. Diferentemente do catolicismo medieval (que nega
+o trabalho, o juro e o lucro como fontes de riquezas), a conduta de vida
+protestante, sobretudo a calvinista, desenvolveu uma ética que prevê a
+racionalização da atividade mundana e, portanto, que se realiza através
+do trabalho rígido e do negócio (negação do ócio) enquanto formas de
+
+
+18                                                         Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                         demonstração de que se é um escolhido por Deus, ou seja, um predesti-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         nado à salvação. Trata-se de uma forma de religiosidade eminentemen-
+                                                                                                                                                                                                                                         te moderna, uma vez que a fé não se reduz à contemplação de Deus,
+                                                                                                                                                                                                                                         mas também prevê ação e dominação do mundo.
+
+                                                                                                                                                                                                                                             O que está em jogo é a relação entre a prosperidade econômica, a
+                                                                                                                                                                                                                                         ética protestante e a origem da racionalidade presente no capitalismo.
+                                                                                                                                                                                                                                         Weber designou esse estilo de vida como ética do trabalho, que pos-
+                                                                                                                                                                                                                                         sivelmente criou a crença de que o “trabalho dignifica o homem” ou o
+                                                                                                                                                                                                                                         “enobrece”. A principal característica da ética do trabalho é o controle
+                                                                                                                                                                                                                                         e a racionalização sobre todos os processos da vida e do trabalho. O
+                                                                                                                                                                                                                                         lucro e a cobrança dos juros, atividades vistas historicamente como de-
+                                                                                                                                                                                                                                         gradantes e realizadas por espíritos gananciosos, passaram a ser tidas
+                                                                                                                                                                                                                                         como benéficas e dignas, de acordo com a análise de Weber. Noções
+                                                                                                                                                                                                                                         antes presentes apenas no vocabulário do catolicismo, como missão,
+                                                                                                                                                                                                                                         visão e vocação, foram transferidas à esfera do trabalho racional e gra-
+                                                                                                                                                                                                                                         dativamente incorporadas ao vocabulário do universo gerencial da ad-
+                                                                                                                                                                                                                                         ministração. O ponto central da análise que Weber realiza sobre a ética
+                                                                                                                                                                                                                                         do trabalho é o de que indiretamente, ou seja, sem exatamente saber, os
+                                                                                                                                                                                                                                         protestantes inventaram as práticas racionalizadoras que foram incor-
+                                                                                                                                                                                                                                         poradas pelo capitalismo. Certamente, indivíduos de outras religiões e
+                                                                                                                                                                                                                                         até mesmo ateus teriam percebido o rápido progresso econômico dos
+                                                                                                                                                                                                                                         fiéis puritanos e começaram a imitar a ética do trabalho, mas sem a sua
+                                                                                                                                                                                                                                         religiosidade original. Pode-se dizer que as práticas econômicas que
+                                                                                                                                                                                                                                         vieram depois adotaram essa ética do trabalho, mas o vínculo entre a
+                                                                                                                                                                                                                                         religiosidade e a racionalidade evaporou.
+
+                                                                                                                                                                                                                                            É interessante notar que a ética do trabalho e o individualismo pro-
+                                                                                                                                                                                                                                         posto por Adam Smith contribuíram para consolidar a ética no cenário
+                                                                                                                                                                                                                                         econômico capitalista.
+
+                                                                                                                                                                                                                                            Na passagem do século XVIII ao XIX, após a legitimação da ciên-
+                                                                                                                                                                                                                                         cia moderna e da ética econômica liberal burguesa e durante as revo-
+                                                                                                                                                                                                                                         luções políticas burguesas, surgiram novas reflexões éticas, voltadas a
+
+
+                                                                                                                                                                                                                                         Ética no Ocidente                                                     19
+princípios morais que regulamentam o comportamento do bom cida-
+
+
+
+
+                                                                                          Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+dão e as boas práticas de administração pública. As superstições e as
+interpretações medievais religiosas de mundo que guiavam a conduta
+humana estavam sendo substituídas pela racionalidade da ciência mo-
+derna, com métodos experimentais e matemáticos aplicados também
+na indústria. Diante da nova ordem política burguesa, fundamentada na
+igualdade jurídica e nas liberdades políticas, o poder dos reis absolutis-
+tas estava prestes a sucumbir definitivamente, e as relações sociais não
+seriam mais guiadas pelos humores dos tiranos e pela rivalidade entre
+eles, mas pela racionalidade jurídica.
+
+    Kant (1724-1804), por exemplo, foi um pensador alemão contempo-
+râneo à Revolução Francesa e otimista em relação às conquistas de seu
+tempo. Com a obra Fundamentação da metafísica dos costumes, partirá
+da visão contempladora da razão moderna aplicada ao direito, à indús-
+tria e à ciência como fundamento para uma nova modalidade de ética,
+que se opõe à tradição maquiavélica, baseada na teleologia (nos fins).
+Kant concebe a deontologia (do grego deon, que significa obrigação ou
+dever moral) como uma ciência do dever, uma obrigação racional que
+deve ser realizada a todo custo, sem que as consequências sejam me-
+didas, afinal de contas estabelece que tudo o que surge ou emana da
+razão é necessariamente benéfico à humanidade, não devendo haver
+suspeitas ou inquietações em relação à própria racionalidade.
+
+     Kant se considerava iluminista. Os iluministas têm forte crença nos
+benefícios da razão humana, e por isso Kant compreendeu que não se-
+ria necessário medir as consequências da ética baseada na deontolo-
+gia, pois importam os meios racionais, ou mesmo os meios passam a
+se confundir com os fins, tendo em vista que a razão sempre conduziria
+o homem ao bem e à verdade, não podendo ser questionada jamais.
+Foi por meio da deontologia que Kant estabeleceu o imperativo cate-
+górico e a máxima muito conhecida que sintetiza sua nova ética: “Age
+como se a máxima de tua ação devesse tornar-se, através da tua vonta-
+de, uma lei universal” (KANT, 2009, p. 245). Isso significa tornar a ação
+
+
+20                                                  Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                         inquestionável e universal, ou seja, difundir e aplicar toda ação racional,
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         sendo sua validade aplicável em qualquer lugar ou tempo, o que revela
+                                                                                                                                                                                                                                         a visão profundamente otimista de Kant diante da razão.
+
+
+                                                                                                                                                                                                                                         3 Liberdade, igualdade e responsabilidade
+                                                                                                                                                                                                                                         como questões da ética
+                                                                                                                                                                                                                                             Vimos que Kant foi herdeiro da filosofia francesa e iluminista do sé-
+                                                                                                                                                                                                                                         culo XVIII. Diderot, Voltaire e Rousseau defendiam a razão e a ciência
+                                                                                                                                                                                                                                         como instrumentos de interpretação e organização do mundo, portan-
+                                                                                                                                                                                                                                         to manifestavam animosidades contra a religiosidade. Rousseau, na
+                                                                                                                                                                                                                                         França, e Locke, pai do liberalismo político, na Inglaterra, muito apre-
+                                                                                                                                                                                                                                         ciados por Kant no século seguinte, afirmavam que a igualdade e a
+                                                                                                                                                                                                                                         liberdade são naturais, devendo ser elementos fundamentais na vida
+                                                                                                                                                                                                                                         política e na organização do Estado. A ética burguesa prezava agora pe-
+                                                                                                                                                                                                                                         las liberdades individuais, que, conforme veremos no próximo capítulo,
+                                                                                                                                                                                                                                         influenciarão a composição dos direitos humanos no século XX. Todos
+                                                                                                                                                                                                                                         esses elementos oriundos da ética liberal e iluminista inspiravam Kant
+                                                                                                                                                                                                                                         na concepção de que a humanidade estava prestes a alcançar o que ele
+                                                                                                                                                                                                                                         designou “paz perpétua” (denominação que se tornou também título de
+                                                                                                                                                                                                                                         um de seus livros, publicado em 1795). A igualdade jurídica, somada à
+                                                                                                                                                                                                                                         liberdade de expressão e à liberdade política, seria um indício de um ver-
+                                                                                                                                                                                                                                         dadeiro império da razão, e dela resultariam necessariamente benesses
+                                                                                                                                                                                                                                         à humanidade.
+
+                                                                                                                                                                                                                                             No século XX, no entanto, diferentes pensadores se opuseram à de-
+                                                                                                                                                                                                                                         ontologia de Kant, alertando para os riscos de ações irresponsáveis e
+                                                                                                                                                                                                                                         inconsequentes quando há uma confiança exagerada ou cega na racio-
+                                                                                                                                                                                                                                         nalidade. Max Weber produziu um ensaio em 1919 intitulado “A política
+                                                                                                                                                                                                                                         como vocação” (WEBER, 2004), em que estabelece a oposição entre os
+                                                                                                                                                                                                                                         conceitos nomeados como ética da convicção (vinculada à deontolo-
+                                                                                                                                                                                                                                         gia) e ética da responsabilidade (vinculada à teleologia).
+
+
+
+                                                                                                                                                                                                                                         Ética no Ocidente                                                        21
+     A ética da convicção compreende um dever moral e racional que
+
+
+
+
+                                                                                          Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+deve ser realizado a todo custo, sem que se leve em consideração as
+consequências desse ato. Weber remete à deontologia criada por Kant
+para definir esse conceito. Podemos tomar como exemplo dessa ética
+um indivíduo que exerce a profissão de médico e cria o valor moral e ra-
+cional de jamais mentir. Caso o seu paciente em estado terminal lhe per-
+gunte qual é a sua situação, certamente receberá a resposta mais desa-
+gradável possível, pois esse médico tem como dever moral não mentir.
+
+     Weber considera que a ética da convicção é um tanto perigosa, na
+medida em que os fins ou resultados são coadjuvantes diante da con-
+fiança no exercício ético da razão. Suponhamos uma empresa que pro-
+duza alimentos transgênicos e queira obter lucros cada vez maiores,
+sem realizar estudos sobre os impactos de seus produtos sobre a saúde
+de seus consumidores. Nesse caso, ao não medir as consequências,
+observamos a ética da convicção, um indício de um ato irresponsável.
+
+     A ética da responsabilidade, como o próprio termo indica, é responsá-
+vel, porque mede as consequências, calcula e reflete sobre todos os re-
+sultados possíveis de uma ação. A ética da responsabilidade tem como
+principal característica valorizar os fins, e não os meios. Por isso, Weber
+se inspira no padrão teleológico no interior da ética da responsabilidade.
+
+     Voltemos ao exemplo anterior, em que o médico prometeu jamais
+mentir. Numa perspectiva weberiana, e caso concordássemos com
+esse pensador, poderíamos considerar a ideia de falar a verdade a todo
+custo um ato irresponsável e, portanto, relacioná-lo à ética da convic-
+ção. É possível dizer que o médico teria sido responsável se tivesse
+mentido, se tivesse dito ao seu paciente quão valente e corajoso ele é
+e que tem o surpreendido. Como na ética da responsabilidade os fins
+são mais relevantes que os meios, a mentira poderia ser considerada,
+nesse caso, responsável. Um defensor da ética da convicção não con-
+cordaria com a ideia de que se deve mentir. Caso julgássemos falar a
+verdade sempre como um princípio moral inquestionável, veríamos a
+
+
+22                                                  Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                         ética da responsabilidade negativamente. É importante perceber aqui
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         como ambas as éticas, da convicção e responsabilidade, podem ter va-
+                                                                                                                                                                                                                                         lores positivos ou negativos de acordo com pontos de vista distintos e
+                                                                                                                                                                                                                                         justificados a partir de nossa consciência moral.
+
+                                                                                                                                                                                                                                             A filósofa alemã Hannah Arendt (1906-1975) produziu uma impor-
+                                                                                                                                                                                                                                         tante crítica à ética kantiana por meio do conceito de banalidade do
+                                                                                                                                                                                                                                         mal, apresentado na obra Eichmann em Jerusalém: um relato sobre a
+                                                                                                                                                                                                                                         banalidade do mal (1963). Adolf Eichmann foi um oficial da Gestapo na-
+                                                                                                                                                                                                                                         zista, responsável pela logística de extermínio de milhões de indivíduos
+                                                                                                                                                                                                                                         durante a Segunda Guerra Mundial, capturado na Argentina e julgado
+                                                                                                                                                                                                                                         em Jerusalém no ano de 1961. Hannah Arendt foi enviada pela revista
+                                                                                                                                                                                                                                         The New Yorker para cobrir o julgamento realizado pelo governo isra-
+                                                                                                                                                                                                                                         elense. Um dos aspectos mais polêmicos da obra é o modo como a
+                                                                                                                                                                                                                                         filósofa descreve o comportamento de Eichmann, pois não aparentava
+                                                                                                                                                                                                                                         ser um monstro, alguém com um espírito demoníaco e antissemita. Era,
+                                                                                                                                                                                                                                         na verdade, um burocrata obediente às leis do seu país; as seguia por
+                                                                                                                                                                                                                                         considerar racional a obediência a elas. Era, portanto, um sujeito medío­
+                                                                                                                                                                                                                                         cre, que de certa forma renunciou a pensar nas consequências que os
+                                                                                                                                                                                                                                         seus atos poderiam ter. Eichmann demonstrou ser pouco reflexivo e foi
+                                                                                                                                                                                                                                         conduzido por um comportamento ético fundamentado na deontologia.
+
+                                                                                                                                                                                                                                             Segundo Arendt (1999), a banalidade do mal é o fenômeno que se
+                                                                                                                                                                                                                                         caracteriza pela renúncia da humanidade, negando a reflexão e produ-
+                                                                                                                                                                                                                                         zindo a tendência de não se assumir a iniciativa dos próprios atos, ou
+                                                                                                                                                                                                                                         seja, caracteriza-se pela ausência de responsabilidade sobre as conse-
+                                                                                                                                                                                                                                         quências das ações. A banalidade do mal demonstra que muitas vezes
+                                                                                                                                                                                                                                         o emprego da razão, ainda que pela via da obediência mais fiel às leis,
+                                                                                                                                                                                                                                         pode se voltar contra a própria humanidade, afastando o indivíduo de
+                                                                                                                                                                                                                                         sua conexão e responsabilidade com os outros humanos e tornando-o
+                                                                                                                                                                                                                                         praticante de atitudes bárbaras. Os campos de concentração expressa-
+                                                                                                                                                                                                                                         vam uma forma racional e sistemática de organização do trabalho e ex-
+                                                                                                                                                                                                                                         termínio em massa dos prisioneiros. A banalização do mal ocorre quan-
+                                                                                                                                                                                                                                         do transformamos nossos semelhantes em meros números, indivíduos
+
+                                                                                                                                                                                                                                         Ética no Ocidente                                                      23
+desumanizados por uma ordem racional cega. Portanto, o conceito é
+
+
+
+
+                                                                                           Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+fruto de uma sociedade inspirada na defesa da racionalidade, seja ela
+moral ou jurídica, sem que se façam reflexões ou críticas em relação a
+essa mesma racionalidade.
+
+     O filósofo francês Jean-Paul Sartre (1905-1980), por sua vez, procu-
+rará definir o que podemos designar como ética existencialista. Sartre
+relaciona a conduta humana com as noções de liberdade e responsa-
+bilidade. Segundo Sartre, nas obras O Ser e o nada (1943) e O existen-
+cialismo é um humanismo (1946), a existência precede a essência. Isso
+significa dizer que não há nada de inato no ser humano, nem essência
+nem natureza humana, ou seja, ninguém nasce definido ou predestina-
+do a ser e agir de alguma forma, muito menos a ocupar uma posição
+social. O ser humano, nas palavras de Sartre, nasce condenado a ser
+livre, de forma que suas escolhas o tornam livre para, a todo instante,
+modificar o seu ser.
+
+     Sartre opõe-se à noção de natureza humana (vista como um ele-
+mento determinista e fatalista), pois limita a liberdade humana e con-
+dena os indivíduos a justificarem sua passividade perante a realidade,
+que está sempre em movimento. Contra a noção de natureza humana,
+Sartre defende a concepção de condição humana, caracterizada por ser
+flexível, plástica e em permanente transformação, ou seja, o conceito é
+sinônimo ao mesmo tempo de liberdade e responsabilidade. A huma-
+nidade vive condenada à liberdade. Ser livre expressa a possibilidade
+de se fazerem escolhas ou projetar a subjetividade no mundo. Porém a
+liberdade causa o que Sartre classifica como náusea ou angústia, por
+dois motivos:
+
+     • Toda escolha (liberdade) implica o abandono ou a anulação de
+        todas as outras possibilidades de ação.
+
+     • Toda escolha (projeto) não irá se realizar no futuro tal como pla-
+        nejada originalmente. Isso porque “meu ser” se encontra numa re-
+        lação de conflito com a realidade e com as infinitas subjetividades
+
+24                                                   Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                                  dos outros. Por isso, o filósofo considera que o inferno são os
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  outros.
+
+                                                                                                                                                                                                                                             Portanto, angústia e náusea correspondem ao fenômeno da nadifi-
+                                                                                                                                                                                                                                         cação, segundo o qual o “meu ser” é resultado de todos os fracassos
+                                                                                                                                                                                                                                         e as escolhas que não se realizaram, ou mesmo dos desvios que mi-
+                                                                                                                                                                                                                                         nha liberdade operou sobre a realidade na qual estou inserido, trans-
+                                                                                                                                                                                                                                         formando-a. Cada escolha, ou seja, cada manifestação da liberdade de
+                                                                                                                                                                                                                                         um indivíduo está em relação de tensão com a realidade, pois nesta
+                                                                                                                                                                                                                                         estão presentes todas as demais subjetividades e formas de pensar,
+                                                                                                                                                                                                                                         que podem ser diferentes do seu pensamento e estar em contradição
+                                                                                                                                                                                                                                         com suas escolhas. Ao perceber que somos livres e que a liberdade se
+                                                                                                                                                                                                                                         exerce a partir da relação conflituosa (dialética) com todas as demais
+                                                                                                                                                                                                                                         subjetividades, Sartre considera que cada ato ou escolha, cada passo
+                                                                                                                                                                                                                                         de nossa liberdade tem ressonância universal, de forma que sempre
+                                                                                                                                                                                                                                         somos responsáveis pelos outros. Nesse ponto Sartre demonstra que a
+                                                                                                                                                                                                                                         responsabilidade perante o mundo é permanente – cada ato nosso está
+                                                                                                                                                                                                                                         interligado com o universal.
+
+                                                                                                                                                                                                                                             O existencialismo é um humanismo é um pequeno ensaio escrito
+                                                                                                                                                                                                                                         pelo filósofo para se opor a seus críticos, que o acusavam de ser dema-
+                                                                                                                                                                                                                                         siadamente pessimista. Para Sartre, o existencialismo é um humanis-
+                                                                                                                                                                                                                                         mo, de modo que, na verdade, ele apresenta um caráter otimista, pois
+                                                                                                                                                                                                                                         embora considere o movimento de nadificação, que produz angústia e
+                                                                                                                                                                                                                                         náusea sobre o ser, considera que este ser é suficientemente livre para,
+                                                                                                                                                                                                                                         permanentemente, se construir e reconstruir ou projetar, sempre de no-
+                                                                                                                                                                                                                                         vas formas e dialeticamente, a sua liberdade no mundo. Ser livre signi-
+                                                                                                                                                                                                                                         fica driblar as nadificações, resultando em consequências imprevisíveis
+                                                                                                                                                                                                                                         e talvez superiores às que orginalmente foram concebidas pela própria
+                                                                                                                                                                                                                                         subjetividade. Sartre considera que age de má-fé o sujeito que afirma
+                                                                                                                                                                                                                                         não escolher ou não ser livre. Para ele, a condição humana é ser livre ou
+                                                                                                                                                                                                                                         fazer escolhas, ainda que essas escolhas signifiquem não escolher ou
+                                                                                                                                                                                                                                         mesmo escolher a submissão. Cada escolha tem ressonância no mun-
+                                                                                                                                                                                                                                         do, tornando cada ato responsável pela ordem e desordem da realidade.
+
+                                                                                                                                                                                                                                         Ética no Ocidente                                                      25
+Considerações finais
+
+
+
+
+                                                                                          Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     Percorremos, no primeiro capítulo, conceitos fundamentais em torno
+da ética. Iniciamos com a distinção entre os termos “ética” e “moral”. Em
+seguida, verificamos os significados das concepções de senso moral
+e consciência moral. Nesse ponto, seria importante você refletir sobre
+como podemos aplicar esses conceitos em nosso cotidiano, perceben-
+do como a concepção filosófica de ética nos permite refletir e analisar as
+atitudes em nosso convívio social – no trabalho, na faculdade ou mesmo
+quando especulamos sobre nossa participação na vida política e social.
+
+     No segundo tópico, delineamos um breve histórico das diferentes
+concepções filosóficas de ética na cultura ocidental. Partindo das no-
+ções éticas dos pensadores gregos da Antiguidade, verificamos que a
+preocupação central girava em torno da possibilidade da construção de
+um bem coletivo estabelecido pela razão. Com o surgimento do pen-
+samento moderno, as perspectivas éticas se modificaram. Maquiavel
+relaciona a ética com uma concepção negativa do comportamento
+humano, fundamentado nos jogos de interesses pessoais, na avareza
+e em permanentes conspirações e traições. Distante da busca da vir-
+tude, Maquiavel procurou estabelecer parâmetros para compreender
+como um governo se mantém no poder, ainda que usando estratégias
+moralmente reprováveis e dissimuladas. Nos séculos seguintes, com a
+ascensão do pensamento político e econômico burguês, promoveu-se
+a defesa das liberdades individuais e da ética do trabalho. A confiança
+exacerbada na ciência e na razão moderna fez com que Kant elabo-
+rasse sobre um tipo de ética designado como deontologia, criticada no
+século XX por diferentes pensadores.
+
+   No último tópico, analisamos algumas das críticas realizadas à de-
+ontologia kantiana. Weber procurou opor a ética da responsabilidade
+à ética da convicção (deontologia), e Hannah Arendt associou o con-
+ceito kantiano à banalidade do mal. Sartre, por sua vez, relacionou o
+
+
+
+26                                                  Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                         comportamento humano à liberdade e à responsabilidade, demonstran-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         do a relação de conflito entre as diferentes subjetividades dispersas na
+                                                                                                                                                                                                                                         realidade e como cada escolha ou liberdade individual promove influên-
+                                                                                                                                                                                                                                         cias ou apresenta consequências no funcionamento do universo, isto é,
+                                                                                                                                                                                                                                         no comportamento dos demais e na vida coletiva.
+
+
+                                                                                                                                                                                                                                         Referências
+                                                                                                                                                                                                                                         ARENDT, Hannah. Eichmann em Jerusalém: um retrato sobre a banalidade do
+                                                                                                                                                                                                                                         mal. São Paulo: Companhia das Letras, 1999.
+
+                                                                                                                                                                                                                                         ARISTÓTELES.  Ética a Nicômaco. Brasília: Editora UnB, 1992.
+
+                                                                                                                                                                                                                                         BRAGA JUNIOR, Antonio Djalma; MONTEIRO, Ivan Luiz. Fundamentos da ética.
+                                                                                                                                                                                                                                         Curitiba: Intersaberes, 2016. (Série Estudos de Filosofia).
+
+                                                                                                                                                                                                                                         KANT, Immanuel. Fundamentação da metafísica dos costumes. São Paulo:
+                                                                                                                                                                                                                                         Barcarolla: Discurso Editorial, 2009.
+
+                                                                                                                                                                                                                                         MOREIRA, Joaquim Manhães. A ética empresarial no Brasil. São Paulo:
+                                                                                                                                                                                                                                         Pioneira Cengage, 1999.
+
+                                                                                                                                                                                                                                         SARTRE, Jean-Paul. O existencialismo é um humanismo. São Paulo: Abril,
+                                                                                                                                                                                                                                         1984. (Coleção Os Pensadores).
+
+                                                                                                                                                                                                                                         SMITH, Adam. A riqueza das nações. São Paulo: Nova Cultural, 1996.
+
+                                                                                                                                                                                                                                         SROUR, Robert Henry. Ética empresarial. Rio de Janeiro: Campus, 2000.
+
+                                                                                                                                                                                                                                         WEBER, Max. A ética protestante e o espírito do capitalismo. São Paulo:
+                                                                                                                                                                                                                                         Pioneira, 1999.
+
+                                                                                                                                                                                                                                         WEBER, Max. A política como vocação. In: WEBER, Max. Ciência e política:
+                                                                                                                                                                                                                                         duas vocações. São Paulo: Cultrix, 2004.
+
+
+
+
+                                                                                                                                                                                                                                         Ética no Ocidente                                                       27
+

@@ -1,0 +1,460 @@
+                                                                                                                                                                                                                                                                                                 Capítulo 7
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                          Política de
+                                                                                                                                                                                                                                                    segurança – GPO
+
+
+
+
+                                                                                                                                                                                                                                            Administrar um ambiente cliente servidor vai muito além de sim-
+                                                                                                                                                                                                                                         plesmente compartilhar pastas ou trocar senha de usuários: é preciso
+                                                                                                                                                                                                                                         gerenciar políticas de segurança por meio de regras. Essas políticas
+                                                                                                                                                                                                                                         garantirão a confidencialidade, a integridade, a disponibilidade e a au-
+                                                                                                                                                                                                                                         tenticidade das informações de uma rede. Os administradores de rede
+                                                                                                                                                                                                                                         precisam de um mecanismo para configurar e impor essas configura-
+                                                                                                                                                                                                                                         ções e restrições aos usuários. É nesse instante que estamos diante
+                                                                                                                                                                                                                                         da “cereja do bolo”, pois é por meio da GPO que criamos os limites da
+                                                                                                                                                                                                                                         rede, permitindo ou negando serviços para a criação de um ambiente
+                                                                                                                                                                                                                                         de segurança.
+
+                                                                                                                                                                                                                                            Neste capítulo, abordamos políticas de segurança e exemplificamos
+                                                                                                                                                                                                                                         como aplicar algumas no ambiente de desenvolvimento.
+
+                                                                                                                                                                                                                                                                                                              143
+1 Conceito de segurança
+
+
+
+
+                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+      Ao iniciar um Windows Cliente (Windows 10 Pro, por exemplo) em
+uma rede com domínio, no término do boot, surgirá uma tela solicitando
+as credenciais para que você possa se autenticar e entrar na rede, cha-
+mando o processo de logon. O usuário coloca um login (identificação),
+uma senha e clica no botão Avançar. Depois de o usuário ser autentica-
+do, inicia-se uma segunda fase de proteger os recursos, na qual a GPO
+vai determinar o ambiente que o usuário vai usufruir, com aplicativos,
+impressoras e outros recursos autorizados. Entretanto, o que vemos é
+um sequenciamento de telas de “boas-vindas”: “Bem-vindos, estamos
+configurando o eu ambiente, vai demorar um pouco, estamos quase lá,
+e pronto”, ou seja, por trás da tela de “Bem-vindo”, o SO está montando o
+ambiente completo para o usuário.
+
+      A autenticação é uma ação para fornecer uma identificação a um
+aplicativo, verificando se é genuína. A identificação é comprovada por
+meio de uma operação criptografada, que usa uma chave que somen-
+te o usuário conhece. O servidor de autenticação compara os dados
+assinados com uma chave de criptografia conhecida para validar a
+tentativa de autenticação.
+
+
+1.1 Segurança em uma rede
+
+      Segurança de rede é qualquer atividade projetada para proteger o
+bom funcionamento e a integridade da sua rede e dados. A segurança
+da rede combina várias camadas de defesas, desde a borda até o nú-
+cleo/centro/coração da rede. Cada camada de segurança implementa
+políticas e controles. Usuários autorizados obtêm acesso a recursos de
+rede, mas agentes mal-intencionados devem ser impedidos de realizar
+explorações e ameaças (WHAT..., 2019).
+
+
+
+144                                                        Sistema operacional I
+                                                                                                                                                                                                                                         1.1.1 Política de segurança em uma rede
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             As decisões que você tomará como administrador de redes, relaciona-
+                                                                                                                                                                                                                                         das à rede, determinarão quão seguro será o ambiente da empresa. Para
+                                                                                                                                                                                                                                         isso, é necessário, inicialmente, determinar quais são as metas de segu-
+                                                                                                                                                                                                                                         rança de uma rede. Assim, pôr em prática a política de segurança e, prin-
+                                                                                                                                                                                                                                         cipalmente, verificar se ela está de acordo com a necessidade (verificar
+                                                                                                                                                                                                                                         as restrições), revisando-se as metas. Criar uma política de segurança é
+                                                                                                                                                                                                                                         essencial para estabelecer as melhores práticas no ambiente da empresa
+                                                                                                                                                                                                                                         e, assim, preservar a integridade de dados. Segundo a RFC2196, “a políti-
+                                                                                                                                                                                                                                         ca de segurança é um documento que resume como a empresa utilizará
+                                                                                                                                                                                                                                         e protegerá seus recursos computacionais e de rede” (FRASER, 1997).
+                                                                                                                                                                                                                                         Existem diversas maneiras de se implantar uma política de segurança de
+                                                                                                                                                                                                                                         rede, na qual a empresa estabelece seus princípios e seus objetivos.
+
+                                                                                                                                                                                                                                             Na figura 1, é demonstrado como você pode iniciar uma política de
+                                                                                                                                                                                                                                         segurança de rede utilizando um fluxo para implementação.
+
+                                                                                                                                                                                                                                                          Figura 1 — Processo de implantação de uma política de segurança de rede
+
+
+                                                                                                                                                                                                                                                                                                                       Vulnerabilidade analisada
+
+
+                                                                                                                                                                                                                                                                  4. Aperfeiçoamento              1. Proposta e implantação
+
+
+
+
+                                                                                                                                                                                                                                               Ambiente                                                                            Ambiente
+                                                                                                                                                                                                                                                                                     Política de segurança
+                                                                                                                                                                                                                                             de produção                                                                            de teste
+                                                                                                                                                                                                                                                                                           da rede
+
+
+
+
+                                                                                                                                                                                                                                                                  3. Monitoramento                2. Testes
+
+
+
+
+                                                                                                                                                                                                                                         Política de segurança – GPO                                                                               145
+      Na figura 1, o primeiro item — e o mais importante — trata de definir-
+
+
+
+
+                                                                                      Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+mos claramente a vulnerabilidade, no sentido de identificar um período
+no qual as medidas defensivas são diminuídas, comprometidas ou au-
+sentes. A vulnerabilidade pode estar, por exemplo, na troca constante do
+IP do computador por parte do usuário — provocado pelo acesso deste
+ao Painel de Controle —, ocasionando problemas na rede.
+
+      Na sequência, no segundo item, trabalhamos em um “ambiente de
+teste”, no qual podemos fazer averiguações e simulações para verificar se
+o ambiente responde adequadamente e inutiliza a vulnerabilidade. Para
+termos uma eficiência maior, é importante analisar os seguintes passos:
+
+      1. Proposta e implantação: para cada ação, temos uma respectiva
+         reação. A proposta e a implantação serão práticas e terão como
+         objetivo sanar a vulnerabilidade em questão. Em caso positivo,
+         aplica-se a GPO no ambiente de produção, isto é, o ambiente que
+         os usuários utilizam normalmente. Esses passos são detalhados
+         na sequência.
+
+      2. Testes: é um ambiente em que o administrador simula a situação
+         e verifica se o resultado é satisfatório. Normalmente, o ambiente
+         de teste é a unidade organizacional de teste (UOT). Caso não sa-
+         tisfaça, volta-se ao passo 1.
+
+      No ambiente de produção, após testada a GPO, o administrador de
+rede faz a implantação da política para o grupo de usuário específico,
+criando, assim, o mecanismo para aplicar a regra. Observam-se os se-
+guintes pontos:
+
+      3. Monitoramento: ao passar a política para o ambiente de produ-
+         ção, é necessário fazer um acompanhamento e monitorar os re-
+         sultados, comparando-os aos objetivos e verificando a eficácia
+         do método.
+
+      4. Aperfeiçoamento: este passo refere-se à finalização da implan-
+         tação. O resultado obtido é comparado com a vulnerabilidade
+
+146                                                           Sistema operacional I
+                                                                                                                                                                                                                                                  estabelecida inicialmente. Caso haja algum ajuste para finalizar a
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  implantação, será executado nesta etapa.
+
+
+                                                                                                                                                                                                                                         1.2 GPO
+
+                                                                                                                                                                                                                                             Uma GPO é um objeto que contém uma ou mais políticas de segu-
+                                                                                                                                                                                                                                         rança, que são aplicadas para usuários ou computadores. O modelo
+                                                                                                                                                                                                                                         criado é arquivado no diretório SYSVOL. As GPOs são vinculadas aos
+                                                                                                                                                                                                                                         usuários e computadores através de OU, sites ou domínios.
+
+                                                                                                                                                                                                                                             Quando falamos em GPO, deve-se pensar em diretiva de grupo, ou
+                                                                                                                                                                                                                                         seja, um conjunto de regras que podemos utilizar para facilitar o gerencia-
+                                                                                                                                                                                                                                         mento, a configuração e a segurança de usuários e computadores. O ge-
+                                                                                                                                                                                                                                         renciamento da GPO pode ser feito através do console de gerenciamen-
+                                                                                                                                                                                                                                         to de políticas de grupo (GPMC — group policy management console),
+                                                                                                                                                                                                                                         que está disponível em: menu Iniciar > Ferramentas Administrativas >
+                                                                                                                                                                                                                                         Gerenciamento de Políticas de Grupos, mostrado na figura 2.
+
+                                                                                                                                                                                                                                                                Figura 2 — Ambiente de gerenciamento da política de grupo
+
+
+
+
+                                                                                                                                                                                                                                         Política de segurança – GPO                                                        147
+   A configuração de uma política de grupo define uma alteração pon-
+
+
+
+
+                                                                                         Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+tual em um objeto específico (usuário, computador) dentro do ADDS.
+Ao criar uma política, é colocada uma estrutura de comandos para que
+o administrador possa fazer as combinações possíveis, criando, assim,
+um ambiente particular, que seguirá o que foi configurado. Por exemplo,
+podemos criar uma GPO para deixar um papel de parede padrão em
+todos os micros e aplicar a política (que impõe o papel de parede) sobre
+o contêiner. Os usuários que estiverem contidos nesse contêiner serão
+afetados e só conseguirão ver o papel de parede definido na GPO.
+
+      A GPO normalmente apresenta três tipos de configuração, que são:
+
+      • Não configurado: este é o padrão. Nesta opção, o item que está
+        marcado não terá nenhum efeito, ou seja, a GPO não modificará
+        o item.
+
+      • Habilitado: colocando-se esta opção, o item será executado e a
+        política será aplicada.
+
+      • Desabilitado: utiliza-se esta opção quando a política não deve ser
+        aplicada ou quando é necessário aplicar o inverso dela.
+
+      Na figura 3, é exibida uma regra da GPO, que indica: “Ocultar o ícone
+do Internet Explorer na área de trabalho”.
+
+                        Figura 3 — Itens de escolha de uma GPO
+
+
+
+
+148                                                              Sistema operacional I
+                                                                                                                                                                                                                                            A figura 3 é um exemplo de uma GPO padrão. Nela, está contida a
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         instrução da GPO: “Ocultar o ícone do Internet Explorer na área de traba-
+                                                                                                                                                                                                                                         lho”. As opções que o administrador pode escolher são:
+
+                                                                                                                                                                                                                                             • Não configurado (não será aplicada a regra).
+
+                                                                                                                                                                                                                                             • Habilitado (o ícone do Internet Explorer será ocultado da área
+                                                                                                                                                                                                                                               de trabalho).
+
+                                                                                                                                                                                                                                             • Desabilitado (o ícone do Internet Explorer NÃO será ocultado da
+                                                                                                                                                                                                                                                  área de trabalho).
+
+
+                                                                                                                                                                                                                                         2 Estratégia em ambientes com GPO
+                                                                                                                                                                                                                                            Montar uma GPO é estratégico em uma empresa. Porém, deve-se le-
+                                                                                                                                                                                                                                         var em conta alguns fatores para que o objetivo seja alcançado. Observe
+                                                                                                                                                                                                                                         que a GPO, como uma diretiva de grupo, possui regras, e estas são hie-
+                                                                                                                                                                                                                                         rárquicas e cumulativas. Dependendo da posição da regra, pode-se ter
+                                                                                                                                                                                                                                         o resultado contrário (MICROSOFT, 2020).
+
+                                                                                                                                                                                                                                            Após ter criado uma GPO e definir todas as configurações a serem
+                                                                                                                                                                                                                                         entregues, o próximo passo é vincular a política a um contêiner do
+                                                                                                                                                                                                                                         ADDS. Esse vínculo é um atalho que também pode ser alocado em mais
+                                                                                                                                                                                                                                         de um contêiner (PRADO, 2012). Você pode vincular a GPO em três ní-
+                                                                                                                                                                                                                                         veis, que são:
+
+                                                                                                                                                                                                                                             • Sites: nível mais alto. Qualquer aplicação nesse nível afetará to-
+                                                                                                                                                                                                                                               dos os usuários e computadores desse site.
+
+                                                                                                                                                                                                                                             • Domínios: nível dois. Qualquer aplicação nesse nível afetará to-
+                                                                                                                                                                                                                                               dos os usuários e computadores desse domínio.
+
+                                                                                                                                                                                                                                             • OUs: qualquer aplicação nesse nível afetará todos os usuários e
+                                                                                                                                                                                                                                               computadores dentro da OU.
+
+                                                                                                                                                                                                                                           Na figura 4, é mostrado que, se houver um computador/usuário em
+                                                                                                                                                                                                                                         qualquer OU, será recebida a GPO1, depois a GPO2, depois a GPO3 e,
+                                                                                                                                                                                                                                         por último, a GPO4.
+
+                                                                                                                                                                                                                                         Política de segurança – GPO                                           149
+                         Figura 4 — Hierarquia da aplicação da GPO
+
+
+
+
+                                                                                                     Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                          Site                GPO 01
+
+
+
+
+                                         Domínio              GPO 02
+
+
+
+
+                                    ou                        GPO 03
+
+
+
+
+                               ou                  ou         GPO 04
+
+
+
+
+      Na figura 5, a seguir, temos o gerenciador de política de grupo e a
+hierarquia real do domínio Senac.Local.
+
+                  Figura 5 — Snap-in do gerenciamento de política de grupo
+
+
+
+
+150                                                                          Sistema operacional I
+                                                                                                                                                                                                                                             Na figura 5, temos a “default domain policy” (política de domínio pa-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         drão). Afetando todos os princípios de segurança no domínio, inclui as
+                                                                                                                                                                                                                                         configurações de política de senha, as configurações de bloqueio de
+                                                                                                                                                                                                                                         conta e o protocolo de autenticação. É recomendado que essa política
+                                                                                                                                                                                                                                         não tenha outras configurações definidas.
+
+                                                                                                                                                                                                                                             Na sequência, a figura 5 indica a “default domain controllers policy”
+                                                                                                                                                                                                                                         (diretiva padrão de controladores de domínio). Essa política fornece
+                                                                                                                                                                                                                                         configurações de auditoria e direitos de usuário, não devendo ser utiliza-
+                                                                                                                                                                                                                                         da para outras finalidades.
+
+                                                                                                                                                                                                                                             As GPOs de início são templates que ajudam na criação de uma
+                                                                                                                                                                                                                                         nova GPO. Isso facilita e agiliza a criação de várias GPOs com a mes-
+                                                                                                                                                                                                                                         ma configuração de base, gerando, assim, uma matriz para o surgimen-
+                                                                                                                                                                                                                                         to de outras GPOs, podendo conter modelo administrativo da seção
+                                                                                                                                                                                                                                         Configuração dos usuários ou Configuração do Computador.
+
+                                                                                                                                                                                                                                             Existem situações em que a GPO não deve ter a herança dos víncu-
+                                                                                                                                                                                                                                         los de GPOs do pai. Nelas, clique com o botão da direita sobre o con-
+                                                                                                                                                                                                                                         têiner desejado e escolha a opção Bloquear Herança. A aplicação da
+                                                                                                                                                                                                                                         GPO é executada a cada 90 minutos (podendo ser alterada). As defi-
+                                                                                                                                                                                                                                         nições de configuração de computador são aplicadas na inicialização.
+                                                                                                                                                                                                                                         Já as configurações dos usuários são aplicadas no logon, bem como
+                                                                                                                                                                                                                                         seus scripts. Para forçar a aplicação de uma GPO, você pode utilizar
+                                                                                                                                                                                                                                         o comando GPUPDATE /FORCE no prompt de comando, ou o cmdlet
+                                                                                                                                                                                                                                         Invoke-Gpupdate no PowerShell.
+
+
+                                                                                                                                                                                                                                         3 Criando e publicando políticas de segurança
+                                                                                                                                                                                                                                             A criação de uma GPO não acarreta seu funcionamento; para isso,
+                                                                                                                                                                                                                                         é necessário que ela esteja vinculada a algum contêiner. Como prática,
+                                                                                                                                                                                                                                         vamos criar uma GPO para ocultar o painel de controle dos usuários da
+                                                                                                                                                                                                                                         OU RH_Senac. Para isso, proceda conforme os passos a seguir.
+
+
+
+                                                                                                                                                                                                                                         Política de segurança – GPO                                            151
+      a. Pressione  + R e digite GPMC.MSC.
+
+
+
+
+                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+      b. Selecione GPOs de início e, com o botão da direita, clique em
+        Novo. Digite Bloquear_PainelControle e finalize com OK.
+
+
+
+
+      c. Vamos editar a GPO criada. Pressione o botão da direita sobre a
+        GPO Bloquear_PainelControle e escolha a opção Editar. Observe
+        que na edição existem dois segmentos à esquerda:
+
+        ◦ Configuração do computador: uma camada de configurações
+            do computador que se aplica a todos os usuários.
+
+        ◦ Configuração do usuário: as camadas se aplicam somente a
+            usuários individuais, não aos grupos.
+
+
+
+
+152                                                        Sistema operacional I
+                                                                                                                                                                                                                                             d. Clique em Configurações do Usuário. Em seguida, em Modelos
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  Administrativos e, depois, em Painel de Controle. Na parte da direi-
+                                                                                                                                                                                                                                                  ta, selecione Proibir acesso ao Painel de Controle e às configura-
+                                                                                                                                                                                                                                                  ções do PC. Pressione o botão da direita do mouse e escolha Editar.
+
+
+
+
+                                                                                                                                                                                                                                             e. Selecione Habilitado. Essa opção indicará à politica a ação a ser
+                                                                                                                                                                                                                                                  executada.
+
+
+
+
+                                                                                                                                                                                                                                         Política de segurança – GPO                                               153
+      Após marcar a opção Habilitado, precisamos vincular essa GPO à OU
+
+
+
+
+                                                                                    Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+RH_Senac. Nesse caso, você deve proceder conforme os passos a seguir.
+
+      a. Selecione o contêiner RH_Senac.
+
+      b. Pressione o botão da direita do mouse sobre o contêiner e esco-
+         lha a opção: Criar um GPO neste domínio e fornecer um link para
+         ele aqui...
+
+
+
+
+      c. Digite o nome RH_Bloquear_Painel_Controle e escolha a GPO de
+         Início de Origem Bloquear_PainelControle. Finalize com OK.
+
+
+
+
+154                                                         Sistema operacional I
+                                                                                                                                                                                                                                             d. Para que a GPO seja executada neste instante, é preciso:
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  ◦ pressionar o botão da direita sobre a GPO criada e marcar a
+                                                                                                                                                                                                                                                       opção IMPOSTO;
+
+                                                                                                                                                                                                                                                  ◦ no prompt de comando, digitar: GPUPDATE /FORCE.
+
+                                                                                                                                                                                                                                             E, assim, a GPO foi forçada e publicada a todos os usuários que esti-
+                                                                                                                                                                                                                                         verem dentro da OU RH_Senac.
+
+
+                                                                                                                                                                                                                                         Considerações finais
+                                                                                                                                                                                                                                             O administrador de rede conta com inúmeras ferramentas que au-
+                                                                                                                                                                                                                                         xiliam sua gestão. Conhecer a GPO o auxilia na personalização do am-
+                                                                                                                                                                                                                                         biente final do usuário, por meio de múltiplas combinações, impondo
+                                                                                                                                                                                                                                         um ambiente de área de trabalho consistente. As diretivas de grupo
+                                                                                                                                                                                                                                         permitem ao administrador a automatização de procedimentos e o me-
+                                                                                                                                                                                                                                         lhor gerenciamento dos recursos. Neste capítulo, foi possível conferir a
+                                                                                                                                                                                                                                         importância de se organizar uma política eficiente, respeitando a hierar-
+                                                                                                                                                                                                                                         quia da GPO.
+
+
+                                                                                                                                                                                                                                         Referências
+                                                                                                                                                                                                                                         FRASER, Barbara et al. Site Security Handbook: RFC2196. Set., 1997. Disponível
+                                                                                                                                                                                                                                         em: https://tools.ietf.org/html/rfc2196. Acesso em: 27 mar. 2020.
+
+                                                                                                                                                                                                                                         MICROSOFT. Aplicar um vínculo de objeto de diretiva de grupo usando GPMC.
+                                                                                                                                                                                                                                         Disponível em: http://technet.microsoft.com/pt-br/library/cc784374(v=ws.10).
+                                                                                                                                                                                                                                         aspx. Acesso em: 28 mar. 2020
+
+                                                                                                                                                                                                                                         PRADO, Alexandro; DONDA, Daniel. Group Policy Objects: da teoria à prática –
+                                                                                                                                                                                                                                         ajudando administradores a automatizar tarefas. 2012.
+
+                                                                                                                                                                                                                                         WHAT is network security? Cisco, 2019. Disponível em: https://www.cisco.
+                                                                                                                                                                                                                                         com/c/en/us/products/security/what-is-network-security.html. Acesso em: 27
+                                                                                                                                                                                                                                         mar. 2020.
+
+
+
+                                                                                                                                                                                                                                         Política de segurança – GPO                                                155
+

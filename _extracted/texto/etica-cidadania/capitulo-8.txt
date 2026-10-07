@@ -1,0 +1,794 @@
+                                                                                                                                                                                                                                                                                               Capítulo 8
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                    Desenvolvimento
+                                                                                                                                                                                                                                                         sustentável
+
+
+
+
+                                                                                                                                                                                                                                            Este capítulo tem como objetivo a análise da concepção de desen-
+                                                                                                                                                                                                                                         volvimento sustentável e os processos históricos que conduziram à
+                                                                                                                                                                                                                                         construção desse conceito. Estudaremos, no primeiro tópico, os deba-
+                                                                                                                                                                                                                                         tes promovidos pela ONU que procuraram aliar de forma global o de-
+                                                                                                                                                                                                                                         senvolvimento econômico com a sustentabilidade. O segundo tópico
+                                                                                                                                                                                                                                         promove a discussão em torno dos limites e das potencialidades do
+                                                                                                                                                                                                                                         desenvolvimento sustentável, por meio da compreensão das relações
+                                                                                                                                                                                                                                         entre Estado, mercado, terceiro setor e cidadãos diante do desenvolvi-
+                                                                                                                                                                                                                                         mento sustentável.
+
+
+
+
+                                                                                                                                                                                                                                                                                                            161
+1 Concepções de desenvolvimento
+
+
+
+
+                                                                                            Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+sustentável
+   Apenas na segunda metade do século XX começou-se a falar gra-
+dualmente na preservação do meio ambiente e o assunto tornou-se de
+interesse das nações. A humanidade deu-se conta de que a produção
+de energia e de armas nucleares e o uso de produtos químicos para
+diversos fins poderiam simplesmente prejudicar a existência dos seres
+humanos e de outras espécies no planeta. Isso significa que o período
+de internacionalização do debate sobre a preservação do meio ambien-
+te está diretamente relacionado com a consciência que a humanidade
+começa a adquirir sobre os avanços destruidores de sua tecnologia.
+
+    A década de 1970 caracterizou-se pelo fortalecimento de ONGs e
+entidades ambientalistas (caso do Greenpeace, surgido em 1971, e
+da WWF, criada em 1961) preocupadas com a preservação do meio
+ambiente e o combate à destruição da natureza. A Terra passou a dar
+alertas sobre a ação predatória exercida principalmente pelo modelo
+de industrialização disseminado por países da Europa e pelos Estados
+Unidos. Verificou-se o aumento da temperatura, a redução das cama-
+das de gelo nos polos, a extinção de animais, a redução das florestas.
+Iniciou-se uma longa e intensa campanha para a preservação do meio
+ambiente e em busca de novas formas de desenvolvimento, o que, com
+o passar dos anos, atraiu a atenção de toda a sociedade. Na Conferência
+de Estocolmo (1972), na Suécia, primeira reunião organizada pela ONU
+para debater o meio ambiente, como já mencionado, utilizava-se o con-
+ceito de ecodesenvolvimento. Como a própria denominação indica, a
+ênfase dos debates estava na questão dos impactos do desenvolvimen-
+to industrial sobre o meio ambiente. Segundo Dias (2006):
+
+            Na segunda metade do século XX, com a intensificação do cres-
+            cimento econômico mundial, os problemas ambientais se agrava-
+            ram e começaram a aparecer com maior visibilidade para ambos
+            os setores da população, particularmente dos países desenvolvi-
+
+
+
+162                                                   Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                                            dos, os primeiros a serem afetados pelos impactos provocados
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                            pela Revolução Industrial. (DIAS, 2006, p. 12)
+
+
+                                                                                                                                                                                                                                             Vimos, no capítulo anterior, que, em 1987, a ONU elaborou o Relatório
+                                                                                                                                                                                                                                         Brundtland (conhecido também como o documento Nosso Futuro
+                                                                                                                                                                                                                                         Comum). Nesse relatório, evidenciou-se a necessidade de articulação e
+                                                                                                                                                                                                                                         coexistência da sustentabilidade ambiental com medidas econômicas,
+                                                                                                                                                                                                                                         políticas, sociais e culturais, fomentando o conceito de desenvolvimen-
+                                                                                                                                                                                                                                         to sustentável e ampliando o debate em relação ao meio ambiente e
+                                                                                                                                                                                                                                         para além dele. A definição de desenvolvimento sustentável foi compre-
+                                                                                                                                                                                                                                         endida como a maneira de as gerações atuais conseguirem satisfazer
+                                                                                                                                                                                                                                         as suas necessidades de consumo sem comprometerem as gerações
+                                                                                                                                                                                                                                         futuras e de obterem recursos para garantirem a sobrevivência.
+
+                                                                                                                                                                                                                                             O ano de 1992 é considerado relevante para a construção do con-
+                                                                                                                                                                                                                                         ceito de desenvolvimento sustentável. No Rio de Janeiro, foi realizada
+                                                                                                                                                                                                                                         pela ONU a Conferência das Nações Unidas sobre o Meio Ambiente e o
+                                                                                                                                                                                                                                         Desenvolvimento (CNUMAD), reunião conhecida como ECO-92 (ou sim-
+                                                                                                                                                                                                                                         plesmente Cúpula da Terra). Essa conferência foi um marco, pois os
+                                                                                                                                                                                                                                         países resolveram dialogar e assumiram a existência de uma situação
+                                                                                                                                                                                                                                         urgente em torno do tema do meio ambiente.
+
+                                                                                                                                                                                                                                             Cento e setenta e nove países assinaram um importante documen-
+                                                                                                                                                                                                                                         to, a Agenda 21, que estabeleceu um programa extenso baseado em
+                                                                                                                                                                                                                                         40 capítulos em que se institui a necessidade do desenvolvimento sus-
+                                                                                                                                                                                                                                         tentável numa escala planetária. A Agenda 21 pode ser lida como um
+                                                                                                                                                                                                                                         dos mais importantes documentos internacionais publicados no século
+                                                                                                                                                                                                                                         XX. Na realidade, é o resultado de um intenso debate e de uma maior
+                                                                                                                                                                                                                                         consciência dos problemas ambientais. O nome “Agenda 21” é utiliza-
+                                                                                                                                                                                                                                         do em virtude da intenção de modificar, para o século XXI, o padrão
+                                                                                                                                                                                                                                         de desenvolvimento econômico dos países. Trata-se de um documento
+                                                                                                                                                                                                                                         que estabelece planetariamente o desenvolvimento sustentável. É um
+                                                                                                                                                                                                                                         instrumento que avalia e planeja ações que direcionam as nações a
+                                                                                                                                                                                                                                         esse desenvolvimento, tendo em vista as peculiaridades geográficas e
+
+
+                                                                                                                                                                                                                                         Desenvolvimento sustentável                                                       163
+culturais de cada nação e das localidades, por meio do emprego de mé-
+
+
+
+
+                                                                                                  Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+todos que visam à preservação do meio ambiente, à igualdade social,
+ao respeito à diversidade cultural e à busca pela eficiência na produção.
+
+      O livro Desenvolvimento sustentável: dimensões e desafios, de Ana
+Luiza Camargo, publicado em 2005, apresenta uma importante compi-
+lação dos múltiplos significados e entendimentos de desenvolvimento
+sustentável. A autora, a partir de seus estudos, indica as variações desse
+conceito, que, como vimos, surgiu primeiro com o Relatório Brundtland
+e depois consolidou-se com a ECO-92.
+
+              Desenvolvimento sustentável é um conceito normativo que envolve
+              compromissos entre objetivos sociais, ecológicos e econômicos.
+              Abrange perspectivas econômicas, sociais e ecológicas de conser-
+              vação e mudança. [...] nova maneira de perceber as soluções para
+              os problemas globais, que não se reduzem apenas à degradação
+              ambiental, mas que incorporam dimensões sociais, políticas e cul-
+              turais, como a pobreza e a exclusão social. [...] é um processo de
+              desenvolvimento econômico em que se procura preservar o meio
+              ambiente levando em consideração os interesses das futuras ge-
+              rações, isto é, promovendo o desenvolvimento sem deteriorar ou
+              prejudicar a base de recursos que lhe dá sustentação. [...] é o mais
+              recente conceito que relaciona as coletivas aspirações de paz, li-
+              berdade, melhoria das condições de vida e de um meio ambien-
+              te saudável. Seu mérito reside na tentativa de reconciliar os reais
+              conflitos entre economia e meio ambiente e entre o presente e o
+              futuro. [...] pode ser também definido como um vetor no tempo de
+              objetivos sociais desejáveis, tais como: incrementos da renda per
+              capita, melhorias no estado de saúde, níveis educacionais aceitá-
+              veis, acesso aos recursos, distribuição mais equitativa de renda e
+              garantia de maiores liberdades fundamentais. [...] deve apresentar
+              uma perspectiva de desenvolvimento além do crescimento econô-
+              mico, reconhecer as múltiplas tradições culturais e crenças, trans-
+              cender o consumismo e fornecer uma estrutura de estilo de vida
+              mais desejável, enfatizar reformas estruturais para equidade inter-
+              na e global e delinear efetivos planos legais e institucionais para a
+              manutenção ambiental [...]. O desenvolvimento sustentável é uma
+              estratégia através da qual comunidades buscam um desenvolvi-
+              mento econômico que também beneficie o meio ambiente local e
+
+
+164                                                         Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                                            a qualidade de vida [...], na tentativa de conciliar eficiência econô-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                            mica, justiça social e prudência ecológica [...]. O termo desenvolvi-
+                                                                                                                                                                                                                                                            mento sustentável é uma combinação profética de duas palavras
+                                                                                                                                                                                                                                                            que unem ambos os aspectos, progresso econômico e qualidade
+                                                                                                                                                                                                                                                            ambiental, em uma só visão [...], é uma ideologia, um valor, uma éti-
+                                                                                                                                                                                                                                                            ca [...] uma declaração moral sobre como deveríamos viver sobre o
+                                                                                                                                                                                                                                                            planeta e uma descrição de características físicas e sociais que de-
+                                                                                                                                                                                                                                                            veriam existir no mundo. [...] apesar da diversidade de abordagens,
+                                                                                                                                                                                                                                                            todas parecem buscar traduzir o espírito de responsabilidade. (CA-
+                                                                                                                                                                                                                                                            MARGO, 2020, p. 72-74)
+
+
+                                                                                                                                                                                                                                             Com base nas múltiplas características do desenvolvimento sustentá-
+                                                                                                                                                                                                                                         vel destacadas por Camargo (2020), pode-se perceber que todas conver-
+                                                                                                                                                                                                                                         gem para dois aspectos centrais. Primeiro, a necessidade global de adotar
+                                                                                                                                                                                                                                         estratégias conjuntas entre governos, mercado e sociedade civil para a re-
+                                                                                                                                                                                                                                         alização de ações igualmente interdependentes, que envolvam a proteção
+                                                                                                                                                                                                                                         ambiental e de culturas tradicionais, o progresso econômico, a redução da
+                                                                                                                                                                                                                                         desigualdade social e a ampliação da participação política. Como consequ-
+                                                                                                                                                                                                                                         ência (e este é o segundo aspecto), deve-se considerar o desenvolvimento
+                                                                                                                                                                                                                                         sustentável um novo pacto social, de forma inédita global, que visa conso-
+                                                                                                                                                                                                                                         lidar e inaugurar princípios civilizatórios, constituindo por isso uma nova
+                                                                                                                                                                                                                                         ética e um compromisso moral. O objetivo dessas novas práticas civiliza-
+                                                                                                                                                                                                                                         tórias é garantir a responsabilidade perante as gerações futuras a partir da
+                                                                                                                                                                                                                                         racionalização, no presente, da forma como garantimos nosso sustento,
+                                                                                                                                                                                                                                         além de consolidar a sustentabilidade na cadeia de produção, trabalho,
+                                                                                                                                                                                                                                         consumo e descarte de mercadorias.
+
+                                                                                                                                                                                                                                            O desenvolvimento sustentável surge como alternativa e solução
+                                                                                                                                                                                                                                         para o modelo de produção predatório vigente. No lugar deste, procu-
+                                                                                                                                                                                                                                         ram-se novas estratégias, sustentáveis, considerando a existência de
+                                                                                                                                                                                                                                         altos níveis de progresso tecnológico, a necessidade do consumo de
+                                                                                                                                                                                                                                         formas de energia renováveis, a conscientização da população, a pre-
+                                                                                                                                                                                                                                         servação do meio ambiente e de outras sociedades ou culturas.
+
+                                                                                                                                                                                                                                             Consolidado o conceito, a ONU promoveu, nos anos seguintes, uma sé-
+                                                                                                                                                                                                                                         rie de conferências, cuja intenção foi delinear ações globais efetivas em
+
+
+                                                                                                                                                                                                                                         Desenvolvimento sustentável                                                                 165
+direção ao desenvolvimento sustentável. No ano de 1997, foi realizada, na
+
+
+
+
+                                                                                         Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+cidade de Kyoto (Japão), uma das reuniões mais relevantes sobre o de-
+senvolvimento sustentável. Pela primeira vez, buscaram-se efetivamente
+alternativas para a redução de gases poluentes e nocivos ao planeta.
+
+   O chamado Protocolo de Kyoto corresponde a um extenso com-
+promisso ambiental, social e econômico entre praticamente todas as
+nações do mundo que entrou em vigor no mesmo ano da reunião. O
+protocolo estabeleceu metas de redução de gases que contribuem ne-
+gativamente para o efeito estufa, liberados na atmosfera principalmen-
+te pelas nações mais desenvolvidas. Além disso, promoveu políticas
+econômicas inéditas de práticas limpas e ecologicamente corretas ao
+incentivar a substituição de produtos e fontes de energia (por exemplo,
+o petróleo) por outras menos poluentes (por exemplo, a energia solar, a
+eólica e o biodiesel). Também instituiu que se reduzissem em torno de
+5,2% os gases poluentes entre os anos de 2008 e 2012. Essa meta de
+redução dos gases não foi idêntica para todos os países, variando de
+acordo com o grau de desenvolvimento industrial e da poluição emitida.
+A União Europeia ficaria responsável por uma redução por volta de 8%.
+Os Estados Unidos deveriam ficar responsáveis por uma redução de
+7%, enquanto o Japão, de 6%. Países em processo de desenvolvimento
+econômico e industrial teriam metas menores, como é o caso de Brasil,
+Índia, China, México e África do Sul, até pelo menos alcançarem seu
+progresso e índices melhores de qualidade de vida para sua população.
+
+    Oitenta e quatro nações assinaram incondicionalmente o protoco-
+lo, inclusive aceitando criar legislações em seus países para barrar o
+intenso processo de destruição do meio ambiente. Já Estados Unidos
+(responsável por 35% das emissões), Canadá, Rússia e Austrália, que,
+juntos, representam mais de 50% das emissões de poluentes, se recu-
+saram a concordar com o documento, julgando-o injusto por não insti-
+tuir o mesmo percentual a todos os países. Os norte-americanos encer-
+raram as negociações no ano de 2001, conduzindo o plano ao fracasso,
+pois eram os maiores responsáveis pela emissão de gases poluentes.
+O argumento das autoridades dos Estados Unidos era o de que não
+
+166                                                Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                         havia provas científicas suficientes para afirmar que a ação da huma-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         nidade seria verdadeiramente a principal responsável pelas mudanças
+                                                                                                                                                                                                                                         climáticas. A Rússia, segundo maior responsável pela emissão de ga-
+                                                                                                                                                                                                                                         ses poluentes, decidiu aderir ao protocolo apenas em 2004, já que este
+                                                                                                                                                                                                                                         era um pré-requisito para a sua inserção na Organização Mundial do
+                                                                                                                                                                                                                                         Comércio (OMC).
+
+                                                                                                                                                                                                                                             A participação do Brasil no Protocolo de Kyoto foi muito importante.
+                                                                                                                                                                                                                                         Uma de suas maiores contribuições foi a criação da proposta chamada
+                                                                                                                                                                                                                                         Mecanismo de Desenvolvimento Limpo (MDL). Com esse mecanismo,
+                                                                                                                                                                                                                                         criou-se uma espécie de aporte aos países desenvolvidos que não con-
+                                                                                                                                                                                                                                         seguem praticar as metas estabelecidas pelo protocolo. A ideia é que os
+                                                                                                                                                                                                                                         países já desenvolvidos financiem ou custeiem políticas de preservação
+                                                                                                                                                                                                                                         do meio ambiente nos países em desenvolvimento ou mais pobres. Essa
+                                                                                                                                                                                                                                         prática ficou conhecida como créditos de carbono. Os países mais ricos
+                                                                                                                                                                                                                                         passam a compensar a poluição por eles produzida com a preservação
+                                                                                                                                                                                                                                         ambiental em países mais pobres, com a troca de recursos financeiros
+                                                                                                                                                                                                                                         ou bônus. Empresas que poluem mais podem obter, junto ao governo
+                                                                                                                                                                                                                                         de seu país, concessões para poluir (certificados chamados de Redução
+                                                                                                                                                                                                                                         Certificada de Emissões – RCE) desde que financiem políticas de preser-
+                                                                                                                                                                                                                                         vação em outras regiões ou países. Os créditos financiam políticas de re-
+                                                                                                                                                                                                                                         florestamento, a utilização de fontes de energia alternativas, a exploração
+                                                                                                                                                                                                                                         sustentável da biodiversidade, a preservação de culturas tradicionais, a
+                                                                                                                                                                                                                                         conservação de florestas, programas de reciclagem, entre outros aliados
+                                                                                                                                                                                                                                         da sustentabilidade econômica, ambiental, social e cultural.
+
+                                                                                                                                                                                                                                             O primeiro projeto de MDL (ou créditos de carbono) autorizado pela
+                                                                                                                                                                                                                                         ONU destinou-se ao aterro sanitário ou lixão de Nova Iguaçu, no Rio de
+                                                                                                                                                                                                                                         Janeiro. Os bônus foram trocados com um conjunto de empresas dos
+                                                                                                                                                                                                                                         Países Baixos. Essa ideia é muito aplicada em todo o mundo, ainda que
+                                                                                                                                                                                                                                         os Estados Unidos tenham se recusado a participar desse protocolo. O
+                                                                                                                                                                                                                                         projeto sustentável do lixão de Nova Iguaçu foi responsável por trans-
+                                                                                                                                                                                                                                         formar o gás metano, resultado da decomposição do lixo, em fonte de
+                                                                                                                                                                                                                                         energia elétrica, capaz de abastecer cerca de 60 mil residências.
+
+
+                                                                                                                                                                                                                                         Desenvolvimento sustentável                                             167
+      Em 2002, novamente a ONU buscou um novo acordo, agora em
+
+
+
+
+                                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+Joanesburgo, na África do Sul, num evento chamado Rio+10, em alu-
+são aos dez anos decorridos desde a conferência realizada no Rio de
+Janeiro, a ECO-92. ONGs, governos e empresários fizeram um balanço
+dos últimos dez anos do texto da Agenda 21 e constataram que pouco
+havia sido feito para preservar o meio ambiente e, pior que isto, a situa-
+ção havia se agravado. Novos compromissos foram assinados, porém
+os norte-americanos insistiam em defender a posição de que não há
+comprovações científicas suficientes para provar que a responsabilida-
+de pelas mudanças climáticas é humana.
+
+      No final de 2007, foi realizada em Bali (Indonésia) uma nova confe-
+rência, dez anos após o Protocolo de Kyoto. A reunião é tida como his-
+tórica. Nela, a Austrália assinou o protocolo, de modo que faltava ape-
+nas os Estados Unidos assumirem um compromisso ambiental global.
+Houve pressão da opinião pública internacional e, inclusive, de todas as
+nações contra os americanos, e o país foi ameaçado de sofrer boicotes
+e sanções econômicas internacionais. Devido a essas pressões, os nor-
+te-americanos acabaram firmando o compromisso e, pela primeira vez,
+reconheceram a relação entre os danos ambientais e a ação humana.
+Em 2012 foi realizada a Rio+20, título em referência aos vinte anos da
+ECO-92. Serrão, Almeida e Carestiato (2012) apresentam os prinicipais
+pontos da Rio+20:
+
+               Dessa Conferência participaram 188 países. O objetivo era reforçar
+               o compromisso para com o desenvolvimento sustentável a partir
+               da formulação de um plano que possibilite que a população de
+               todo o mundo possa se desenvolver de modo digno, com o cui-
+               dado para que os recursos naturais sejam preservados para as
+               gerações futuras. Assim sendo, uma das mais altas expectativas
+               era a de que a Rio+20 conseguisse determinar metas concretas
+               e definitivas para um desenvolvimento sustentável, em diferentes
+               áreas, a serem oferecidas como uma solução aos países partici-
+               pantes [...]. Dois temas principais pontuaram a Conferência: 1) a
+               economia verde no contexto do desenvolvimento sustentável e da
+               erradicação da pobreza; e 2) a estrutura institucional para o desen-
+
+
+168                                                          Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                                            volvimento sustentável [...]. O primeiro é considerado como uma
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                            forma alternativa de aplicar políticas e programas relacionados
+                                                                                                                                                                                                                                                            com os compromissos do desenvolvimento sustentável em todos
+                                                                                                                                                                                                                                                            os países da ONU. O segundo trata das discussões sobre a estru-
+                                                                                                                                                                                                                                                            tura institucional na busca por melhorar a coordenação e a eficácia
+                                                                                                                                                                                                                                                            das atividades desenvolvidas pelas diversas instituições do siste-
+                                                                                                                                                                                                                                                            ma ONU que se dedicam aos principais pilares do desenvolvimento
+                                                                                                                                                                                                                                                            sustentável (econômico, social e ambiental) [...]. Os países debate-
+                                                                                                                                                                                                                                                            ram, principalmente, maneiras pelas quais os programas voltados
+                                                                                                                                                                                                                                                            ao desenvolvimento econômico, ao bem-estar social e à proteção
+                                                                                                                                                                                                                                                            ambiental podem ser organizados em esforços conjuntos, que re-
+                                                                                                                                                                                                                                                            almente correspondam às aspirações do desenvolvimento susten-
+                                                                                                                                                                                                                                                            tável. (SERRÃO; ALMEIDA; CARESTIATO, 2012, p. 185)
+
+
+                                                                                                                                                                                                                                             No ano de 2015, a ONU promoveu o Acordo de Paris. A conferência
+                                                                                                                                                                                                                                         é considerada sucessora do Protocolo de Kyoto, assim como foi tam-
+                                                                                                                                                                                                                                         bém responsável por aperfeiçoá-lo, pois os Estados Unidos, à época
+                                                                                                                                                                                                                                         presididos por Barack Obama, haviam se comprometido com políticas
+                                                                                                                                                                                                                                         voltadas ao desenvolvimento sustentável, sobretudo com a revisão das
+                                                                                                                                                                                                                                         práticas predatórias ambientais da produção norte-americana. O Brasil,
+                                                                                                                                                                                                                                         por sua vez, se comprometeu a diminuir o desmatamento e queimadas
+                                                                                                                                                                                                                                         de florestas. Portanto, o objetivo principal do Acordo de Paris era reduzir
+                                                                                                                                                                                                                                         as emissões de gases poluentes e expandir práticas sustentáveis so-
+                                                                                                                                                                                                                                         ciais e econômicas.
+
+                                                                                                                                                                                                                                             Em 2017, no entanto, os Estados Unidos deixaram de ser signatários
+                                                                                                                                                                                                                                         do acordo com a vitória de Donald Trump à presidência. No Brasil, com
+                                                                                                                                                                                                                                         a vitória de Bolsonaro, que assumiu o cargo de presidente em 2019,
+                                                                                                                                                                                                                                         houve desrespeito ao acordo, com índices de desmatamento e queima-
+                                                                                                                                                                                                                                         das recordes. Além disso, o governo brasileiro cancelou uma nova cúpu-
+                                                                                                                                                                                                                                         la da ONU sobre o clima que viria a ocorrer no Brasil em 2019. Em 2021,
+                                                                                                                                                                                                                                         a Cúpula do Clima foi realizada por videoconferência devido à pandemia
+                                                                                                                                                                                                                                         de Covid-19. Seu principal ponto foi tornar os Estados Unidos protago-
+                                                                                                                                                                                                                                         nista dos debates ambientais, após a postura negacionista característi-
+                                                                                                                                                                                                                                         ca do governo Trump. A principal meta anunciada pelo novo presidente
+                                                                                                                                                                                                                                         norte-americano, Biden, organizador do evento, foi a redução de 50%
+
+                                                                                                                                                                                                                                         Desenvolvimento sustentável                                                               169
+das emissões de gases de efeito estufa até 2030, o que estimulou a
+
+
+
+
+                                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+União Europeia e outras nações a buscarem metas mais ousadas.
+
+
+           PARA SABER MAIS
+
+           Elabore uma pesquisa investigando em jornais, revistas e artigos aca-
+           dêmicos o processo de evolução das propostas e metas dos países a
+           partir das conferências da ONU sobre o desenvolvimento sustentável.
+           Compare as práticas do bloco europeu, dos Estados Unidos e do Brasil.
+
+                                                                                            
+
+
+
+2 As possibilidades e os limites do
+desenvolvimento sustentável
+      Há intensos debates a respeito das práticas de desenvolvimento
+sustentável. Suas possibilidades e limites giram em torno da capacida-
+de ou não de Estados, governos e instituições privadas realizarem com
+sucesso ações que promovam inclusão social, cuidados com o meio
+ambiente e progresso econômico. Diante disso, na década de 1980,
+com a ascensão do neoliberalismo, surgiram diversas práticas que leva-
+ram a uma maior atuação do mercado e do chamado terceiro setor no
+que diz respeito ao desenvolvimento sustentável.
+
+
+           PARA SABER MAIS
+
+           O neoliberalismo passou a vigorar nos anos 1980. Suas principais carac-
+           terísticas são a redução da participação do Estado na economia (o cha-
+           mado Estado mínimo, com privatizações e terceirizações) e drásticas
+           reduções de gastos públicos nas políticas de bem-estar social (educa-
+           ção, saúde, moradia, direitos trabalhistas), tendendo a transferir essas
+           ações ao mercado e ao terceiro setor.
+
+                                                                                            
+
+
+
+170                                                          Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                             Para compreender o debate, é necessário investigar primeiro as
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         dimensões que representam o Estado, o mercado e a sociedade civil
+                                                                                                                                                                                                                                         organizada (conhecida também como terceiro setor). O Estado é enten-
+                                                                                                                                                                                                                                         dido como um bem público e, enquanto tal, deve necessariamente agir
+                                                                                                                                                                                                                                         em nome de toda a sociedade, ou seja, do bem comum e dos direitos
+                                                                                                                                                                                                                                         à cidadania, conforme vimos anteriormente nos primeiros capítulos. O
+                                                                                                                                                                                                                                         mercado é dominado por grandes corporações particulares, médias e
+                                                                                                                                                                                                                                         pequenas empresas que contribuem para o movimento e desenvolvi-
+                                                                                                                                                                                                                                         mento da economia, geram empregos, pagam impostos e agem em
+                                                                                                                                                                                                                                         conformidade com as leis vigentes e criadas pelo Estado. O mercado
+                                                                                                                                                                                                                                         representa os interesses privados, ou seja, as expectativas de cresci-
+                                                                                                                                                                                                                                         mento e conquista de maiores fatias de consumidores e lucros, por isso
+                                                                                                                                                                                                                                         empresas privadas buscam a todo instante maximizar a venda de seus
+                                                                                                                                                                                                                                         produtos e serviços como garantia de sucesso individual (seja da em-
+                                                                                                                                                                                                                                         presa, seja do sujeito inserido no mercado). A sociedade civil organi-
+                                                                                                                                                                                                                                         zada, ou terceiro setor, expressa-se quando um ou mais cidadãos ou
+                                                                                                                                                                                                                                         empresas (ou seja, membros do mercado) se organizam e unem inte-
+                                                                                                                                                                                                                                         resses, por meio de instituições que passam a atuar ativamente no ce-
+                                                                                                                                                                                                                                         nário político, social, econômico e cultural, com o objetivo de reivindicar
+                                                                                                                                                                                                                                         direitos de grupos particulares ou interesses públicos (são exemplos:
+                                                                                                                                                                                                                                         sindicatos, academias de artes e letras, associações de moradores, em-
+                                                                                                                                                                                                                                         presas, movimentos populares). O terceiro setor refere-se ao que conhe-
+                                                                                                                                                                                                                                         cemos como organizações não governamentais, as chamadas ONGs.
+
+                                                                                                                                                                                                                                             Até a década de 1970, os Estados foram os grandes responsáveis
+                                                                                                                                                                                                                                         pelas políticas que promovem benefícios à sociedade, o que foi cha-
+                                                                                                                                                                                                                                         mado de política de bem-estar social. Ao promoverem a qualidade dos
+                                                                                                                                                                                                                                         serviços públicos, os Estados obtiveram como resultado a piora das
+                                                                                                                                                                                                                                         condições de seus orçamentos, pois não havia mais verba suficiente,
+                                                                                                                                                                                                                                         tampouco mão de obra capacitada e adequada em número e eficiência,
+                                                                                                                                                                                                                                         para conceder benefícios e suprir as necessidades de todos os cida-
+                                                                                                                                                                                                                                         dãos. Na década de 1980, as grandes potências econômicas e os pa-
+                                                                                                                                                                                                                                         íses subdesenvolvidos estavam endividados e assistiam à inoperância
+
+
+                                                                                                                                                                                                                                         Desenvolvimento sustentável                                             171
+da administração pública frente aos interesses de seus cidadãos.
+
+
+
+
+                                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+Nesse contexto, emergiu o neoliberalismo e com ele o chamado tercei-
+ro setor, como forma de suprir as demandas não atendidas pelo Estado.
+Segundo Froes e Melo Neto,
+
+               Intelectuais, políticos, empresários e pesquisadores sociais apon-
+               tam distorções, culpam o governo, criticam as políticas públicas
+               e identificam gestores e instituições corruptas, ineficientes e ine-
+               ficazes. Muito se fala e pouco se faz de concreto e efetivo. Muitas
+               vezes, o que se fala esconde a inércia, o conformismo, a visão ba-
+               nalizada dos problemas, o ceticismo diante das questões sociais.
+               (FROES; MELO NETO, 2002, p. 15)
+
+
+      Esse cenário favoreceu a expansão do mercado e da iniciativa pri-
+vada, de maneira que estes se tornaram gradativamente responsáveis
+pela adoção de ações e projetos que fossem capazes de promover me-
+lhorias sociais. Ao Estado restava apenas o auxílio com recursos es-
+cassos à sociedade civil organizada para buscar reduzir os problemas
+sociais. Foi assim que surgiu o chamado terceiro setor e a responsabi-
+lidade social e ambiental. Portanto, o terceiro setor representa a socie-
+dade civil organizada, que atua publicamente, sem fins lucrativos, no
+cenário social e ambiental devido à ineficiência e ao processo de deca-
+dência do Estado no gerenciamento das políticas de bem-estar social e
+de cuidados com o meio ambiente.
+
+      Nesse ponto residem as críticas ao terceiro setor, pois verifica-se
+uma nova dinâmica na sociedade, em que as organizações da socieda-
+de civil passam a agir em nome do interesse público. Para alguns, isso
+consiste na terceirização dos deveres fundamentais do Estado perante
+os seus cidadãos e o meio ambiente. O terceiro setor recebe repasses
+escassos do Estado ou elevadas quantias de empresas privadas que
+obtêm em troca vantagens fiscais junto aos governos, como a redu-
+ção de impostos. Dessa forma, as empresas e o terceiro setor promo-
+vem ações e assumem responsabilidades que deveriam pertencer ao
+Estado, afinal de contas os cidadãos pagam impostos para promover
+
+
+172                                                          Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                         justiça social e proteção ambiental. Além disso, o terceiro setor possui
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         elementos administrativos que são empregados pelo mercado, já que
+                                                                                                                                                                                                                                         as organizações que o compõem possuem administração próxima à da
+                                                                                                                                                                                                                                         iniciativa privada, sendo a principal diferença a não obtenção de lucros,
+                                                                                                                                                                                                                                         já que capta recursos e doações de empresas privadas ou recebe ver-
+                                                                                                                                                                                                                                         bas dos governos.
+
+                                                                                                                                                                                                                                             Questiona-se também se as empresas privadas promovem essas
+                                                                                                                                                                                                                                         contribuições à sociedade apenas com o objetivo de reforçar sua ima-
+                                                                                                                                                                                                                                         gem no mercado e ampliar a divulgação de seus negócios até o limite
+                                                                                                                                                                                                                                         de seus interesses lucrativos, de modo que muitos segmentos e regiões
+                                                                                                                                                                                                                                         de um país, quando desprovidos de mercado consumidor ou com pou-
+                                                                                                                                                                                                                                         ca atenção da mídia, acabam sendo descartados como alvo das ações
+                                                                                                                                                                                                                                         dessas organizações. A crítica, por isso, refere-se à transformação de
+                                                                                                                                                                                                                                         direitos políticos, sociais, econômicos, culturais e ambientais em mer-
+                                                                                                                                                                                                                                         cadorias com visibilidade midiática, com fins direcionados primeiro ao
+                                                                                                                                                                                                                                         consumo e só depois ao exercício da cidadania e da proteção ambiental.
+
+                                                                                                                                                                                                                                             Os defensores do terceiro setor avaliam as potencialidades a partir
+                                                                                                                                                                                                                                         das oportunidades que as práticas sociais e ambientais podem produzir
+                                                                                                                                                                                                                                         para a imagem das organizações privadas ao participarem ou contribu-
+                                                                                                                                                                                                                                         írem com os projetos do terceiro setor. Froes e Melo Neto elencam os
+                                                                                                                                                                                                                                         seguintes elementos favoráveis a essas ações:
+
+                                                                                                                                                                                                                                                            Capacidade de improvisar, inovar e enfrentar os seus problemas;
+                                                                                                                                                                                                                                                            aptidão para buscar novas alternativas de desenvolvimento; com-
+                                                                                                                                                                                                                                                            petência para inovar em busca de novas formas de inserção social;
+                                                                                                                                                                                                                                                            competência para gerar por si só renda e emprego; acessibilidade
+                                                                                                                                                                                                                                                            (a serviços públicos essenciais e informações básicas para o exer-
+                                                                                                                                                                                                                                                            cício da cidadania); capacidade de mobilizar-se em defesa de seus
+                                                                                                                                                                                                                                                            interesses; aplicação de alto investimento no fator humano; ten-
+                                                                                                                                                                                                                                                            dência à inversão e ao reinvestimento; dotada de vontade política
+                                                                                                                                                                                                                                                            forte e com um projeto próprio de desenvolvimento; dotada de alta
+                                                                                                                                                                                                                                                            mobilização e conscientização de seus membros; capacidade de
+                                                                                                                                                                                                                                                            criar novas e diversas organizações sociais. (FROES; MELO NETO,
+                                                                                                                                                                                                                                                            2002, p. 104)
+
+
+
+                                                                                                                                                                                                                                         Desenvolvimento sustentável                                                             173
+      Essas oportunidades promovidas pelo mercado e pelo terceiro setor
+
+
+
+
+                                                                                                 Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+levaram à ascensão de conceitos como a responsabilidade social e am-
+biental (RSA), ou seja, a uma forma de conduzir os negócios da empresa
+de tal modo que ela se torne parceira e corresponsável pelo desenvol-
+vimento sustentável. Assim, defende-se o compromisso empreendedor
+das organizações privadas com o comportamento ético, que promova o
+progresso econômico, político e social dos locais onde estão inseridas.
+
+      A RSA, também conhecida como empreendedorismo social e am-
+biental, visa promover ações cidadãs da organização tanto no âmbito
+interno (público interno), com a conscientização e educação responsá-
+vel de seus colaboradores e a revisão de seus processos produtivos,
+tornando-os ecologicamente corretos e apoiando causas sociais; quan-
+to no âmbito externo (público externo), com práticas que auxiliem a im-
+plementação dos direitos sociais e políticas que visem ao bem-estar da
+sociedade, sobretudo contribuindo para suprir as demandas sociais de
+populações excluídas ou carentes. Segundo Tachizawa (2005, p. 86):
+
+              Esse conceito deve expressar compromisso com a adoção e a di-
+              fusão de valores, conduta e procedimentos que induzam e estimu-
+              lem o contínuo aperfeiçoamento dos processos empresariais, para
+              que também resultem em preservação e melhoria da qualidade de
+              vida da sociedade do ponto de vista ético, social e ambiental. (TA-
+              CHIZAWA, 2005, p. 86)
+
+
+      Um dos temas que estão em pauta no gerenciamento das empre-
+sas diz respeito às oportunidades de promover a visibilidade de marcas,
+produtos e serviços através de condutas sustentáveis e empreendedo-
+ras, que proporcionem benefícios às comunidades carentes. O empre-
+endedorismo social e ambiental surge como um conceito fundamen-
+tal tanto para promover a imagem de uma organização quanto para a
+realização de programas sociais. Nesse sentido, procura-se diferenciar
+o empreendedorismo empresarial do empreendedorismo social. O pri-
+meiro visa à maximização e obtenção de lucros das empresas; o segun-
+do representa a busca do retorno ou a aplicação de parte dos lucros de
+
+174                                                        Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                         uma organização na sociedade, por meio de projetos socioambientais.
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         Defensores do empreendedorismo social afirmam que promove-se,
+                                                                                                                                                                                                                                         com essas ações, a tomada de consciência dos cidadãos, dos cola-
+                                                                                                                                                                                                                                         boradores das organizações e do próprio Estado, por meio de práticas
+                                                                                                                                                                                                                                         que se comprometem com o desenvolvimento de uma sociedade mais
+                                                                                                                                                                                                                                         justa, reduzindo as desigualdades nos cenários econômicos, políticos
+                                                                                                                                                                                                                                         e sociais.
+
+                                                                                                                                                                                                                                             Cabe enfatizar que o empreendedorismo social e ambiental desponta
+                                                                                                                                                                                                                                         no século XXI como ferramenta gerencial relevante para as organizações
+                                                                                                                                                                                                                                         que procuram promover uma imagem responsável e positiva diante dos
+                                                                                                                                                                                                                                         cidadãos, consumidores e investidores. Criou-se uma nova oportunidade
+                                                                                                                                                                                                                                         de negócios, uma vez que o empreendedorismo aplicado à sociedade e ao
+                                                                                                                                                                                                                                         meio ambiente contribui para o desenvolvimento humano de segmentos
+                                                                                                                                                                                                                                         sociais que até então se encontravam excluídos e marginalizados.
+
+
+                                                                                                                                                                                                                                                       PARA SABER MAIS
+
+                                                                                                                                                                                                                                                       Pesquise em jornais, revistas e artigos acadêmicos práticas bem-su-
+                                                                                                                                                                                                                                                       cedidas de empreendedorismo social e ambiental do lado do terceiro
+                                                                                                                                                                                                                                                       setor. Investigue quais problemas foram solucionados, quais foram os
+                                                                                                                                                                                                                                                       impactos sobre segmentos sociais e quais benefícios surgiram a partir
+                                                                                                                                                                                                                                                       dessas ações.
+
+                                                                                                                                                                                                                                                                                                                               
+
+                                                                                                                                                                                                                                             De acordo com Froes e Melo Neto (2002), ao realizarem ações em
+                                                                                                                                                                                                                                         benefício da sociedade, as empresas produzem propostas de redução
+                                                                                                                                                                                                                                         dos problemas socioeconômicos, o que promove também a aprovação
+                                                                                                                                                                                                                                         de seus produtos e serviços pelos consumidores. Sob um ponto de vista
+                                                                                                                                                                                                                                         gerencial, o empreendedorismo social pode ser visto não apenas como
+                                                                                                                                                                                                                                         uma ferramenta útil para a promoção da solidariedade e conscientiza-
+                                                                                                                                                                                                                                         ção da sociedade, mas também como uma estratégia que pode atrair
+                                                                                                                                                                                                                                         novos lucros e investimentos. Froes e Melo Neto (2002) apontam nove
+                                                                                                                                                                                                                                         aspectos essenciais do empreendedorismo social e ambiental:
+
+
+                                                                                                                                                                                                                                         Desenvolvimento sustentável                                                           175
+              a) cria novas interações entre as pessoas, fortalecendo laços de
+
+
+
+
+                                                                                                    Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+              amizade, familiares e novas opções de trabalho e recreação; b) aju-
+              da a moldar as práticas e valores individuais, grupais e coletivos,
+              aguçando a percepção e a visão social das pessoas; c) conecta in-
+              divíduos, grupos, regiões e organizações; d) ajuda a construir novas
+              formas de convivência; e) contribui para a superação de problemas
+              sociais através da definição coletiva de objetivos, articulação de
+              pessoas e instituições; f) disponibiliza “saberes distintos” e os colo-
+              ca a serviço do interesse coletivo; g) constrói vínculos mais fortes
+              e consistentes entre as pessoas, grupos e instituições; h) promove
+              acordos de cooperação e alianças; i) cria e amplia alternativas de
+              ação. (FROES; MELO NETO, 2002, p. 41)
+
+
+      Os autores destacam ainda que o sucesso dos projetos realizados
+pelo empreendedorismo social e ambiental depende de exigências fun-
+damentais, dentre as quais destacam-se:
+
+              [...] mudanças de comportamento da população; preservação das
+              culturas locais; desenvolvimento de processos de participação;
+              introdução e prática de novas formas de inserção social; engaja-
+              mento das pessoas no processo; incentivo à iniciativa de autossus-
+              tentação; incentivo à adoção de comportamentos responsáveis e
+              éticos; garantia do uso sustentável de áreas naturais e da proteção
+              das culturas locais; e autogeração de renda e emprego. (FROES;
+              MELO NETO, 2002, p. 36)
+
+
+      O empreendedorismo social e ambiental gera debates em torno da
+perda ou não da autonomia e das obrigações do Estado na realização de
+projetos sociais e ambientais. Os defensores afirmam haver parcerias
+entre os setores público e privado. Os críticos afirmam haver a terceiri-
+zação ou privatização das responsabilidades elementares do Estado.
+
+      O comprometimento das empresas com as comunidades atingidas
+pelas suas ações responsáveis requer o rigor dos projetos. Mais do que
+o mero interesse estratégico no retorno financeiro à empresa, obtido
+através da credibilidade alcançada perante a sociedade, os defensores
+dessas práticas destacam que é preciso ter em mente que o projeto
+
+
+176                                                           Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                         social e ambiental deve planejar e gerir muito bem qual o público-alvo
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         e qual o retorno esperado em relação aos grupos sociais a serem auxi-
+                                                                                                                                                                                                                                         liados. Essas ações não se reduzem a um mero assistencialismo nem
+                                                                                                                                                                                                                                         a uma contribuição que não agregue valor à comunidade. O projeto so-
+                                                                                                                                                                                                                                         cial deve sempre visar à independência política, social e econômica dos
+                                                                                                                                                                                                                                         grupos auxiliados, para que possam gozar plenamente de seus direitos
+                                                                                                                                                                                                                                         sociais. Froes e Melo Neto afirmam que:
+
+                                                                                                                                                                                                                                                            Num projeto de empreendedorismo social, o propósito não é o de
+                                                                                                                                                                                                                                                            solucionar um problema social específico, mas o de “empoderar”
+                                                                                                                                                                                                                                                            a comunidade local para que esta se mobilize e se fortaleça na
+                                                                                                                                                                                                                                                            busca de soluções para os seus problemas prioritários [...]. Ao con-
+                                                                                                                                                                                                                                                            trário dos projetos sociais tradicionais, cujo sucesso depende dos
+                                                                                                                                                                                                                                                            seus gestores e dos beneficiários, os projetos do empreendedoris-
+                                                                                                                                                                                                                                                            mo social baseiam-se fundamentalmente na ação e desempenho
+                                                                                                                                                                                                                                                            dos atores sociais como sujeitos do seu próprio desenvolvimento.
+                                                                                                                                                                                                                                                            (FROES; MELO NETO, 2002, p. 129)
+
+
+                                                                                                                                                                                                                                             Diante dessa perspectiva, considera-se que é preciso que a gestão
+                                                                                                                                                                                                                                         dos projetos sociais e ambientais promova e transmita conhecimentos
+                                                                                                                                                                                                                                         a respeito de estratégias de gerenciamento e administração, para que
+                                                                                                                                                                                                                                         a população aprenda a gerenciar seus recursos culturais, naturais e de-
+                                                                                                                                                                                                                                         mais potenciais locais, já que o objetivo é torná-las autônomas ou au-
+                                                                                                                                                                                                                                         tossuficientes. Os críticos dessas práticas apontam que é preciso ouvir
+                                                                                                                                                                                                                                         as demandas sociais e respeitar suas tradições culturais, a fim de que
+                                                                                                                                                                                                                                         o ponto de vista das empresas não subjugue e desmereça tais grupos.
+                                                                                                                                                                                                                                         Já os defensores afirmam que há a possibilidade de conciliação entre
+                                                                                                                                                                                                                                         geração de renda e preservação de traços culturais e do meio ambiente,
+                                                                                                                                                                                                                                         o que é essencial para obtenção de sucesso no gerenciamento desse
+                                                                                                                                                                                                                                         tipo de empreendedorismo.
+
+                                                                                                                                                                                                                                             A questão fundamental desse debate é que devemos sempre buscar
+                                                                                                                                                                                                                                         o respeito às diferenças culturais e, ao mesmo tempo, possibilidades
+                                                                                                                                                                                                                                         de inserção econômica dessas populações. Esse é um modo racional e
+                                                                                                                                                                                                                                         ético de combater as desigualdades sociais. As organizações passam a
+
+
+                                                                                                                                                                                                                                         Desenvolvimento sustentável                                                               177
+ser consideradas cidadãs e agentes de transformação social e ambien-
+
+
+
+
+                                                                                              Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+tal à medida que realizam seus projetos nessas áreas, fortalecendo sua
+imagem como entidades que assumem atitudes responsáveis.
+
+
+Considerações finais
+   Estudamos, no capítulo, os significados de desenvolvimento susten-
+tável e sua evolução, a partir das conferências da ONU, instituição que
+passou, a partir da década de 1970, a promover a cooperação global em
+torno de ações em prol das sustentabilidades política, econômica, cul-
+tural, ambiental e social. No primeiro tópico, conhecemos importantes
+conferências e documentos da ONU sobre o desenvolvimento susten-
+tável, destacando-se a ECO-92, o Protocolo de Kyoto, a Agenda 21 e o
+Acordo de Paris. Por fim, no segundo tópico, investigamos as poten-
+cialidades e limites, ou seja, os argumentos favoráveis e contrários à
+participação do mercado e do terceiro setor na promoção de práticas
+ambientais e sociais.
+
+
+Referências
+CAMARGO, Ana Luiza de Brasil. Desenvolvimento sustentável: dimensões e de-
+safios. Campinas: Papirus, 2020. (Coleção Papirus Educação).
+
+DIAS, Reinaldo. Gestão ambiental: responsabilidade social e sustentabilidade.
+São Paulo: Atlas, 2006.
+
+FROES, César; MELO NETO, Francisco Paulo de. Empreendedorismo social: a
+transição para a sociedade sustentável. Rio de Janeiro: Qualitymark, 2002.
+
+SERRÃO, Mônica; ALMEIDA, Aline; CARESTIATO, Andréa. Sustentabilidade:
+uma questão de todos nós. Rio de Janeiro: Senac, 2012.
+
+TACHIZAWA, Takeshy. Gestão ambiental e responsabilidade social corpora-
+tiva: estratégias de negócios focadas na realidade brasileira. São Paulo: Atlas,
+2005.
+
+
+
+178                                                     Ética, cidadania e sustentabilidade
+                                                                                                                                                                                                                                         Sobre o autor
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                            Paulo Niccoli Ramirez é professor de filosofia, sociologia, antro-
+                                                                                                                                                                                                                                         pologia e ciência política. Leciona na Escola Superior de Propaganda
+                                                                                                                                                                                                                                         e Marketing (ESPM), na Fundação Escola de Sociologia e Política
+                                                                                                                                                                                                                                         de São Paulo (FESPSP), na Casa do Saber e no Colégio São Luís.
+                                                                                                                                                                                                                                         Possui doutorado (2014) e mestrado (2007) em ciências sociais pela
+                                                                                                                                                                                                                                         PUC-SP (respectivamente nas áreas de concentração antropologia
+                                                                                                                                                                                                                                         e sociologia) e também bacharelado em ciências sociais (PUC-SP
+                                                                                                                                                                                                                                         – 2004) e filosofia (USP – 2007). É autor do livro Sérgio Buarque de
+                                                                                                                                                                                                                                         Holanda e a dialética da cordialidade.
+
+
+
+
+                                                                                                                                                                                                                                                                                                           181
+

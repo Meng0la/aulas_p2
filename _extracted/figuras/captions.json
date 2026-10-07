@@ -1,0 +1,370 @@
+[
+  {
+    "chapter": 1,
+    "figure": 1,
+    "caption": "Figura 1 – Modelo relacional",
+    "page": 13,
+    "box_pt": [
+      40,
+      352.6545,
+      413.543,
+      553.616
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 1,
+    "figure": 2,
+    "caption": "Figura 2 – Esquema do banco de dados",
+    "page": 14,
+    "box_pt": [
+      40,
+      207.6465,
+      413.543,
+      312.8591
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 1,
+    "figure": 3,
+    "caption": "Figura 3 – Modelo hierárquico",
+    "page": 15,
+    "box_pt": [
+      40,
+      82.0136,
+      413.543,
+      183.1956
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 1,
+    "figure": 4,
+    "caption": "Figura 4 – Modelo de rede",
+    "page": 15,
+    "box_pt": [
+      40,
+      322.4444,
+      413.543,
+      447.7192
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 1,
+    "figure": 5,
+    "caption": "Figura 5 – Modelo orientado a objeto",
+    "page": 16,
+    "box_pt": [
+      40,
+      159.6465,
+      413.543,
+      253.9094
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 1,
+    "figure": 6,
+    "caption": "Figura 6 – Sistema de banco de dados",
+    "page": 18,
+    "box_pt": [
+      40,
+      143.4212,
+      413.543,
+      349.7295
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 1,
+    "figure": 7,
+    "caption": "Figura 7 – Projeto de banco de dados",
+    "page": 20,
+    "box_pt": [
+      40,
+      336.6544,
+      413.543,
+      562.8692
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 2,
+    "figure": 1,
+    "caption": "Figura 1 – Conjunto de entidades Funcionário.",
+    "page": 5,
+    "box_pt": [
+      40,
+      248.1505,
+      413.543,
+      331.6881
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 2,
+    "figure": 2,
+    "caption": "Figura 2 – Conjunto de entidades funcionário e seus atributos",
+    "page": 8,
+    "box_pt": [
+      40,
+      82.0136,
+      413.543,
+      277.0425
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 2,
+    "figure": 3,
+    "caption": "Figura 3 – Conjuntos de relacionamentos entre os conjuntos de entidades funcionário e projeto",
+    "page": 9,
+    "box_pt": [
+      40,
+      191.6465,
+      413.543,
+      262.0389
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 2,
+    "figure": 4,
+    "caption": "Figura 4 – Atributo do conjunto de relacionamento num_horas",
+    "page": 9,
+    "box_pt": [
+      40,
+      417.2877,
+      413.543,
+      522.2393
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 2,
+    "figure": 5,
+    "caption": "Figura 5 – Cardinalidade de um conjunto de relacionamentos",
+    "page": 11,
+    "box_pt": [
+      40,
+      143.6465,
+      413.543,
+      235.5701
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 2,
+    "figure": 6,
+    "caption": "Figura 6 – Funcionário e Projeto têm participação total no relacionamento “trabalha_em”",
+    "page": 12,
+    "box_pt": [
+      40,
+      160.1299,
+      413.543,
+      228.0048
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 2,
+    "figure": 7,
+    "caption": "Figura 7 – Restrição estrutural",
+    "page": 13,
+    "box_pt": [
+      40,
+      82.0136,
+      413.543,
+      305.0136
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 2,
+    "figure": 8,
+    "caption": "Figura 8 – Entidade fraca e relacionamento de identificação",
+    "page": 14,
+    "box_pt": [
+      40,
+      127.6465,
+      413.543,
+      267.1212
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 2,
+    "figure": 9,
+    "caption": "Figura 9 – Relacionamento recursivo",
+    "page": 15,
+    "box_pt": [
+      40,
+      341.6225,
+      413.543,
+      438.8531
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 2,
+    "figure": 10,
+    "caption": "Figura 10 – Especialização",
+    "page": 17,
+    "box_pt": [
+      40,
+      82.497,
+      413.543,
+      277.4584
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 2,
+    "figure": 11,
+    "caption": "Figura 11 – Agregação",
+    "page": 18,
+    "box_pt": [
+      40,
+      285.1186,
+      413.543,
+      420.9007
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 3,
+    "figure": 1,
+    "caption": "Figura 1 – DER empresa",
+    "page": 11,
+    "box_pt": [
+      40,
+      82.0136,
+      413.543,
+      278.1003
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 3,
+    "figure": 2,
+    "caption": "Figura 2 – Relacionamento ternário",
+    "page": 12,
+    "box_pt": [
+      40,
+      82.497,
+      413.543,
+      234.3247
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 3,
+    "figure": 3,
+    "caption": "Figura 3 – Generalização e especialização",
+    "page": 13,
+    "box_pt": [
+      40,
+      296.1505,
+      413.543,
+      515.5253
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 7,
+    "figure": 12,
+    "caption": "Figura 12 – Comando CREATE FUNCTION",
+    "page": 8,
+    "box_pt": [
+      40,
+      211.4109,
+      413.543,
+      434.41089999999997
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "chapter": 8,
+    "figure": 1,
+    "caption": "Figura 1 – Acesso por índice",
+    "page": 4,
+    "box_pt": [
+      40,
+      365.0438,
+      413.543,
+      588.0437999999999
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  }
+]

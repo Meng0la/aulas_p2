@@ -1,0 +1,1032 @@
+                                                                                                                                                                                                                                                                                                  Capítulo 5
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                     Implantando
+                                                                                                                                                                                                                                                   roteamento na
+                                                                                                                                                                                                                                               LAN, configurando
+                                                                                                                                                                                                                                                     redundância
+                                                                                                                                                                                                                                                 para espaços de
+                                                                                                                                                                                                                                                armazenamentos
+                                                                                                                                                                                                                                                         (RAID) e
+                                                                                                                                                                                                                                                  gerenciamento
+                                                                                                                                                                                                                                                        de discos
+                                                                                                                                                                                                                                            Com o avanço tecnológico e, por consequência, do acesso à inter-
+                                                                                                                                                                                                                                         net, nossa comunicação, cooperação e intercâmbio de informações
+                                                                                                                                                                                                                                         ocorrem de maneira nunca vista na sociedade. A rede, atualmente, está
+                                                                                                                                                                                                                                         presente em tudo que utilizamos com tecnologia, desde um aplicativo
+                                                                                                                                                                                                                                         de internet até celulares, sistemas operacionais, educação, entre outros.
+
+                                                                                                                                                                                                                                                                                                                93
+Toda essa comunicação passa por um caminho chamado rede, seja
+
+
+
+
+                                                                                    Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+dentro da empresa, seja na internet global. Dessa forma, não adianta
+nada ter o melhor computador se não existir a comunicação entre os
+equipamentos: o roteamento será a ponte para que a comunicação che-
+gue rapidamente ao seu destino. Já nos equipamentos da nossa rede,
+em algum momento, teremos de armazenar informações. Esta é uma
+decisão estratégica para o administrador: como guardar as informa-
+ções dos usuários. A escolha impactará espaços, estabilidade, veloci-
+dade e redundância. Um passo errado e todos os usuários são afetados.
+Neste capítulo, conversaremos sobre roteamento na rede e formas de
+armazenamento de informação no disco.
+
+
+1 Conceitos de roteamento em uma LAN
+     A empresa na qual você trabalha, recentemente, adquiriu uma nova
+filial. Você, como responsável pela área de TI, em um primeiro momen-
+to, solicita um mapa da topologia do novo local para tentar realizar um
+inventário local; entretanto, a resposta dada pelo antigo gerente é a de
+que “não há um mapa”. Você recebe apenas o nome de usuário e a se-
+nha dos dispositivos de rede da filial, além disso, foi passado o endereço
+web para o servidor dessa filial. Com essas informações em mãos, o
+que você consegue fazer para criar uma documentação? Difícil? No dia
+a dia de TI, esse tipo de situação se torna um tanto constante, mas o
+roteamento o ajudará.
+
+     Vamos conhecer um pouco mais a composição de uma rede para
+entender o roteamento?
+
+
+1.1 Roteador
+
+     Quando você está diante de um computador, abre seu navegador
+e dá um clique em um link, saiba que, após esse procedimento, você
+desencadeou diversas requisições que acontecerão em milissegundos.
+
+94                                                          Sistema operacional I
+                                                                                                                                                                                                                                         Um usuário comum só vai entender se a URL for carregada rapidamente
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         ou não. Contudo, existem diversos equipamentos e tecnologias conec-
+                                                                                                                                                                                                                                         tadas que trabalham em conjunto, mas o principal equipamento para
+                                                                                                                                                                                                                                         conectar uma rede a outra é o roteador.
+
+                                                                                                                                                                                                                                             Sem roteadores, a comunicação entre redes não seria possível, pois
+                                                                                                                                                                                                                                         um roteador encaminha o pacote ao próximo e determina o melhor ca-
+                                                                                                                                                                                                                                         minho, desde a origem até o destino. Em outras palavras, o roteador é
+                                                                                                                                                                                                                                         responsável pelo roteamento de tráfego entre as redes.
+
+                                                                                                                                                                                                                                             Como você pode verificar na figura 1, temos a representação de uma
+                                                                                                                                                                                                                                         empresa com a matriz na cidade de São Paulo e precisaríamos nos ligar
+                                                                                                                                                                                                                                         com a filial em Osasco (um município próximo). A forma mais rápida
+                                                                                                                                                                                                                                         seria utilizar a internet nas duas pontas; para isso, contrataríamos uma
+                                                                                                                                                                                                                                         operadora de telefonia para ligar nossa rede à internet. Na nossa rede,
+                                                                                                                                                                                                                                         será instalado um roteador que a ligará na da operadora, que a ligará em
+                                                                                                                                                                                                                                         outro roteador e outro... até chegar à nossa filial. O procedimento é um
+                                                                                                                                                                                                                                         pouco mais complexo, mas isso acontece em milissegundos quando
+                                                                                                                                                                                                                                         você clica em um link ou digita uma URL em seu navegador.
+
+                                                                                                                                                                                                                                                                     Figura 1 — Aplicação de roteadores em uma rede
+
+
+                                                                                                                                                                                                                                                                                Roteador rede
+
+
+
+
+                                                                                                                                                                                                                                                 Matriz São Paulo                                               Roteador
+
+                                                                                                                                                                                                                                                                                                                                Roteador rede
+                                                                                                                                                                                                                                                                                                Filial Osasco
+
+
+                                                                                                                                                                                                                                                    MSP-02
+                                                                                                                                                                                                                                                                     MSP-01              FLO-01                                IMP-01
+
+
+
+                                                                                                                                                                                                                                                                                                                      SDM-01
+
+
+
+
+                                                                                                                                                                                                                                         Implantando roteamento na LAN, configurando redundância para espaços de
+                                                                                                                                                                                                                                         armazenamentos (RAID) e gerenciamento de discos                                                        95
+   O roteador é basicamente um computador com instruções espe-
+
+
+
+
+                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+cializadas de roteamento e switching (encaminhamento). O que difere
+um computador de um roteador é que este não é um computador com
+adaptador de vídeo e placa de som para um usuário final, mas um com-
+putador especializado, com portas e placas de rede específicas para
+interconectar dispositivos a outras redes. A placa que o roteador utiliza
+para encaminhar um pacote pode ser o destino ou pode ser outra porta
+de outro roteador, que será utilizada para chegar ao destino. Nesse con-
+texto, o roteador examina o endereço de destino do pacote, encontran-
+do, assim, o melhor caminho para a rede.
+
+
+2 Criando e gerenciando volumes de discos
+   Trabalhar com o disco requer cuidados, pois, dependendo de como
+for arquitetada, a entrega de informação pode ser comprometida. Em
+alguns casos, o projeto pode se tornar extremamente lento, o que torna
+impraticável o acesso ao disco e às informações. Nesse sentido, essa
+etapa demonstrará o conceito aplicado no gerenciamento de disco.
+
+
+2.1 Discos
+
+     Você resolve comprar um disco e, em uma simples pesquisa, encon-
+tra diversos modelos, com diversos preços. E aí, qual escolher? Vamos
+nos atentar a alguns quesitos.
+
+
+2.1.1 Padrão da interface
+
+     No mercado, a primeira tarefa a ser definida é a interface do disco.
+Chama-se interface o padrão de comunicação com os discos, sendo
+definido o protocolo físico de comunicação utilizado para o envio e o re-
+cebimento dos controles de dados. As interfaces mais usuais são SATA
+(serial advanced technology attachment), para computadores pessoais,
+e SAS (serial attached SCSI), para servidores.
+
+96                                                         Sistema operacional I
+                                                                                                                                                                                                                                             Mas como podemos distinguir o melhor disco? Nesse caso, pode-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         mos avaliar o desempenho, para o qual temos o acrônimo IOPS (do
+                                                                                                                                                                                                                                         inglês input/output operations per second) ou operações de entrada e
+                                                                                                                                                                                                                                         saída por segundo — em português, conhecido como ESPS. Essa é uma
+                                                                                                                                                                                                                                         medida de desempenho comum usada para dispositivos de armazena-
+                                                                                                                                                                                                                                         mento de computador de referência, como SSD, unidades de disco rígi-
+                                                                                                                                                                                                                                         do (HDD — hard disk drive) e redes de área de armazenamento (SAN —
+                                                                                                                                                                                                                                         storage area network). Quanto maior esse número, mais eficiente será
+                                                                                                                                                                                                                                         o dispositivo.
+
+                                                                                                                                                                                                                                             O IOPS é calculado pela seguinte fórmula:
+
+                                                                                                                                                                                                                                                                                         1.000
+                                                                                                                                                                                                                                                            IOPS =
+                                                                                                                                                                                                                                                                         rotational latency + seek latency
+
+
+
+                                                                                                                                                                                                                                             sendo latência rotacional (rotational latency) o tempo gasto pelo HD
+                                                                                                                                                                                                                                         sair de um estado de espera, rotacionar o disco até o ponto da leitura
+                                                                                                                                                                                                                                         dos dados, e tempo de busca (seek latency), o tempo do deslocamento
+                                                                                                                                                                                                                                         da cabeça de leitura até o local em que está a informação.
+
+                                                                                                                                                                                                                                             Informações desses parâmetros podem ser encontradas nas espe-
+                                                                                                                                                                                                                                         cificações técnicas fornecidas pelo fabricante. Na figura 2, é apresenta-
+                                                                                                                                                                                                                                         da a interface do HD, sua rotação e o IOPS. Só no caso do SSD é que não
+                                                                                                                                                                                                                                         temos partes móveis e as informações ficam armazenadas em chips de
+                                                                                                                                                                                                                                         memória do tipo flash.
+
+                                                                                                                                                                                                                                             Na figura 2, é apresentada uma divisão na interface dos discos.
+
+
+
+
+                                                                                                                                                                                                                                         Implantando roteamento na LAN, configurando redundância para espaços de
+                                                                                                                                                                                                                                         armazenamentos (RAID) e gerenciamento de discos                           97
+               Figura 2 — Tipos de HD e interfaces com valores típicos de IOPS
+
+
+
+
+                                                                                                         Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                      IDE 5.400 RPM = 50 a 80 IOPS
+                                                      SCSI 7.200 RPM = 75 a 100 IOPS
+                                                      SATA 7.200 RPM = 130 a 150
+                                                      SAS = 15.000 RPM = 175 a 210 IOPS
+
+
+
+
+                                                      SSD = 1.500 IOPS
+
+
+
+
+     Quanto à interface, podemos caracterizar os discos em IDE (integrated
+drive eletronics), SCSI (small computer system interface), SATA e SAS.
+
+
+2.1.1.1 IDE
+
+     Esse padrão surgiu em 1986, causando uma grande revolução no
+mercado, porque trazia cabo de conexão menor (padrão PATA – paralelo
+ATA) e diminuição significativa do tempo de acesso e recuperação de da-
+dos. Nas placas-mãe existentes na época, existiam uma ou duas portas
+IDE, que podiam conectar até quatro dispositivos, sendo HD ou CD-ROM.
+Próximo a essas duas portas havia uma porta FDD, em que poderia ser
+conectado um disquete. A ordem de definição do disposto (quem era o
+principal ou secundário) era dada pela configuração física no dispositivo,
+sendo “jumpeado” (colocado um jumper em uma posição) o dispositivo
+em “master” (principal), “slave” (secundário – escravo) ou “cable select”,
+que era configurado de acordo com a posição do cabo.
+
+
+2.1.1.2 SCSI
+
+     Esse padrão se assemelhava ao padrão do IDE, mas era destinado
+exclusivamente para servidor. Em 2003, foi lançada a última versão
+
+
+
+98                                                                               Sistema operacional I
+                                                                                                                                                                                                                                         SCSI Ultra 5, que chegava a 640 MB por segundo, muito mais rápido
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         que o padrão IDE.
+
+
+                                                                                                                                                                                                                                         2.1.1.3 SAS
+
+                                                                                                                                                                                                                                             O SAS substitui o SCSI paralelo, fazendo a transmissão de dados em
+                                                                                                                                                                                                                                         série, full-duplex (possibilidade de enviar e receber arquivos simultanea-
+                                                                                                                                                                                                                                         mente), com rotação de 15.000 RPM e taxa de transmissão média de 3
+                                                                                                                                                                                                                                         GB por segundo. É uma interface de comunicação ponto a ponto (p2p),
+                                                                                                                                                                                                                                         que conecta dispositivos de armazenamento em massa. O desempenho
+                                                                                                                                                                                                                                         é superior ao disco SATA. Suporta hot-plug. É utilizada em servidores de
+                                                                                                                                                                                                                                         missão crítica. Uma característica interessante do SAS é que ele permite
+                                                                                                                                                                                                                                         o uso de extensores (que ligam diversos discos SAS a uma única porta).
+                                                                                                                                                                                                                                         Temos dois tipos de extensores: Edge Expanders, que permitem ligar até
+                                                                                                                                                                                                                                         128 discos na mesma porta, e Fanout Expanders, que permitem conectar
+                                                                                                                                                                                                                                         até 128 Edge Expanders, totalizando 16.384 discos por porta SAS.
+
+
+                                                                                                                                                                                                                                         2.1.1.4 SATA
+
+                                                                                                                                                                                                                                             Em março de 2020, a versão mais recente no mercado era o SATA
+                                                                                                                                                                                                                                         3, que consegue trabalhar com a velocidade de 6,0 Gbps. Além do be-
+                                                                                                                                                                                                                                         nefício de ser muito mais rápida do que o IDE, por exemplo, consegue
+                                                                                                                                                                                                                                         armazenar grande quantidade de informações.
+
+
+                                                                                                                                                                                                                                         2.1.1.5 SSD
+
+                                                                                                                                                                                                                                             O disco de estado sólido se difere dos demais produtos apresenta-
+                                                                                                                                                                                                                                         dos, pois não possui os cabeçotes móveis de leitura ou de gravação
+                                                                                                                                                                                                                                         de disco, o que garante maior desempenho, gravando as informações
+                                                                                                                                                                                                                                         na memória flash. O SSD é uma memória não volátil e seu potencial é
+                                                                                                                                                                                                                                         imenso se compararmos com o HD convencional, pois o SSD não faz
+                                                                                                                                                                                                                                         barulho, é mais resistente (caso caia no chão), dificilmente sofrerá al-
+                                                                                                                                                                                                                                         gum dano por conta de movimentação e não perde ou corrompe os
+
+                                                                                                                                                                                                                                         Implantando roteamento na LAN, configurando redundância para espaços de
+                                                                                                                                                                                                                                         armazenamentos (RAID) e gerenciamento de discos                           99
+dados por interferências eletromagnéticas. O SSD, com o passar do
+
+
+
+
+                                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+tempo e com sua popularização, vem ficando mais barato.
+
+
+2.1.2 Criando e administrando discos no Server 2019 – volume de
+discos
+
+      Já que você conheceu um pouco sobre as interfaces, o que foi fun-
+damental para sua escolha dos discos, é preciso decidir agora a melhor
+forma para gerenciar esse armazenamento. Para isso, o primeiro passo
+é entender como funciona o sistema de arquivo de um disco.
+
+
+2.1.3 Sistema de arquivos
+
+      O sistema de arquivo é uma estrutura lógica na qual o SO consegue
+gravar, recuperar e controlar os dados de um HD. A figura 3 faz alusão a
+um sistema de arquivo. Veja que o desenho da esquerda não obedece a
+nenhum padrão, tornando-se impossível a recuperação de dados. Já no
+desenho à direita, nitidamente são observados os padrões. Caso seja
+solicitado que você localize uma casinha, tenho a plena certeza de que
+você conseguirá fazê-lo. Então, o sistema de arquivo vem para contri-
+buir nessa organização.
+
+                  Figura 3 — Analogia para entender o sistema de arquivo
+
+
+
+
+100                                                                        Sistema operacional I
+                                                                                                                                                                                                                                              No caso do Windows, você pode escolher qual tipo de sistema de
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         arquivo trabalhará. Basicamente, temos o sistema de arquivo FAT32
+                                                                                                                                                                                                                                         (file allocation table – tabela de alocação de arquivos de 32 bits), NTFS
+                                                                                                                                                                                                                                         (new technology file system – nova tecnologia de sistema de arquivos)
+                                                                                                                                                                                                                                         e ReFS (resilient file system – sistema de arquivos resiliente). Entre os
+                                                                                                                                                                                                                                         três, podemos destacar a grande migração de sistemas de arquivos tra-
+                                                                                                                                                                                                                                         dicionais (FAT32 e NTFS) para o sistema ReFS. Esse sistema é capaz de
+                                                                                                                                                                                                                                         identificar um erro (de hardware) e corrigi-lo. No quadro 1, é demonstra-
+                                                                                                                                                                                                                                         do um comparativo entre ReFS e NTFS.
+
+                                                                                                                                                                                                                                                        Quadro 1 — Comparação de Refs e NTFS quanto ao limite de armazenamento
+
+
+                                                                                                                                                                                                                                                                                            Limites
+
+
+                                                                                                                                                                                                                                                          Recurso                               ReFS                        NTFS
+
+
+                                                                                                                                                                                                                                               Tamanho máximo do nome do
+                                                                                                                                                                                                                                                                                       255 caracteres Unicode       255 caracteres Unicode
+                                                                                                                                                                                                                                                           arquivo
+
+
+                                                                                                                                                                                                                                               Tamanho máximo do nome do
+                                                                                                                                                                                                                                                                                      32 mil caracteres Unicode    32 mil caracteres Unicode
+                                                                                                                                                                                                                                                          caminho
+
+
+                                                                                                                                                                                                                                                Tamanho máximo do arquivo                 35 PB (petabytes)            256 TB (terabyte)
+
+
+                                                                                                                                                                                                                                                Tamanho máximo do volume                        35 PB                       256 TB
+
+
+
+                                                                                                                                                                                                                                         Fonte: adaptado de Microsoft (2019).
+
+
+
+
+                                                                                                                                                                                                                                              No Windows Server 2019, você tem um ambiente específico para
+                                                                                                                                                                                                                                         visualizar e administrar os discos de um servidor. Proceda: menu Iniciar,
+                                                                                                                                                                                                                                         Ferramentas Administrativas, Gerenciamento do Computador. No item
+                                                                                                                                                                                                                                         Repositório, escolha a opção Gerenciamento de Discos. A figura 4 apre-
+                                                                                                                                                                                                                                         senta a tela de gerenciamento dos discos.
+
+
+
+
+                                                                                                                                                                                                                                         Implantando roteamento na LAN, configurando redundância para espaços de
+                                                                                                                                                                                                                                         armazenamentos (RAID) e gerenciamento de discos                                                       101
+                       Figura 4 — Tela de gerenciamento de discos
+
+
+
+
+                                                                                            Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+      Na figura 4, temos dois dispositivos de hardware disponíveis para a
+utilização, colocados como “DISCO 0” e “CD-ROM 0”. Nessa área, é deta-
+lhado como os discos estão montados ou arranjados. Na parte superior,
+com as informações em colunas, fica mais fácil a identificação do sis-
+tema de arquivo, por exemplo. Note que, nesse servidor, a unidade “C:”
+tem o sistema de arquivo NTFS, enquanto a unidade “D:” possui a UDF
+(universal disk format é uma especificação do formato de um sistema
+de arquivos em um disco óptico).
+
+      A capacidade de armazenamento de informações é finita e chegará
+um momento em que você precisará colocar mais discos. Mas como
+proceder nesses casos? Vamos exemplificar: no servidor DC-01, insta-
+lamos mais quatro discos de 1 GB cada. A figura 5 detalha os quatro
+discos instalados fisicamente disponíveis para o uso; entretanto, não
+estão configurados. Observe que estão em “off-line”, com a barra supe-
+rior na cor preta.
+
+
+
+
+102                                                                 Sistema operacional I
+                                                                                                                                                                                                                                                                             Figura 5 — Adição de novos discos
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             Vamos criar duas partições no disco 01 e configurar no sistema
+                                                                                                                                                                                                                                         NTFS. Para isso, proceda conforme os passos a seguir.
+
+                                                                                                                                                                                                                                             a. Pressione o botão da direita do mouse sobre Disco 1 e escolha a
+                                                                                                                                                                                                                                                  opção On-line.
+
+                                                                                                                                                                                                                                             b. Novamente, pressione com o botão da direita em Disco 1 e esco-
+                                                                                                                                                                                                                                                  lha a opção Iniciar o disco.
+
+                                                                                                                                                                                                                                             c. Na tela de Inicializar Disco, escolha a opção GPT. MBR (master
+                                                                                                                                                                                                                                                  boot record) e GPT (GUID partition table) são padrões que deter-
+                                                                                                                                                                                                                                                  minam como o disco será particionado, sendo a GPT mais recen-
+                                                                                                                                                                                                                                                  te. Comparando os tipos, o MBR pode ter partições de até 2 TB,
+                                                                                                                                                                                                                                                  enquanto a GPT suporta partições de 9,4 ZB (zetabytes). Portanto,
+                                                                                                                                                                                                                                                  deverá ser utilizada principalmente quando for colocado HD SSD.
+
+                                                                                                                                                                                                                                             d. No próximo passo, vamos criar uma divisão no disco, fragmentan-
+                                                                                                                                                                                                                                                  do-o em três partes. Nesse momento, pressione o botão da direi-
+                                                                                                                                                                                                                                                  ta sobre a barra preta do disco e escolha Novo Volume Simples...
+
+                                                                                                                                                                                                                                         Implantando roteamento na LAN, configurando redundância para espaços de
+                                                                                                                                                                                                                                         armazenamentos (RAID) e gerenciamento de discos                           103
+      e. No Assistente para novas Partições Simples, pressione Avançar.
+
+
+
+
+                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+         No Tamanho do volume simples, digite 250 e clique em Avançar.
+
+      f. Escolha a unidade E: e clique em Avançar.
+
+      g. Vamos escolher a opção NTFS e nomear o disco como Dados01.
+         Clique em Avançar e finalize com Concluir.
+
+      Nesse servidor DC-01, criamos mais uma unidade de 250 MB no dis-
+co 01 e atribuímos a letra F:\ para demonstrar que em um único disco
+podemos ter mais de uma partição e, assim, administrar as unidades
+de disco de acordo com a necessidade. Em alguns casos, precisamos
+aumentar ou diminuir a unidade.
+
+      Os procedimentos apresentados na figura 6 mostram como pode-
+mos customizar esses discos. Vamos diminuir o disco E:\ de 250 MB
+para 150 MB. Para isso, proceda conforme os passos a seguir.
+
+      a. Botão da direita do mouse sobre o disco E:\. O Disco E:\ estará
+         hachurado (selecionado). Escolha a opção Diminuir Volume.
+
+
+
+
+104                                                        Sistema operacional I
+                                                                                                                                                                                                                                             b. Após aplicar a diminuição do volume, será mostrada uma tela
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  com as distribuições.
+
+
+
+
+                                                                                                                                                                                                                                             No caso de aumentar o volume, vamos utilizar a unidade F:\, deixan-
+                                                                                                                                                                                                                                         do-a após o procedimento com 350 MB. Vamos proceder conforme os
+                                                                                                                                                                                                                                         passos a seguir.
+
+                                                                                                                                                                                                                                             a. Pressione com o botão da direita do mouse sobre a unidade F:\,
+                                                                                                                                                                                                                                                  deixando-a hachurada. Escolha a opção Estender volume.
+
+
+
+
+                                                                                                                                                                                                                                         Implantando roteamento na LAN, configurando redundância para espaços de
+                                                                                                                                                                                                                                         armazenamentos (RAID) e gerenciamento de discos                           105
+      b. No Assistente para Extensão de Volumes, clique em Avançar e, na
+
+
+
+
+                                                                                              Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+        segunda tela, digite o valor 100 na opção Selecione o espaço em
+        MB. Depois, pressione Avançar e Concluir.
+
+
+
+
+      c. Após aplicar a opção Estender o volume, será mostrada uma tela
+        com as distribuições.
+
+
+
+
+            IMPORTANTE
+
+           Como prática recomendada, antes de diminuir o volume, você deve des-
+           fragmentar o disco. Esse método retorna a quantidade máxima de espa-
+           ço livre em disco, além de colocar os arquivos no início do disco. Caso
+           você esteja utilizando o ReFS, é possível aumentar (estender) o volume;
+           entretanto, nesse sistema, não é possível diminuir o volume.
+
+                                                                                       
+
+
+
+
+106                                                                   Sistema operacional I
+                                                                                                                                                                                                                                                       PARA SABER MAIS
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                       Você pode utilizar também as ferramentas DISKPART.EXE no prompt de
+                                                                                                                                                                                                                                                       comando ou o cmdlet Resize-Partition no Windows PowerShell para re-
+                                                                                                                                                                                                                                                       dimensionar o volume de disco.
+
+                                                                                                                                                                                                                                                                                                                                                          
+
+
+                                                                                                                                                                                                                                         3 Explanação sobre arranjo de discos e suas
+                                                                                                                                                                                                                                         aplicabilidades
+                                                                                                                                                                                                                                             Em algumas situações, o simples fato de colocar mais discos, aumen-
+                                                                                                                                                                                                                                         tar ou diminuir o volume não atende a algumas demandas de administra-
+                                                                                                                                                                                                                                         ção. Nesses casos, temos que partir para montar volumes que nos deem
+                                                                                                                                                                                                                                         mais confiança através da redundância, que tenham alto desempenho e
+                                                                                                                                                                                                                                         que possam ser escaláveis, criando, assim, arranjos de discos.
+
+                                                                                                                                                                                                                                             A tecnologia RAID (redundant array of inexpensive disks) possibilita
+                                                                                                                                                                                                                                         a configuração de sistemas de armazenamento eficientes. Dependendo
+                                                                                                                                                                                                                                         da matriz escolhida, o sistema de armazenamento pode suportar falhas
+                                                                                                                                                                                                                                         de discos ou propiciar excelente desempenho. O principal objetivo do
+                                                                                                                                                                                                                                         RAID é assegurar redundância e permanecer com o serviço disponível,
+                                                                                                                                                                                                                                         mesmo que um disco falhe (THOMPSON, 2017). A figura 6 ilustra os
+                                                                                                                                                                                                                                         tipos de RAID e seus principais níveis.
+
+                                                                                                                                                                                                                                                                             Figura 6 — Tipos de RAID e seus níveis
+
+
+                                                                                                                                                                                                                                                            RAID de hardware: tem a necessidade de utilizar
+                                                                                                                                                                                                                                                            controladoras de disco compatíveis com o RAID          Nível do RAID:
+                                                                                                                                                                                                                                                            escolhido. Normalmente configurado durante o           RAID 0 – fracionamento (stripping array)
+                                                                                                                                                                                                                                                            processo de inicialização do servidor.                 RAID 1 – espelhamento (mirror)
+                                                                                                                                                                                                                                                                                                                   RAID 5 – strip set com paridade
+                                                                                                                                                                                                                                                            RAID do software: é configurado normalmente a          RAID 10 – combinação RAID 0 e RAID 1
+                                                                                                                                                                                                                                                            partir de um sistema operacional, por exemplo,         RAID 50 – combinação RAID 0 e RAID 5
+                                                                                                                                                                                                                                                            dentro do Windows Server 2019, utilizando os
+                                                                                                                                                                                                                                                            discos disponíveis no gerenciador de disco.
+
+
+                                                                                                                                                                                                                                         Implantando roteamento na LAN, configurando redundância para espaços de
+                                                                                                                                                                                                                                         armazenamentos (RAID) e gerenciamento de discos                                                                  107
+      Conforme apresentado na figura 6, temos inicialmente dois tipos
+
+
+
+
+                                                                                    Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+de implementação:
+
+      • RAID de hardware: ao iniciar a instalação de um servidor, caso
+         ele tenha controladora de discos, é provável que você receba um
+         software para criar um arranjo físico dos discos. Você precisará
+         acessar o software e configurá-lo.
+
+      • RAID de software: nesse tipo de RAID, a configuração é aplicada
+         nos discos disponíveis no SO. Por meio do gerenciador de disco,
+         pode ser criado o arranjo necessário.
+
+
+3.1 Nível do RAID
+
+      A sigla RAID significa “matriz redundante de discos independentes”,
+isto, levar vários discos rígidos a trabalhar como se fossem um só.
+
+      Para que o RAID seja implantado corretamente, faz-se necessária
+uma ação sobre o disco que receberá o RAID. Deve ser feita uma con-
+versão do disco de básico para dinâmico. O disco básico é limitado a
+três partições primárias e uma estendida. Já em um disco dinâmico
+você não se limita a apenas quatro partições. O RAID só funcionará em
+discos dinâmicos.
+
+      Ao implantar o RAID, além de sua estrutura (hardware ou softwa-
+re), você precisará decidir qual nível de RAID será implantado. Para sua
+decisão, você deverá levar em conta a quantidade de discos rígidos, a
+recuperação desejada e a velocidade de leitura e de gravação.
+
+
+3.1.1 RAID 0
+
+      O RAID 0 permite melhorar o desempenho utilizando múltiplos HDs.
+Quando o RAID 0 é acionado, a informação é gravada no disco lógico,
+porém, você não percebe que o sistema é que vai determinar onde está
+fisicamente o arquivo (THOMPSON, 2017). Analise a figura 7.
+
+108                                                         Sistema operacional I
+                                                                                                                                                                                                                                                                             Figura 7 — Configuração do RAID 0
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                                                            RAID 0
+
+
+                                                                                                                                                                                                                                                                                    A1                  A2
+
+
+                                                                                                                                                                                                                                                                                    A3                  A4
+                                                                                                                                                                                                                                                                                    A5                  A6
+                                                                                                                                                                                                                                                                                    A7                  A8
+
+
+
+
+                                                                                                                                                                                                                                                                                   Disk 0             Disk 1
+
+
+
+
+                                                                                                                                                                                                                                         Fonte: adaptado de Wikimedia Commons.
+
+
+
+
+                                                                                                                                                                                                                                             Na figura 7, o RAID 0 junta os dois discos em uma única unidade
+                                                                                                                                                                                                                                         lógica. Para exemplificar, se cada disco possuísse 500 MB de espaço,
+                                                                                                                                                                                                                                         ao final do RAID 0, teríamos uma única unidade (E:\) com 1.000 MB. A
+                                                                                                                                                                                                                                         vantagem com esse tipo de arranjo é que ele tem alto desempenho tan-
+                                                                                                                                                                                                                                         to na leitura como na gravação. Já a desvantagem é que a perda de um
+                                                                                                                                                                                                                                         disco resultará na perda de todos os dados. Para montar esse RAID, são
+                                                                                                                                                                                                                                         necessários dois ou mais discos.
+
+                                                                                                                                                                                                                                             Para exemplificar a instalação do RAID 0 no nosso servidor DC-01,
+                                                                                                                                                                                                                                         adicionamos dois discos na VM, simulando a colocação de HD no servi-
+                                                                                                                                                                                                                                         dor. Após colocar os discos, aparecem no gerenciador de disco os HDs
+                                                                                                                                                                                                                                         no formato off-line. Deixe-os on-line e inicialize-os. No Windows Server
+                                                                                                                                                                                                                                         2019, o RAID 0 é identificado como Estendido. Proceda conforme os
+                                                                                                                                                                                                                                         passos a seguir.
+
+                                                                                                                                                                                                                                             a. Abra o Gerenciador de disco. Vamos trabalhar com o disco 2
+                                                                                                                                                                                                                                                  (1.008 MB e a parte que não utilizamos do disco 1 – 408 MB).
+                                                                                                                                                                                                                                                  No disco 2, pressione o botão da direita e escolha a opção Novo
+                                                                                                                                                                                                                                                  volume estendido.
+
+                                                                                                                                                                                                                                         Implantando roteamento na LAN, configurando redundância para espaços de
+                                                                                                                                                                                                                                         armazenamentos (RAID) e gerenciamento de discos                           109
+                                                                                       Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+      b. No Assistente, na primeira tela, pressione Avançar e, na segunda
+         tela, escolha a opção Disponíveis (à esquerda), o Disco 2. Pressione
+         o botão Adicionar para colocá-lo na área Selecionados. Pressione
+         Avançar para a próxima tela.
+
+
+
+
+110                                                            Sistema operacional I
+                                                                                                                                                                                                                                             c. Na opção Atribuir a seguinte letra da unidade, deixe como G e cli-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  que em Avançar.
+
+
+
+
+                                                                                                                                                                                                                                             d. Escolha a opção Formatar este volume com as seguintes configu-
+                                                                                                                                                                                                                                                  rações, escolhendo NTFS e atribuindo o nome de Dados3.
+                                                                                                                                                                                                                                                  Pressione Avançar e Concluir para finalizar.
+
+
+
+
+                                                                                                                                                                                                                                         Implantando roteamento na LAN, configurando redundância para espaços de
+                                                                                                                                                                                                                                         armazenamentos (RAID) e gerenciamento de discos                           111
+      e. Antes de ele criar o RAID 0, você será informado de que o disco
+
+
+
+
+                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+         será convertido de básico para dinâmico. Nessa mensagem de
+         alerta, clique na opção SIM.
+
+
+
+
+      f. Após o procedimento, o disco aparecerá na cor roxa, indicando
+         onde está sendo aplicado o RAID 0 com o disco de 1,46GB.
+
+
+
+
+3.1.2 RAID 1
+
+      O RAID 1 também é chamado de espelhamento, pois um dos discos
+serve de espelho para o outro. Toda ação que é realizada em um auto-
+maticamente é gravada na mesma posição no outro disco. Isso faz com
+que a performance de gravação seja um pouco prejudicada; no entanto,
+a leitura dos dados é acelerada, já que dois discos leem o mesmo arqui-
+vo. É uma forma segura, mas também a mais cara, sendo que apenas
+metade do espaço disponível é aproveitado. Portanto, se esse arranjo
+possuir dois discos de 500 MB, a unidade no final estará disponibilizan-
+do 500 MB (THOMPSON, 2017).
+
+
+112                                                        Sistema operacional I
+                                                                                                                                                                                                                                             Nesse tipo de RAID, se um HD falhar, a unidade controladora identi-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         fica o defeito e direciona os processos para o disco que não está com
+                                                                                                                                                                                                                                         defeito, até que a unidade seja substituída e a operação continue. A im-
+                                                                                                                                                                                                                                         plementação desse tipo de arranjo é extremamente fácil.
+
+                                                                                                                                                                                                                                                                             Figura 8 — Configuração do RAID 1
+
+
+                                                                                                                                                                                                                                                                                            RAID 1
+
+
+                                                                                                                                                                                                                                                                                    A1                  A1
+
+
+                                                                                                                                                                                                                                                                                    A2                  A2
+                                                                                                                                                                                                                                                                                    A3                  A3
+                                                                                                                                                                                                                                                                                    A4                  A4
+
+
+
+
+                                                                                                                                                                                                                                                                                   Disk 0             Disk 1
+
+
+                                                                                                                                                                                                                                         Fonte: adaptado de Wikimedia Commons.
+
+
+
+
+                                                                                                                                                                                                                                             Para montar um RAID 1, vamos utilizar o nosso DC-01. Abra o ge-
+                                                                                                                                                                                                                                         renciador do computador e escolha a opção de gerenciamento de
+                                                                                                                                                                                                                                         disco. Atuaremos com o disco 3 e o disco 4. Proceda conforme os
+                                                                                                                                                                                                                                         passos a seguir.
+
+                                                                                                                                                                                                                                             a. Com o gerenciador habilitado e os discos on-line e inicializados,
+                                                                                                                                                                                                                                                  clique no disco 3, pressione o botão da direita e escolha a opção
+                                                                                                                                                                                                                                                  Novo Volume Espelhado.
+
+
+
+
+                                                                                                                                                                                                                                         Implantando roteamento na LAN, configurando redundância para espaços de
+                                                                                                                                                                                                                                         armazenamentos (RAID) e gerenciamento de discos                           113
+114
+
+
+
+
+                                                                                                                     c. Na tela seguinte, será necessário atribuir uma letra.
+
+
+
+
+Sistema operacional I
+                                                                                                                                                                                                                            à esquerda, selecione o Disco 4 e, em seguida, pressione Avançar.   b. Na tela de boas-vindas, pressione o botão Avançar. Na sequência,
+
+
+
+
+   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             d. Para finalizar o processo, é necessário dar um nome para o volu-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  me, escolher o Sistema de Arquivo e concluir. O sistema apresen-
+                                                                                                                                                                                                                                                  tará uma nova unidade para o administrador.
+
+
+
+
+                                                                                                                                                                                                                                             e. Ao finalizar o RAID 1, o Windows mostra o volume espelhado.
+
+
+
+
+                                                                                                                                                                                                                                         Implantando roteamento na LAN, configurando redundância para espaços de
+                                                                                                                                                                                                                                         armazenamentos (RAID) e gerenciamento de discos                           115
+3.1.3 RAID 5
+
+
+
+
+                                                                                                         Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+      O RAID 5 normalmente é utilizado quando o desempenho não é críti-
+co, mas é importante maximizar o uso. Ele atua com paridades e distri-
+bui as tiras de paridade por todos os discos. Evita o estrangulamento de
+um disco com as paridades e os dados continuam sendo armazenados
+em todos os discos. Tem como vantagem o fato de que, quanto mais
+discos, mais rápido. Ele utiliza um método para criar um pequeno espa-
+ço no disco (chamado de paridade) que não aloca em um único disco. A
+figura 9 apresenta o arranjo do RAID 5 com paridade.
+
+                                    Figura 9 — Configuração do RAID 5
+
+
+                                                 RAID 5
+
+
+                        A1               A2                A3            AP
+
+
+                        B1               B2                BP            B3
+                        C1               CP                C2            C3
+                        DP               D1                D2            D3
+
+
+
+
+                      Disk 0            Disk 1            Disk 2        Disk 3
+
+
+Fonte: adaptado de Wikimedia Commons.
+
+
+
+
+      Para montar um RAID 5, vamos utilizar o nosso DC-01. Para que você
+consiga acompanhar a instalação, apague o RAID 0 e RAID 1. Abra o
+gerenciador do computador e escolha a opção de gerenciamento de
+disco. Atuaremos com os discos 2 , 3, e 4. Proceda conforme os passos
+a seguir.
+
+      a. Com o gerenciador habilitado, discos on-line e inicializado, clique
+         no disco 3 e pressione o botão da direita, escolhendo a opção
+         Novo volume RAID 5.
+
+
+116                                                                              Sistema operacional I
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             b. Na tela de Novo Volume RAID 5, à esquerda, escolha o Disco 2,
+                                                                                                                                                                                                                                                  Adicionar. Selecione o 3 e Adicionar. Em seguida, pressione Avançar.
+
+
+
+
+                                                                                                                                                                                                                                         Implantando roteamento na LAN, configurando redundância para espaços de
+                                                                                                                                                                                                                                         armazenamentos (RAID) e gerenciamento de discos                           117
+118
+
+
+
+
+                                                                                                              NTFS.
+
+
+
+
+                                                                                                                                                                                                                                   c. Na próxima tela, modifique a letra para L:\.
+
+
+
+
+Sistema operacional I
+                                                                                                                      d. Na tela de Formatar volume, deixe o Sistema de Arquivo como
+
+
+
+
+   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             e. O resultado dos discos combinados.
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         3.1.4 RAID híbridos: RAID 10 e RAID 50
+
+                                                                                                                                                                                                                                             É possível combinar configurações de RAID a fim de alcançar melhor
+                                                                                                                                                                                                                                         performance. As combinações mais comuns são RAID 0 com RAID 1,
+                                                                                                                                                                                                                                         denominado RAID 10; e a RAID 5 com RAID 0, o RAID 5+0 ou RAID 50.
+
+
+                                                                                                                                                                                                                                         3.1.4.1 RAID 10
+
+                                                                                                                                                                                                                                             Para esse arranjo, fazem-se necessários dois grupos de discos, com-
+                                                                                                                                                                                                                                         binando um grupo como RAID 1 e o resultado deste em um outro grupo,
+                                                                                                                                                                                                                                         como RAID 0. Parece ser complexo na escrita, mas se torna fácil quan-
+                                                                                                                                                                                                                                         do é exemplificado.
+
+                                                                                                                                                                                                                                                                           Figura 10 — Demonstração do RAID 10
+
+
+                                                                                                                                                                                                                                                                                                               RAID 10
+                                                                                                                                                                                                                                                                                                 RAID 0                        2 TB
+
+                                                                                                                                                                                                                                                              RAID 0                    RAID 1      1 TB                 RAID 1       1 TB
+                                                                                                                                                                                                                                             RAID
+                                                                                                                                                                                                                                                              Estender
+                                                                                                                                                                                                                                               10         +
+                                                                                                                                                                                                                                            Arranjar          RAID 1
+                                                                                                                                                                                                                                                          Espelhamento
+
+                                                                                                                                                                                                                                                                                       1TB            1TB                1TB           1TB
+
+                                                                                                                                                                                                                                         Implantando roteamento na LAN, configurando redundância para espaços de
+                                                                                                                                                                                                                                         armazenamentos (RAID) e gerenciamento de discos                                                     119
+    Observe que o RAID 10 fará a combinação do RAID 1 e 0. Nesse
+
+
+
+
+                                                                                                                Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+caso, temos fisicamente conectados ao nosso servidor quatro discos
+com 1 TB cada um. Na parte inferior, aplica-se o RAID 1, espelhamen-
+to, e, como não queremos perder a informação, caso um disco falhe, o
+outro assumirá até que o disco defeituoso seja substituído. Mas temos
+na figura 10 dois discos no RAID 1 com 1 TB, e a saída do RAID como
+1 TB. Subindo o nível, podemos combinar os dois RAIDs 1 com o RAID 0.
+Nesse caso, o RAID 0 combinará (somará) os discos do nível inferior e
+mostrará um único disco. Na figura 10, temos 1 TB de um grupo de dis-
+cos e outro 1 TB do segundo grupo de discos. Portanto, estendendo o
+volume, teremos como resultado um único disco lógico com 2 TB.
+
+   Com esse RAID 10, temos um resultado muito bom para leitura e
+gravação de dados, podendo tolerar as falhas de dois ou mais discos
+(dependendo da quantidade de discos colocadas no arranjo), e, como
+desvantagem, apenas a metade dos discos estará disponível para o
+administrador.
+
+3.1.4.2 RAID 50
+
+   No RAID 50, temos a combinação da paridade de discos com o vo-
+lume estendido. A vantagem desse arranjo está na maior proteção de
+dados, o número de falhas do arranjo pode ser mais bem controlado,
+além de melhor desempenho de gravação. Para que o RAID 50 funcione,
+são necessários dois grupos de três discos. Vamos entender melhor o
+arranjo na figura 11.
+
+                           Figura 11 — Demonstração do RAID 50
+
+                                                                 RAID 50
+                                                                  8 TB
+                                               RAID 0                                  8 TB
+
+                RAID 0           RAID 5                 4 TB                  RAID 5                 4 TB
+  RAID
+                Estender
+      50    +
+ Arranjar       RAID 5
+                Paridade
+
+                               2 TB         2 TB          2 TB              2 TB          2 TB         2 TB
+
+                              A paridade nos discos está representada pela cor laranja (uma fração do disco).
+
+120                                                                                     Sistema operacional I
+                                                                                                                                                                                                                                            Na parte inferior da figura 11, temos a combinação de três discos de
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         2 TB cada. Na cor laranja, está representada a paridade do disco (fração
+                                                                                                                                                                                                                                         destinada à redundância). Note que, nesse exemplo, se somarmos os
+                                                                                                                                                                                                                                         discos, temos 6 TB; entretanto, por causa da paridade, perdemos 2 TB.
+                                                                                                                                                                                                                                         Após aplicar o RAID 5 nos três discos, teremos disponíveis nesse grupo
+                                                                                                                                                                                                                                         4 TB. Subindo o nível, podemos combinar esses grupos em um único
+                                                                                                                                                                                                                                         RAID, o RAID 0, e assim estender o volume. Nesse nosso caso, temos
+                                                                                                                                                                                                                                         4 TB + 4 TB, totalizando um único volume de 8 TB.
+
+                                                                                                                                                                                                                                            Com esse arranjo (RAID 50), temos a excelência da paridade distribuí­
+                                                                                                                                                                                                                                         da nas unidades: bom desempenho de leitura com melhor desempenho
+                                                                                                                                                                                                                                         de gravação do que somente o RAID 5. Esse sistema é tolerante à falha
+                                                                                                                                                                                                                                         e possibilita a recuperação de dados. Deve ser aplicado em ambientes
+                                                                                                                                                                                                                                         de alta performance, como em servidores de arquivo, bancos de dados,
+                                                                                                                                                                                                                                         entre outros que necessitam de requisição do usuário.
+
+
+                                                                                                                                                                                                                                         Considerações finais
+                                                                                                                                                                                                                                            Este capítulo mostrou a importância de um roteamento eficiente.
+                                                                                                                                                                                                                                         Entendemos como funciona um roteador ligado a outro e outro... Mas o
+                                                                                                                                                                                                                                         ambiente de roteamento é um item à parte, pois é um universo de infor-
+                                                                                                                                                                                                                                         mação e configuração. No mercado, existem certificações específicas
+                                                                                                                                                                                                                                         dos grandes fabricantes de roteadores.
+
+                                                                                                                                                                                                                                            Em relação ao armazenamento de dados, o planejamento de discos
+                                                                                                                                                                                                                                         e arranjo de volumes é extremamente importante, pois cada tipo de
+                                                                                                                                                                                                                                         RAID tem suas vantagens e desvantagens. Tudo também dependerá da
+                                                                                                                                                                                                                                         controladora escolhida, tipos de discos e configuração para chegar ao
+                                                                                                                                                                                                                                         desempenho desejado.
+
+
+
+
+                                                                                                                                                                                                                                         Implantando roteamento na LAN, configurando redundância para espaços de
+                                                                                                                                                                                                                                         armazenamentos (RAID) e gerenciamento de discos                           121
+Referências
+
+
+
+
+                                                                                  Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+MICROSOFT. Visão geral do ReFS (Sistema de Arquivos Resiliente). 2019.
+Disponível em: https://docs.microsoft.com/pt-br/windows-server/storage/
+refs/refs-overview. Acesso em: 5 mar. 2020.
+
+THOMPSON, M. A. Microsoft Windows Server 2016: fundamentos. São Paulo:
+Érica, 2017.
+
+
+
+
+122                                                       Sistema operacional I
+

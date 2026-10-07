@@ -1,0 +1,596 @@
+                                                                                                                                                                                                                                                                                                 Capítulo 3
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                                       Modelagem
+                                                                                                                                                                                                                                                                        relacional
+
+
+
+                                                                                                                                                                                                                                            Após a definição de um modelo conceitual, frequentemente represen-
+                                                                                                                                                                                                                                         tado pelo diagrama entidade-relacionamento (DER), que descreve as enti-
+                                                                                                                                                                                                                                         dades e seus relacionamento de maneira abstrata, o próximo passo é a
+                                                                                                                                                                                                                                         transição para o projeto lógico de banco de dados. Nessa etapa, as enti-
+                                                                                                                                                                                                                                         dades identificadas no DER são organizadas em tabelas, e os relaciona-
+                                                                                                                                                                                                                                         mentos entre elas são estruturados de maneira a possibilitar a sua
+                                                                                                                                                                                                                                         implementação em um banco de dados relacional.
+
+                                                                                                                                                                                                                                            Nesse capítulo, será abordado o modelo relacional com detalhes sobre
+                                                                                                                                                                                                                                         como as entidades e relacionamento do DER são traduzidas em tabelas.
+                                                                                                                                                                                                                                         Em seguida, serão abordadas as restrições do modelo relacional, as quais
+                                                                                                                                                                                                                                         garantem a consistência dos dados no banco de dados. Por fim, será
+                                                                                                                                                                                                                                         descrito o processo de mapeamento do DER para o modelo relacional,
+                                                                                                                                                                                                                                         no qual as entidades e os relacionamentos do esquema conceitual são
+                                                                                                                                                                                                                                         convertidos para uma estrutura relacional adequada.
+
+                                                                                                                                                                                                                                                                                                               43
+1 O modelo relacional
+     Segundo Elmasri (2018), o modelo de dados relacional, criado por
+Edgar Codd, da IBM Research, em 1970, está baseado no princípio de
+que um banco de dados pode ser representado por uma coleção de rela-
+ções matemáticas, as quais são representadas de maneira uniforme atra-
+vés de tabelas de valores. Esses valores podem ser interpretados como
+um fato que descreve uma entidade ou uma instância de relacionamento.
+
+     Uma tabela, ou relação, é composta por colunas e linhas, onde as
+colunas são chamadas atributos e às linhas da tabela dá-se o nome de
+tuplas. Cada coluna em uma tabela é definida por um domínio que res-
+tringe os valores que podem ser armazenados naquela coluna. Como
+exemplo, temos a tabela 1 com as seguintes colunas: numat, nome, sexo,
+dtnasc e salário. Observe, cada linha da tabela Funcionário é uma tupla.
+
+                                 Tabela 1 – Tabela Funcionário
+
+
+       numat              nome                  sexo             dtnasc        salário
+
+
+ 235           João da Silva                M            14/04/1980       R$ 2.823,92
+
+
+ 121           Edna Martins                 F            21/06/1977       R$ 2.841,71
+
+
+ 345           Pedro Coutinho               M            29/03/1989       R$ 1.460,66
+
+
+
+
+1.1 Atributos, domínios e formato de dado
+
+     Os atributos representam as colunas de uma tabela (Silberschatz, 2020)
+e são responsáveis por armazenar as características das entidades repre-
+sentadas pelas tuplas. Cada atributo possui um tipo de dados associado,
+como inteiro, string ou data, e um domínio para aquele atributo.
+
+
+
+
+44                                                                             Banco de dados
+    Formalmente, um domínio D é um conjunto de valores atômicos. Por
+atômico, entende-se que cada valor do domínio seja indivisível. Alguns
+exemplos de domínio são:
+
+    • Idade: é um atributo do tipo inteiro que inclui valores de 0 a 120,
+         indicando a faixa etária de uma pessoa.
+
+    • Idade_funcionario: idades possíveis para funcionários de uma
+         empresa; cada um deve ser um valor entre 18 e 70 anos.
+
+    • Notas_bimestrais: valores de notas escolares que deve variar de
+         0 a 10.
+
+    • CEP: é o código de endereço postal do Brasil formado por 8 dígitos.
+
+    Um formato de dado é também especificado para cada domínio. Por
+exemplo, o formato para o domínio CEP pode ser declarado com uma
+cadeia de caracteres da forma ddddd-ddd, onde cada d é um dígito.
+
+
+1.2 Relações e tuplas
+
+    Um esquema de relação R, representado por R(A1, A2, …, An) é formado
+pelo nome de uma relação R e uma lista de atributos A1, A2, …, An (Elmasri,
+2018). Cada atributo Ai é o nome de um papel desempenhado por algum
+domínio D no esquema de relação R. D é dito o domínio de Ai e é repre-
+sentado por dom(Ai). Um esquema de relação é usado para descrever
+uma relação; R é dito o nome dessa relação. O grau de uma relação é o
+número de atributos n de seu esquema de relação. Como exemplo, con-
+sidere o seguinte esquema de relação para uma relação de grau 4, que
+descreve o funcionário de uma empresa:
+
+    DEPARTAMENTO(nomeDep, numDep, nchefe, dtIniChef)
+
+    Para esse esquema de relação, DEPARTAMENTO é o nome da relação,
+que possui quatro atributos: nomeDep, numDep, nchefe e dtIniChef.
+
+
+
+Modelagem relacional                                                     45
+     O termo instância da relação refere-se a uma instância específica da
+relação, ou seja, que contém um conjunto específico de linhas (Silbers-
+chatz, 2020). Segundo Elmasri (2018), uma relação (ou instância da rela-
+ção) r do esquema de relação R(A1, A2, …, An), também representado por
+r(R), é o conjunto de tuplas r = {t1, t2, …, tm}.
+
+
+             IMPORTANTE
+
+            Cada tupla t é uma lista ordenada de n valores t = <v1, v2, …, vn>, onde cada
+            valor vi, 1 ≤ i ≤ n, é elemento do domínio dom(Ai) ou um valor especial
+            nulo, representado por -.
+
+
+
+
+     Para obter o valor vi, utiliza-se t[Ai] ou t.Ai. A notação t[Au, Aw …, Az] indica
+o conjunto de valores <vu, vw, …, vz> de t correspondentes a Au, Aw …, Az. A
+tabela 2 ilustra um exemplo de uma relação DEPARTAMENTO, que corres-
+ponde ao esquema DEPARTAMENTO especificado anteriormente.
+
+                              Tabela 2 – Tabela DEPARTAMENTO
+
+
+                nomeDep              numDep          nchefe              dtinic
+
+
+        Pesquisa                 5                2345            22/05/2010
+
+
+        Desenvolvimento          4                9776            02/01/2016
+
+
+        Administração            1                9896            16/06/2018
+
+
+        Contas a Pagar           3                1123            15/02/2019
+
+
+
+     Considere a tupla t1 = <’Pesquisa’, 5, 2345, 22/05/2010>, e para obter
+o nome do departamento dessa tupla utilize t1[nomeDep] = <’Pesquisa’>.
+Para obter o nome do departamento e o número do departamento uti-
+lize t1[nomeDep, numDep] = <’Pesquisa’, 5>.
+
+     É possível que muitos atributos tenham o mesmo domínio, entretanto
+cada atributo indica um papel diferente ou interpretação, para o domínio.
+
+
+46                                                                                Banco de dados
+Por exemplo, na relação FUNCIONÁRIO, é possível ter um atributo numat,
+e um outro atributo, por exemplo, nsuper, os quais possuem o mesmo
+domínio. Entretanto, em numat, o domínio exerce o papel do “número de
+matrícula do empregado”, enquanto em nsuper, do “número de matrícula
+do supervisor do empregado”. Ou seja, o funcionário tem o seu número
+de matrícula e tem um relacionamento recursivo com o seu supervisor
+que também é uma instância de funcionário.
+
+
+1.3 Características de uma relação
+
+    Uma das principais características do modelo relacional é a não orde-
+nação das tuplas. No modelo relacional os dados são armazenados em
+um conjunto não ordenado de tuplas. Isso significa que não há garantia
+de que as tuplas sejam armazenadas em uma ordem específica dentro da
+tabela, o que é uma característica derivada da teoria de conjuntos, onde a
+ordem dos elementos não é relevante. Além disso, não há duplicação de
+tuplas em uma tabela relacional. Cada tupla deve ser única dentro de sua
+relação, o que é uma exigência fundamental do modelo (Elmasri, 2018).
+
+    Os atributos de cada tupla são ordenados, ou seja, cada posição de um
+atributo dentro da tupla é fixada, e essa ordem é importante para o pro-
+cesso de definição e manipulação dos dados. No entanto, cada valor de
+atributo deve ser atômico e monovalorado. Por exemplo, o valor de um
+campo que representa um nome não pode ser uma lista, mas sim um único
+valor, como “João da Silva”. Já a característica de monovalor implica que
+cada atributo de uma tupla deve ter apenas um valor por vez, o que signi-
+fica que campos como listas não são permitidos dentro da tupla.
+
+
+1.4 Atributos chave da relação
+
+    Como mencionado anteriormente, uma relação é definida por um con-
+junto de tuplas. Assim, todas as tuplas de uma relação devem também
+ser distintas. Isto implica que duas tuplas quaisquer não podem possuir
+
+Modelagem relacional                                                    47
+a mesma combinação de valores para todos os atributos delas. Ou seja,
+os valores dos atributos de uma tupla devem ser tais que possam iden-
+tificar a tupla de maneira única.
+
+     Uma superchave (SK) é um conjunto de um ou mais atributos que per-
+mitem identificar de forma única uma tupla na relação (Silberschatz,
+2020). Isto é, uma superchave é um conjunto, tal que, para quaisquer
+duas tuplas t1 e t2, em uma instância r de R, tem-se a restrição que t1[SK]
+≠ t2[SK]. Toda relação tem pelo menos uma superchave, que é o con-
+junto de todos os atributos (Takai, 2005).
+
+     Contudo, alguns atributos da superchave podem ser redundantes, de
+maneira que um conceito mais útil é o conceito de chave. Uma chave é
+uma superchave mínima, ou seja, ao remover-se um atributo, perde-se a
+unicidade. O termo unicidade indica que nenhum valor da chave pode se
+repetir na relação. Cada uma das possíveis chaves de uma relação é
+denominada de chave candidata.
+
+     Uma chave primária (do inglês, PK – primary key) é uma chave candi-
+data escolhida para identificar de forma única cada tupla da relação. Por
+convenção, os atributos da chave primária são sublinhados no esquema
+relacional. Exemplo: FUNCIONÁRIO (numat, nome, sexo, dtnasc e salário).
+Na relação FUNCIONÁRIO, a chave primária é o “numat” e deve estar sub-
+linhada. As outras chaves candidatas são denominadas chaves únicas (do
+inglês, UK – Unique Key), e não são sublinhadas (Elmasri, 2018).
+
+     Uma chave estrangeira (do inglês, FK – Foreign Key) é um atributo, ou
+conjunto de atributos, em uma relação que faz referência à chave primá-
+ria de outra relação. Dessa forma, estabelece-se um relacionamento entre
+as tabelas. De maneira formal, um conjunto de atributos FK em um
+esquema de relação R1 é uma chave estrangeira de R1 se ele satisfaz
+duas regras:
+
+
+
+
+48                                                              Banco de dados
+    1. Os atributos de FK possuem o mesmo domínio dos atributos PK
+         da chave primária de um esquema de relação R2; os atributos FK
+         se referem à relação R2.
+
+    2. Um valor de FK em uma tupla t1 de R1 ocorre ou como um valor de
+         PK para alguma tupla de t2 de R2 ou é nulo. No primeiro caso, tem-
+         -se t1[FK] = t2[PK], que significa que a tupla t1 se refere à tupla t2.
+
+
+2 Restrições do modelo relacional
+    As restrições do modelo relacional são regras que garantem a con-
+sistência e a validade dos dados de um banco de dados relacional. Elas
+evitam que informações incorretas sejam inseridas, mantendo a consis-
+tência e a integridade do banco de dados. Segundo Elmasri (2018), as
+restrições são as seguintes:
+
+    • Restrições de domínio: restrições de domínio especificam que o
+         valor de cada atributo A deve ser um valor atômico pertencente ao
+         domínio de A.
+
+    • Restrições de valores nulos sobre atributos: outra restrição sobre
+         os atributos especifica se valores nulos são permitidos ou não. Por
+         exemplo, o nome do funcionário não pode ser nulo, logo, define-se
+         uma restrição de valor nulo sobre o atributo nome do FUNCIONÁRIO.
+
+    • Restrição de integridade de entidade: restrição que estabelece
+         que nenhum valor de chave primária pode ser nulo. O motivo é que
+         uma chave primária é utilizada para identificar uma tupla de maneira
+         única na relação, caso existam duas ou mais tuplas com valores
+         nulos nas chaves primárias, então não há como diferenciar uma
+         tupla de outra.
+
+    • Restrições de chave: a restrição de chave exige que toda relação
+         tenha uma chave primária cujos valores sejam únicos e não nulos.
+
+
+
+Modelagem relacional                                                               49
+       Isto garante que cada tupla seja identificada de forma única na
+       relação.
+
+     • Restrição de integridade referencial: é uma restrição utilizada
+       para manter a consistência entre duas relações (Takai, 2005). Infor-
+       malmente, a restrição de integridade referencial estabelece que
+       um valor de atributo que faz referência a uma outra tupla deve se
+       referir a uma tupla existente nesta relação. Por exemplo, no banco
+       de dados empresa, o atributo ndepto de FUNCIONÁRIO representa
+       o número do departamento para o qual cada funcionário trabalha.
+       Portanto, o seu valor em toda tupla de FUNCIONÁRIO dever ser
+       igual ao valor de numdep de alguma tupla da relação
+       DEPARTAMENTO.
+
+
+3 Mapeamento do DER para o modelo
+relacional
+     De acordo com Elmasri (2018), as etapas para projetar um esquema
+de banco de dados relacional (um projeto lógico) tendo como base o
+modelo conceitual (DER), seguem os seguintes passos:
+
+       Passo 1: para cada conjunto de entidades E no DER, crie uma rela-
+       ção com o mesmo nome de E, e inclua todos os atributos simples
+       de E. Para um atributo composto, inclua somente os componentes
+       simples que compõem o atributo composto. Escolha como chave
+       primária um dos atributos chave de E. Caso a chave seja composta,
+       o conjunto de atributos simples formará a chave primária.
+
+       Passo 2: para cada conjunto de entidades fraca F do DER que tem
+       um conjunto de entidades proprietárias E, crie uma relação e inclua
+       todos os atributos simples de F, e ainda, inclua somente os atribu-
+       tos simples que compõem o atributo composto. Incluir como a
+       chave estrangeira a chave primária da relação que corresponde ao
+
+
+
+50                                                              Banco de dados
+         conjunto de entidades proprietárias E. A chave primária é a com-
+         binação da chave estrangeira com a chave parcial de F.
+
+         Passo 3: para cada tipo de relacionamento binário 1:1, identifique
+         as relações S e T que participam em R. Escolha uma das relações,
+         por exemplo S, e inclua como chave estrangeira de S a chave pri-
+         mária de T. Escolha o tipo de entidade com participação total em
+         R como sendo a relação S. Inclua todos os atributos simples (ou
+         os componentes simples de atributos compostos) do tipo de rela-
+         cionamento 1:1, R, como atributo de S.
+
+         Passo 4: para cada tipo de relacionamento 1:N entre S e T que par-
+         ticipam de R, identifique a relação S que representa o lado N do
+         tipo de relacionamento. Inclua como chave estrangeira em S a
+         chave primária de T. Inclua como chave estrangeira em S a chave
+         primária de T.
+
+         Passo 5: para cada tipo de relacionamento M:N entre as relações
+         S e T, crie uma relação R para representar o tipo de relacionamento
+         M:N. Inclua como chave estrangeira em R as chaves primárias de
+         S e T. Inclua também qualquer atributo simples do tipo relaciona-
+         mento M:N (ou componente simples dos atributos compostos)
+         como atributos de R.
+
+         Passo 6: para cada atributo multivalorado A, crie uma nova rela-
+         ção R. Inclua o atributo correspondente ao atributo multivalorado
+         A em R. Inclua como chave estrangeira a chave primária K do tipo
+         de entidade/relacionamento que possui A. Se o atributo for com-
+         posto, deve-se atribuir seus componentes simples.
+
+    Para entender o mapeamento do modelo ER para o modelo relacio-
+nal, considere o exemplo de uma empresa ilustrado na figura 1. Seguindo
+os passos do mapeamento, obtém-se:
+
+
+
+
+Modelagem relacional                                                      51
+     Passo 1: entidades fortes
+
+       FUNCIONARIO (matrícula, pnome, mnome, snome, CPF, dtNasc,
+       endereco, salario, sexo)
+
+       DEPARTAMENTO (numdep, nome)
+
+       PROJETO (nproj, nome, local)
+
+     Passo 2: entidades fracas
+
+       DEPENDENTE(matrícula(*), nome, dtnasc, sexo, tipo)
+
+       (*) chave estrangeira
+
+     Passo 3: relacionamento 1:1
+
+       DEPARTAMENTO (numdep, nome, nchefe(*), dtinichefia)
+
+     Passo 4: relacionamento 1:N
+
+       FUNCIONARIO (matrícula, pnome, mnome, snome, CPF, dtNasc,
+       endereco, salario, sexo,
+
+       Numdep (*), nsuper(*))
+
+       PROJETO (nproj, nome, local, numdep(*))
+
+     Passo 5: relacionamento M:N
+
+       TRABALHA_EM(matrícula(*), nproj(*), horas)
+
+     Passo 6: atributos multivalorados
+
+       LOCAL_DEPTO (numdep, local)
+
+       CELULAR_FUNCIONARIO (matrícula, celular)
+
+
+
+
+52                                                          Banco de dados
+                                                   Figura 1 – DER empresa
+
+
+                                                                         mnome     snome
+                                                      pnome
+                                                                                                   dtNasc
+                                                                                   celular
+                                                                          nome                                endereço
+     sexo            tipo
+                                                             matrícula                                                    1
+                                                                                                            supervisor
+     Dependente                         possui                                     Funcionário
+                            N                           1                                                             supervisiona
+                                                                 CPF
+                                                                                                            subordinado    N
+     nome                                               N                        sexo
+                dtNasc                   Trabalha                                                 salário
+                                1                                                            M
+                                           para
+                                                                                                             horas
+                                                     dtini                         Trabalha em
+    nome        local
+                                         chefia         1                                    N
+                                    1                                                                       nome
+      Departamento                                                   local
+                                1                      N                                Projeto               nproj
+                                        controla
+       numdep
+
+
+
+Fonte: adaptado de Elmasri (2018).
+
+
+
+
+            Passo 7: mapeamento de tipo de relacionamento n-ário. Para cada
+            tipo de relacionamento n-ário, n>2, crie uma nova relação R para
+            representar o relacionamento. Inclua como chave estrangeira em
+            R a chave primária de cada relação participante do relacionamento.
+            Inclua também qualquer atributo simples do tipo de relacionamento
+            n-ário (ou componente simples do atributo composto) como atri-
+            buto de R. A chave primária de R é, normalmente, a combinação
+            de todas as chaves estrangeiras que referenciam as relações que
+            representam os tipos de entidades participantes.
+
+     Como exemplo, observe o tipo de relacionamento ternário na figura
+2. O mapeamento do DER para o modelo relacional é a seguinte: FORNE-
+CEDOR (fnome), PEÇA (num), PROJETO (pnome), FORNECE (fnome, num,
+pnome, quantidade).
+
+
+
+
+Modelagem relacional                                                                                                                 53
+                                     Figura 2 – Relacionamento ternário
+
+
+
+                                              Peça                 num
+
+         fnome
+
+                                                                                    pnome
+
+
+       Fornecedor                            Fornece                      Projeto
+
+
+
+                                           quantidade
+
+
+Fonte: adaptado de Elmasri (2018).
+
+
+
+
+     Para o mapeamento do modelo entidade relacionamento estendido
+para o relacional, deve-se repetir todos os passos do mapeamento do
+modelo ER para o relacional (passos 1 a 7) vistos até o momento e, ainda,
+deve-se acrescentar o passo a seguir. Denota-se Atr(R) como sendo os
+atributos da relação R. Utilize PK(R) para denotar a chave primária de R.
+
+          Passo 8: mapeamento de especialização ou generalização. Con-
+          verta cada especialização com m subclasses {S1, S2, …, Sm} e super-
+          classe generalizada C, em que os atributos de C são {k, a1, a2 … an}
+          e k é a chave primária para os esquemas da relação usando as
+          seguintes opções:
+
+     • Opção 8A: múltiplas relações – superclasses e subclasses. Crie
+          uma relação L para C com atributos Atr(L) = {k, a1, a2, …, an} e PK(L)
+          = k. Crie uma relação Li para cada subclasse Si, 1 ≤ i ≤ m, com os
+          atributos Atr(Li) = {k} ⋃ {atributos de Si} e PK(Li) = k.
+
+     • Opção 8B: múltiplas relações – apenas relações de subclasses. Crie
+          uma relação L, para cada subclasse Si, 1 ≤ i ≤ m, com os atributos
+          Atr(Li) = {atributos de Si} ⋃ {k, a1, a2 … an} e PK(Li) = k. Ideal para espe-
+          cializações cujas subclasses são disjuntas e totais (toda entidade
+          em uma superclasse deve pertencer a, pelo menos, uma subclasse).
+
+
+54                                                                                  Banco de dados
+     • Opção 8C: relação única com um atributo de tipo. Crie uma única
+          relação L com os atributos Atr(L) = {k, a1, a2 … an} ⋃ {atributos de
+          S1} ⋃ ... ⋃ {atributos de Sm} ⋃ { t } e chave PK(L) = k. Essa opção é
+          adequada para especializações cujas subclasses são disjuntas e
+          t é um atributo indicativo da classe (indica a subclasse a que per-
+          tence cada entidade).
+
+     • Opção 8D: relação isolada com atributos de múltiplos tipos. Crie
+          uma relação L com Atr(L) = {k, a1, a2 … an} È {atributos de S1} ⋃ ...
+          ⋃ {atributos de Sm} ⋃ {t1, t2, …, tm} e chave PK(L) = k. Essa opção é
+          para especializações cujas subclasses são sobrepostas (não dis-
+          juntas) e cada ti, 1 ≤ i ≤ m, é um valor lógico indicando se a tupla
+          pertence ou não a subclasse Si.
+
+                                     Figura 3 – Generalização e especialização
+
+
+
+
+                            nome                                        CPF
+
+
+
+
+                      matrícula                      Funcionário
+
+
+
+                                                           d
+
+                                           U              U          U                  tipo
+        idioma                                   grau
+
+
+
+                   Secretário                           Técnico                  Engenheiro
+
+
+
+Fonte: adaptado de Elmasri (2018).
+
+
+
+
+     Considere como exemplo o DER estendido da figura 3. Utilizando o
+passo 8A, obtém-se as seguintes relações:
+
+
+
+Modelagem relacional                                                                           55
+     FUNCIONÁRIO (matrícula, nome, CPF)
+
+     SECRETÁRIO (matrícula, idioma)
+
+     TÉCNICO (matrícula, grau)
+
+     ENGENHEIRO (matrícula, tipo)
+
+
+Considerações finais
+     Este capítulo apresentou, inicialmente, o projeto lógico, que é uma
+etapa do projeto de banco de dados em que se obtém um modelo lógico
+a partir do modelo relacional.
+
+     Na sequência, o texto introduziu o modelo relacional que é um modelo
+lógico obtido a partir do mapeamento do DER. Para isso, definiu-se rela-
+ção ou tabela, atributos e domínio de atributos, tuplas, superchaves, cha-
+ves candidatas e chaves primárias.
+
+     Além disso, mostrou as diversas restrições que podem ocorrer no
+modelo relacional. Essas restrições são importantes para o projeto de
+banco de dados, pois garantem a integridade e consistência do banco
+de dados.
+
+     Ao final, o texto descreve uma sequência de passos para realizar o
+mapeamento do diagrama entidade relacionamento para o modelo
+relacional.
+
+
+Referências
+ELMASRI, Ramez; NAVATHE, Shamkant B. Sistemas de banco de dados. 7. ed.
+São Paulo: Pearson, 2018.
+
+RAMAKRISHNAN, Raghu; GEHRKE, Johannes. Sistema de gerenciamento de
+banco de dados. 3. ed. Porto Alegre: AMGH, 2011.
+
+
+
+
+56                                                             Banco de dados
+SILBERCHATZ, Abraham; KORTH, Henry F; SUDARSHAN, S. Sistema de Banco
+de Dados. 7. ed. Rio de Janeiro: GEN LTC, 2020.
+
+TAKAI, Osvaldo Kotaro; ITALIANO, Isabel Cristina; FERREIRA, João Eduardo.
+Introdução a banco de dados. São Paulo: Universidade de São Paulo, 2005.
+E-book. Disponível em: https://www.ime.usp.br/~jef/apostila.pdf. Acesso em: 25
+jan. 2025.
+
+
+
+
+Modelagem relacional                                                        57
+

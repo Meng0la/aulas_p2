@@ -1,0 +1,506 @@
+                                                                                                                                                                                                                                                                                                 Capítulo 6
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             Rede de impressão
+
+
+
+                                                                                                                                                                                                                                            Você já parou para pensar no quanto imprimimos em uma empre­
+                                                                                                                                                                                                                                         sa? E mais agravante: no custo de impressão por página e no quanto
+                                                                                                                                                                                                                                         desperdiçamos com impressões erradas? É custo atrás de custo. Além
+                                                                                                                                                                                                                                         disso, algumas empresas usam impressoras caseiras em ambientes de
+                                                                                                                                                                                                                                         produção, o que traz diversos encargos, especialmente para a equipe
+                                                                                                                                                                                                                                         de TI, que precisa checar como ligar essas impressoras na rede, como
+                                                                                                                                                                                                                                         repor os cartuchos, como calcular o custo de manutenção, entre outras
+                                                                                                                                                                                                                                         tarefas. Como solução para esses casos, neste capítulo, tratamos do
+                                                                                                                                                                                                                                         serviço de impressão, com o intuito de reduzir custos e utilizar impres­
+                                                                                                                                                                                                                                         sora em rede para racionalizar o trabalho.
+
+
+                                                                                                                                                                                                                                         1 Conceitos de servidor de impressão
+                                                                                                                                                                                                                                            Você já deve ter tido algum contato com impressoras de alimentação
+                                                                                                                                                                                                                                         contínua (Bulkink) — aquelas que têm o tanque de tinta do lado de fora
+                                                                                                                                                                                                                                         —, a laser ou matriciais. Sabe o que elas têm em comum? Instalação,
+                                                                                                                                                                                                                                         compartilhamento e impressão.
+
+                                                                                                                                                                                                                                                                                                              123
+      Do ponto de vista da equipe de TI, a primeira parte é a mais impor­
+
+
+
+
+                                                                                             Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+tante: como fazer uma instalação correta, de modo que diversos usuá­
+rios possam utilizar a mesma impressora? A seguir, demonstramos a
+implantação do servidor de impressão, destacando suas principais ca­
+racterísticas de manuseio e implementação.
+
+
+1.1 Servidor de impressão
+
+      O servidor de impressão permite receber diversas requisições de
+impressão de outros computadores no domínio, gerenciar, monitorar,
+relatar erros e encaminhar a solicitação de impressão até a impressora
+destino. Além do gerenciamento, permite também compartilhar drives
+atualizados da impressora. Com essa opção ativa, as impressões serão
+centralizadas em um local, no qual o Windows Server 2019 definirá a
+ordem e o local da impressão (MICROSOFT, 2017).
+
+      Algumas vantagens de se instalar um servidor de impressão:
+
+      • Centralização do serviço: todos os processos e serviços de im­
+         pressão da rede passam por um servidor. Os drives das impres­
+         soras serão instalados nesse equipamento.
+
+      • Monitoramento: acompanhamento das impressões, criando logs
+         para verificações futuras.
+
+      • Gerenciamento da impressão: verificação de detalhes da impres­
+         são, como erros, permissão, manipulação da fila de impressão.
+
+
+            PARA SABER MAIS
+
+            Quer administrar melhor uma impressora? No blog de tecnologia Huttel.
+            com.br, você encontra o artigo “Salvar log de impressões do Windows
+            Server 2012 em banco de dados MySQL”, no qual você aprende como
+            administrar mais de uma impressora (SALVAR..., 2016).
+
+                                                                                      
+
+124                                                                  Sistema operacional I
+                                                                                                                                                                                                                                         1.2 Spooler de impressão
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             Para que um arquivo seja impresso, obrigatoriamente, passará pelo
+                                                                                                                                                                                                                                         spooler de impressão. O acrônimo spool vem do inglês “simultaneous
+                                                                                                                                                                                                                                         peripheral operations online”, cuja tradução seria “operações periféricas
+                                                                                                                                                                                                                                         simultâneas on-line”. O spool foi criado com o objetivo de permitir a
+                                                                                                                                                                                                                                         transmissão de dados entre equipamentos de forma multitarefa, a fim
+                                                                                                                                                                                                                                         de não criar um gargalo no equipamento de origem, deixando-o livre
+                                                                                                                                                                                                                                         para atuar em outros processos e reduzindo a espera, enquanto, em
+                                                                                                                                                                                                                                         paralelo, a impressão é composta.
+
+                                                                                                                                                                                                                                             O spooler de impressão cria uma hierarquia para a impressão se­
+                                                                                                                                                                                                                                         quencial, visto que, ao imprimir um documento, a impressora requer um
+                                                                                                                                                                                                                                         tempo predeterminados para executar a ação.
+
+                                                                                                                                                                                                                                             Confira, na figura 1, um exemplo de especificações de uma impres­
+                                                                                                                                                                                                                                         sora a laser monocromática.
+
+                                                                                                                                                                                                                                                             Figura 1 — Detalhes de uma impressora a laser
+
+
+
+                                                                                                                                                                                                                                                             Especificações            Detalhes
+                                                                                                                                                                                                                                                             Velocidade de impressão   – 16 páginas A4 por minuto (ppm).
+                                                                                                                                                                                                                                                                                       – Primeira página impressa em 8 segundos.
+
+                                                                                                                                                                                                                                                             Resolução de impressão    – Modo 600: essa configuração oferece
+                                                                                                                                                                                                                                                                                       qualidade de impressão efetiva de 600 dpi.
+                                                                                                                                                                                                                                                                                       – Modo 1.200: essa configuração oferece
+                                                                                                                                                                                                                                                                                       qualidade de impressão efetiva de 1.200 dpi.
+                                                                                                                                                                                                                                                                                       – Modo economia: utiliza-se menos toner
+                                                                                                                                                                                                                                                                                       para imprimir neste modo. Esse tipo de
+                                                                                                                                                                                                                                                                                       impressão é útil para imprimir rascunhos.
+                                                                                                                                                                                                                                                                                       É possível ativar essa opção independente-
+                                                                                                                                                                                                                                                                                       mente das outras configurações de qualidade
+                                                                                                                                                                                                                                                                                       de impressão.
+                                                                                                                                                                                                                                                             Ciclo de serviço          – Máximo de 8.000 páginas de uma face por mês.
+                                                                                                                                                                                                                                                                                       – Média de 1.000 páginas de uma face por mês.
+
+
+
+
+                                                                                                                                                                                                                                         Rede de impressão                                                                             125
+      À direita da figura 1, note que a primeira impressão é iniciada após 8
+
+
+
+
+                                                                                      Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+segundos. Nesse caso, o spool funciona muito bem, pois, com compu­
+tadores cada vez mais rápidos, ter que aguardar 8 segundos para conti­
+nuar o processamento seria um tempo realmente muito longo. O spool,
+então, libera o equipamento para executar outras tarefas, enquanto fica
+montando o processo da impressão em segundo plano. Ao trabalhar
+em segundo plano, é utilizado um espaço no disco rígido para armaze­
+nar a fila de impressão, que atua sob demanda, um a um.
+
+      E se considerarmos uma rede de médio porte, na qual a impressora
+é utilizada por muitos usuários? Nessas condições, teremos uma fila de
+impressão e precisaremos de um servidor para administrar a impres­
+são. E aí vem um problema: quantas vezes nos deparamos com a situa­
+ção de a impressora imprimir caracteres estranhos — como “carinhas”
+— em vez da página solicitada? Isso acontece por erro no spooler da
+impressão, que corrompe o arquivo, tornando a impressão indisponível
+até o cancelamento do documento solicitado.
+
+
+
+1.3 Reiniciando o serviço do spooler no Windows Server
+2019
+
+      Para finalizar uma impressão, é possível cancelá-la por meio do pai­
+nel de controle da impressão. Porém, em alguns casos, não é possível
+fazer o cancelamento. Essa ação deve ser tomada como medida drásti­
+ca, como última etapa para que o serviço normalize. Para localizar o ser­
+viço de spooler de impressão, é necessário acessar a tela de serviços.
+Confira nos passos a seguir como reiniciar o spooler.
+
+      a. Pressione as teclas  + R. Escreva services.msc.
+
+
+
+
+126                                                           Sistema operacional I
+                                                              b. Localize o serviço Spooler de Impressão. Observe que, na coluna                                                c. Pressione o botão da direita do mouse sobre o Spooler de
+
+
+
+
+                                                                                                                                                                                                                                                                                      127
+                                                                                                                                   Status, deve aparecer a opção Em Execução.
+                                                                                                                                                                                                                                              Impressão e, em seguida, Reiniciar.
+                                                                                                                                                                                                                                                                                    Rede de impressão
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                    Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+      Pronto, os erros de impressão desse computador serão finalizados.
+
+
+1.4 Automatizando a (re)solução/tratamento do erro
+– Configurando
+
+      Você também pode personalizar a resolução de problemas do
+spooler de impressão criando uma lista de tarefas para que, caso haja
+algum erro, o computador execute a lista e tente resolvê-lo. Confira os
+passos a seguir.
+
+      a. Pressione as teclas  + R. Escreva services.msc.
+
+      b. Localize o serviço Spooler de Impressão. Em seguida, pressione
+        o botão da direita do mouse sobre o serviço e clique
+        em Propriedades.
+
+
+
+
+128                                                         Sistema operacional I
+                                                                                                                                                                                                                                             c. Acesse a guia Recuperação e encontre as opções Primeira falha,
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  Segunda falha. No item Primeira falha, escolher Reiniciar o serviço.
+
+
+
+
+                                                                                                                                                                                                                                             d. No item Segunda falha, escolha a opção Executar um programa.
+                                                                                                                                                                                                                                                  Crie em uma pasta o arquivo .BAT escrevendo o texto a seguir.
+                                                                                                                                                                                                                                                  Ao término da digitação, salve o arquivo em um local que
+                                                                                                                                                                                                                                                  você conheça.
+
+
+
+
+                                                                                                                                                                                                                                         Rede de impressão                                                         129
+            IMPORTANTE
+
+
+
+
+                                                                                               Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+            Você pode copiar a sequência de comandos para corrigir o erro de spooler
+            diretamente daqui:
+
+
+      @echo off
+      title Limpa Spooler de Impressão
+      echo ---------------------------
+      echo Limpa Spooler de Impressão
+      echo ---------------------------
+      echo Pressione CTRL + C para sair
+      echo ---------------------------
+      cls
+      echo 33% Completo
+      net stop spooler
+      echo 66% Completo
+      cd %systemroot%\system32\spool\PRINTERS
+      del %systemroot%\system32\spool\PRINTERS\*.* /Q
+      del /f /s *.shd
+      del /f /s *.spl
+      cls
+      echo 100% Completo
+      net start spooler
+      cls
+      pause
+      echo.
+      exit %0
+
+
+
+
+                                                                                        
+
+
+
+1.5 Instalando o serviço de impressão no Server 2019
+
+      No servidor DC-01, abra o gerenciador do servidor e proceda de acor­
+do com os passos a seguir.
+
+      a. Clique em Adicionar Funções e Recursos e, em seguida, em
+         Instalação baseada em função ou recurso. Depois, clique
+         em Próximo.
+
+130                                                                    Sistema operacional I
+                                                                                                      b. Clique em Selecionar um servidor no pool de servidor. Confira (a
+
+
+
+
+                                                                                                                                                                                                                                                131
+                                                                                                                                                                            seguir), se está selecionado o server DC-01. Clique em Próximo.
+                                                                                                                                                                                                                                              Rede de impressão
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+132
+
+
+
+
+                                                                                                       em Próximo.
+
+                                                                                                                                                                                                                            clique em Próximo.
+
+
+
+
+Sistema operacional I
+                                                                                                                     d. Na tela de Selecionar Recursos, não selecione nada. Clique                                                               c. Procure e marque a opção Serviço de Impressão e Documentos e
+
+
+
+
+   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                              f. Na tela, para selecionar Serviços de Função, escolha a primeira
+
+
+
+
+                                                                                                                                                                                                                                                                 133
+e. Em seguida, o assistente explica sobre o serviço. Clique
+                                                                                                                                                                                   opção: Servidor de Impressão. Para finalizar, clique no botão
+                                                              em Próximo.                                                                                                                                                                          Instalar.
+                                                                                                                                                                                                                                                               Rede de impressão
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+      Na instalação do servidor de impressão, você se deparou com a
+
+
+
+
+                                                                                                        Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+mensagem “O Windows Server 2019 dá suporte à fila de impressão do
+Tipo 3 ou Tipo 4”. Mas o que significa esse tipo 3 ou tipo 4?
+
+      No Windows Server 2012, a Microsoft criou um tipo de drive para
+substituir o sistema de impressão. Esse tipo de padrão substituirá os
+drivers universais. O drive V4 é chamado de “drive in box”, pois é incor­
+porado no SO e desenvolvido pelo fabricante, com suporte e compatí­
+vel com a mesma linguagem da impressora, como PostScript ou PCL
+(SCHIFFEL, 2016). Na figura 2 é exemplificada a interface de um drive
+V4 de impressora laser.
+
+            Figura 2 — Tela da impressora de uma impressora laser com o drive tipo 4
+
+
+
+
+1.6 Instalando uma impressora no servidor de impressão
+
+      Nosso processo não estaria completo se não demonstrássemos
+a instalação e a administração de uma impressora. Para exemplificar,
+
+
+134                                                                             Sistema operacional I
+                                                                                                                                                                                                                                         vamos instalar a impressora genérica na porta LPT1. Lembre-se de que
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         este é apenas um exemplo para mostrar a instalação e o gerenciamento
+                                                                                                                                                                                                                                         da impressora. Então, proceda conforme os passos a seguir.
+
+                                                                                                                                                                                                                                             a. Clique em Iniciar > Ferramentas Administrativas > Gerenciamento
+                                                                                                                                                                                                                                                  de Impressão. Note que, nesta tela, no DC-01, temos a opção de
+                                                                                                                                                                                                                                                  instalar drives, formulários, portas e impressoras. Vamos selecio­
+                                                                                                                                                                                                                                                  nar a opção Impressoras e clicar com o botão da direita, escolhen­
+                                                                                                                                                                                                                                                  do Adicionar Impressora.
+
+
+
+
+                                                                                                                                                                                                                                             b. Vamos escolher a opção Adicionar uma nova impressora usando
+                                                                                                                                                                                                                                                  uma porta existente. Escolha LPT1: Porta de impressora. Clique
+                                                                                                                                                                                                                                                  em Avançar.
+
+
+
+
+                                                                                                                                                                                                                                         Rede de impressão                                                       135
+      c. No Assistente, no Drive da Impressora, escolha Instalar um novo
+
+
+
+
+                                                                                    Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+         Drive. Depois, clique em Avançar.
+
+
+
+
+      d. Na Instalação de Impressora, em Fabricante, escolha a opção Sua
+         impressora; e na impressora, Impressora laser. Após selecionados
+         o fabricante e a impressora, clique em Avançar.
+
+
+
+
+136                                                         Sistema operacional I
+                                                                                                                                                                                                                                             e. Nesta etapa, escolhemos o nome da impressora e se esta estará
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  disponível para compartilhamento. Vamos dar o nome de IMP1 e
+                                                                                                                                                                                                                                                  deixar marcada a opção de Compartilhamento. Clique em Avançar.
+                                                                                                                                                                                                                                                  Para finalizar, clique em Concluir.
+
+
+
+
+                                                                                                                                                                                                                                             E, assim, a impressora estará corretamente instalada e à disposição do
+                                                                                                                                                                                                                                         administrador para compartilhá-la. A figura 3, a seguir, mostra que, após a
+                                                                                                                                                                                                                                         instalação e ao clicar com o botão da direita do mouse sobre a impresso­
+                                                                                                                                                                                                                                         ra instalada, temos uma lista de comandos que podem gerenciá-la.
+
+                                                                                                                                                                                                                                                                  Figura 3 — Gerenciamento da impressora
+
+
+
+
+                                                                                                                                                                                                                                         Rede de impressão                                                       137
+2 Pool de impressão
+
+
+
+
+                                                                                    Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+      No item anterior, você observou que o administrador de rede não só
+instala uma impressora, mas também administra os serviços. Para dar­
+mos mais um passo, imagine que você tem três impressoras idênticas
+e precisa otimizar o trabalho. O que fazer? Faça um pool de impressão!
+
+
+2.1 Mas o que vem a ser um “pool de impressão”?
+
+      O pool de impressão permite ao administrador de rede instalar diver­
+sas impressoras (do mesmo modelo) e criar uma associação entre elas,
+de forma que se tornem apenas um único caminho para a impressão,
+deixando o gerenciamento da impressão por conta do Windows Server
+2019, de modo que ele encaminhe a impressão para a impressora que
+estiver disponível. Essa ação possibilita maior velocidade na impressão,
+otimização do tempo de uso, distribuição da carga de trabalho, escalabi­
+lidade do serviço de impressão da rede e, principalmente, diminuição do
+tempo de espera pela impressão desejada. Do ponto de vista do usuá­
+rio, o pool de impressoras se parecerá como uma única impressora.
+
+
+2.2 Como montar um pool de impressão?
+
+      Você deve seguir os passos demonstrados anteriormente para a ins­
+talação das impressoras. Após instalá-las, é necessário associá-las a
+um pool para a criação do ambiente de impressão. Nesse caso, temos
+três impressoras idênticas e vamos demonstrar como colocá-las no
+pool. Proceda conforme os passos a seguir.
+
+      a. Instalamos três impressoras e as nomeamos como P1, P2 e P3
+         (P de Printer), nas portas LPT1, LPT2 e LPT3, respectivamente.
+
+
+
+138                                                         Sistema operacional I
+                                                                     b. Na P1, clique com o botão da direita do mouse e escolha a op­
+                                                                                                                                        ção Propriedades. Acesse a guia Compartilhamento, troque o
+
+
+
+
+                                                                                                                                                                                                                                                                                           139
+                                                                                                                                                                                                     nome do compartilhamento para P_Universal e marque a opção
+                                                                                                                                                                                                                                                                  Listar no diretório.
+                                                                                                                                                                                                                                                                                         Rede de impressão
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+      c. Na guia Portas, selecione as portas LPT1, LPT2 e LPT3. Marque
+
+
+
+
+                                                                                    Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+         a opção Ativar pool de impressão — e o pool de impressão
+         será criado.
+
+
+
+
+      Então, a partir deste momento, quando houver uma impressão na
+P_Universal, o Server 2019 direcionará automaticamente a impres­
+são para o dispositivo que estiver mais ocioso, sem a intervenção do
+administrador.
+
+
+Considerações finais
+      Ao fim deste material, você deve ter percebido a importância do am­
+biente de impressão em uma empresa — e saído do achismo de que
+“bastava instalar a impressora no local do usuário”. Então, pôde obser­
+var que, por trás do compartilhamento de uma impressora de rede, exis­
+te a administração de um serviço, no qual há um servidor dedicado para
+
+140                                                         Sistema operacional I
+                                                                                                                                                                                                                                         receber e gerenciar os dispositivos, que possibilita entregar para a rede
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         o produto impressão com muito mais eficiência e coerência, além de
+                                                                                                                                                                                                                                         altamente escalável com o uso de um pool de impressão.
+
+
+                                                                                                                                                                                                                                         Referências
+                                                                                                                                                                                                                                         MICROSOFT. MCSA Windows Server 2016 EXAM REF. Indianapolis, EUA:
+                                                                                                                                                                                                                                         Microsoft Press, 2017.
+
+                                                                                                                                                                                                                                         SALVAR log de impressões do Windows Server 2012 em banco de dados MySQL.
+                                                                                                                                                                                                                                         Huttel.com.br, 18 jul. 2016. Disponível em: http://www.huttel.com.br/2016/07/
+                                                                                                                                                                                                                                         salvar-log-de-impressoes-do-windows-server-2012-em-banco-de-dados-mys­
+                                                                                                                                                                                                                                         ql/. Acesso em: 3 set. 2020.
+
+                                                                                                                                                                                                                                         SCHIFFEL, Mike. The New Microsoft V4 Printer Driver Model: What Admins
+                                                                                                                                                                                                                                         Need to Know. 2016. Disponível em: https://blog.thinprint.com/the-new-micro­
+                                                                                                                                                                                                                                         soft-v4-printer-driver-model/. Acesso em: 13 mar. 2020.
+
+
+
+
+                                                                                                                                                                                                                                         Rede de impressão                                                         141
+

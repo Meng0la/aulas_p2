@@ -1,0 +1,805 @@
+BANCO DE DADOS
+                                                                          Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+      Dados Internacionais de Catalogação na Publicação (CIP)
+               (Claudia Santos Costa – CRB 8a/9050)
+
+
+Takuno, Leonardo
+    Banco de dados / Leonardo Takuno. – São Paulo : Editora Senac
+São Paulo, 2025. – (Série Universitária)
+
+    Bibliografia.
+    e-ISBN 978-85-396-5575-5 (ePub/2025)
+    e-ISBN 978-85-396-5576-2 (PDF/2025)
+
+     1. Banco de dados. 2. Projeto de banco de dados. 3. Banco de dados
+relacionais. 4. SQL (Linguagem de programação). I. Título. II. Série.
+
+25-2477c                                                 CDD – 005.74
+                                                     BISAC COM018000
+                                                           COM062000
+
+
+                  Índice para catálogo sistemático:
+                     1. Banco de dados 005.74
+BANCO DE DADOS
+
+
+
+
+   Leonardo Takuno
+Administração Regional do Senac no Estado de São Paulo
+Presidente do Conselho Regional
+Abram Szajman
+
+Diretor do Departamento Regional
+Luiz Francisco de A. Salgado
+
+Superintendente Universitário e de Desenvolvimento
+Luiz Carlos Dourado
+
+
+
+Editora Senac São Paulo
+Conselho Editorial
+Luiz Francisco de A. Salgado
+Luiz Carlos Dourado
+Darcio Sayad Maia
+Lucila Mara Sbrana Sciotti
+Luís Américo Tousi Botelho
+Gerente/Publisher
+Luís Américo Tousi Botelho
+Coordenação Editorial
+Verônica Marques Pirani
+Prospecção
+Andreza Fernandes dos Passos de Paula
+Dolores Crisci Manzano
+Paloma Marques
+Administrativo
+Marina P. Alves
+Comercial
+Aldair Novais Pereira
+Comunicação e Eventos
+Tania Mayumi Doyama Natal
+Coordenação de Arte
+Antonio Carlos De Angelis
+Coordenação de Revisão de Texto
+Marcelo Nardeli
+Acompanhamento Pedagógico
+Otacília da Paz Pereira
+Designer Educacional
+Janaina Nascimento Menezes da Silva
+Revisão Técnica
+Alexandre dos Santos Mignon
+Preparação e Revisão de Texto
+Carol Santos
+                                                     Proibida a reprodução sem autorização expressa.
+Projeto Gráfico                                      Todos os direitos desta edição reservados à
+Alexandre Lemes da Silva
+Emília Corrêa Abreu
+                                                     Editora Senac São Paulo
+Capa                                                 Av. Engenheiro Eusébio Stevaux, 823 – Prédio Editora
+Antonio Carlos De Angelis                            Jurubatuba – CEP 04696-000 – São Paulo – SP
+                                                     Tel. (11) 2187 4450
+Editoração Eletrônica e Ilustrações
+                                                     editora@sp.senac.br
+Alyne Lourenço de Souza
+                                                     https://www.editorasenacsp.com.br
+Imagens
+Adobe Stock Photos                                   © Editora Senac São Paulo, 2025
+Sumário
+
+
+Capítulo 1                                 Capítulo 4
+Conceitos iniciais, 7                      Normalização, 59
+   1 Histórico e evolução dos bancos de       1 Critérios informais para avaliação de
+     dados, 9                                   qualidade, 60
+   2 Modelo de Banco de Dados, 12             2 Dependências Funcionais, 66
+   3 Sistema gerenciador de banco de          3 Normalização, 68
+     dados (SGBD), 17                         Considerações finais, 73
+   4 Projeto de banco de dados, 19            Referências, 74
+   Considerações finais, 21
+   Referências, 21                         Capítulo 5
+                                           SQL – Uma linguagem de
+Capítulo 2                                 banco de dados, 75
+Conceitos de modelagem de                     1 Definição de dados em SQL, 76
+dados, 23                                     2 Consultas em SQL, 81
+   1 Modelo conceitual, 24                    3 Atualizações em SQL, 89
+   2 Modelo entidade-relacionamento           4 Visões em SQL, 91
+     (MER), 26
+                                              Considerações finais, 91
+   3 Modelo entidade-relacionamento
+     estendido (MERE), 38                     Referências, 92
+   Considerações finais, 41                Capítulo 6
+   Referências, 41                         Índices e restrições, 93
+                                              1 Índices e SQL, 93
+Capítulo 3
+Modelagem relacional, 43                      2 Restrições padrão, 96
+   1 O modelo relacional, 44                  3 Asserções, 99
+   2 Restrições do modelo relacional, 49      4 Restrição de integridade
+                                                referencial, 100
+   3 Mapeamento do DER para o modelo
+     relacional, 50                           5 Tratamento de violação de
+                                                restrições de integridade
+   Considerações finais, 56                     referencial, 100
+   Referências, 56                            Considerações finais, 101
+                                              Referências, 102
+Capítulo 7                        Capítulo 8
+
+
+
+
+                                                                            Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+SQL – Stored procedures e         Segurança e proteção de
+triggers, 103                     dados, 115
+    1 Procedimentos armazenados      1 Organização do SGBD (Sistema de
+      (stored procedures), 104         Gerenciamento de Banco de Dados)
+    2 Gatilhos (triggers), 111         padrão SQL, 116
+    Considerações finais, 113        2 Catálogo de banco de dados, 119
+    Referências, 114                 3 Segurança e proteção de dados, 120
+                                     4 Serializações, atomicidades e
+                                       transações, 124
+                                     Considerações finais, 128
+                                     Referências, 129
+
+                                  Sobre o autor, 131
+
+
+
+
+6
+                                                                                                                                                                                                                                                                                                  Capítulo 1
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  Conceitos iniciais
+
+
+
+
+                                                                                                                                                                                                                                            Atualmente, os bancos de dados são essenciais em diversas aplica-
+                                                                                                                                                                                                                                         ções do cotidiano, como em transações de vendas on-line, transferên-
+                                                                                                                                                                                                                                         cias bancárias e consultas de horários de voo, além de estarem por trás
+                                                                                                                                                                                                                                         de aplicativos móveis, incluindo plataformas de delivery, redes sociais e
+                                                                                                                                                                                                                                         serviços de streaming. Esses bancos de dados permitem a organização,
+                                                                                                                                                                                                                                         o armazenamento e a recuperação de informações de maneira eficiente,
+                                                                                                                                                                                                                                         garantindo o bom funcionamento dessas aplicações digitais.
+
+                                                                                                                                                                                                                                                                                                                 7
+    Segundo Elmasri (2018), um banco de dados é uma coleção de dados
+relacionados que se mantém por um longo período e que possuem as
+seguintes propriedades:
+
+    • Reflete um recorte do mundo real, denominado “minimundo” (ex.:
+      alunos em um sistema acadêmico, clientes de um banco, funcio-
+      nários de uma empresa, entre outros).
+
+    • É um conjunto de dados organizados de forma lógica e que pos-
+      sui um significado próprio.
+
+    • É desenvolvido, estruturado e preenchido com dados para atender
+      a um propósito. Ele serve a um grupo específico de usuários e a
+      um conjunto de aplicações previamente planejadas, de interesse
+      desses usuários.
+
+    Em outras palavras, um banco de dados é um compilado de informa-
+ções que registra fatos do mundo real, com um certo grau de interação
+com esse mundo e um grupo de usuários interessados no conteúdo.
+Cada mudança em alguma informação contida no banco de dados reflete
+uma mudança ocorrida na realidade.
+
+    Para Ramakrishnan (2011), um banco de dados é uma coleção de
+dados que, geralmente, descreve as atividades de organizações relacio-
+nadas. Por exemplo, em um cenário de venda, é possível encontrar as
+seguintes informações:
+
+    • Entidades como cliente, produto e pedido.
+
+    • Relacionamentos entre as entidades, por exemplo, cliente realiza
+      pedidos. Outro exemplo é a relação entre pedido e produto — nesse
+      caso, um pedido pode conter vários produtos.
+
+    Um sistema gerenciador de banco de dados (SGBD) é um software
+desenvolvido para ajudar na administração e utilização de grandes volu-
+mes de dados, e a demanda por esses sistemas, assim como sua apli-
+cação, está crescendo de forma acelerada (Ramakrishnan, 2011). O par
+
+8                                                            Banco de dados
+formado por um banco de dados e o software que o manipula, indepen-
+dentemente de ser ou não um SGBD, é denominado sistema de banco
+de dados (Elmasri, 2018). Os programas e aplicativos são criados para
+serem clientes desses sistemas de banco de dados.
+
+     É importante destacar as seguintes definições:
+
+     • Banco de dados é uma coleção de dados relacionados que se
+          mantém por um longo período. Ela reflete um recorte do mundo
+          real (minimundo), organizado de forma lógica e com significado
+          próprio. O banco de dados é estruturado, organizado e preenchido
+          para atender a um propósito específico e a um grupo de usuários
+          interessados.
+
+     • Sistema gerenciador de banco de dados (SGBD) é o software que
+          gerencia, manipula e organiza os dados.
+
+     • Sistema de banco de dados é o par formado pelo banco de dados
+          e o SGBD.
+
+
+1 Histórico e evolução dos bancos de dados
+     Os primeiros SGBDs comerciais de propósito geral surgiram nos anos
+1960. Antes disso, as aplicações utilizavam sistemas de arquivos para
+armazenar as informações (Takai, 2005). Esses programas gravavam
+seus dados em discos, segundo estruturas de arquivos proprietárias, o
+que representava uma grande limitação. Isso ocorria porque outros pro-
+gramas que não conhecessem essas estruturas não conseguiam aces-
+sar ou utilizar as informações armazenadas (Ramakrishnan, 2011).
+
+     Se diversos programas precisassem compartilhar os dados de um
+mesmo arquivo, todos eles teriam que conhecer e manipular a estru-
+tura desse arquivo. Além disso, não se realizava controle concorrente
+de usuários e processos. O SGBD, então, surge como um sistema inter-
+mediário entre os programas e o arquivo. Ele deve conhecer a estrutura
+
+
+Conceitos iniciais                                                       9
+do arquivo em que serão armazenados os dados de cada programa,
+deve armazená-los adequadamente e deve fornecer os dados de que
+cada programa precisa.
+
+     Com o tempo, surgiram formas de representação para descrever as
+estruturas das informações contidas nos bancos de dados, denomina-
+das modelos de dados (Takai, 2005). Os modelos de dados incluem:
+modelo de rede, modelo hierárquico, modelo de dados relacional, modelo
+de dados orientado a objetos e NoSQL.
+
+
+1.1 Modelo de rede e modelo hierárquico (década de 1960)
+
+     Na década de 1960, destacaram-se dois modelos de dados mais
+conhecidos da época: o modelo de rede, que foi utilizado no chamado
+Depósito de dados integrado (do inglês, Integrated Data Storage) e padro-
+nizado pela Conferência sobre Linguagens de Sistemas de Dados
+(CODASYL, do inglês Conference on Data Systems Languages); e o modelo
+hierárquico, um modelo de dados utilizado no Sistema de Gerenciamento
+de Informação (Information Management System), criado pela IBM.
+
+
+1.2 Modelo de dados relacional (década de 1970)
+
+     Em 1970, o pesquisador da IBM, Edgar Codd, apresentou o modelo
+de dados relacional, que se tornou um marco no desenvolvimento dos
+sistemas de banco de dados (Ramakrishnam, 2011). Codd recebeu o
+prêmio Turing de 1981 pelo seu trabalho original. Com a evolução das
+técnicas de armazenamento e melhoria nos desempenhos do processa-
+mento e otimização de consultas, os bancos de dados relacionais torna-
+ram-se o modelo de dados dominante para as aplicações tradicionais.
+
+
+
+
+10                                                             Banco de dados
+1.3 Banco de dados orientado a objetos (década de 1980
+e 1990)
+
+     Nas décadas de 1980 e 1990, surgiram as linguagens de programa-
+ção orientadas a objetos, o que levou ao desenvolvimento dos bancos
+de dados orientados a objetos (BDOOs). Esses sistemas foram projeta-
+dos para armazenar dados complexos, como objetos e suas relações,
+permitindo o armazenamento e a manipulação de dados mais próxima
+à modelagem de software orientado a objetos (Elmasri, 2018). No entanto,
+a adoção desse modelo não foi tão ampla quanto a do modelo relacio-
+nal, devido à sua complexidade e à falta de um padrão inicial.
+
+
+1.4 Banco NoSQL (década de 2000)
+
+     A partir dos anos 2000, a internet provocou um crescimento signifi-
+cativo na geração de dados estruturados e não estruturados, o que trouxe
+novos desafios para o armazenamento e o processamento de grandes
+volumes de dados (Elmasri, 2018). Para gerenciar esses volumes, foram
+necessários novos sistemas de banco de dados que garantissem busca
+e recuperação rápidas, além de armazenamento seguro de dados não
+tradicionais, como postagens em redes sociais, documentos, gráficos,
+dados em cache e tweets. Nesse contexto, surge o banco de dados NoSQL
+(Not Only SQL), cujo modelo é projetado para gerenciar grandes volumes
+de dados não estruturados ou semiestruturados.
+
+
+1.5 Banco de dados em nuvem (após 2010)
+
+     De acordo com o Google Cloud (2025), a computação em nuvem é a
+disponibilidade sob demanda de recursos computacionais (como arma-
+zenamento e infraestrutura) oferecidos como serviços pela internet. Tra-
+ta-se de um termo utilizado para se referir à utilização de serviços e
+recursos computacionais por meio da internet. Segundo a IBM (2025a),
+
+
+Conceitos iniciais                                                    11
+um banco de dados na nuvem é um serviço de banco de dados criado e
+acessado por meio de um serviço em nuvem. O termo banco de dados
+como um serviço (DBaaS – Database as a Service) designa o modelo
+em que uma organização contrata um provedor de serviço em nuvem
+por meio de assinatura baseada em taxas (Oracle, 2025a). O provedor
+oferece tarefas operacionais, manutenção e gerenciamento do banco de
+dados para o usuário final. O banco de dados reside e é executado na
+infraestrutura disponibilizada pelo provedor. Alguns desses serviços de
+banco de dados na nuvem incluem Amazon RDS, Cloud SQL, Azure SQL
+Database e Oracle Cloud Database Services.
+
+
+1.6 Big data e ciência de dados
+
+     Como se pode observar, a evolução da área de banco de dados é con-
+tínua e acompanha a complexidade das aplicações e das inovações tec-
+nológicas. O aumento do volume de dados exige o uso de ferramentas
+para o tratamento do chamado Big Data, como Hadoop e Spark, que per-
+mitem o processamento de grandes volumes de dados (Oracle, 2025b).
+
+     Além disso, essa explosão de dados impulsionou o surgimento da
+ciência de dados, uma área que combina matemática, estatística, pro-
+gramação, inteligência artificial (IA) e aprendizado de máquina para ana-
+lisar e extrair insights valiosos (IBM, 2025b). O cientista de dados é o
+profissional encarregado de coletar, analisar e interpretar esses dados
+para identificar padrões, realizar previsões e criar planos estratégicos
+acionáveis (Microsoft, 2025).
+
+
+2 Modelo de banco de dados
+     De acordo com Ramakrishnan (2011), o modelo de dados é composto
+por ferramentas de alto nível para a descrição de dados, simplificando a
+complexidade dos detalhes de armazenamento em baixo nível. Esses
+modelos descrevem a estrutura do banco de dados, as operações para
+
+12                                                             Banco de dados
+manipular essas estruturas, os relacionamentos entre os dados e certas
+restrições que os bancos de dados devem atender (Elmasri, 2018).
+
+     • Modelo relacional: representa dados e seus relacionamentos por
+          meio de uma coleção de tabelas, cada uma com um número de
+          colunas de nomes únicos. A figura 1 apresenta um exemplo de
+          banco de dados relacional, mostrando os clientes e suas contas.
+          Ela exibe, na parte superior, a tabela de clientes com informações
+          dos clientes Pedro, Maria e Carlos. Na parte inferior, apresenta-se
+          a tabela de conta corrente.
+
+          Pode-se observar que André mora em São Paulo e possui R$ 1.000,00
+          na conta corrente. Note também que Bianca mora em Barueri,
+          enquanto Camila e André moram no mesmo endereço e acessam
+          a mesma conta corrente, indicando que possuem uma conta con-
+          junta. Este livro focará com atenção no modelo relacional, pois é um
+          dos modelos de dados mais utilizados pelas aplicações.
+
+                                        Figura 1 – Modelo relacional
+
+
+                     nome              logradouro                  cidade          num_cc
+
+            André               rua Paissandu             São Paulo         1111
+
+            Bianca              rua Antônio Castro        Barueri           2222
+
+            Carlos              rua Cassiano Flores       São Caetano       3333
+
+            Camila              rua Paissandu             São Paulo         1111
+
+
+
+
+                                      num_cc                   saldo
+
+                               1111                   R$ 1000,00
+
+                               2222                   R$ 1010,00
+
+                               3333                   R$ 1450,00
+
+
+Fonte: elaborado pelo autor.
+
+
+
+
+Conceitos iniciais                                                                          13
+     • Em qualquer modelo de dados, é importante fazer uma distinção
+          entre a descrição do banco de dados e o banco de dados propria-
+          mente dito. Um esquema é especificado durante o projeto do banco
+          de dados e, em geral, não é modificado com frequência (Elmasri,
+          2018). Um esquema de banco de dados pode ser ilustrado por
+          meio de um diagrama de esquema. Observe a figura 2, que apre-
+          senta o esquema correspondente à figura 1.
+
+                               Figura 2 – Esquema do banco de dados
+
+
+                                             Cliente
+
+            nome                logradouro                cidade      num_cc
+
+
+
+
+                                              Conta
+
+                                 num_cc                 saldo
+
+
+Fonte: elaborado pelo autor.
+
+
+
+
+     • Modelo hierárquico: organiza os dados em uma estrutura de árvore,
+          seguindo uma relação de pai-filho (um-para-muitos) (Takai, 2005).
+          A consulta é realizada em sequência, iniciando-se no topo da hierar-
+          quia e descendo até a base, avançando da esquerda para a direita.
+          Um diagrama em estrutura de árvore descreve o esquema do banco
+          de dados hierárquico. Ele é composto por caixas com textos repre-
+          sentando registros e linhas que conectam esses registros.
+
+     • O modelo hierárquico foi significativo principalmente devido à impor-
+          tância do sistema de banco de dados IMS (Information Manage-
+          ment System), desenvolvido pela IBM. O IMS é um dos mais antigos
+          e mais utilizados sistemas de banco de dados. Seus desenvolvedo-
+          res foram os primeiros a lidar com problemas de concorrência, recu-
+          peração, integridade e processamento eficiente de consultas. A figura
+          3 apresenta um exemplo de modelo hierárquico.
+
+
+
+14                                                                      Banco de dados
+                                         Figura 3 – Modelo hierárquico
+
+
+
+
+    André|Rua Pais...|SP       Bianca|Rua Ant...|Barueri    Carlos|Rua Cas...|SC     Camila|Rua Pais...|SP
+
+
+
+     1111|R$ 1000,00                2222|R$ 1010,00           3333|R$ 1450,00          1111|R$ 1000,00
+
+
+Fonte: elaborado pelo autor.
+
+
+
+
+     • Modelo de rede: no modelo de rede, existe uma coleção de regis-
+          tros e relacionamentos entre os dados representados por links,
+          que podem ser vistos como ponteiros. Os registros no banco de
+          dados são organizados como uma coleção de grafos (Silberschatz,
+          1991). A figura 4 apresenta o modelo de rede.
+
+                                            Figura 4 – Modelo de rede
+
+
+                     André|Rua Paissandu|SP
+                                                                                   1111|R$ 1000,00
+
+             Bianca|Rua Antonio Carlos|Barueri
+                                                                                   2222|R$ 1010,00
+
+          Carlos|Rua Cassiano Flores|São Caetano
+                                                                                   3333|R$ 1450,00
+               Camila|Rua Paissandu|São Paulo
+
+
+Fonte: elaborado pelo autor.
+
+
+
+
+     • Modelo orientado a objetos: segundo Silberschatz (2020), a pro-
+          gramação orientada a objetos tornou-se prática predominante a
+          partir dos anos 2000, liderada por linguagens como C++, C# e Java.
+          Isso levou, inicialmente, ao desenvolvimento de um modelo de
+          dados orientado a objetos. O padrão para os bancos de dados
+          orientados a objetos foi definido pelo Object Database Manage-
+          ment Group (ODMG). Esse grupo é formado por representantes
+
+
+Conceitos iniciais                                                                                           15
+          dos maiores fabricantes de banco de dados e é responsável por
+          adotar padronizações em seus produtos. O diagrama UML geral-
+          mente serve como esquema para o modelo orientado a objetos
+          (figura 5) (Takai, 2005).
+
+                                 Figura 5 – Modelo orientado a objeto
+
+
+
+                       Cliente                                           Conta
+               nome: str             1..*                  1..*
+                                                                    num_cc: int
+               logradouro: str
+                                                                    saldo: real
+               cidade: str
+
+
+
+Fonte: Takai (2005).
+
+
+
+
+     • Modelo de dados NoSQL: o modelo NoSQL utiliza sistemas de
+          armazenamento para dados estruturados e não estruturados.
+          Segundo a AWS (2012), existem alguns tipos de banco de dados
+          NoSQL, como:
+
+     • Banco de dados de chave-valor: armazena uma chave com valor
+          único, acompanhado por um conjunto de dados associados. A
+          chave pode ser numérica, alfanumérica ou composta. Exemplos
+          incluem Redis e Amazon DocumentDB.
+
+     • Banco de dados de documentos: armazena documentos em for-
+          matos como JSON, BSON (uma versão binária do JSON) ou XML.
+          Exemplos incluem MongoDB e CouchDB.
+
+     • Banco de dados de grafos: um grafo é uma estrutura matemática
+          formada por vértices e arestas. Nesse modelo, as entidades são
+          representadas por vértices e os relacionamentos, por arestas. Esses
+          bancos são usados em redes sociais (para sugerir amizades), em
+          sistemas de recomendação (para sugerir produtos com base em
+          interações) e na detecção de fraudes (para identificar padrões
+
+
+
+16                                                                                Banco de dados
+          suspeitos em transações financeiras). Exemplos incluem Amazon
+          Neptune e Neo4j.
+
+     • Banco de dados em memória: utilizam a memória principal como
+          meio de armazenamento, em vez de discos rígidos ou SSDs (Ama-
+          zon Web Services, 2023). São úteis em aplicações em que o desem-
+          penho é um requisito importante, como sistemas em tempo real.
+          Exemplos: Redis, ElastiCache e Memcached.
+
+
+               IMPORTANTE
+
+               O MongoDB é um banco de dados NoSQL orientado a documentos, que
+               armazena dados no formato BSON (uma versão binária do JSON), per-
+               mitindo o armazenamento de dados semiestruturados ou não estrutura-
+               dos. Ele foi projetado para armazenar grandes volumes de informações
+               e oferecer alto desempenho no processamento (MongoDB, 2025).
+
+
+
+
+3 Sistema gerenciador de banco de dados
+(SGBD)
+     • Um sistema gerenciador de banco de dados (SGBD) é uma cole-
+          ção de programas que facilitam a definição, construção e manipu-
+          lação do banco de dados (Elmasri, 2018).
+
+     • Definição: corresponde à especificação dos tipos de dados e das
+          restrições dos dados a serem armazenados no banco de dados.
+
+     • Construção: envolve a criação das estruturas de um banco de
+          dados e o armazenamento dos dados nessas estruturas.
+
+     • Manipulação: permite a realização de consultas, a atualização do
+          banco de dados e a geração de relatórios com base nos dados.
+
+
+
+
+Conceitos iniciais                                                                    17
+     Como mencionado, o banco de dados, junto ao SGBD, compõe o sis-
+tema de banco de dados. A figura 6 apresenta um esquema simplificado
+desse sistema e sua interação com usuários e programadores.
+
+                                    Figura 6 – Sistema de banco de dados
+
+
+                                            Usuários/programadores
+
+        Sistema de banco de dados
+
+                                     Consultas / Programas de aplicações
+
+
+                 SGBD
+                                            Processador de consultas
+
+                               Gerenciador de memória / transações / arquivos
+
+
+
+
+          Armazenamento                                                             BD
+          em disco               Arquivos     Índices     Dados        Dicionário
+                                 de dados               estatísticos   de dados
+
+
+
+
+Fonte: elaborado pelo autor.
+
+
+
+
+     A figura 6 mostra um modelo hierárquico composto por:
+
+     • Usuários, que podem ser pessoas ou softwares que interagem
+          com os dados armazenados no banco de dados.
+
+     • Programas de aplicações, softwares que dependem do banco de
+          dados para realizar suas operações, como sistemas de vendas,
+          acadêmicos ou administrativos.
+
+     • O SGBD, que gerencia as interações entre o banco de dados e as
+          aplicações, além de assegurar a integridade e a segurança dos dados.
+
+     • O banco de dados propriamente dito, ou seja, o repositório onde
+          os dados são armazenados com a finalidade de organização e
+          acesso eficiente.
+
+
+18                                                                                       Banco de dados
+     Como podemos observar, o uso de um SGBD traz diversas vantagens,
+como a independência de dados, permitindo que programas não se preo-
+cupem com detalhes de armazenamento. Ele oferece acesso eficiente e
+garante integridade e segurança, aplicando restrições e controles de
+acesso. A centralização da administração melhora a organização e mini-
+miza redundâncias. Além disso, o SGBD gerencia acessos simultâneos
+e protege contra falhas (Ramakrishnan, 2011).
+
+
+4 Projeto de banco de dados
+     Um projeto de banco de dados é o processo de planejar e estruturar
+a forma como os dados serão armazenados, organizados, acessados e
+manipulados em um sistema de banco de dados. Ele envolve a criação
+de um modelo de dados para atender aos requisitos de um negócio, ou
+minimundo. O projeto de banco de dados tem o propósito de garantir que
+os dados sejam armazenados de maneira estruturada, que a integridade
+e a performance sejam mantidas e que a manutenção do sistema seja
+viável ao longo do tempo. Segundo Elmasri (2018), um projeto de banco
+de dados consiste nas seguintes etapas:
+
+     1. Levantamento dos requisitos: é a percepção do universo do mundo
+          real (minimundo), identificando e descrevendo os dados nele exis-
+          tentes, das relações entre os dados, do significado e das restrições
+          sobre os dados.
+
+     2. Projeto conceitual: criar um modelo de dados em alto nível, deno-
+          minado modelo conceitual, sem se preocupar com detalhes de
+          implementação ou como os dados estão fisicamente armazena-
+          dos. Para o modelo de banco de dados relacional o modelo con-
+          ceitual utilizado é o modelo entidade-relacionamento e o produto
+          gerado nesta etapa é o esquema conceitual chamado diagrama
+          entidade-relacionamento.
+
+
+
+
+Conceitos iniciais                                                          19
+     3. Projeto lógico: o modelo lógico é uma descrição de um banco de
+          dados no nível de abstração vista pelo usuário do SGBD (Heuser,
+          2010). O objetivo do projeto lógico é transformar o modelo concei-
+          tual em modelo lógico de dados. Para o modelo de banco de dados
+          relacional, o produto gerado nesta etapa é o esquema relacional.
+          Com o esquema relacional produzido, é possível ainda nesta etapa
+          avaliar a qualidade do esquema e aplicar melhorias. Para isso, uti-
+          liza-se a normalização do banco de dados, que é o processo de
+          organizar o esquema lógico para reduzir redundância do banco de
+          dados e melhorar a integridade.
+
+     4. Projeto físico: essa etapa define como o banco de dados será
+          implementado fisicamente, pela escolha de um SGBD e definição
+          dos detalhes como tipos de dados e índices.
+
+     A figura 7 ilustra as etapas do projeto de banco de dados.
+
+                                     Figura 7 – Projeto de banco de dados
+
+
+
+
+           Modelo              MER
+          de dados
+          relacional
+                                          minimundo
+
+
+              projetista de banco        Levantamento
+                   de dados              dos requisitos
+
+
+             esquema conceitual:       Projeto Conceitual
+                   DER
+                                                   mapeamento
+
+               esquema lógico:                                             normalização
+                                         Projeto Lógico
+              esquema relacional
+                                                   padrões e tecnologias
+
+                esquema físco:                                    implementação           banco de dados
+                                         Projeto Físico
+                 scripts de BD
+
+
+Fonte: elaborado pelo autor.
+
+
+
+
+20                                                                                             Banco de dados
+Considerações finais
+     Neste capítulo, apresentamos conceitos iniciais sobre bancos de
+dados, sistemas de gerenciamento de banco de dados e sistemas de
+banco de dados. Foram abordados aspectos históricos e a evolução dos
+sistemas de armazenamento e seus modelos de dados.
+
+     Por fim, destacamos o projeto de banco de dados e suas etapas: levan-
+tamento de requisitos, projeto conceitual, projeto lógico e projeto físico,
+finalizando com a implementação em um SGBD.
+
+
+Referências
+AMAZON WEB SERVICES. NoSQL. Amazon Web Services, inc., [S. l.: s. n.], 6 fev.
+2012. Disponível em: https://aws.amazon.com/pt/nosql/. Acesso em: 25 jan. 2025.
+
+AMAZON WEB SERVICES. O que é um banco de dados em memória? Amazon
+Web Services, inc., [S. l.: s. n.], 6 dez. 2023. Disponível em: https://aws.amazon.
+com/pt/nosql/in-memory/. Acesso em: 26 jan. 2025.
+
+ELMASRI, Ramez; NAVATHE, Shamkant B. Sistemas de banco de dados. 7. ed.
+São Paulo: Pearson, 2018.
+
+GOOGLE CLOUD. What is cloud computing? Google Cloud, [S. l.: s. n.], 2021.
+Disponível em: https://cloud.google.com/learn/what-is-cloud-computing?hl=pt-BR.
+Acesso em: 26 jan. 2025.
+
+HEUSER, Carlos Alberto. Projeto de banco de dados. 6. ed. Porto Alegre:
+Bookman, 2010.
+
+IBM. O que é ciência de dados? IBM, [S. l.: s. n.], 2024. Disponível em: https://
+www.ibm.com/br-pt/topics/data-science. Acesso em: 27 jan. 2025.
+
+IBM. O que é um banco de dados na nuvem? IBM, [S. l.: s. n.], 2023. Disponível
+em: https://www.ibm.com/br-pt/topics/cloud-database. Acesso em: 26 jan. 2025.
+
+
+
+
+Conceitos iniciais                                                              21
+MICROSOFT. What is data science? Azure, [S. l.: s. n.], 2023. Disponível em: https://
+azure.microsoft.com/pt-br/resources/cloud-computing-dictionary/what-is-data-
+science/. Acesso em: 26 jan. 2025.
+
+MONGODB. MongoDB: banco de dados orientado a documentos. MongoDB, [S.
+l.: s. n.], 2025. Disponível em: https://www.mongodb.com/pt-br. Acesso em: 26
+jan. 2025.
+
+ORACLE. O que é big data. OCI, [S. l.: s. n.], 2024. Disponível em: https://www.
+oracle.com/br/big-data/what-is-big-data/. Acesso em: 27 jan. 2025.
+
+ORACLE. O que é um banco de dados em nuvem? OCI, [S. l.: s. n.], 2019. Disponível
+em: https://www.oracle.com/br/database/what-is-a-cloud-database/. Acesso
+em: 26 jan. 2025.
+
+RAMAKRISHNAN, Raghu; GEHRKE, Johannes. Sistema de gerenciamento de
+banco de dados. 3. ed. Porto Alegre: AMGH, 2008.
+
+SILBERSCHATZ, Abraham; KORTH, Henry F. Database system concepts. 2. ed.
+New York: McGraw-Hill, 1991.
+
+SILBERSCHATZ, Abraham; KORTH, Henry F.; SUDARSHAN, S. Database system
+concepts. 7. ed. New York: McGraw-Hill, 2020.
+
+TAKAI, Osvaldo Kotaro; ITALIANO, Isabel Cristina; FERREIRA, João Eduardo.
+Introdução a banco de dados. São Paulo: Universidade de São Paulo, 2005.
+E-book. Disponível em: https://www.ime.usp.br/~jef/apostila.pdf. Acesso em:
+25 jan. 2025.
+
+
+
+
+22                                                                       Banco de dados
+

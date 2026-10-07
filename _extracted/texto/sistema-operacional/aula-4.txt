@@ -1,0 +1,546 @@
+                                                                                                                                                                                                                                                                                                 Capítulo 4
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                                      Servidores
+                                                                                                                                                                                                                                                                     DHCP e DNS
+
+
+
+
+                                                                                                                                                                                                                                            Administrar um computador é fácil, mas e se você estivesse na pele
+                                                                                                                                                                                                                                         de um administrador de redes com mais de cem computadores? Nesse
+                                                                                                                                                                                                                                         cenário, a pessoa responsável precisa se preocupar com cada equipa-
+                                                                                                                                                                                                                                         mento, pois cada um possui um ou mais usuários e configuração espe-
+                                                                                                                                                                                                                                         cífica. No ambiente de redes de computadores, eles se comunicam por
+                                                                                                                                                                                                                                         meio de uma identificação, parecida com o nosso CPF, a que damos o
+                                                                                                                                                                                                                                         nome de IP (internet protocol).
+
+                                                                                                                                                                                                                                            Aplicando-se uma lógica de agrupamento de redes de computado-
+                                                                                                                                                                                                                                         res, criamos a rede da empresa. Em nosso caso, cada um dos cem
+                                                                                                                                                                                                                                         computadores terá um IP diferente. Daí, uma pergunta: como o admi-
+                                                                                                                                                                                                                                         nistrador conseguirá decorar cada um? Números, ainda! Difícil... Para
+                                                                                                                                                                                                                                         facilitar esse cenário, será explicado o serviço de DHCP e, em conjunto,
+
+                                                                                                                                                                                                                                                                                                               77
+entra o nosso segundo assunto, chamado DNS (domain name server),
+
+
+
+
+                                                                                  Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+que atribui um nome a um número do computador. Neste capítulo, va-
+mos conhecer esses dois serviços importantes em uma rede.
+
+
+1 Serviços de DHCP (dynamic host
+configuration protocol)
+     Nesta seção, você aprenderá como configurar um serviço de DHCP
+criando escopos de trabalho.
+
+
+1.1 O que é DHCP?
+
+     Em um ambiente pequeno, é normal que um técnico mapeie o IP de
+cada equipamento manualmente, criando o IP “192.168.0.100”, por exem-
+plo. Dessa forma, pode-se criar uma rede de computadores. Mesmo as-
+sim, o processo é repetitivo e moroso. A cada novo equipamento na rede,
+é necessário fixar o IP. Esta ainda é uma realidade em muitas redes do
+Brasil. Em um ambiente corporativo com diversos equipamentos, a ação
+de fixar manualmente o IP torna-se impossível. O protocolo DHCP desem-
+penha uma função importante na infraestrutura de uma rede. Trata-se
+do principal meio de distribuição de informações sobre as configurações
+dos serviços de rede para os clientes, entregando também outras infor-
+mações sobre os serviços (THOMPSON, 2017).
+
+     O DHCP também é importante para dispositivos móveis, como o
+celular, que está em constante mudança de rede. Esse serviço oferece
+diversas informações complexas de rede para os usuários (dispositi-
+vos), sem que ele necessite entender de redes de computadores ou
+como configurá-las.
+
+     O serviço do DHCP pode ser configurado tanto no ambiente gráfico
+como na interface de linha de comando. Neste material, demonstrare-
+mos como instalar o serviço.
+
+78                                                        Sistema operacional I
+                                                                                                                                                                                                                                         1.2 Como funciona o DHCP
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             O serviço de DHCP funciona baseado em concessão, ou seja, quan-
+                                                                                                                                                                                                                                         do um computador inicia, o DHCP concede um IP dentro de uma sub-
+                                                                                                                                                                                                                                         -rede. A concessão tem como padrão um limite de duração, sendo con-
+                                                                                                                                                                                                                                         figurada em horas ou dias. Por padrão, a concessão é de oito dias para
+                                                                                                                                                                                                                                         usuários conectados através de cabos, e três dias para usuários que
+                                                                                                                                                                                                                                         utilizam Wi-Fi. O servidor DHCP é limitado dentro da sua sub-rede. Do
+                                                                                                                                                                                                                                         outro lado, no computador, tem que estar habilitada a opção de obter
+                                                                                                                                                                                                                                         um IP automaticamente.
+
+                                                                                                                                                                                                                                             Para o processo de concessão do IP, o servidor utiliza quatro etapas
+                                                                                                                                                                                                                                         de entrega:
+
+                                                                                                                                                                                                                                             1. Pacote DHCPDISCOVER: o computador cliente transmite para
+                                                                                                                                                                                                                                                  rede o pacote de DHCPDISCOVER. Em alguma parte da rede, um
+                                                                                                                                                                                                                                                  computador que está executando o servidor DHCP responderá
+                                                                                                                                                                                                                                                  (computador com função de DHCP).
+
+                                                                                                                                                                                                                                             2. O servidor de DHCP responde com um pacote chamado
+                                                                                                                                                                                                                                                  DHCPOFFER, contendo um endereço.
+
+                                                                                                                                                                                                                                             3. O computador recebe o pacote DHCPOFFER e transmite o
+                                                                                                                                                                                                                                                  DHCPREQUEST, contendo um identificador. Observação: e se a
+                                                                                                                                                                                                                                                  rede possuir outros servidores DHCP, como acontece essa etapa
+                                                                                                                                                                                                                                                  da negociação? Então, a decisão de qual aceitar estará no tem-
+                                                                                                                                                                                                                                                  po de resposta do pacote DHCPDISCOVER, ou seja, a decisão do
+                                                                                                                                                                                                                                                  cliente será a aceitação do pacote com o menor tempo, pois isso
+                                                                                                                                                                                                                                                  garantirá que o servidor de DHCP esteja mais próximo. Em segui-
+                                                                                                                                                                                                                                                  da, o computador cliente transmite o DHCPREQUEST, contendo
+                                                                                                                                                                                                                                                  um identificador de servidor. Isso informa aos servidores DHCP
+                                                                                                                                                                                                                                                  que recebem a transmissão qual DHCPOFFER do servidor o clien-
+                                                                                                                                                                                                                                                  te optou por aceitar.
+
+
+
+                                                                                                                                                                                                                                         Servidores DHCP e DNS                                                 79
+     4. O servidor de DHCP recebe o DHCPREQUEST. O servidor escolhi-
+
+
+
+
+                                                                                                     Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+       do armazena as informações de endereço IP do cliente no banco
+       de dados DHCP e responde com uma mensagem DHCPACK.
+
+     A figura 1 apresenta a negociação de um cliente DHCP com o servi-
+dor DHCP.
+
+            Figura 1 — Negociação de pacotes envolvidos em um serviço de DHCP
+
+
+
+
+             1. DHCPDISCOVER                                  Cliente DHCP
+
+
+                               3. DHCPREQUEST
+
+
+
+                                  2. DHCPOFFER
+
+                                             4. DHCPACK
+
+
+
+
+              Servidor DHCP
+
+
+
+
+1.3 Renovação do IP
+
+     Quando você configura o serviço de DHCP no servidor, uma das eta-
+pas é definir a validade daquele IP para o cliente, que pode ser conce-
+dida por horas ou até dias. Por padrão, quando a concessão chega em
+50% da utilização, o computador cliente solicita a renovação. A ação é
+feita sem a intermediação do usuário, totalmente em segundo plano. O
+cliente manda o pacote DHCPREQUEST para a rede, o servidor DHCP
+identifica que aquele pacote pertence a ele e devolve o DHCPACK com
+as informações para a atualização do cliente.
+
+
+80                                                                           Sistema operacional I
+                                                                                                                                                                                                                                             E no caso de não haver a renovação com 50% de utilização da con-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         cessão? Nesse momento, o cliente aguarda um novo tempo, espera
+                                                                                                                                                                                                                                         87,5% para efetuar o procedimento descrito anteriormente. Caso ainda
+                                                                                                                                                                                                                                         não tenha renovado, aguarda a terceira fase de 100% de utilização da
+                                                                                                                                                                                                                                         concessão. Caso não consiga, a última ação é solicitar a renovação em
+                                                                                                                                                                                                                                         uma outra sub-rede; nesse caso, solicita uma nova concessão utilizan-
+                                                                                                                                                                                                                                         do o Gateway.
+
+
+                                                                                                                                                                                                                                         1.4 Instalando o serviço de DHCP
+
+                                                                                                                                                                                                                                             Para esta atividade, necessitaremos utilizar o nosso servidor DC-01.
+                                                                                                                                                                                                                                         Neste momento, será demonstrado como instalar o serviço de DHCP
+                                                                                                                                                                                                                                         no DC-01.
+
+                                                                                                                                                                                                                                             a. Abra o gerenciador do servidor.
+
+                                                                                                                                                                                                                                             b. Clique na opção Adicionar funções ou recursos.
+
+                                                                                                                                                                                                                                             c. Na tela Assistente de Adição de Funções e Recursos, selecione a
+                                                                                                                                                                                                                                                  opção Instalação baseada em função ou recurso.
+
+
+
+
+                                                                                                                                                                                                                                         Servidores DHCP e DNS                                                 81
+82
+
+
+
+
+                                                                                                                     e. Na tela Funções do Servidor, escolha a opção Servidor DHCP.                                                d. Na tela de Seleção de Servidor, escolha o DC-01.Senac.local.
+
+
+
+
+Sistema operacional I
+
+
+
+
+   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             f. Na tela de Gerenciar recursos, pressione Próximo.
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             g. Na tela de Servidor DHCP, é informado sobre o serviço do DHCP.
+                                                                                                                                                                                                                                                  Nesse caso, pressione o botão Próximo.
+
+
+
+
+                                                                                                                                                                                                                                             h. Na última opção, clique no botão Instalar. A figura 2 mostra o se-
+                                                                                                                                                                                                                                                  quenciamento das telas de instalação.
+
+                                                                                                                                                                                                                                             Note que fizemos a instalação do serviço de DHCP, e não a conces-
+                                                                                                                                                                                                                                         são do DHCP. Faremos a configuração do DHCP nas seções a seguir.
+
+
+                                                                                                                                                                                                                                         1.5 Escopo de DHCP
+
+                                                                                                                                                                                                                                             A instalação do serviço de DHCP na rede não significa que ele está
+                                                                                                                                                                                                                                         pronto para conceder o IP para os hosts. Nesse caso, precisamos confi-
+                                                                                                                                                                                                                                         gurar seu escopo. Vamos entendê-lo um pouco mais.
+
+                                                                                                                                                                                                                                             Um escopo DHCP é o método principal para configurar opções de
+                                                                                                                                                                                                                                         um grupo de endereços IP. Baseia-se em uma sub-rede IP e pode ter
+
+
+                                                                                                                                                                                                                                         Servidores DHCP e DNS                                                  83
+configurações específicas de hardware ou grupos de clientes. Para im-
+
+
+
+
+                                                                                            Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+plantar um escopo de DHCP, você precisa planejar algumas proprieda-
+des (THOMPSON, 2017). Os itens são mostrados na figura 2.
+
+                          Figura 2 — Planejamento do DHCP
+
+
+
+
+                   Servidor DHCP
+
+
+
+                                   Nome do escopo: LabSenac
+
+
+                                   Intervalo do escopo: 10.0.0.100 — 10.0.0.200
+
+                                   Máscara de sub-rede: 255.0.0.0
+
+                                   Exclusões de IP: 10.0.0.101
+
+
+                                   Duração da concessão: 3 dias
+
+
+
+
+     A figura 2 aborda:
+
+     • Nome do escopo: o nome é importante para fazer a identificação
+        desse escopo. Nomes genéricos podem, em algum momento,
+        confundir ou não traduzir a realidade.
+
+     • Intervalo do escopo: esta é a parte mais relevante de todas as
+        propriedades, pois aqui será definida a faixa (range) de IP que
+        será oferecida aos usuários. Um erro aqui pode colocar em risco
+        a política de segurança da empresa.
+
+     • Máscara de sub-rede: a máscara de sub-rede subdivide a rede,
+        resultando em um tráfego menor. Em nossas atividades, estamos
+        usando a máscara 255.0.0.0.
+
+
+84                                                                  Sistema operacional I
+                                                                                                                                                                                                                                             • Exclusão de IP: a partir do momento que você definiu o seu es-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  copo e a máscara de sub-rede, o próximo ponto seria a exclusão
+                                                                                                                                                                                                                                                  de IP. A lista que aqui for colocada não será disponibilizada para
+                                                                                                                                                                                                                                                  os hosts. Nesse caso, o administrador utiliza essa exclusão para
+                                                                                                                                                                                                                                                  atribuir o IP em impressoras de rede, roteador ou serviços especí-
+                                                                                                                                                                                                                                                  ficos de administração de rede.
+
+                                                                                                                                                                                                                                             • Duração da concessão: este é o tempo de validade da concessão
+                                                                                                                                                                                                                                                  do IP. Como prática, utiliza-se uma concessão mais curta para dis-
+                                                                                                                                                                                                                                                  positivos que ficarão menos tempo conectados e duração maior
+                                                                                                                                                                                                                                                  para hosts conectados à rede, como desktops e impressoras.
+
+
+                                                                                                                                                                                                                                                      PARA SABER MAIS
+
+                                                                                                                                                                                                                                                      Se você desejar conhecer um pouco mais sobre máscara de sub-rede,
+                                                                                                                                                                                                                                                      leia o artigo “O que é uma máscara em sub-redes?”, disponibilizado no
+                                                                                                                                                                                                                                                      portal Brasil Cloud ([s. d.]). Vale conferir.
+
+                                                                                                                                                                                                                                                                                                                              
+
+
+
+                                                                                                                                                                                                                                         1.6 DHCP IPv6
+
+                                                                                                                                                                                                                                             Em nosso projeto, estamos utilizando o IPv4. Mas e se eu desejar
+                                                                                                                                                                                                                                         utilizar o IPv6? O DHCP para IPv6 funciona um pouco diferente do DHCP
+                                                                                                                                                                                                                                         para IPv4, pois existe um novo protocolo: DHCPv6.
+
+                                                                                                                                                                                                                                             Diferentemente do IPv4, o IPv6 é formado por 128 bits agrupados em
+                                                                                                                                                                                                                                         oito campos no formato hexadecimal. Cada campo é separado por dois
+                                                                                                                                                                                                                                         pontos. Em nosso caso, podemos ver o IPv6 no DC-01. A figura 3 mostra
+                                                                                                                                                                                                                                         o comando “ipconfig /all”, que foi executado no prompt do PowerShell.
+
+
+
+
+                                                                                                                                                                                                                                         Servidores DHCP e DNS                                                                85
+              Figura 3 — Resultado do comando IPCONFIG /ALL no PowerShell
+
+
+
+
+                                                                                                     Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     No PowerShell, você pode dar o comando “Get-NetIPInterface” para
+ver as interfaces disponíveis e anotar o índice (que, neste caso, foi o
+numeral seis). A figura 4 mostra a tela com o comando.
+
+            Figura 4 — Comando no PowerShell para visualizar a interface de rede
+
+
+
+
+86                                                                           Sistema operacional I
+                                                                                                                                                                                                                                             Quando instalamos a função de DHCP, também é disponibilizada a
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         opção do IPv6. Para utilizar e propagar a concessão, necessitamos fa-
+                                                                                                                                                                                                                                         zer a configuração. A figura 5 mostra a disponibilidade do serviço.
+
+                                                                                                                                                                                                                                                          Figura 5 — Disponibilidade do IPv6 para configuração no Server 2019
+
+
+
+
+                                                                                                                                                                                                                                             Para concluir o assunto de IPv6, que se torna uma obrigatoriedade à
+                                                                                                                                                                                                                                         medida que os endereços de IPv4 vão acabando, o processo de plane-
+                                                                                                                                                                                                                                         jamento segue a regra citada na figura 2, ou seja, precisamos de: nome
+                                                                                                                                                                                                                                         do escopo, intervalo do escopo, máscara de sub-rede, exclusões de IP e
+                                                                                                                                                                                                                                         duração da concessão.
+
+
+                                                                                                                                                                                                                                                      PARA SABER MAIS
+
+                                                                                                                                                                                                                                                      Se desejar conhecer um pouco mais sobre IPv6, leia o artigo “Autoconfi-
+                                                                                                                                                                                                                                                      guração de endereços via DHCPv6 – Revista Infra Magazine 9”, disponi-
+                                                                                                                                                                                                                                                      bilizado no portal DEVMEDIA ([s. d.]).
+
+                                                                                                                                                                                                                                                                                                                                
+
+
+
+
+                                                                                                                                                                                                                                         Servidores DHCP e DNS                                                                  87
+1.7 Reserva de DHCP
+
+
+
+
+                                                                                     Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     Neste ponto, nossa rede propaga o serviço de DHCPv4. Fizemos as
+exclusões dos IPs e agora falta atribuir esses IPs excluídos a determina-
+dos equipamentos-chave da rede, por exemplo, uma impressora a qual
+todos acessam. Nesse caso, é desnecessário deixar o DHCP automá-
+tico para a impressora, pois a cada renovação pode ser atribuído um
+outro endereço de IP e, assim, dar um grande trabalho ao administrador
+para reconfigurar o IP novo da impressora nos hosts. Para evitar esse
+retrabalho, surge a reserva de DHCP, que é um endereço de IP válido
+e específico dentro de um escopo reservado para a concessão de um
+dispositivo. O interessante dessa ação é para casos em que não haja
+mais endereços IP no escopo do DHCP, o IP do dispositivo reservado é
+garantido.
+
+     Mas o que devo ter para reservar um IP? Normalmente, você terá
+uma planilha ou sistema para gerir os IPs reservados, além da organiza-
+ção, obrigatoriamente, você precisa ter o MAC Address (media access
+control — endereço físico) do dispositivo a ser reservado.
+
+     O MAC Address é composto por um endereço hexadecimal. Nesse
+caso, o DC-01 tem o endereço físico como: “00-0C-29-82-45-61”, que pode
+ser verificado na figura 3. Note que essa combinação é única no mundo.
+
+
+2 Serviços de DNS
+     Nossa empresa tem mais de cem computadores, todos conectados
+à rede. Cada equipamento tem um IP e um MAC Address. Uma conta
+básica: duas informações multiplicadas por cem computadores — logo,
+temos duzentas informações diferentes. A informação do IP vem no for-
+mato “10.0.0.101”, e do MAC em “00-0C-29-82-45-61”. Você conseguiria
+lembrar ou decorar essas informações? Provavelmente sua resposta é
+
+
+
+88                                                           Sistema operacional I
+                                                                                                                                                                                                                                         “não”. Nesse cenário caótico é que vem o serviço de DNS, ou seja, uma
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         ajuda para o administrador de rede.
+
+                                                                                                                                                                                                                                             O DNS é um sistema de resolução de nomes que tem como fina-
+                                                                                                                                                                                                                                         lidade traduzir (numerais, códigos), por meio de software, nomes que
+                                                                                                                                                                                                                                         os usuários possam compreender, bem como endereços IP numéricos,
+                                                                                                                                                                                                                                         necessários à comunicação TCP/IP. O ADDS, principalmente na rede,
+                                                                                                                                                                                                                                         depende muito do DNS para resolver endereços e localizar hosts.
+
+                                                                                                                                                                                                                                             O DNS é um serviço que resolve FQDN (fully qualified domain name)
+                                                                                                                                                                                                                                         e outros nomes de host para endereços IP. Todos os SO Windows Server
+                                                                                                                                                                                                                                         incluem um DNS, que utiliza uma base de dados que normalmente é
+                                                                                                                                                                                                                                         criada quando instalamos o ADDS. Qualquer consulta referente a IP ou
+                                                                                                                                                                                                                                         nome de hosts são feitas na base do DNS. Analise a figura 6.
+
+                                                                                                                                                                                                                                                                 Figura 6 — Comando ping -a no servidor DC-01
+
+
+
+
+                                                                                                                                                                                                                                             Na figura 6, utilizamos o comando “ping -a 10.0.0.100”, que retornou
+                                                                                                                                                                                                                                         o nome do host no formato FQDN, ficando, assim, um nome mais ami-
+                                                                                                                                                                                                                                         gável. Caso o DNS reverso esteja configurado, se você der o comando
+                                                                                                                                                                                                                                         “ping -a DC-01”, será mostrado o IP do host.
+
+
+
+                                                                                                                                                                                                                                         Servidores DHCP e DNS                                                  89
+     Na base de dados do DNS, estão sendo agrupadas informações so-
+
+
+
+
+                                                                                                 Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+bre todos os recursos da rede no formato de uma estrutura hierárquica
+de domínios, ou seja, o formato dessa estrutura é parecido com uma
+árvore invertida, na qual os endereços IP (e nomes) começam no do-
+mínio raiz, finalizando no domínio filho individualmente. Essa estrutura
+é conhecida como namespace DNS. Portanto, toda essa estrutura de
+domínio DNS é chamada de “espaço para nome DNS”.
+
+
+2.1 Zona DNS
+
+     Uma das partes específicas do namespace do DNS é a zona DNS.
+Nela, estão contidos os registros para responder qualquer consulta
+no domínio. Esse banco se torna vital para a otimização da rede e exis-
+tem basicamente dois tipos de zonas do DNS. A figura 7 apresenta as
+duas opções.
+
+                 Figura 7 — Dois tipos de zonas mais utilizadas do DNS
+
+
+
+
+                                    Pesquisa direta: resolve nomes de host
+                                    para endereços IP
+                                    Pesquisa inversa: resolve nomes de
+               DNS                  endereços IP para nome de domínio
+
+
+
+
+2.2 Exemplos de comandos do DNS
+
+     Em alguns momentos, a comunicação da rede para o servidor não
+consegue mais responder à resolução de nomes; o problema pode ser
+o DNS. Na figura 8, foi feito o acesso ao prompt de comando e digitado
+o comando ipconfig /displaydns.
+
+
+
+
+90                                                                       Sistema operacional I
+                                                                                                                                                                                                                                                                 Figura 8 — Comando ipconfig/ displaydns
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                            Para liberar o DNS e deixar mais rápida a consulta, digite o comando
+                                                                                                                                                                                                                                         ipconfig/flushdns. Esse procedimento, geralmente, resolve a paralisa-
+                                                                                                                                                                                                                                         ção do DNS. Agora, execute novamente ipconfig/displaydns e compare
+                                                                                                                                                                                                                                         com a execução anterior.
+
+
+                                                                                                                                                                                                                                         Considerações finais
+                                                                                                                                                                                                                                             Este capítulo foi intenso, pois a configuração errônea pode comprome-
+                                                                                                                                                                                                                                         ter a segurança da rede, bem como a otimização de recursos. No tocante
+                                                                                                                                                                                                                                         ao IP, o serviço de DHCP ajudará na implantação e na administração da
+                                                                                                                                                                                                                                         rede, por meio de escopo, concessão e validação. Já na linha de adminis-
+                                                                                                                                                                                                                                         tração da rede, o servidor DNS faz a ligação entre o domínio e o IP do host
+                                                                                                                                                                                                                                         de forma amigável, fazendo a tradução automática por meio de software.
+
+
+
+                                                                                                                                                                                                                                         Servidores DHCP e DNS                                                    91
+     Para finalizar, você conhece o IP “8.8.8.8”? Não é mais fácil falar para
+
+
+
+
+                                                                                         Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+você que esse endereço DNS pertence ao google.com?
+
+
+Referências
+AUTOCONFIGURAÇÃO de endereços via DHCPv6 – Revista Infra Magazine 9.
+DevMedia, [s. d.]. Disponível em: https://www.devmedia.com.br/autoconfigu-
+racao-de-enderecos-via-dhcpv6-revista-infra-magazine-9/26783. Acesso em: 3
+set. 2020.
+
+O QUE é uma máscara em sub-redes? Brasil Cloud, [s. d.]. Disponível em: https://
+brasilcloud.com.br/duvidas/o-que-e-uma-mascara-de-sub-rede-sub-mask/.
+Acesso em: 3 set. 2020.
+
+THOMPSON, M. A. Microsoft Windows Server 2016: Fundamentos. São Paulo:
+Érica, 2017.
+
+
+
+
+92                                                               Sistema operacional I
+

@@ -1,0 +1,572 @@
+                                                                                                                                                                                                                                                                                                  Capítulo 3
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                     Instalando
+                                                                                                                                                                                                                                                 controlador de
+                                                                                                                                                                                                                                                domínio usando
+                                                                                                                                                                                                                                              IFM; gerenciando
+                                                                                                                                                                                                                                                usuário, grupos
+                                                                                                                                                                                                                                                  e unidades no
+                                                                                                                                                                                                                                              AD e scripts para
+                                                                                                                                                                                                                                            usuários em massa
+                                                                                                                                                                                                                                            Em um cenário de empresas, onde encontramos matriz e filial, pode
+                                                                                                                                                                                                                                         ocorrer que a matriz esteja localizada em uma determinada cidade e a
+                                                                                                                                                                                                                                         filial esteja a 250 km de distância. Sair da matriz em uma cidade, para
+                                                                                                                                                                                                                                         dar manutenção no AD, e deslocar-se para a filial, dependendo do cami-
+                                                                                                                                                                                                                                         nho, de carro ou ônibus, levará várias horas. Então, geralmente, o contro-
+                                                                                                                                                                                                                                         lador de domínio pode ser replicado off-line em mais de um ponto. Se o
+                                                                                                                                                                                                                                         AD fosse replicado on-line, criaria uma dependência imensa da matriz e
+                                                                                                                                                                                                                                         precisaríamos de uma banda larga satisfatória para atender ao projeto.
+
+                                                                                                                                                                                                                                                                                                                 61
+     Neste capítulo, estudaremos como é possível reduzir drasticamente
+
+
+
+
+                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+a quantidade de megabyte nessa replicação para torná-la viável. Após a
+replicação, você saberá como administrar muitos usuários em sua rede.
+Então, vamos tratar sobre as características de um usuário e demons-
+trar como podemos importar uma grande quantidade de usuários, seja
+no prompt de comando ou no PowerShell.
+
+
+1 Instalação IFM (install from media) do AD
+no Windows Server
+     Nesta seção, você aprenderá como configurar um controlador de do-
+mínio usando o arquivo de dados IFM. O IFM é um recurso que permite
+configurar um servidor como um controlador de domínio. Esse recurso
+ajuda a reduzir o consumo de largura de banda da rede usado durante a
+configuração adicional do controlador de domínio. O IFM permite expor-
+tar o arquivo de banco de dados do AD (NTDS) para uma mídia externa
+que pode ser usada para configurar um controlador de domínio adicional.
+
+
+1.1 O que é o IFM?
+
+     O IFM, ou a “instalação da mídia”, é uma opção que permite criar uma
+mídia de instalação “off-line” do seu AD. Usando a abordagem IFM, você
+poderá “despejar” o conteúdo do AD (conteúdo do banco de dados/
+SYSVOL) e copiar essa “mídia de instalação” para o futuro controlador
+de domínio.
+
+     O IFM foi projetado para minimizar o tráfego de replicação ao pro-
+mover os controladores de domínio. Atualmente, assumimos que a ve-
+locidade da rede é suficiente para realizar essa operação; entretanto, em
+algum momento, o link pode ficar tão lento que uma operação normal
+de instalação do domínio simplesmente atinge o tempo limite e você
+
+
+
+
+62                                                         Sistema operacional I
+                                                                                                                                                                                                                                         não pode promover seu servidor remoto para um controlador de domí-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         nio (TECHNET, 2015).
+
+                                                                                                                                                                                                                                             Para esta atividade, utilizaremos nossas máquinas virtuais DC-01 e
+                                                                                                                                                                                                                                         um pendrive. Vamos para a prática.
+
+                                                                                                                                                                                                                                             Acesse o DC-01 e desenvolva os procedimentos a seguir para confi-
+                                                                                                                                                                                                                                         gurar o IFM. Com o usuário Administrador, proceda conforme os passos
+                                                                                                                                                                                                                                         a seguir.
+
+                                                                                                                                                                                                                                             a. Abra a caixa de diálogo Executar, digite o comando CMD e pres-
+                                                                                                                                                                                                                                                  sione Enter. Assim, abriremos o prompt para executar as ações.
+
+                                                                                                                                                                                                                                             b. Na janela prompt de comando, digite o comando: NTDSUTIL e
+                                                                                                                                                                                                                                                  pressione Enter.
+
+                                                                                                                                                                                                                                             c. Necessitamos ativar o ntds. Para isso, digite: Activate instance ntds.
+
+
+
+
+                                                                                                                                                                                                                                             d. Na sequência, temos o resultado da execução da primeira série
+                                                                                                                                                                                                                                                  de comandos, que, não tendo ocorrido nenhum erro, será uma
+                                                                                                                                                                                                                                                  tela com o conteúdo exibido na figura a seguir.
+
+
+
+
+                                                                                                                                                                                                                                         Instalando controlador de domínio usando IFM; gerenciando usuário, grupos e unidades no AD
+                                                                                                                                                                                                                                         e scripts para usuários em massa                                                             63
+     e. Digite o comando IFM e pressione Enter. Em seguida, digite o co-
+
+
+
+
+                                                                                      Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+        mando Create sysvol full C:\IFM.
+
+
+
+
+     f. Ao término, será mostrada a mensagem: Mídia IFM criada com
+        êxito em C:\IFM. Note que, na penúltima linha do print da tela, é
+        indicado que a a Mídia IFM foi criada com sucesso.
+
+     Para finalizar o processo, digite Quit. Então, deve ter sido criada uma
+pasta chamada IFM no drive C. Copie essa pasta para o pendrive e leve-o
+ao computador de destino para transferir o sistema.
+
+
+2 Administrando usuários e suas
+particularidades
+     Com a evolução das redes, houve uma necessidade de administrar
+o quadro de usuários com maior eficiência e muito mais rapidez. Nesse
+contexto, o coração de uma rede é o AD, pois possibilita administrar os
+
+
+64                                                            Sistema operacional I
+                                                                                                                                                                                                                                         objetos disponíveis (computador, usuários, etc.) personalizando caso
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         a caso, e criando, assim, um perfil. Nesta seção, serão demonstradas
+                                                                                                                                                                                                                                         algumas configurações para agregar ao nosso cenário. Para esta ativi-
+                                                                                                                                                                                                                                         dade, utilizaremos o VM DC-01.
+
+                                                                                                                                                                                                                                             Imagine a situação: seu supervisor lhe faz um pedido com urgên-
+                                                                                                                                                                                                                                         cia. Ele diz: “Temos 30 minutos para cadastrar 400 funcionários para o
+                                                                                                                                                                                                                                         ambiente de telemarketing”. O que você faz? Senta e chora? Dá para o
+                                                                                                                                                                                                                                         estagiário fazer? Não se desespere, pois nesta seção vamos mostrar
+                                                                                                                                                                                                                                         que existem algumas saídas. Para isso, teremos que conhecer algu-
+                                                                                                                                                                                                                                         mas informações.
+
+
+                                                                                                                                                                                                                                         2.1 Administrando usuários
+
+                                                                                                                                                                                                                                             Em uma rede de computadores, o elo entre a pessoa física e a rede
+                                                                                                                                                                                                                                         de computador é o usuário. O administrador, quando cria um usuário,
+                                                                                                                                                                                                                                         entrega a uma pessoa uma permissão de utilizar os recursos da rede,
+                                                                                                                                                                                                                                         configurando um ambiente para atender às suas necessidades e parti-
+                                                                                                                                                                                                                                         cularidades. Um objeto de usuário no AD DS é a base da identidade e
+                                                                                                                                                                                                                                         do acesso ao AD. A identificação do usuário (login) pode ser traduzida
+                                                                                                                                                                                                                                         como processos consistentes, eficientes e seguros relativos à adminis-
+                                                                                                                                                                                                                                         tração das contas de usuário, gerando, assim, uma segurança corpora-
+                                                                                                                                                                                                                                         tiva (THOMPSON, 2017).
+
+
+                                                                                                                                                                                                                                         2.2 Criando um usuário: configurando atributos de conta
+                                                                                                                                                                                                                                         do usuário
+
+                                                                                                                                                                                                                                             Ao criar uma conta de usuário no AD, as propriedades de conta ou os
+                                                                                                                                                                                                                                         atributos associados também são configurados. Os atributos associa-
+                                                                                                                                                                                                                                         dos a uma conta de usuário são definidos como parte do esquema AD,
+                                                                                                                                                                                                                                         passíveis de modificação pelos membros do grupo “administradores de
+                                                                                                                                                                                                                                         esquema”. É importante considerar as propriedades a seguir ao criar
+                                                                                                                                                                                                                                         contas de usuário locais:
+                                                                                                                                                                                                                                         Instalando controlador de domínio usando IFM; gerenciando usuário, grupos e unidades no AD
+                                                                                                                                                                                                                                         e scripts para usuários em massa                                                             65
+     • Nome completo: usado para criar atributos de um objeto de usuá­
+
+
+
+
+                                                                                                           Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+        rio, especialmente as propriedades CN (nome comum) e o nome
+        para exibição. O CN é o nome que aparece no painel de detalhes
+        do snap-in1 e deve ser exclusivo dentro do contêiner ou da OU.
+
+     • Propriedade logon UPN (UPN — user principal name) do usuá-
+        rio: consiste em um prefixo de nome de logon de usuário e um
+        sufixo, que será acrescentado ao logon após o símbolo @.
+
+     • UPN: método de autenticação de logon no qual você insere as
+        credenciais como username@domainname.com em vez do mé-
+        todo de autenticação do Windows (domainname\username) para
+        ser usado como login.
+
+     Agora, vamos à prática: inicialmente, criaremos um novo usuário,
+para que você possa entender o mecanismo e ver os campos que uti-
+lizaremos. Para acessar o AD, abra o Executar utilizando as teclas de
+atalho  + R e, em seguida, digite dsa.msc.
+
+     Observe que, na tela que será exibida, encontramos nosso domínio.
+Para acessá-lo, basta clicar sobre o termo Senac.local e este será ex-
+pandido, mostrando detalhadamente os objetos para administração.
+Nos itens seguintes, são detalhados os principais.
+
+
+2.3 OU
+
+     A hierarquia da OU não precisa refletir a hierarquia departamental
+da organização ou grupo. As OUs são criadas para uma finalidade es-
+pecífica, como a delegação de administração, a aplicação de diretiva
+de grupo ou a limitação da visibilidade de objetos. Pode-se projetar a
+estrutura da OU para delegar administração a indivíduos ou grupos da
+
+
+
+1 Snap-in é uma ferramenta hospedada no MMC (console de gerenciamento da Microsoft). Serve para criar,
+salvar e abrir ferramentas administrativas denominadas “consoles”.
+
+
+66                                                                                 Sistema operacional I
+                                                                                                                                                                                                                                         organização que requerem autonomia para gerenciar seus próprios re-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         cursos e dados. As OUs representam limites administrativos e permi-
+                                                                                                                                                                                                                                         tem que você controle o escopo de autoridade dos administradores de
+                                                                                                                                                                                                                                         dados (THOMPSON, 2017).
+
+                                                                                                                                                                                                                                             O administrador define a estrutura da empresa criando árvores, pen-
+                                                                                                                                                                                                                                         sando em uma política para o gerenciamento dos usuários. Então, ago-
+                                                                                                                                                                                                                                         ra, vamos criar uma OU. Proceda de acordo com as indicações a seguir.
+
+                                                                                                                                                                                                                                             • Com o AD aberto, clique sobre o nome do domínio com o botão
+                                                                                                                                                                                                                                                  da direita e escolha a opção NOVO|UNIDADE ORGANIZACIONAL e
+                                                                                                                                                                                                                                                  digite SENACSP. A figura 1 mostra o procedimento.
+
+                                                                                                                                                                                                                                                                         Figura 1 – Procedimento para criar uma OU
+
+
+
+
+                                                                                                                                                                                                                                         Instalando controlador de domínio usando IFM; gerenciando usuário, grupos e unidades no AD
+                                                                                                                                                                                                                                         e scripts para usuários em massa                                                             67
+2.4 Criando o usuário
+
+
+
+
+                                                                                                     Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     Com a criação da OU SenacSP, podemos criar nosso usuário Caio
+Pimenta. Para a criação do usuário, selecione o contêiner SenacSP e pres-
+sione o botão da direita do mouse. Clique em Novo e depois em Usuário.
+
+     Então, será exibida uma tela para fazer o cadastro básico de um novo
+usuário. A figura 2 mostra os campos para preenchimento que aparecerão.
+
+              Figura 2 – Tela de com detalhes dos campos do cadastro de usuário
+
+
+
+
+68                                                                           Sistema operacional I
+                                                                                                                                                                                                                                             A figura 2 mostra os campos mínimos para a criação de um usuá-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         rio. Note que a senha tem de atender aos requisitos de complexidade,
+                                                                                                                                                                                                                                         que são:
+
+                                                                                                                                                                                                                                             • não pode conter partes do nome do usuário;
+
+                                                                                                                                                                                                                                             • deve contar com letras maiúsculas e minúsculas;
+
+                                                                                                                                                                                                                                             • ter, no mínimo, 8 dígitos;
+
+                                                                                                                                                                                                                                             • ter, ao menos, um símbolo (@, #, ...).
+
+
+                                                                                                                                                                                                                                                       PARA SABER MAIS
+
+                                                                                                                                                                                                                                                       Você sabia que utilizar esses requisitos de complexidade possibilita
+                                                                                                                                                                                                                                                       218.340.105.584.896 combinações diferentes para uma única senha?
+                                                                                                                                                                                                                                                       Se algum hacker tentar invadir o computador será bastante difícil reali-
+                                                                                                                                                                                                                                                       zar um ataque de força bruta, no qual se tenta descobrir a senha testan-
+                                                                                                                                                                                                                                                       do as diversas possibilidades.
+
+                                                                                                                                                                                                                                                                                                                                      
+
+
+                                                                                                                                                                                                                                             Na última tela do cadastro, você consegue aplicar uma regra sim-
+                                                                                                                                                                                                                                         ples. Nesse momento, quando você pressionar Enter, o usuário poderá
+                                                                                                                                                                                                                                         acessar um terminal qualquer (sempre dentro do domínio).
+
+
+                                                                                                                                                                                                                                         2.5 Administrando o usuário
+
+                                                                                                                                                                                                                                             Após criado o usuário, precisamos parametrizá-lo, ou seja, temos de
+                                                                                                                                                                                                                                         configurar os recursos do usuário Caio. Para acessar as propriedades
+                                                                                                                                                                                                                                         do usuário, dê um duplo clique sobre o usuário Caio Pimenta. A figura 3
+                                                                                                                                                                                                                                         mostra as guias e o campos que podem ser alterados.
+
+
+
+
+                                                                                                                                                                                                                                         Instalando controlador de domínio usando IFM; gerenciando usuário, grupos e unidades no AD
+                                                                                                                                                                                                                                         e scripts para usuários em massa                                                             69
+                Figura 3 – As principais telas na administração de um usuário
+
+
+
+
+                                                                                                        Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+
+
+     São exibidas as seguintes guias:
+
+     • Geral: mostra as informações pessoais do usuário. Muitos aplica-
+        tivos (principalmente de e-mail), utilizam essas informações para
+        compor outras informações.
+
+
+70                                                                              Sistema operacional I
+                                                                                                                                                                                                                                             • Conta: traz informações sobre o login. Essa tela é interessante,
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  pois você consegue montar um ambiente personalizado para o
+                                                                                                                                                                                                                                                  usuário e, por meio dos botões “Fazer Logon...” e “Fazer Logon
+                                                                                                                                                                                                                                                  em”, determinar qual máquina da rede o usuário pode acessar e
+                                                                                                                                                                                                                                                  em qual horário isso será permitido.
+
+                                                                                                                                                                                                                                             • Perfil: o caminho pode ser local ou, mais normalmente, um ca-
+                                                                                                                                                                                                                                                  minho UNC (uniform naming convention). Define a localização de
+                                                                                                                                                                                                                                                  um recurso em uma rede.
+
+                                                                                                                                                                                                                                             • Membro: utilizada para definir a participação do usuário em gru-
+                                                                                                                                                                                                                                                  pos, o que facilita a administração de pastas e segurança.
+
+
+                                                                                                                                                                                                                                         3 Usando comandos para criar usuários em
+                                                                                                                                                                                                                                         massa (prompt de comando e PowerShell)
+                                                                                                                                                                                                                                             Agora que você conheceu um pouco mais a criação, a configuração
+                                                                                                                                                                                                                                         de usuário, a administração de OU e conferiu algumas propriedades
+                                                                                                                                                                                                                                         sobre o usuário, vamos dar mais um passo. No método apresentado
+                                                                                                                                                                                                                                         anteriormente, criamos um usuário por vez. E se precisássemos subir
+                                                                                                                                                                                                                                         no AD uma lista com 300 usuários no prazo de alguns minutos? Nessa
+                                                                                                                                                                                                                                         situação, você teria que recorrer a scripts ou automatizar a criação de
+                                                                                                                                                                                                                                         usuários. Então, temos duas soluções: ou você cria um script e executa
+                                                                                                                                                                                                                                         no prompt de comando, ou faz uma automação usando o PowerShell.
+                                                                                                                                                                                                                                         Para o DOS, precisamos conhecer o comando DSADD.
+
+
+                                                                                                                                                                                                                                         3.1 DSADD
+
+                                                                                                                                                                                                                                             O DSADD é usado para criar uma instância de uma classe de objeto
+                                                                                                                                                                                                                                         do AD em uma determinada partição do diretório. Essas classes incluem
+                                                                                                                                                                                                                                         usuários, computadores, contatos, grupos, OUs e cotas. O DSADD tem
+                                                                                                                                                                                                                                         uma sintaxe genérica que consiste na situação apresentada pela figura 4.
+
+                                                                                                                                                                                                                                         Instalando controlador de domínio usando IFM; gerenciando usuário, grupos e unidades no AD
+                                                                                                                                                                                                                                         e scripts para usuários em massa                                                             71
+                                       Figura 4 — Sintaxe do comando DSADD
+
+
+
+
+                                                                                                                          Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                           DSADD<Object>,<caminho>-<Atributo>
+
+
+Qual o tipo que você deseja inserir,                                        O atributo sempre começará com um
+ou seja, temos o User, OU, Computer                                         sinal de menos e, em seguida, o seu valor
+
+
+                        Local que você deseja colocar o objeto, ou seja OU, domínio.
+                          Neste caso, utilize sempre vírgula para separar o caminho
+
+
+   Vamos criar um novo usuário chamado Felipe Pimenta na nossa OU
+chamada SenacSP. Um detalhe: nunca coloque um novo usuário direto na
+sua área de produção, pois sempre é interessante testar antes de liberar.
+
+     Para criar o usuário, proceda conforme os passos a seguir.
+
+     • Abra a tela do Executar utilizando as teclas de atalhos  + R. Em
+       seguida, digite o comando CMD.
+
+     • No prompt do DOS, digite o comando:
+
+         dsadd user cn=“Felipe Pimenta”,ou=SenacSP,dc=Senac,dc=local
+         -samid FPimenta -upn “fpimenta@senac.local” -fn Felipe -ls
+         Pimenta -pwd “Senac@123” -disabled no
+
+     Para explicar o comando digitado, vamos desmembrá-lo a conforme
+figura 5.
+
+                                        Figura 5 — Comando com comentários
+
+
+                  1                      2                             3                              4
+
+              dsadd user cn=“Felipe Pimenta”,ou=SenacSP,dc=Senac,dc=local -samid FPimenta
+              -upn “fpimenta@senac.local” -fn Felipe -ls Pimenta -pwd “Senac@123” -disabled no
+
+                             5                      6              7                   8                  9
+
+     1. Você vai adicionar um usuário                                                  5. Nome logon do usuário
+     2. O CN (compose name) vai aparecer na lista do AD, na tela                       6. Nome do usuário
+     principal. Colocamos entre aspas, pois temos um espaço no valor                   7. Sobrenome do usuário
+     3. Este é o caminho desejado, ou seja, queremos que este usuário                  8. Senha
+     seja colocado na OU SenacSP do domínio Senac.Local                                9. Usuário está habilitado
+     4. Nome logon do usuário (anterior ao Windows 2000)
+
+
+72                                                                                                Sistema operacional I
+                                                                                                                                                                                                                                             E no caso de haver mais de um usuário, ou seja, de precisarmos adicio-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         nar uma quantidade realmente grande de usuários ? Como faríamos para
+                                                                                                                                                                                                                                         cadastrar outros usuários, a Eloiza Pimenta, a Izabelli Pimenta e a Eliza
+                                                                                                                                                                                                                                         Pimenta? Já que você entendeu o comando do DSADD USER, teríamos
+                                                                                                                                                                                                                                         de montar um arquivo em lote e, assim, executá-lo de uma vez. Nesse
+                                                                                                                                                                                                                                         caso, criaremos um arquivo em um bloco de notas e salvaremos com a
+                                                                                                                                                                                                                                         extensão .BAT. Então, vamos proceder conforme os passos a seguir.
+
+                                                                                                                                                                                                                                             a. Abra a tela do Executar utilizando as teclas de atalho  + R e, em
+                                                                                                                                                                                                                                                  seguida, digite o comando NOTEPAD.
+
+                                                                                                                                                                                                                                             b. Com o bloco de notas aberto, digite as linhas de comandos, con-
+                                                                                                                                                                                                                                                  forme exibido na figura a seguir. Lembre-se de que a tecla Enter
+                                                                                                                                                                                                                                                  só deve ser utilizada no final da linha, ou seja, quando você trocar
+                                                                                                                                                                                                                                                  de usuário.
+
+
+
+
+                                                                                                                                                                                                                                             c. Após digitar, vamos salvar o arquivo no desktop. Clique no menu
+                                                                                                                                                                                                                                                  Arquivo, depois em Salvar Como. Selecione a área de trabalho
+                                                                                                                                                                                                                                                  (desktop), na opção Tipo, selecione TODOS OS ARQUIVOS; na opção
+                                                                                                                                                                                                                                                  NOME, digite SCRIPT.BAT e finalize pressionando o botão Salvar.
+
+                                                                                                                                                                                                                                             d. Para executar o arquivo, é simples: basta acessar o desktop do
+                                                                                                                                                                                                                                                  DC-01 e dar dois cliques no ícone do SCRIPT.BAT.
+
+
+                                                                                                                                                                                                                                         Instalando controlador de domínio usando IFM; gerenciando usuário, grupos e unidades no AD
+                                                                                                                                                                                                                                         e scripts para usuários em massa                                                             73
+     e. Para conferir, abra a tela do AD e observe o que foi criado. Se por
+
+
+
+
+                                                                                              Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+        acaso não aparecerem os usuários criados, atualize a tela utili-
+        zando a tecla F5.
+
+
+           PARA SABER MAIS
+
+           Na página ReviverSoft, no artigo “.BAT — extensão de arquivo”, você en-
+           contra mais informações sobre esse tipo de arquivo.
+
+                                                                                       
+
+
+
+3.2 Adicionando usuários em lote usando o PowerShell
+
+     No caso do PowerShell, a forma de adicionar usuários em lote é um
+pouco diferente, pois a sintaxe se difere do prompt de comando. Você
+também pode usar o Windows PowerShell para gerenciar os objetos do
+AD (TECHNET, 2016). Para exemplificar, vamos criar mais um usuário,
+a Fernanda Pimenta, na nossa OU SenacSP. Vamos proceder conforme
+os passos a seguir.
+
+     a. Na barra de tarefas, clique no ícone do Windows PowerShell.
+
+     b. Para criar um usuário chamado Fernanda Pimenta na OU SenacSP,
+        digite o seguinte comando e pressione Enter:
+
+        New-ADUser -Name “Fernanda Pimenta” -DisplayName “Fernanda
+        Pimenta” -Path “ou=SenacSp,dc=Senac,dc=local”
+
+    Ainda está faltando a importação em lote, ou seja, mais de um usuá-
+rio ao mesmo tempo. Nesse caso, vamos adicionar os usuários Miguel
+Pimenta, Aldi Pimenta, Antonio Pimenta e Oscar Pimenta. Observe que
+vamos colocar o nome na lista do AD com a primeira letra e o sobreno-
+me só para diferenciar o que adicionamos via prompt de comando e via
+PowerShell; será meramente ilustrativo.
+
+     Agora, vamos ao procedimento, conforme os passos a seguir.
+
+
+
+74                                                                    Sistema operacional I
+                                                                                                                                                                                                                                             a. Abra a tela do Executar utilizando as teclas de atalhos  + R. Em
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  seguida, digite o comando NOTEPAD.
+
+                                                                                                                                                                                                                                             b. Com o bloco de notas aberto, digite as linhas de comandos, con-
+                                                                                                                                                                                                                                                  forme mostra a figura a seguir.
+
+
+
+
+                                                                                                                                                                                                                                             c. Após digitar, para facilitar a localização do arquivo, crie uma pasta
+                                                                                                                                                                                                                                                  no drive C:\, nomeando-a como TEMP. Salve esse arquivo como
+                                                                                                                                                                                                                                                  SCRIPT.CSV.
+
+                                                                                                                                                                                                                                             d. No PowerShell, digite os comandos mostrados na figura a seguir.
+                                                                                                                                                                                                                                                  Em seguida, pressione Enter.
+
+
+
+
+                                                                                                                                                                                                                                             e. Para finalizar, abra o AD e verifique os usuários importados, con-
+                                                                                                                                                                                                                                                  forme mostra a figura a seguir.
+
+
+
+
+                                                                                                                                                                                                                                         Instalando controlador de domínio usando IFM; gerenciando usuário, grupos e unidades no AD
+                                                                                                                                                                                                                                         e scripts para usuários em massa                                                             75
+Considerações finais
+
+
+
+
+                                                                                      Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     Este capítulo abordou a importância do AD na administração de
+usuá­rios. Hoje, você já poderia montar o AD e enviá-lo por e-mail para
+um local remoto, criando, assim, uma cópia idêntica ao seu AD da em-
+presa matriz, mas off-line.
+
+     A partir do momento em que temos o AD já implantando, começa-
+mos o papel de entender como funciona a administração do AD, bem
+como suas principais guias e seus recursos. Sabendo onde estão as in-
+formações, manipulamos usuários, acessamos suas características e,
+finalmente, começamos a importar usuários em massa, tanto em DOS
+– usando arquivos de lote (entendendo o comando DSADD) – como no
+PowerShell, com sua escrita. Os comandos podem ser aprofundados e
+explorados, dependendo apenas da situação em que você se encontra.
+
+
+Referências
+THOMPSON, M. A. Microsoft Windows Server 2016: fundamentos. São Paulo:
+Érica, 2017.
+
+TECHNET. Criando mídias de instalação IFM (install from media). [2015?].
+Disponível em: https://social.technet.microsoft.com/wiki/contents/articles/
+4084.criando-midias-de-instalacao-ifm-install-from-media-pt-br.aspx. Acesso
+em: 5 fev. 2020.
+
+TECHNET. Criando usuários em lote no active directory usando PowerShell.
+[2016?]. Disponível em: https://social.technet.microsoft.com/wiki/pt-br/
+contents/articles/25093.criando-usuarios-em-lote-no-active-directory-usando-
+-powershell.aspx. Acesso em: 6 fev. 2020.
+
+
+
+
+76                                                            Sistema operacional I
+

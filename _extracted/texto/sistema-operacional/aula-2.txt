@@ -1,0 +1,808 @@
+                                                                                                                                                                                                                                                                                                Capítulo 2
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                Funcionamento de
+                                                                                                                                                                                                                                                uma rede baseada
+                                                                                                                                                                                                                                                      no conceito
+                                                                                                                                                                                                                                                      de diretório
+                                                                                                                                                                                                                                                      – domínios
+
+                                                                                                                                                                                                                                            Você já deve ter lido em sites, jornais e fóruns sobre termos como
+                                                                                                                                                                                                                                         “segurança cibernética”, “segurança de computadores”, “invasão” — e
+                                                                                                                                                                                                                                         pode ter ficado preocupado com a possibilidade de invadirem seu com-
+                                                                                                                                                                                                                                         putador e roubarem seus dados. Então, você já deve saber que não é
+                                                                                                                                                                                                                                         colocando apenas um firewall que sua empresa ficará segura. A infraes-
+                                                                                                                                                                                                                                         trutura de redes, sistema de nomes de domínio (DNS — domain name
+                                                                                                                                                                                                                                         system), computadores e roteadores não pode falhar.
+
+                                                                                                                                                                                                                                            Sobre esse universo de segurança, você conferiu no capítulo anterior
+                                                                                                                                                                                                                                         a importância de escolher um SO Windows adequado. Neste capítulo,
+                                                                                                                                                                                                                                         daremos mais um passo, em que montaremos uma rede, na qual so-
+                                                                                                                                                                                                                                         mente os convidados podem aproveitar os benefícios — e você é quem
+                                                                                                                                                                                                                                         decidirá quem estará nesse ambiente.
+
+                                                                                                                                                                                                                                                                                                              29
+     Vamos definir o domínio e uma rede (limite administrativo e de segu-
+
+
+
+
+                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+rança) e administrar alguns serviços que garantirão a melhoria na segu-
+rança de suas informações.
+
+
+1 Configuração de active directory domain
+services (ADDS)
+     As decisões de uma empresa podem ser centralizadas ou descentra-
+lizadas — e cada uma delas tem suas vantagens e desvantagens. Você
+deve ter também uma opinião formada, mas vamos a uma situação hi-
+potética: um funcionário recebe uma ordem de execução. O chefe A, do
+RH, pede a ele que pinte a parede com uma cor branca utilizando látex.
+O funcionário começa a preparar a tinta para a pintura. Passados alguns
+minutos, chega no local outro chefe B, do financeiro, e pede a ele que
+pinte a parede de branco, mas utilizando uma tinta a óleo. Após um mi-
+nuto, chega o chefe C, do almoxarifado, e pede que a parede seja pinta-
+da de branco acrílico brilhante... O interessante é que todos querem uma
+pintura nova, mas cada um do seu jeito e, nessa situação, os chefes não
+conversaram entre si. Você reconhece esse tipo de situação? Com isso,
+voltamos ao tópico sobre decisões centralizadas ou descentralizadas.
+
+     Em uma rede do tipo doméstica (home), a decisão está em cada
+computador. Ou seja, no micro A, se adicionar uma nova impressora
+em um computador da rede, é preciso ir de micro em micro, usuário
+por usuário, fazer as atualizações necessárias — um baita trabalho! Se
+uma rede corporativa, com muitos computadores, também funcionas-
+se dessa maneira, seria impossível de gerenciar, sem falar nos proble-
+mas de segurança. Já em uma rede profissional, centralizada, as in-
+formações sempre estarão em um local definido e organizado. Nessa
+mesma situação, o administrador de rede, em vez de ir de máquina em
+máquina instalar a impressora, cria um comando para que, ao iniciar o
+computador, com um login, ela seja instalada automaticamente. Muito
+mais fácil e rápido.
+
+30                                                         Sistema operacional I
+                                                                                                                                                                                                                                             O ADDS é uma estrutura informativa sobre objetos da rede (usuários,
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         computadores ou outros recursos), tornando-se fácil a localização e a
+                                                                                                                                                                                                                                         utilização desses recursos pelos administradores e usuários. O active
+                                                                                                                                                                                                                                         directory (AD) usa um repositório central na forma de um diretório hie-
+                                                                                                                                                                                                                                         rárquico pesquisável (armazenado em um banco de dados), além de um
+                                                                                                                                                                                                                                         método de aplicação de parâmetros de configuração e segurança para
+                                                                                                                                                                                                                                         objetos da empresa (THOMPSON, 2017).
+
+                                                                                                                                                                                                                                             Para que o usuário possa acessar os recursos disponíveis, será ne-
+                                                                                                                                                                                                                                         cessário fazer uma autenticação (o logon de rede). O AD é o responsá-
+                                                                                                                                                                                                                                         vel por verificar essa autenticação. Já o domain service (domínio) é um
+                                                                                                                                                                                                                                         limite administrativo e de segurança que é dado ao usuário quando ele
+                                                                                                                                                                                                                                         faz o logon na rede. A figura 1 mostra alguns serviços que são armaze-
+                                                                                                                                                                                                                                         nados no Server 2019 e estão sob a hierarquia do AD.
+
+                                                                                                                                                                                                                                                                              Figura 1 — Alguns serviços do AD
+
+
+
+
+                                                                                                                                                                                                                                                                                 Server 2019
+
+                                                                                                                                                                                                                                                                                                                 Informações sobre
+                                                                                                                                                                                                                                                    Grupos
+                                                                                                                                                                                                                                                                                                                 identidade do usuário
+
+                                                                                                                                                                                                                                                  Serviços
+
+
+                                                                                                                                                                                                                                                  Recursos
+                                                                                                                                                                                                                                                                                                                         Computadores
+                                                                                                                                                                                                                                                                                                   AD
+
+
+
+
+                                                                                                                                                                                                                                         1.1 Instalando o ADDS no servidor
+
+                                                                                                                                                                                                                                             Em nosso cenário, temos uma VM com o nome de DC-01. Para essa
+                                                                                                                                                                                                                                         atividade, precisaremos iniciá-la. Vamos promovê-la como domínio.
+
+                                                                                                                                                                                                                                             Proceda conforme os passos a seguir.
+
+
+
+                                                                                                                                                                                                                                         Funcionamento de uma rede baseada no conceito de diretório – domínios                           31
+32
+
+
+
+
+                                                                                                                 configurações. Clique em Próximo.
+
+
+                                                                                                                                                                                                                          b. Escolha a opção Adicionar funções e recursos.
+
+
+                                                                                                                                                                                                                                                                             a. Clique em Iniciar e, depois, em Gerenciador do Servidor.
+
+
+
+
+Sistema operacional I
+                                                                                                                                                     c. Observe que a tela do assistente indica onde serão aplicadas as
+
+
+
+
+   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             d. Escolha a opção Instalação baseada em função ou recurso
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  e Próximo.
+
+
+
+
+                                                                                                                                                                                                                                             e. Nesta tela, observe que, na parte central, está selecionado o IP do
+                                                                                                                                                                                                                                                  servidor, bem como o nome e a versão do local de instalação.
+                                                                                                                                                                                                                                                  Escolha a opção Selecione um servidor no pool de servidores.
+                                                                                                                                                                                                                                                  Como temos apenas um servidor, clique em DC-01 e em Próximo.
+
+
+
+
+                                                                                                                                                                                                                                         Funcionamento de uma rede baseada no conceito de diretório – domínios   33
+     f. Localize a opção Active Directory Domain Services. Observe que,
+
+
+
+
+                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+        ao selecionar, aparecerá outra janela, lembrando que a instalação
+        é composta de mais alguns recursos. Nesse caso, clique em
+        Adicionar Recursos.
+
+
+
+
+34                                                         Sistema operacional I
+                                                                                                                                                                                                                                  35
+g. Marque também a opção DNS Server. Após marcados os itens,                                                  h. Na tela de Selecionar recursos, deixe as opções Default. Pressione
+                                                                                                                                                                                                                                  Funcionamento de uma rede baseada no conceito de diretório – domínios
+                                                               pressione Próximo.
+                                                                                                                                                                                      Próximo.
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     i. Na tela de Serviços de domínio do Active Directory, pressione o
+
+
+
+
+                                                                                     Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+        botão Próximo.
+
+     j. Na tela do Servidor DNS, pressione o botão Próximo.
+
+     k. Na última tela, Confirmar seleções de instalação, marque a opção
+        Reiniciar cada servidor de destino automaticamente, se necessário
+        e finalize com o botão Instalar.
+
+
+
+
+     l. Após a finalização da primeira etapa, precisamos promover o equi-
+        pamento DC-01 para servidor. Volte para a janela do Gerenciador do
+        Servidor e observe que existe uma bandeira com um sinal de excla-
+        mação. Pressione-a e aparecerá o serviço pendente.
+
+
+
+
+36                                                           Sistema operacional I
+                                                                                                                                                                                                                                             m. Esta tela é o coração do domínio, pois demonstra o nome do domí-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  nio e como ele será estruturado. Para criar um domínio, é obrigató-
+                                                                                                                                                                                                                                                  rio você iniciar com uma letra e incluir um ponto. Em nosso caso, o
+                                                                                                                                                                                                                                                  domínio se chamará: SENAC.LOCAL. Escolha a opção Adicionar
+                                                                                                                                                                                                                                                  uma nova floresta (abordaremos esse tema adiante), digite no
+                                                                                                                                                                                                                                                  nome do domínio Senac.Local e, em seguida, clique em Próximo.
+
+
+
+
+                                                                                                                                                                                                                                             n. O item Nível de funcionalidade da floresta deve ser Windows Server
+                                                                                                                                                                                                                                                  2019. Entretanto, por atualização, aparecerá Windows Server
+                                                                                                                                                                                                                                                  Technical Preview. Isso não prejudicará o serviço do AD. Digite
+                                                                                                                                                                                                                                                  também uma senha para fechar a instalação.
+
+
+
+
+                                                                                                                                                                                                                                         Funcionamento de uma rede baseada no conceito de diretório – domínios     37
+     o. Na tela Opções do DNS, será mostrada uma mensagem de erro.
+
+
+
+
+                                                                                                Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+        Isso acontecerá, pois esse servidor não foi criado o serviço de
+        DNS. Pressione Próximo.
+
+
+
+
+     p. Na tela Opções adicionais, no NetBIOS, deixe SENAC.
+
+
+
+
+           PARA SABER MAIS
+
+           Para saber mais sobre NetBIOS, acesse o blog “Tecnologia da Informa-
+           ção — diário de bordo de um instrutor”, de Rogério Molina.
+
+                                                                                         
+
+38                                                                      Sistema operacional I
+                                                                                                                                                                                                                                             q. Na tela de Caminhos, é mostrado o local físico dos serviços que
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  serão utilizados neste domínio. Pressione Próximo.
+
+
+
+
+                                                                                                                                                                                                                                             r. Para finalizar, um resumo sobre a configuração. Confira-o e pres-
+                                                                                                                                                                                                                                                  sione Próximo.
+
+
+
+
+                                                                                                                                                                                                                                             Na próxima etapa, será mostrada a informação: Todas as verifica-
+                                                                                                                                                                                                                                         ções de pré-requisitos passaram com êxito. Clique em Instalar para co-
+                                                                                                                                                                                                                                         meçar a instalação. Ao término, o servidor foi promovido para servidor
+                                                                                                                                                                                                                                         da nossa rede.
+
+                                                                                                                                                                                                                                         Funcionamento de uma rede baseada no conceito de diretório – domínios   39
+     s. Note que o domínio está no início do login. A palavra SENAC repre-
+
+
+
+
+                                                                                    Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+        senta o domínio.
+
+
+
+
+2 Domínios e grupos de trabalho (workgroup)
+e redes baseadas em diretório
+     Na empresa onde trabalha, provavelmente, em algum momento,
+você precisará formatar um computador. Nessa ação, observe que,
+após instalar o SO, você precisará ingressar esse computador na rede.
+
+     Na instalação do Windows 10, por exemplo, por padrão, o Windows
+coloca no item membro de grupo de trabalho, em Propriedades do
+Sistema, a informação workgroup. Ou seja, esse tipo de grupo foi criado
+para facilitar o compartilhamento de recursos em um ambiente domés-
+tico, caso esse equipamento não seja colocado em um ambiente corpo-
+rativo. Nesse tipo de rede, cada computador tem sua lista de usuários,
+regras e segurança própria (GOUVEIA, 2015).
+
+     Já em uma rede baseada em diretório, o gerenciamento das informa-
+ções está centralizado em servidores que compartilham uma mesma
+base de dados. Nesse sentido, cria-se uma relação de confiança com o
+domínio. Para ingressar nesse domínio, o administrador de rede deve dar
+a permissão e, assim, o usuário receberá os serviços de redes que fo-
+ram disponibilizados para o perfil. Portanto, o domínio é um agrupamento
+
+
+40                                                          Sistema operacional I
+                                                                                                                                                                                                                                         lógico de servidores, no qual são compartilhadas informações de segu-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         rança e se estabelecem os limites de cada usuário e os recursos de rede.
+                                                                                                                                                                                                                                         No quadro 1, fazemos um comparativo entre workgroup e domínio.
+
+                                                                                                                                                                                                                                                                      Quadro 1 — Comparativo entre workgroup e domínio
+
+
+                                                                                                                                                                                                                                                                Workgroup                                                Domínio
+
+
+                                                                                                                                                                                                                                                 Nenhuma administração é centralizada.                           Administração centralizada.
+
+
+                                                                                                                                                                                                                                           Não há muita segurança dos dados ou dos recursos        Segurança na disponibilização de recursos através
+                                                                                                                                                                                                                                                                  de rede.                                                 do AD.
+
+
+                                                                                                                                                                                                                                            Todo computador deve fazer parte de uma mesma             O computador pode ser conectado em locais
+                                                                                                                                                                                                                                                                    rede                                                  remotos.
+
+
+                                                                                                                                                                                                                                             O número de computadores conectados à rede é         O servidor pode gerenciar muitos computadores ao
+                                                                                                                                                                                                                                                       limitado e de pequena escala.                                   mesmo tempo.
+
+
+                                                                                                                                                                                                                                            Administração de política de grupo extremamente           Enquanto o computador estiver no domínio,
+                                                                                                                                                                                                                                             complicada. A configuração em cada estação é           estará sendo gerenciado por políticas de grupo
+                                                                                                                                                                                                                                                        realizada individualmente.                                     centralizadas.
+
+
+                                                                                                                                                                                                                                         Fonte: adaptado de Gouveia (2015).
+
+
+
+
+                                                                                                                                                                                                                                         2.1 Colocando o cliente no domínio
+
+                                                                                                                                                                                                                                              Na etapa anterior, criamos o domínio. Agora, faz-se necessário colocar
+                                                                                                                                                                                                                                         o cliente nessa rede. Afinal de contas, será com ele que faremos os testes.
+
+                                                                                                                                                                                                                                              Para essa atividade, precisaremos novamente do DC-01 e da VM CL1
+                                                                                                                                                                                                                                         (VMs que criamos no capítulo anterior). A figura 2 representa o domínio
+                                                                                                                                                                                                                                         da nossa rede (na cor laranja) e a VM (representando um cliente fora
+                                                                                                                                                                                                                                         do domínio de confiança, que é o SENAC.local). Nesse caso, A VM CLI1
+                                                                                                                                                                                                                                         está conectada ao switch virtual, que conecta também a VM DC-01, po-
+                                                                                                                                                                                                                                         rém a CLI1 não está conectada logicamente e não tem acesso aos re-
+                                                                                                                                                                                                                                         cursos por estar fora do domínio.
+
+
+
+                                                                                                                                                                                                                                         Funcionamento de uma rede baseada no conceito de diretório – domínios                                         41
+               Figura 2 — Representação do domínio e dos recursos envolvidos
+
+
+
+
+                                                                                                       Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                     CLI1
+
+
+                             DC-1
+                             Domínio Senac.Local
+
+
+
+
+     Proceda conforme os passos a seguir.
+
+     a. Na máquina Cliente (CLI-01), utilize as teclas de atalho  + R.
+        Digite na linha de comando: sysdm.cpl. Aparecerá a tela de
+        Propriedades de sistema. Acesse a guia Nome do computador e
+        clique no botão Alterar.
+
+
+
+
+     b. Selecione a opção Domínio e digite Senac.local. Em seguida, fina-
+        lize com o botão OK. Serão solicitados um usuário e uma senha
+        para ingressar no domínio. Coloque o usuário Administrador e a
+
+
+
+42                                                                             Sistema operacional I
+                                                                                                                                                                                                                                                  senha Senac@123. Só lembrando que a senha digitada será a que
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  você cadastrou no servidor. Sua máquina será reiniciada e, após o
+                                                                                                                                                                                                                                                  início, estará no domínio.
+
+
+
+
+                                                                                                                                                                                                                                         3 Árvore de domínio e unidades
+                                                                                                                                                                                                                                         organizacionais (OU)
+                                                                                                                                                                                                                                             Ao passo que você faz a instalação do AD, será disponibilizada uma
+                                                                                                                                                                                                                                         estrutura para o gerenciamento de usuário de rede. A estrutura de ár-
+                                                                                                                                                                                                                                         vore de domínio mostra um relacionamento hierárquico de um ou mais
+                                                                                                                                                                                                                                         domínios da empresa, no qual se compartilham recursos e informa-
+                                                                                                                                                                                                                                         ções em domínio de confiança. Ao conjunto de árvores, dá-se o nome
+                                                                                                                                                                                                                                         de “floresta”.
+
+                                                                                                                                                                                                                                             As OU (organization unit) são um objeto contêiner dentro de um do-
+                                                                                                                                                                                                                                         mínio, com o objetivo de representar estruturas lógicas da empresa. A
+                                                                                                                                                                                                                                         manipulação da OU, bem como sua organização, dependerá diretamen-
+                                                                                                                                                                                                                                         te das necessidades da empresa, cabendo ao administrador de rede
+                                                                                                                                                                                                                                         montar a estrutura.
+
+                                                                                                                                                                                                                                         Funcionamento de uma rede baseada no conceito de diretório – domínios   43
+     Podemos exemplificar os termos: a entidade Senac tem hoje 60
+
+
+
+
+                                                                                       Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+unidades em São Paulo. Cada uma delas poderia ter um domínio. No
+conjunto desses domínios temos uma floresta, ou seja, hierarquias de
+domínios formando um namespace Senac.SP. Já analisando uma uni-
+dade, por exemplo, a de Osasco, teremos alguns domínios, que aten-
+derão às necessidades administrativas da unidade, por exemplo, pode-
+mos ter um domínio do ambiente acadêmico e outro do administrativo.
+Nessa situação, temos uma árvore. Particularizando o domínio acadê-
+mico da unidade, podemos ter uma divisão entre professores e alunos.
+Cada grupo será colocado em uma OU, para facilitar a administração e
+a aplicação de políticas de grupo.
+
+     As OU também permitem delegar tarefas administrativas a usuários
+ou grupos sem precisar torná-los administradores do diretório, e você
+ainda pode vinculá-los às políticas (GPO). A figura 3 mostra detalhes da
+tela de administração.
+
+                      Figura 3 — Tela de administração do AD
+
+
+
+
+44                                                             Sistema operacional I
+                                                                                                                                                                                                                                         4 Instalação e configuração do Windows
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         Server Core
+                                                                                                                                                                                                                                            Em uma situação hipotética, sua empresa necessita de um servidor
+                                                                                                                                                                                                                                         rápido para alguns serviços. Sabemos que a interface gráfica do Windows
+                                                                                                                                                                                                                                         (GUI) deixa o computador/servidor mais lento. Então, a Microsoft lançou
+                                                                                                                                                                                                                                         um servidor, sem a interface com o usuário, para a otimização do equipa-
+                                                                                                                                                                                                                                         mento e a diminuição do risco de ataques (de vírus, acessos).
+
+                                                                                                                                                                                                                                             As vantagens do Server 2019 incluem menor utilização de CPU, RAM
+                                                                                                                                                                                                                                         e espaço em disco, menos vulnerabilidades e mais resistência a ataques
+                                                                                                                                                                                                                                         cibernéticos, pois contém uma superfície de ataque menor e menos códi-
+                                                                                                                                                                                                                                         go. Menos é instalado com o Server Core por padrão, mas muito pode ser
+                                                                                                                                                                                                                                         adicionado conforme a necessidade. Algumas funções, no entanto, não
+                                                                                                                                                                                                                                         são suportadas independentemente. Há menos patchs para atualização
+                                                                                                                                                                                                                                         e, consequentemente, menos reinicializações. A versão possui a maioria
+                                                                                                                                                                                                                                         dos serviços das outras versões, eliminando serviços que são necessá-
+                                                                                                                                                                                                                                         rios para subir a interface gráfica. Na página da Microsoft, é possível con-
+                                                                                                                                                                                                                                         ferir os serviços que não estão disponíveis na versão Core.
+
+
+                                                                                                                                                                                                                                         4.1 Instalando o Server sem a versão desktop
+
+                                                                                                                                                                                                                                            Para essa prática, necessitaremos criar uma VM. Configure-a da se-
+                                                                                                                                                                                                                                         guinte forma:
+
+                                                                                                                                                                                                                                             • Nome da VM: CORE1.
+
+                                                                                                                                                                                                                                             • Versão do SO: Windows Server 2019 Datacenter.
+
+                                                                                                                                                                                                                                             • Memória: 1024 MB.
+
+                                                                                                                                                                                                                                             • Tamanho do disco rígido: 50 GB.
+
+                                                                                                                                                                                                                                             • Adaptador de rede: somente host (clique em Personalizar hardware
+                                                                                                                                                                                                                                               antes de clicar no botão Concluir).
+
+                                                                                                                                                                                                                                             • Senha: Senac@123.
+
+
+                                                                                                                                                                                                                                         Funcionamento de uma rede baseada no conceito de diretório – domínios     45
+   Depois de instalar a VM SVR1 com as configurações anteriores, defi-
+
+
+
+
+                                                                                     Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+na as seguintes configurações de TCP/IP:
+
+     • Endereço IP: 10.0.0.103.
+
+     • Máscara de sub-rede: 255.0.0.0.
+
+     • Gateway padrão: 10.0.0.1.
+
+     • Servidor DNS preferencial: 10.0.0.100.
+
+     Após configurar a VM, inicie a instalação conforme os passos a seguir.
+
+     a. Escolha as opções para Português (Brasil).
+
+
+
+
+     b. Escolha a opção Instalar.
+
+
+
+
+46                                                           Sistema operacional I
+                                                                                                                                                                                                                                  47
+c. Escolha a opção Windows Server 2019 Datacenter e, depois, pres-                                            d. Na próxima tela, selecione Aceito os termos de licença e clique em
+                                                                     sione Avançar.                                                                                                                                               Funcionamento de uma rede baseada no conceito de diretório – domínios
+                                                                                                                                                                                      Avançar.
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     e. Escolha a opção Personalizada: instalar apenas o Windows
+
+
+
+
+                                                                                  Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+       (avançado).
+
+
+
+
+     f. Pressione Avançar.
+
+
+
+
+     g. Como estamos na versão Core, vamos nos esquecer do mouse
+       e usar o teclado. Com a seta direcional para baixo (setinha para
+       baixo), escolha a opção OK.
+
+48                                                        Sistema operacional I
+                                                                                                                                                                                                                                             h. Digite a senha Senac@123 no campo Nova senha. Utilize a tecla
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  Tab para ir ao campo de baixo e digite novamente a senha
+                                                                                                                                                                                                                                                  Senac@123 na opção Confirmar senha.
+
+
+
+
+                                                                                                                                                                                                                                             i. Tudo ocorrendo corretamente, você chegará em um prompt.
+                                                                                                                                                                                                                                                  Isso quer dizer que você instalou corretamente a versão Core do
+                                                                                                                                                                                                                                                  Server 2019.
+
+
+
+
+                                                                                                                                                                                                                                         Funcionamento de uma rede baseada no conceito de diretório – domínios   49
+5 Gerenciando recursos do servidor
+
+
+
+
+                                                                                       Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+utilizando PowerShell
+     No servidor Core-01 que instalamos, ainda não foi configurado ne-
+nhum recurso. Para torná-lo operacional, precisamos alterar o nome do
+servidor, alterar o IP e ingressar no domínio. Nesta seção, gerenciare-
+mos esses recursos utilizando o PowerShell. Se a VM do Core-01 estiver
+desligada, ligue-a. Também deve estar ligado e logado o DC-01, pois ele
+é o nosso servidor da rede.
+
+
+5.1 Alterando o nome do servidor
+
+     Nesta etapa, vamos utilizar a VM da Core-01. Proceda conforme os
+passos a seguir.
+
+     a. No prompt, digite sconfig e pressione a tecla Enter.
+
+
+
+
+50                                                             Sistema operacional I
+                                                                                                                                                                                                                                             b. É mostrada uma tela na cor azul, com as possibilidades para con-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                  figuração do servidor. Lembre-se de que você deve digitar as in-
+                                                                                                                                                                                                                                                  formações e, para executar o comando, pressionar o Enter.
+
+
+                                                                                                                                                                                                                                         5.2 Renomeando o Server Core para Core-01
+
+
+
+
+                                                                                                                                                                                                                                             c. Digite a opção 2. Em seguida, digite Core-01. Será solicitado que a
+                                                                                                                                                                                                                                                  VM seja reiniciada.
+
+
+
+
+                                                                                                                                                                                                                                         Funcionamento de uma rede baseada no conceito de diretório – domínios   51
+5.3 Trocando o IP do Core-01
+
+
+
+
+                                                                                      Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     a. Para trocar o IP, precisamos alterar a rede do Core-01. Então, digi-
+        te 8 e será mostrada a rede ativa no Core. Note que, na esquerda,
+        tem um índice. Nesse caso, escolhemos o número 1.
+
+
+
+
+     b. Na tela, digite 1 para definir o endereço do adaptador de rede.
+
+
+
+
+52                                                            Sistema operacional I
+                                                                                                                                                                                                                                  53
+                                                                                          d. Digite 10.0.0.103; máscara: 255.0.0.0; gateway: 10.0.0.1 – e o ser-
+                                                                                                                                                                   vidor Core-01 estará na rede da empresa.
+c. Digite E para ser estático.                                                                                                                                                                                                    Funcionamento de uma rede baseada no conceito de diretório – domínios
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+54
+
+
+
+
+                                                                                                                                                                                                                                                                                        5.4 Definindo DNS
+
+
+
+
+                                                                                                                                        b. Digite o IP: 10.0.0.100, DNS alternativo: 8.8.8.8.
+
+
+
+
+                                                                                                                                                                                                                     a. Precisamos ainda definir o DNS. Para isso, digite o número 2.
+
+
+
+
+Sistema operacional I
+
+
+
+
+   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         5.5 Colocando o servidor no domínio
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             A última etapa desta seção é colocar esse servidor no domínio
+                                                                                                                                                                                                                                         Senac.Local. Para isso, proceda conforme os passos a seguir.
+
+                                                                                                                                                                                                                                             a. No menu de configuração do servidor, digite 1.
+
+
+
+
+                                                                                                                                                                                                                                             b. Neste caso, ingressaremos no domínio Senac.Local. Então, digi-
+                                                                                                                                                                                                                                                  te D.
+
+
+
+
+                                                                                                                                                                                                                                         Funcionamento de uma rede baseada no conceito de diretório – domínios   55
+     c. Digite Senac.Local. Em seguida, é solicitado o usuário: digite
+
+
+
+
+                                                                                  Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+       Administrador e finalize com a senha Senac@123. Reinicie a VM,
+       e o Core1 fará parte do domínio Senac.Local.
+
+
+
+
+6 Gerenciamento remoto de servidor
+     Um grupo de servidores é criado para otimizar o processamento
+ou forçar que uma determinada estação de trabalho seja direcionada
+para um servidor de aplicação. Essa configuração é utilizada quando
+há a necessidade de monitorar um processo específico em um ambien-
+te balanceado, no qual não se sabe para qual servidor de aplicação a
+conexão foi direcionada. Com o gerenciamento de serviços podemos
+instalar serviços remotamente em outros servidores do nosso domínio.
+Nesses casos, podemos fazer um gerenciamento desse grupo também
+remotamente. Usando o DC-01 e o Core-01, será instalado o gerencia-
+mento. Confira como é fácil o procedimento.
+
+     a. No DC-01, entre no gerenciador do servidor. Escolha a opção 4 –
+       Criar um grupo de Servidores.
+
+
+
+56                                                        Sistema operacional I
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                             b. Na caixa Criar Grupo de Servidores, no Nome de grupo de servido-
+                                                                                                                                                                                                                                                  res, digite: Grupo_Servidores_Senac. Na parte central, escolha a
+                                                                                                                                                                                                                                                  opção Active Directory. Note que será informado o server instala-
+                                                                                                                                                                                                                                                  do, inclusive o Core-01. Selecione Core-01 e adicione-o com o bo-
+                                                                                                                                                                                                                                                  tão Incluir.
+
+
+
+
+                                                                                                                                                                                                                                         Funcionamento de uma rede baseada no conceito de diretório – domínios   57
+     c. Após finalizar, a tela de gerenciamento de servidor mostrará o
+
+
+
+
+                                                                                  Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+       grupo recém-criado.
+
+
+
+
+     d. Então, neste momento, não é preciso mais abrir o servidor para
+       instalar novos serviços ou recursos. Esse gerenciador possibilita
+       a instalação desses recursos.
+
+
+
+
+Considerações finais
+     Nosso cenário começa a aumentar, incorporando novos serviços
+e utilizando as VMs para montar a rede. Neste capítulo, tratamos das
+
+58                                                        Sistema operacional I
+                                                                                                                                                                                                                                         diferenças entre uma rede com domínio e sem domínio e, em relação ao
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         AD, da importância do gerenciamento de um usuário.
+
+                                                                                                                                                                                                                                             O AD possui uma estrutura de OU, o que faz com que sua organiza-
+                                                                                                                                                                                                                                         ção dependa diretamente do administrador de rede. A figura 4 mostra o
+                                                                                                                                                                                                                                         cenário finalizado até este capítulo.
+
+                                                                                                                                                                                                                                                                     Figura 4 — Cenário após a implantação do domínio
+
+
+
+
+                                                                                                                                                                                                                                                                                                      CLI1
+
+
+
+
+                                                                                                                                                                                                                                                                         DC-1                                           CORE - 01
+                                                                                                                                                                                                                                                                                                                        Domínio Senac.Local
+
+
+
+
+                                                                                                                                                                                                                                             Você também pôde conferir que trabalhar com servidor sem a inter-
+                                                                                                                                                                                                                                         face gráfica (GUI) não é tão difícil quanto costumam dizer. Além de sair
+                                                                                                                                                                                                                                         com mais conhecimento, aplicou alguns serviços. Daqui para a frente,
+                                                                                                                                                                                                                                         vamos implementar novos serviços na nossa rede e testá-los.
+
+
+                                                                                                                                                                                                                                         Referências
+                                                                                                                                                                                                                                         GOUVEIA, D. Domínio × grupo de trabalho: qual é a diferença? Technet, 25 set.
+                                                                                                                                                                                                                                         2015. Disponível em: https://social.technet.microsoft.com/wiki/pt-br/contents/
+                                                                                                                                                                                                                                         articles/32295.dominio-x-grupo-de-trabalho-qual-e-a-diferenca.aspx. Acesso
+                                                                                                                                                                                                                                         em: 18 jan. 2020.
+
+                                                                                                                                                                                                                                         THOMPSON, M. A. Microsoft Windows Server 2016: fundamentos. São Paulo:
+                                                                                                                                                                                                                                         Érica, 2017.
+
+
+
+
+                                                                                                                                                                                                                                         Funcionamento de uma rede baseada no conceito de diretório – domínios                            59
+

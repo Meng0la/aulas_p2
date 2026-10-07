@@ -1,0 +1,167 @@
+[
+  {
+    "figure": 1,
+    "caption": "Figura 1 — Aplicação de roteadores em uma rede",
+    "page": 3,
+    "box_pt": [
+      40,
+      387.7818,
+      413.543,
+      618.969
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "figure": 2,
+    "caption": "Figura 2 — Tipos de HD e interfaces com valores típicos de IOPS",
+    "page": 6,
+    "box_pt": [
+      40,
+      84.0986,
+      413.543,
+      337.09860000000003
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "figure": 3,
+    "caption": "Figura 3 — Analogia para entender o sistema de arquivo",
+    "page": 8,
+    "box_pt": [
+      40,
+      433.1362,
+      413.543,
+      618.969
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "figure": 4,
+    "caption": "Figura 4 — Tela de gerenciamento de discos",
+    "page": 10,
+    "box_pt": [
+      40,
+      84.0986,
+      413.543,
+      337.09860000000003
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "figure": 5,
+    "caption": "Figura 5 — Adição de novos discos",
+    "page": 11,
+    "box_pt": [
+      40,
+      84.0986,
+      413.543,
+      337.09860000000003
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "figure": 6,
+    "caption": "Figura 6 — Tipos de RAID e seus níveis",
+    "page": 15,
+    "box_pt": [
+      40,
+      466.164,
+      413.543,
+      618.969
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "figure": 7,
+    "caption": "Figura 7 — Configuração do RAID 0",
+    "page": 17,
+    "box_pt": [
+      40,
+      84.0986,
+      413.543,
+      337.09860000000003
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "figure": 8,
+    "caption": "Figura 8 — Configuração do RAID 1",
+    "page": 21,
+    "box_pt": [
+      40,
+      162.774,
+      413.543,
+      415.774
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "figure": 9,
+    "caption": "Figura 9 — Configuração do RAID 5",
+    "page": 24,
+    "box_pt": [
+      40,
+      258.519,
+      413.543,
+      511.519
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "figure": 10,
+    "caption": "Figura 10 — Demonstração do RAID 10",
+    "page": 27,
+    "box_pt": [
+      40,
+      497.1362,
+      413.543,
+      618.969
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "figure": 11,
+    "caption": "Figura 11 — Demonstração do RAID 50",
+    "page": 28,
+    "box_pt": [
+      40,
+      485.1204,
+      413.543,
+      618.969
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  }
+]

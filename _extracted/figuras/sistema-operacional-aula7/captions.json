@@ -1,0 +1,77 @@
+[
+  {
+    "figure": 1,
+    "caption": "Figura 1 — Processo de implantação de uma política de segurança de rede",
+    "page": 3,
+    "box_pt": [
+      40,
+      363.0229,
+      413.543,
+      616.0228999999999
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "figure": 2,
+    "caption": "Figura 2 — Ambiente de gerenciamento da política de grupo",
+    "page": 5,
+    "box_pt": [
+      40,
+      368.1283,
+      413.543,
+      618.969
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "figure": 3,
+    "caption": "Figura 3 — Itens de escolha de uma GPO",
+    "page": 6,
+    "box_pt": [
+      40,
+      419.7858,
+      413.543,
+      618.969
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "figure": 4,
+    "caption": "Figura 4 — Hierarquia da aplicação da GPO",
+    "page": 8,
+    "box_pt": [
+      40,
+      84.0986,
+      413.543,
+      337.09860000000003
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  },
+  {
+    "figure": 5,
+    "caption": "Figura 5 — Snap-in do gerenciamento de política de grupo",
+    "page": 8,
+    "box_pt": [
+      40,
+      404.7758,
+      413.543,
+      618.969
+    ],
+    "page_wh_pt": [
+      453.543,
+      651.969
+    ]
+  }
+]

@@ -1,0 +1,781 @@
+                                                                                                                                                                                                                                                                                                Capítulo 2
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                             Conceitos de
+                                                                                                                                                                                                                                                            modelagem de
+                                                                                                                                                                                                                                                                   dados
+
+
+                                                                                                                                                                                                                                            Neste capítulo são apresentados conceitos fundamentais sobre mode-
+                                                                                                                                                                                                                                         lagem de dados, com ênfase no modelo relacional. A modelagem de dados
+                                                                                                                                                                                                                                         é a ação de representar dados do minimundo com o objetivo de criar
+                                                                                                                                                                                                                                         modelos conceituais, lógicos e físicos (Elmasri; Navathe, 2018). Esses
+                                                                                                                                                                                                                                         três níveis representam diferentes etapas no desenvolvimento do projeto
+                                                                                                                                                                                                                                         de banco de dados, variando do mais abstrato para o mais concreto.
+
+                                                                                                                                                                                                                                            • Modelo conceitual: é o primeiro nível e se concentra em entender
+                                                                                                                                                                                                                                               e estruturar os dados com base nas necessidades do usuário.
+                                                                                                                                                                                                                                               Nesse ponto, o foco está na definição dos dados e de suas rela-
+                                                                                                                                                                                                                                               ções, sem se preocupar com o armazenamento físico. Diagramas
+                                                                                                                                                                                                                                               são frequentemente usados para representar esse modelo. O obje-
+                                                                                                                                                                                                                                               tivo é compreender o que o usuário precisa e como as informa-
+                                                                                                                                                                                                                                               ções devem ser organizadas de forma a refletir esse entendimento
+                                                                                                                                                                                                                                               (Ramakrishnan; Gehrke, 2011).
+
+                                                                                                                                                                                                                                                                                                              23
+     • Modelo lógico: ao passar para este modelo, começa-se a pensar
+        na implementação dos dados de forma mais detalhada. Neste
+        estágio, a estrutura dos dados ainda é abstrata, mas já se consi-
+        dera como eles serão organizados em tabelas ou outras estrutu-
+        ras lógicas. Mesmo sem especificar qual sistema gerenciador de
+        banco de dados (SGBD) será utilizado, o modelo lógico é projetado
+        para garantir que os dados sejam organizados de maneira eficiente
+        e que todas as relações necessárias estejam corretamente esta-
+        belecidas (Elmasri; Navathe, 2018).
+
+     • Modelo físico: parte do modelo lógico e descreve as estruturas físi-
+        cas de armazenamento de dados, tais como tipo de dados, tama-
+        nho dos campos, formas de acesso, entre outros (Heuser, 2010).
+
+     As seções seguintes detalham o modelo conceitual, com abordagem
+ao modelo relacional, o modelo entidade-relacionamento (MER) – que é
+um padrão predominante na área de banco de dados – e, por fim, o
+modelo entidade-relacionamento estendido (MERE), que inclui novos con-
+ceitos de modelagem, como subclasse e superclasse, generalização e
+especialização.
+
+
+1 Modelo conceitual
+     O modelo conceitual é um dos elementos principais no processo de
+desenvolvimento de um banco de dados. Consiste em uma abstração
+dos dados que se deseja armazenar no banco, sem considerar a imple-
+mentação física (Elmasri; Navathe, 2018). Esse processo começa com
+a definição de um “universo de discurso”, que representa o contexto ou a
+realidade a ser modelada. Esse universo pode ser real, como o funciona-
+mento de uma empresa, ou abstrato, como a representação de persona-
+gens em um jogo de RPG.
+
+     Para tornar essa abstração compreensível e funcional, é necessário
+seguir um formalismo, ou seja, um conjunto de regras e convenções que
+
+
+24                                                               Banco de dados
+orientam a modelagem, garantindo a coerência do modelo e evitando ambi-
+guidades (Elmasri; Navathe, 2018). Ao modelar um sistema de biblioteca,
+por exemplo, é necessário definir conceitos como “livro”, “autor” e “emprés-
+timo”, além de estabelecer como esses elementos se relacionam entre si.
+
+    Além disso, os modelos conceituais devem apresentar as seguintes
+características:
+
+    1. Propósito: todo modelo deve ter um objetivo bem definido.
+
+    2. Simplificação da realidade: representação simplificada, contendo
+         apenas os elementos essenciais.
+
+    3. Conexão com a realidade: deve refletir informações reais.
+
+    4. Padrão visual: pode ou não seguir uma estrutura visual definida,
+         o que permite sua compreensão por diversos envolvidos no
+         projeto.
+
+    A adoção de formalismos padronizados, como o modelo entidade-re-
+lacionamento (ER) ou a UML, possibilita uma representação estruturada
+e compreensível das informações, promovendo clareza e padronização
+no desenvolvimento do sistema. Esse formalismo contribui para o enten-
+dimento do modelo e facilita a comunicação entre os membros da equipe.
+
+    Ao construir um modelo, o projetista tem uma visão clara do que pre-
+cisa ser representado, o que facilita a tomada de decisões e evita confu-
+sões durante o processo. Além disso, o modelo conceitual favorece a
+comunicação ao estabelecer uma linguagem comum entre os membros
+da equipe (Ramakrishnan; Gehrke, 2011).
+
+
+2 Modelo entidade-relacionamento (MER)
+    Segundo Elmasri e Navathe (2018), o modelo entidade-relacionamento
+(MER) é um modelo conceitual de alto nível, amplamente difundido nos
+projetos de banco de dados relacionais.
+
+Conceitos de modelagem de dados                                           25
+     O MER representa as informações do universo sendo modelado com
+objetos, denominados entidades, e os relacionamentos entre esses obje-
+tos (Silberschatz; Korth; Sudarshan, 2020).
+
+     O esquema conceitual baseado no MER é representado graficamente
+por um diagrama entidade-relacionamento (DER).
+
+
+           IMPORTANTE
+
+           MER: conjunto de conceitos e elementos usados para realizar a modela-
+           gem de dados (modelo conceitual).
+
+           DER: resultado do processo de modelagem executado por um projetista
+           de dados (esquema conceitual).
+
+           Assim, o projetista de banco de dados constrói um DER utilizando os con-
+           ceitos e elementos do MER.
+
+
+
+
+2.1 Entidade e conjuntos de entidades
+
+     Uma entidade é um objeto que existe no universo modelado e é dis-
+tinguível dos demais objetos (Silberschatz; Korth; Sudarshan, 2020). Ela
+pode ser um objeto físico ou lógico:
+
+     • Uma entidade física é um objeto concreto, visível no mundo real.
+        Exemplos: pessoa, casa, carro, funcionário.
+
+     • Uma entidade lógica é um objeto com existência conceitual, como
+        empresa, cargo e curso.
+
+     Uma coleção de entidades que possuem a mesma estrutura e semân-
+tica forma um conjunto de entidades (também conhecido como tipo de
+entidade).
+
+
+
+
+26                                                                        Banco de dados
+     Na representação gráfica do DER, um conjunto de entidades, segundo
+o modelo proposto por Peter Chen, em 1976 (Elmasri; Navathe, 2018), é
+representado por um retângulo com o nome da entidade dentro. O nome
+deve ser um substantivo no singular.
+
+     Por exemplo, suponha uma empresa onde trabalham vários funcio-
+nários. João da Silva e Carla Gomes são funcionários dessa empresa.
+Na modelagem de dados, João da Silva e Carla Gomes são entidades, e
+o conjunto de todos os funcionários da empresa determina o conjunto
+de entidades chamado “Funcionário”.
+
+                                 Figura 1 – Conjunto de entidades Funcionário.
+
+
+
+
+                                               Funcionário
+
+Fonte: adaptado de Elmasri e Navathe (2018).
+
+
+
+
+2.2 Atributo do conjunto de entidades
+
+     Cada entidade possui atributos, que são conjuntos de informações
+que a descrevem (Ramakrishnan; Gehrke, 2011). Quanto maior a quan-
+tidade de atributos, maior o nível de detalhamento sobre a entidade.
+
+     Cada conjunto de entidades possui atributos, e seus respectivos valo-
+res descrevem as instâncias da entidade. Por exemplo, uma entidade
+Funcionário pode ser descrita pelos atributos: nome, CPF, número do
+celular, endereço, salário, entre outros. Uma instância de “Funcionário”
+pode ter os seguintes atributos:
+
+     • Nome: João Carlos Maia
+
+     • CPF: 123.456.789-10
+
+
+Conceitos de modelagem de dados                                                  27
+     • Celular: (11) 9876-5432
+
+     • Endereço: Rua das Rosas, 1001. Jardim das flores. São Paulo, SP,
+        0554110
+
+     • Salário: R$ 2.200,00
+
+     Cada entidade desse conjunto possui valores específicos para os atri-
+butos. Para cada atributo, existe um conjunto de valores válidos, deno-
+minado domínio do atributo (Ramakrishnan; Gehrke, 2011). Por exemplo,
+o atributo nome pode ser definido como uma string de até cinquenta
+caracteres. Outro exemplo seria o atributo nota de avaliação do funcio-
+nário, limitado à faixa de valores de 1 a 10, para ser armazenado no banco
+de dados.
+
+     Segundo Elmasri e Navathe (2018), os atributos podem ser classifi-
+cados da seguinte forma:
+
+     • Simples: atributos atômicos ou indivisíveis. Exemplo: nome, idade,
+        sexo, CPF.
+
+     • Compostos: atributos que podem ser divididos em subatributos
+        com significados independentes. Exemplo: o atributo endereço
+        pode ser dividido em rua, número, bairro, CEP e complemento.
+
+     • Monovalorados ou univalorados: possuem um único valor para
+        cada entidade. Exemplo: data de nascimento.
+
+     • Multivalorados: podem assumir vários valores para uma mesma
+        entidade. Exemplo: número de celular, e-mail ou diplomas.
+
+     • Derivados: podem ser obtidos a partir de outros atributos. Exem-
+        plo: o atributo “idade” pode ser derivado da “data de nascimento”.
+
+     Em algumas situações, um atributo pode não ter valor ou seu valor
+pode ser desconhecido. Nesses casos, atribui-se o valor nulo ao atributo.
+
+
+
+
+28                                                              Banco de dados
+Por exemplo, o campo apartamento recebe valor nulo para o funcioná-
+rio que não resida em prédio.
+
+    Para distinguir cada entidade de forma única dentro de um conjunto,
+utilizam-se os atributos-chave (Ramakrishnan; Gehrke, 2011). Um atribu-
+to-chave é aquele cujo valor pode ser usado para identificar cada enti-
+dade de maneira exclusiva (Elmasri; Navathe, 2018).
+
+    Uma chave candidata consiste em um conjunto mínimo de atributos,
+ou seja, não deve haver subconjuntos que também sejam chaves candi-
+datas (Ramakrishnan; Gehrke, 2011). Um conjunto de entidades pode
+possuir várias chaves candidatas. A chave primária é uma das chaves
+candidatas, escolhida para ser o principal identificador da entidade.
+
+    No DER, o atributo é representado por uma elipse com seu nome den-
+tro. A elipse é conectada ao conjunto de entidades ao qual o atributo per-
+tence por meio de uma linha simples. Atributos simples e monovalorados
+são representados por elipses simples; atributos multivalorados, por elip-
+ses duplas; e atributos derivados, por elipses pontilhadas. Os atributos
+que formam a chave primária têm seus nomes sublinhados (Elmasri;
+Navathe, 2018).
+
+    Voltando ao exemplo da empresa: quais informações sobre os fun-
+cionários são importantes para modelar o conjunto de entidades Funcio-
+nário? Informações como número de matrícula, nome, CPF, endereço
+(composto por rua, cidade, estado e CEP), data de nascimento, idade
+(derivada da data de nascimento) e celular (que pode assumir mais de
+um valor).
+
+    Observe a figura 2, que contém a representação gráfica no DER.
+
+
+
+
+Conceitos de modelagem de dados                                         29
+                        Figura 2 – Conjunto de entidades funcionário e seus atributos
+
+
+
+                                                              nome da rua
+                                                                                        cidade
+                                           celular
+                 nome
+                                                               endereço
+                                                                                            estado
+
+
+                                               Funcionário                      CEP
+          matrícula
+
+
+
+                               CPF                dtNasc          Idade
+
+
+Fonte: adaptado de Elmasri e Navathe (2018).
+
+
+
+
+     No exemplo da figura 2, cada funcionário pode ser identificado pelo
+número de matrícula, já que não existem dois empregados com o mesmo
+número. Assim, o atributo “matrícula” é a chave primária do conjunto de
+entidades “Funcionário”.
+
+
+2.3 Relacionamento e conjuntos de relacionamentos
+
+     No modelo entidade-relacionamento (ER), um relacionamento repre-
+senta a associação entre duas ou mais entidades (Ramakrishnan; Gehrke,
+2011). Um conjunto de relacionamentos, ou tipo de relacionamento, cor-
+responde a um grupo de relacionamentos do mesmo tipo. Assim, um
+relacionamento binário associa duas entidades, um relacionamento ter-
+nário associa três entidades, e assim por diante (Elmasri; Navathe, 2018).
+
+     No contexto da empresa, vários projetos são desenvolvidos e perten-
+cem ao conjunto de entidades denominado Projeto. Como os funcioná-
+rios participam desses projetos, forma-se uma associação chamada
+trabalha_em entre as entidades Empregado e Projeto.
+
+
+30                                                                                           Banco de dados
+     Na representação gráfica do DER, um conjunto de relacionamentos é
+representado por um losango, com o nome do conjunto dentro, ligado
+por linhas aos conjuntos de entidades que ele associa. O nome deve ser
+um substantivo ou um verbo na terceira pessoa do singular (mais apro-
+priado). A figura 3 ilustra o conjunto de relacionamentos entre os conjun-
+tos de entidades Funcionário e Projeto.
+
+     Figura 3 – Conjuntos de relacionamentos entre os conjuntos de entidades funcionário e projeto
+
+
+
+
+                                                Trabalha
+         Funcionário                                                                  Projeto
+                                                   em
+
+
+Fonte: adaptado de Elmasri e Navathe (2018).
+
+
+
+
+     Um conjunto de relacionamentos pode possuir atributos que descre-
+vem a associação entre as entidades. Voltando ao exemplo: cada empre-
+gado trabalha um certo número de horas em um determinado projeto.
+Portanto, o número de horas trabalhadas por um funcionário em um pro-
+jeto é um atributo do relacionamento “trabalha_em”. A figura 4 ilustra esse
+atributo no conjunto de relacionamento entre Funcionário e Projeto.
+
+                        Figura 4 – Atributo do conjunto de relacionamento num_horas
+
+
+
+                                               num_horas
+
+
+
+                                                 Trabalha
+          Funcionário                                                                 Projeto
+                                                    em
+
+
+Fonte: adaptado de Elmasri e Navathe (2018).
+
+
+
+
+Conceitos de modelagem de dados                                                                      31
+2.4 Restrições de conjuntos de relacionamentos
+
+     Segundo Takai, Italiano e Ferreira (2005), uma restrição sobre um con-
+junto de relacionamentos é uma condição ou limitação que impõe uma
+regra específica sobre como os relacionamentos entre entidades devem
+ocorrer. Essas restrições são estabelecidas conforme observações rea-
+lizadas sobre a representação dos relacionamentos no minimundo
+(Elmasri; Navathe, 2018). Por exemplo, se existir uma regra segundo a
+qual cada funcionário trabalha em apenas um projeto, essa restrição
+deve ser descrita no esquema.
+
+
+2.4.1 Restrições de cardinalidade
+
+     A restrição chamada razão de cardinalidade expressa o número de
+instâncias de um conjunto de entidades A que podem estar associadas
+a instâncias de outro conjunto de entidades B.
+
+     Para um conjunto de relacionamentos binários, a cardinalidade pode
+ser:
+
+     • Um para um (1:1): uma entidade de A pode estar associada a, no
+        máximo, uma entidade de B.
+
+     • Um para muitos (1:N): uma entidade de A pode estar associada a
+        várias entidades de B; e uma entidade de B pode estar associada
+        a, no máximo, uma entidade de A.
+
+     • Muitos para muitos (N:N): uma entidade de A pode estar asso-
+        ciada a várias entidades de B; e uma entidade de B pode estar asso-
+        ciada a várias entidades do conjunto A.
+
+     • Exemplo: um funcionário pode trabalhar em vários projetos, e um
+        projeto pode ter vários funcionários. Logo, o relacionamento “tra-
+        balha_em” tem cardinalidade “N:N”.
+
+
+
+32                                                               Banco de dados
+     Na representação gráfica do DER, a cardinalidade de um conjunto de
+relacionamentos é escrita sobre as linhas que o ligam aos conjuntos de
+entidades. Isso está ilustrado na figura 5.
+
+                        Figura 5 – Cardinalidade de um conjunto de relacionamentos
+
+
+
+
+                                   N            Trabalha               N
+         Funcionário                                                                 Projeto
+                                                   em
+
+
+
+Fonte: adaptado de Elmasri e Navathe (2018).
+
+
+
+
+2.4.2 Restrições de participação
+
+     A restrição de participação expressa se todas as entidades de um
+conjunto de entidades A devem estar, obrigatoriamente ou não, associa-
+das a uma entidade de outro conjunto de entidades B, por meio de um
+relacionamento R.
+
+     Em relação à participação, os conjuntos de relacionamentos podem
+ser:
+
+     • Total (ou obrigatória): toda entidade de A está obrigatoriamente
+          associada a alguma entidade de B, por meio de R. Dizemos que R
+          é total em relação ao conjunto de entidades A.
+
+     • Parcial: pode haver entidades de A que não estejam associadas a
+          entidades de B, por meio de R. Dizemos que R é parcial em rela-
+          ção ao conjunto de entidades A.
+
+     Voltando ao exemplo: como todo funcionário da empresa trabalha
+em algum projeto, e todo projeto possui algum empregado trabalhando
+nele, o relacionamento “trabalha_em” é total em relação a Funcionário
+e a Projeto.
+
+
+Conceitos de modelagem de dados                                                                33
+     Na representação gráfica do DER, quando um conjunto de relaciona-
+mentos R é total em relação a um conjunto de entidades E, utiliza-se uma
+linha dupla para ligar E a R. Quando R é parcial, utiliza-se uma linha sim-
+ples. Veja um exemplo na figura 6.
+
+        Figura 6 – Funcionário e Projeto têm participação total no relacionamento “trabalha_em”
+
+
+
+
+                                               Trabalha
+         Funcionário                                                               Projeto
+                                                  em
+
+
+Fonte: adaptado de Elmasri e Navathe (2018).
+
+
+
+
+2.4.3 Restrição estrutural
+
+     A restrição estrutural define o número mínimo e o número máximo
+de vezes que uma instância de um conjunto de entidades E pode parti-
+cipar de um conjunto de relacionamentos R.
+
+     Ou seja, dado um par de números inteiros (min, max), a restrição estru-
+tural determina que a instância deve participar ao menos o valor min e
+no máximo o valor max de vezes em instâncias do relacionamento R.
+
+     Caso min seja igual a zero, a restrição de participação é parcial. Se
+min for maior do que zero, a participação é total.
+
+     A figura 7 ilustra a restrição estrutural.
+
+
+
+
+34                                                                                      Banco de dados
+                                          Figura 7 – Restrição estrutural
+
+
+
+                                                     Trabalha
+                   Funcionário                                                   Departamento
+                                     N                  em                  1
+
+                           participação                               participação
+      Restrição                total                                     parcial            Restrição
+      estrutural                                                                            estrutural
+
+
+
+
+                                     (1,1)           Trabalha        (0,N)
+                   Funcionário                                                   Departamento
+                                                        em
+
+
+
+    Observe que na figura 7 a restrição estrutural de Funcionário é (1,1),
+pois participa no mínimo uma e no máximo uma vez no relacionamento
+“Trabalha para”. Já a restrição estrutural de Departamento é (0,N), pois
+participa no mínimo zero (participação parcial) e no máximo N vezes no
+relacionamento “Trabalha para”.
+
+
+2.5 Conjunto de entidades fracas
+
+    Quando um conjunto de entidades não possui nenhum conjunto de
+atributos próprio que satisfaça a condição de chave primária, dizemos
+que ele é um conjunto de entidades fracas (Elmasri; Navathe, 2018). Esse
+tipo de entidade é representado, no DER, por um retângulo com contorno
+em linha dupla. O termo “fraca” refere-se ao fato de a entidade só existir
+se estiver associada a outra entidade (Heuser, 2010), chamada de enti-
+dade forte ou entidade proprietária.
+
+    O relacionamento entre uma entidade fraca e uma entidade forte é
+chamado de relacionamento de identificação (Elmasri; Navathe, 2018) e
+é representado, no DER, por um losango com contorno em linha dupla.
+
+    O tipo de entidade fraca tem restrição de participação total (dependên-
+cia de existência) com relação ao seu relacionamento de identificação,
+pois a entidade fraca não pode ser identificada sem sua entidade proprie-
+
+
+
+Conceitos de modelagem de dados                                                                          35
+tária. Contudo, nem toda entidade forte tem uma relação de dependência
+com uma entidade fraca, sendo, nesse caso, a participação parcial.
+
+                         Figura 8 – Entidade fraca e relacionamento de identificação
+
+
+
+         matrícula
+                                                                            sexo              tipo
+
+
+
+        Funcionário                            possui                        Dependente
+
+
+
+                                                                           nome
+       nome
+
+
+
+Fonte: adaptado de Elmasri e Navathe (2018).
+
+
+
+
+     No exemplo da empresa, considere que os funcionários possuem
+dependentes. Cada dependente possui apenas três atributos: “nome”,
+“sexo” e “tipo” (esposa, filho, filha). Os dependentes só podem existir no
+banco de dados se houver um funcionário associado a eles.
+
+     Uma entidade fraca possui um atributo chamado chave parcial, que
+identifica unicamente uma entidade fraca relacionada a uma entidade
+proprietária. Por exemplo, um funcionário não pode ter dois dependen-
+tes com o mesmo nome. Porém, o nome pode se repetir para dois fun-
+cionários distintos.
+
+     No DER, a chave parcial é sublinhada por uma linha tracejada. Verifi-
+que a figura 8 para um exemplo do esquema conceitual.
+
+
+
+
+36                                                                                        Banco de dados
+2.6 Relacionamentos recursivos e papéis no
+relacionamento
+
+     Segundo Ramakrishnan e Gehrke (2011), os conjuntos de entidades
+que participam de um conjunto de relacionamentos não precisam ser
+distintos; às vezes, um relacionamento pode envolver duas entidades
+dentro do mesmo conjunto.
+
+     Elmasri e Navathe (2018) denominam esse tipo de relacionamento
+como relacionamento recursivo e, nesses casos, é útil definir o papel
+ou a função de cada entidade para distinguir o significado de cada
+participação.
+
+     Veja a figura 9, que mostra um relacionamento recursivo sobre o con-
+junto de entidades Funcionário. Nesse exemplo, é útil determinar quais
+funcionários são gerentes e quais são subordinados.
+
+                                      Figura 9 – Relacionamento recursivo
+
+
+                                                       gerente
+
+
+                      Funcionário                                    supervisiona
+
+                                                     subordinado
+
+Fonte: adaptado de Elmasri e Navathe (2018).
+
+
+
+
+               PARA SABER MAIS
+
+               O BRModelo é uma ferramenta de modelagem de banco de dados baseada
+               nos conceitos de modelagem propostos por Peter Chen, permitindo a
+               criação de diagramas Entidade-Relacionamento (DER).
+
+               Para saber mais, acesse a versão on-line, disponível em: (BRModelo, 2025).
+
+
+
+
+Conceitos de modelagem de dados                                                             37
+3 Modelo entidade-relacionamento
+estendido (MERE)
+     O modelo entidade-relacionamento estendido (MERE) é uma amplia-
+ção do modelo entidade-relacionamento tradicional, projetada para cap-
+turar aspectos mais complexos da modelagem de dados. Ele introduz
+conceitos adicionais que permitem representar hierarquias de generali-
+zação/especialização e agregação de relacionamentos, proporcionando
+um modelo mais expressivo e realista para sistemas de banco de dados.
+
+
+3.1 Especialização
+
+     A especialização é o processo de definir um conjunto de subtipos de
+um tipo de entidade mais geral, denominado superclasse (Elmasri; Nava-
+the, 2018). Esse mecanismo permite refinar uma entidade, criando sub-
+classes que herdam os atributos e relacionamentos da superclasse e
+podem possuir atributos adicionais específicos.
+
+     Por exemplo, na modelagem da empresa, o conjunto de entidades
+Funcionário pode ser especializado nas seguintes subclasses: Secretá-
+rio, Técnico e Engenheiro. Cada subclasse possui atributos próprios, além
+daqueles herdados de Funcionário, como mostra a figura 10.
+
+
+
+
+38                                                             Banco de dados
+                                               Figura 10 – Especialização
+
+
+
+                               nome                                         CPF
+
+
+
+
+                         matrícula                      Funcionário
+
+
+
+                                                              d
+
+                                               U              U        U                 tipo
+           idioma                                    grau
+
+
+
+                      Secretário                            Técnico               Engenheiro
+
+
+Fonte: adaptado de Elmasri e Navathe (2018).
+
+
+
+
+     A especialização pode ser restringida por dois aspectos principais:
+
+     • Disjunção: um objeto pode pertencer a apenas um dos subtipos.
+          Por exemplo, o funcionário pode ser secretário, ou técnico, ou enge-
+          nheiro, mas não mais de um ao mesmo tempo.
+
+     • Sobreposição: um objeto pode pertencer simultaneamente a mais
+          de um subtipo.
+
+
+3.2 Generalização
+
+     A generalização é o processo inverso da especialização. Em vez de
+subdividir uma entidade, várias entidades distintas são unificadas em
+um supertipo que contém atributos comuns.
+
+     Por exemplo, considere os tipos de entidades Carro e Caminhão.
+Ambas compartilham atributos como “licença”, “identificação” e “preço”.
+É possível criar um supertipo chamado Veículo, agrupando os atributos
+gerais, enquanto se mantêm atributos específicos nos subtipos.
+
+
+Conceitos de modelagem de dados                                                                 39
+3.3 Agregação
+
+     A agregação é um mecanismo que permite tratar um relacionamento
+como uma entidade, possibilitando que ela se relacione com outras
+entidades.
+
+     Por exemplo, considere o relacionamento “entrevista” entre os tipos
+de entidades Empresa e Candidato. Caso seja necessário registrar infor-
+mações adicionais sobre essa entrevista ou associá-la a outras entida-
+des, é possível criar uma entidade chamada Entrevista, que armazene os
+detalhes do evento. Isso permite que essa nova entidade se relacione
+com outra, como Oferta_Emprego, conforme ilustrado na figura 11.
+
+                                               Figura 11 – Agregação
+
+
+
+
+                                               M                       N
+                  Empresa                            entrevista              Candidato
+
+
+
+
+                                                       1
+                                                                       1
+                                                    resulta em             Oferta_Emprego
+
+
+
+Fonte: adaptado de Elmasri e Navathe (2018).
+
+
+
+
+     Com isso, a agregação “entrevista” pode se associar ao tipo de enti-
+dade Oferta_Emprego.
+
+     A agregação é útil quando um relacionamento precisa ser tratado
+como uma unidade para participar de outras relações.
+
+
+
+
+40                                                                                       Banco de dados
+Considerações finais
+   Inicialmente, este capítulo detalhou princípios fundamentais da mode-
+lagem de dados, destacando os três níveis de modelagem: modelo con-
+ceitual, modelo lógico e modelo físico em um projeto de banco de dados.
+
+   Na sequência, foi apresentado o modelo entidade-relacionamento e
+seus elementos, que incluem: entidade, conjunto de entidades, atributos
+simples, compostos, multivalorados e derivados.
+
+   Também foram descritos os tipos de relacionamentos e as restrições
+de cardinalidade, participação e estruturais. Além disso, o texto abordou
+as entidades fracas e os relacionamentos recursivos.
+
+  Ao final, foi apresentado o modelo entidade-relacionamento estendido,
+com ênfase nos conceitos de especialização, generalização e agregação.
+
+
+Referências
+BRMODELOWEB. BR modelo web: ferramenta de modelagem de banco de dados.
+BR Modelo Web, [S. l.: s. n.], 2021. Disponível em: https://www.brmodeloweb.
+com/lang/pt-br/index.html. Acesso em: 16 fev. 2025.
+
+ELMASRI, Ramez; NAVATHE, Shamkant B. Sistemas de banco de dados. 7. ed.
+São Paulo: Pearson, 2018.
+
+HEUSER, Carlos Alberto. Projeto de banco de dados. 6. ed. Porto Alegre: Bookman,
+2010.
+
+RAMAKRISHNAN, Raghu; GEHRKE, Johannes. Sistema de gerenciamento de
+banco de dados. 3. ed. Porto Alegre: AMGH, 2011.
+
+SILBERCHATZ, Abraham; KORTH, Henry F; SUDARSHAN, S. Sistema de Banco
+de Dados. 7. ed. Rio de Janeiro: GEN LTC, 2020.
+
+TAKAI, Osvaldo Kotaro; ITALIANO, Isabel Cristina; FERREIRA, João Eduardo.
+Introdução a banco de dados. São Paulo: Universidade de São Paulo, 2005.
+E-book. Disponível em: https://www.ime.usp.br/~jef/apostila.pdf. Acesso em:
+25 jan. 2025.
+
+Conceitos de modelagem de dados                                               41
+

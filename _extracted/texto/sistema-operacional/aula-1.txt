@@ -1,0 +1,938 @@
+Fábio Brussolo de Oliveira
+
+
+
+Sistema operacional I
+                                                                        Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     Dados Internacionais de Catalogação na Publicação (CIP)
+             (Jeane Passos de Souza - CRB 8a/6189)
+
+Oliveira, Fábio Brussolo de
+    Sistema operacional I / Fábio Brussolo de Oliveira. – São Paulo :
+Editora Senac São Paulo, 2020. (Série Universitária)
+
+   Bibliografia.  
+   e-ISBN 978-65-5536-371-5 (ePub/2020)
+   e-ISBN 978-65-5536-372-2 (PDF/2020)
+
+   1. Sistema operacional (Computadores) I. Título. II. Série.
+
+20-1191t                                                CDD – 005.43
+                                                    BISAC COM046000
+
+                   Índice para catálogo sistemático
+           1. Sistema operacional (Computadores) 005.43
+                                                                 SISTEMA OPERACIONAL I
+                                                                                                                                          Fábio Brussolo de Oliveira
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                              Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+Administração Regional do Senac no Estado de São Paulo
+Presidente do Conselho Regional
+Abram Szajman
+
+Diretor do Departamento Regional
+Luiz Francisco de A. Salgado
+
+Superintendente Universitário e de Desenvolvimento
+Luiz Carlos Dourado
+
+
+
+
+Editora Senac São Paulo
+Conselho Editorial
+Luiz Francisco de A. Salgado
+Luiz Carlos Dourado
+Darcio Sayad Maia
+Lucila Mara Sbrana Sciotti
+Jeane Passos de Souza
+Gerente/Publisher
+Jeane Passos de Souza (jpassos@sp.senac.br)
+Coordenação Editorial/Prospecção
+Luís Américo Tousi Botelho (luis.tbotelho@sp.senac.br)
+Dolores Crisci Manzano (dolores.cmanzano@sp.senac.br)
+Administrativo
+grupoedsadministrativo@sp.senac.br
+Comercial
+comercial@editorasenacsp.com.br
+Acompanhamento Pedagógico
+Otacília da Paz Pereira
+Designer Educacional
+Patrícia Pinheiro de Sant’Ana
+Revisão Técnica
+Filippo Valiante Filho
+Preparação e Revisão de Texto
+Eloiza Mendes Lopes
+Projeto Gráfico
+Alexandre Lemes da Silva
+Emília Correa Abreu
+Capa                                                     Proibida a reprodução sem autorização expressa.
+Antonio Carlos De Angelis                                Todos os direitos desta edição reservados à
+Editoração Eletrônica                                    Editora Senac São Paulo
+Stephanie dos Reis Baldin
+                                                         Rua 24 de Maio, 208 – 3o andar
+Ilustrações                                              Centro – CEP 01041-000 – São Paulo – SP
+Stephanie dos Reis Baldin                                Caixa Postal 1120 – CEP 01032-970 – São Paulo – SP
+                                                         Tel. (11) 2187-4450 – Fax (11) 2187-4486
+Imagens
+                                                         E-mail: editora@sp.senac.br
+Adobe Stock Photos
+                                                         Home page: http://www.livrariasenac.com.br
+E-pub
+Ricardo Diana                                            © Editora Senac São Paulo, 2020
+                                                                                                                                                                                                                                         Sumário
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         Capítulo 1                               Capítulo 3
+                                                                                                                                                                                                                                         Conceitos de sistemas                    Instalando controlador
+                                                                                                                                                                                                                                         operacionais e virtualização             de domínio usando IFM;
+                                                                                                                                                                                                                                         de máquinas, 7                           gerenciando usuário, grupos e
+                                                                                                                                                                                                                                            1 Funções de um sistema operacional   unidades no AD e scripts para
+                                                                                                                                                                                                                                              (SO), 8                             usuários em massa, 61
+                                                                                                                                                                                                                                            2 Componentes de um SO, 9                1 Instalação IFM (install from media)
+                                                                                                                                                                                                                                            3 Classificação dos SO, 10                 do AD no Windows Server, 62
+                                                                                                                                                                                                                                            4 Máquina virtual (VM), 12               2 Administrando usuários e suas
+                                                                                                                                                                                                                                                                                       particularidades, 64
+                                                                                                                                                                                                                                            5 Princípios e conceitos sobre
+                                                                                                                                                                                                                                              virtualização, 13                      3 Usando comandos para criar
+                                                                                                                                                                                                                                                                                       usuários em massa (prompt de
+                                                                                                                                                                                                                                            6 Instalando VMware no host, 15
+                                                                                                                                                                                                                                                                                       comando e PowerShell), 71
+                                                                                                                                                                                                                                            Considerações finais, 28
+                                                                                                                                                                                                                                                                                     Considerações finais, 76
+                                                                                                                                                                                                                                            Referências, 28
+                                                                                                                                                                                                                                                                                     Referências, 76
+                                                                                                                                                                                                                                         Capítulo 2                               Capítulo 4
+                                                                                                                                                                                                                                         Funcionamento de uma rede                Servidores
+                                                                                                                                                                                                                                         baseada no conceito                      DHCP e DNS, 77
+                                                                                                                                                                                                                                         de diretório – domínios, 29                 1 Serviços de DHCP (dynamic host
+                                                                                                                                                                                                                                            1 Configuração de active directory         configuration protocol), 78
+                                                                                                                                                                                                                                              domain services (ADDS), 30
+                                                                                                                                                                                                                                                                                     2 Serviços de DNS, 88
+                                                                                                                                                                                                                                            2 Domínios e grupos de trabalho
+                                                                                                                                                                                                                                              (workgroup) e redes baseadas em        Considerações finais, 91
+                                                                                                                                                                                                                                              diretório, 40                          Referências, 92
+                                                                                                                                                                                                                                            3 Árvore de domínio e unidades        Capítulo 5
+                                                                                                                                                                                                                                              organizacionais (OU), 43            Implantando roteamento na LAN,
+                                                                                                                                                                                                                                            4 Instalação e configuração do        configurando redundância para
+                                                                                                                                                                                                                                              Windows Server Core, 45
+                                                                                                                                                                                                                                                                                  espaços de armazenamentos
+                                                                                                                                                                                                                                            5 Gerenciando recursos do servidor
+                                                                                                                                                                                                                                              utilizando PowerShell, 50
+                                                                                                                                                                                                                                                                                  (RAID) e gerenciamento
+                                                                                                                                                                                                                                                                                  de discos, 93
+                                                                                                                                                                                                                                            6 Gerenciamento remoto de                1 Conceitos de roteamento em uma
+                                                                                                                                                                                                                                              servidor, 56                             LAN, 94
+                                                                                                                                                                                                                                            Considerações finais, 58                 2 Criando e gerenciando volumes de
+                                                                                                                                                                                                                                            Referências, 59                            discos, 96
+                                                                                                                                                                                                                                                                                     3 Explanação sobre arranjo de discos
+                                                                                                                                                                                                                                                                                       e suas aplicabilidades, 107
+                                                                                                                                                                                                                                                                                     Considerações finais, 121
+                                                                                                                                                                                                                                                                                     Referências, 122
+                                          Capítulo 8
+
+
+
+
+                                                                                          Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+Capítulo 6
+Rede de impressão, 123                    Segurança no SO Windows:
+    1 Conceitos de servidor de            AppLocket, Firewall e outros
+      impressão, 123                      serviços, 157
+    2 Pool de impressão, 138                 1 Conceitos de AppLocker, 158
+    Considerações finais, 140                2 Conceitos de Firewall, 165
+    Referências, 141                         3 Serviço de RDP (remote desktop
+                                               protocol), 171
+Capítulo 7
+                                             4 Serviço de VPN (virtual private
+Política de segurança – GPO, 143               network), 173
+    1 Conceito de segurança, 144
+                                             Considerações finais, 189
+    2 Estratégia em ambientes com
+      GPO, 149                               Referências, 189
+    3 Criando e publicando políticas de      Glossário de siglas e abreviações, 190
+      segurança, 151
+                                          Sobre o autor, 193
+    Considerações finais, 155
+    Referências, 155
+
+
+
+
+6                                                                 Sistema operacional I
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                                                                 Capítulo 1
+
+
+                                                                                                                                                                                                                                                                  Conceitos
+                                                                                                                                                                                                                                                                de sistemas
+                                                                                                                                                                                                                                                              operacionais e
+                                                                                                                                                                                                                                                               virtualização
+                                                                                                                                                                                                                                                               de máquinas
+
+
+                                                                                                                                                                                                                                            Em uma empresa, seja ela de qual porte for, são necessárias diver-
+                                                                                                                                                                                                                                         sas ações para controlar sua maior preciosidade: seus dados.
+
+                                                                                                                                                                                                                                            Se pensar em qualquer empresa, notará que nela há computadores,
+                                                                                                                                                                                                                                         impressoras, rede, internet, entre outros elementos de infraestrutura.
+                                                                                                                                                                                                                                         Nesse cenário, é importante entender como a tecnologia funciona, com-
+                                                                                                                                                                                                                                         binando hardware (computadores e seus periféricos) com software (sis-
+                                                                                                                                                                                                                                         temas operacionais, entre outros), pois, dependendo da escolha, teremos
+                                                                                                                                                                                                                                         uma arquitetura de rede, contando com recursos de compartilhamento
+                                                                                                                                                                                                                                         (espaço em disco, impressora, internet) e, principalmente, de segurança
+                                                                                                                                                                                                                                         (quem acessa, quando acessa e que tipo de ação pode fazer).
+
+
+                                                                                                                                                                                                                                                                                                               7
+                                                                                            Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+    Neste capítulo, vamos conhecer um pouco os sistemas operacionais
+de rede e seus componentes, demostrar conceitos de máquinas vir­
+tuais – princípios, tipos, fazer comparações entre as máquinas virtuais
+de mercado (2020) – e colocar as “mãos na massa”, ou seja, aprender
+a instalar as máquinas virtuais com os sistemas operacionais (cliente
+e servidor).
+
+
+1 Funções de um sistema operacional (SO)
+    Imagine um grande edifício. Uma pessoa diante dele poderia se aten-
+tar a diversos aspectos do empreendimento: a arquitetura, a fachada, a
+entrada... Mas, neste livro, o que nos interessa é o que está dentro de
+construções como essa, ou seja, a tecnologia que elas podem abrigar.
+Nesse sentido, quais elementos tecnológicos você imagina que poderia
+haver nesse prédio?
+
+    À medida que consideramos andares, pessoas, telefones e compu-
+tadores, temos uma demanda significativa para interconectar sistemas
+(computador para computador, computador para impressora, compu-
+tador para internet, entre outros). Nesse caso, temos um aumento de
+sistema operacional (SO) em um único local.
+
+    O tipo de SO escolhido garante o tipo de segurança aplicado, além
+de limitar os tipos de serviço nesse cenário. Supondo que tenha sido
+escolhido um SO Windows Home, mais barato e doméstico, não poderá
+ser atingido o desempenho de um sistema Windows Professional, bem
+como não haverá recursos necessários para sua utilização em uma
+empresa, muito menos uma segurança eficaz. Para isso, precisamos
+entender o SO.
+
+    De acordo com um dos principais autores da área:
+
+               um sistema operacional é um programa que atua como intermediá­
+               rio entre o usuário e o hardware de um computador. O propósito de
+
+
+
+8                                                                   Sistema operacional I
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                             um sistema operacional é propiciar um ambiente no qual o usuário
+                                                                                                                                                                                                                                                             possa executar outros programas de forma conveniente, por escon-
+                                                                                                                                                                                                                                                             der detalhes internos de funcionamento e eficiência, por procurar
+                                                                                                                                                                                                                                                             gerenciar de forma justa os recursos do sistema. (SILBERSCHATZ;
+                                                                                                                                                                                                                                                             GALVIN; GAGNE, 2000, p. 22)
+
+
+
+
+                                                                                                                                                                                                                                         2 Componentes de um SO
+                                                                                                                                                                                                                                              Um SO gerencia um sistema complexo e tem diversas funções. Uma
+                                                                                                                                                                                                                                         delas é atuar como uma interface agindo como um ponto de conexão,
+                                                                                                                                                                                                                                         seja no formato SHELL (ou interpretador de comandos) ou GUI (graphical
+                                                                                                                                                                                                                                         user interface — interface gráfica de usuário), mantendo usuário e
+                                                                                                                                                                                                                                         hardware conectado. A figura 1 ilustra, segundo Tanenbaum (2016), a
+                                                                                                                                                                                                                                         conciliação das aplicações (software) com o hardware, demonstrando
+                                                                                                                                                                                                                                         a maneira como tudo se encaixa em um ambiente computacional.
+
+                                                                                                                                                                                                                                                              Figura 1 – Onde o SO se encaixa em um ambiente computacional
+
+
+
+
+                                                                                                                                                                                                                                          Modo usuário
+
+
+
+
+                                                                                                                                                                                                                                          Modo núcleo
+                                                                                                                                                                                                                                                                                                                             Software
+
+
+
+
+                                                                                                                                                                                                                                                                                                                             Hardware
+
+
+
+
+                                                                                                                                                                                                                                         Fonte: adaptado de Tanenbaum (2016).
+
+
+
+
+                                                                                                                                                                                                                                         Conceitos de sistemas operacionais e virtualização de máquinas                                 9
+2.1 Sistemas operacionais de rede (SOR)
+
+
+
+
+                                                                                      Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     Os sistema operacionais de rede (SOR) têm aplicação direta para
+servir a múltiplos usuários ao mesmo tempo, por meio de uma rede
+que permite compartilhar recursos de hardware e software. No caso
+de uma empresa, o SOR estará instalado em um servidor e conectando
+as estações por meio de uma rede de computadores. Comparado com
+um SO doméstico, o SOR oferece melhor segurança, aplicações de ser-
+vidores (como banco de dados, web, etc.), armazenamento de dados
+centralizado, repositório (local) de recursos de conta de usuários, fila de
+impressão, arranjo de gerenciamento de disco (RAID — redundant array
+of inexpensive disks), entre outros recursos.
+
+
+3 Classificação dos SO
+     Hoje, no mercado, existem diversos tipos de SOR, utilizados para si-
+tuações específicas. Considerando-se as licenças, temos sistemas li-
+vres e proprietários, a saber:
+
+     • SO livres: têm distribuição, geralmente, gratuita. O principal repre-
+        sentante dessa categoria é o Linux, com as distribuições Ubuntu,
+        FreeBSD, etc. Como são livres, o usuário pode ter uma versão do
+        código-fonte desses softwares e pode fazer as alterações neces-
+        sárias, customizando sua versão.
+
+     • SO proprietário: aqueles que não disponibilizam o código-fon-
+        te e exigem a compra de uma licença de uso, com todos os re-
+        cursos previstos na aquisição. No tocante à usabilidade, esse
+        tipo de software tem fácil manuseio, instalação e configuração
+        mais simples, mais aplicativos compatíveis, além de suporte do
+        desenvolvedor.
+
+
+
+
+10                                                            Sistema operacional I
+                                                                                                                                                                                                                                         3.1 Versões do SO de redes: Windows Server 2019
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                              Para facilitar a vida do pessoal de TI, a Microsoft remodelou os
+                                                                                                                                                                                                                                         produtos para a versão Windows Server 2019 quando lançou o SOR e
+                                                                                                                                                                                                                                         lançou duas versões para micro e pequenas empresas, além de duas
+                                                                                                                                                                                                                                         versões para empresas de médio e grande porte. O quadro 1, a seguir,
+                                                                                                                                                                                                                                         mostra as principais diferenças entre essas versões.
+
+                                                                                                                                                                                                                                                                 Quadro 1 – Comparativo entre versões do Windows Server 2019
+
+
+                                                                                                                                                                                                                                                                                                                                   Versão Microsoft
+                                                                                                                                                                                                                                               Versão Essentials                Versão Standard           Versão Datacenter
+                                                                                                                                                                                                                                                                                                                                    Hyper-V Server
+
+                                                                                                                                                                                                                                           Ambientes de pequenas                                                                    Ambientes de
+                                                                                                                                                                                                                                                                                                          Ambientes de médio
+                                                                                                                                                                                                                                             empresas chamados              Ambiente médio, de                                      hipervisão de
+                                                                                                                                                                                                                                                                                                           ou grande porte,
+                                                                                                                                                                                                                                            Small Business Server         baixa densidade ou não                                  máquinas virtuais,
+                                                                                                                                                                                                                                                                                                          com a utilização de
+                                                                                                                                                                                                                                              (SBS) ou Microsoft                 virtualizados                                   ou seja, ser o host e
+                                                                                                                                                                                                                                                                                                             virtualização
+                                                                                                                                                                                                                                              BackOffice Server                                                                     executar VMs
+
+                                                                                                                                                                                                                                            Interface simplificada,                                                               O Hyper-V Server é
+                                                                                                                                                                                                                                                                                                      Todas as funções estão
+                                                                                                                                                                                                                                               com serviços em            Todas as funções estão                                 um servidor dedicado
+                                                                                                                                                                                                                                                                                                     nesta versão. Sem limite
+                                                                                                                                                                                                                                             nuvem, sem direito a                nesta versão                                    com funcionalidade
+                                                                                                                                                                                                                                                                                                           de virtualizações
+                                                                                                                                                                                                                                                 virtualização                                                                       simplificada
+
+                                                                                                                                                                                                                                                                                                                                    Ele é instalado
+                                                                                                                                                                                                                                                                                                                                   por padrão como
+                                                                                                                                                                                                                                                                           Limite no processador      Limite no processador
+                                                                                                                                                                                                                                             Servidor limitado: 25                                                                  um Núcleo do
+                                                                                                                                                                                                                                                                            e CAL (Client Access          e CAL (Client Access
+                                                                                                                                                                                                                                              contas de usuários                                                                  Servidor, que não
+                                                                                                                                                                                                                                                                                   License)                    License)
+                                                                                                                                                                                                                                                                                                                                  pode ser alterado
+                                                                                                                                                                                                                                                                                                                                   posteriormente
+
+
+                                                                                                                                                                                                                                           Microempresa/pequeno
+                                                                                                                                                                                                                                                                                  Médio porte                Grande porte        Médio e grande porte
+                                                                                                                                                                                                                                              porte/médio porte
+
+
+
+                                                                                                                                                                                                                                         Fonte: adaptado de Microsoft (2019).
+
+
+
+
+                                                                                                                                                                                                                                         3.2 Utilização da versão
+                                                                                                                                                                                                                                              Qualquer versão caberia em nosso projeto; entretanto, para que pos-
+                                                                                                                                                                                                                                         samos explorar os recursos das versões, trabalharemos com a versão
+                                                                                                                                                                                                                                         Datacenter (Desktop Experience).
+
+                                                                                                                                                                                                                                         Conceitos de sistemas operacionais e virtualização de máquinas                                                  11
+           PARA SABER MAIS
+
+
+
+
+                                                                                               Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+           É possível baixar a versão do Windows Server 2019 na página da Mi-
+           crosoft. O sistema pode ser utilizado gratuitamente por 180 dias. Após
+           esse prazo, é preciso adquirir a licença.
+
+                                                                                        
+
+
+
+4 Máquina virtual (VM)
+     A VM (do inglês, Virtual Machine) é um software que administra to-
+dos os recursos de entrada, saída, processamento, armazenamento e
+gerenciamento de memória. Como é um software, ele se adéqua às ne-
+cessidades do projeto, ou seja, é customizado de acordo com a deman-
+da. Lembrando que os recursos disponibilizados para utilização na VM
+dependerão do computador físico.
+
+     Para conceituar melhor e não confundir, dá-se o nome de “host” ao
+equipamento que roda a VM. Já os sistemas criados na VM recebem o
+nome de “guest”. O software que gerencia a operação para que exista a
+funcionalidade da VM no Host é chamado de hipervisor, ou hypervisor,
+em inglês (conhecido também como VMM — virtual machine monitor),
+alocando os recursos necessários. Para exemplificar, estamos usan-
+do um notebook com processador Core i7, 8 GB de RAM e HD SSD
+(solid-state drive — unidade de estado sólido) de 480 GB, executando o
+SO Windows 10. Nesse caso, esse nosso notebook é o “host”.
+
+     Na sequência, instalaremos o Server 2019 Datacenter utilizando a
+VM. Nessa situação, cada VM que instalar será um guest.
+
+
+           IMPORTANTE
+
+           No mercado, temos diversas plataformas de virtualização, como:
+           Hyper-V, da Microsoft; XenServer, da Citrix; VMware, da EMC; VirtualBox,
+
+
+
+12                                                                     Sistema operacional I
+                                                                                                                                                                                                                                                        da Oracle. Cada uma delas tem suas particularidades, sendo umas pa-
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                        gas, outras gratuitas. As imagens neste capítulo foram obtidas da ver-
+                                                                                                                                                                                                                                                        são 15.5, mas é recomendável a instalação da última versão disponível.
+
+                                                                                                                                                                                                                                                                                                                                    
+
+
+
+                                                                                                                                                                                                                                         5 Princípios e conceitos sobre virtualização
+                                                                                                                                                                                                                                              Há dois tipos de hypervisor ou VMM: bare metal (ou tipo 1) e hospe-
+                                                                                                                                                                                                                                         dado (ou tipo 2), conforme explicado na figura 2.
+
+                                                                                                                                                                                                                                                                                     Figura 2 – Tipos de VM
+
+
+
+
+                                                                                                                                                                                                                                                                         Bare metal: não há um SO                  VM    VM
+                                                                                                                                                                                                                                                                         entre o software de
+                                                                                                                                                                                                                                                                         virtualização e o hardware
+
+                                                                                                                                                                                                                                                 Hipervisor
+                                                                                                                                                                                                                                                                         Hospedado: é executado no            VM
+                                                                                                                                                                                                                                                                         SO host, dependendo, assim,
+                                                                                                                                                                                                                                                                                                              Sistema operacional
+                                                                                                                                                                                                                                                                         de um SO para funcionar
+
+
+
+
+                                                                                                                                                                                                                                              No bare metal, a VM não possui nenhum intermediário para executar
+                                                                                                                                                                                                                                         e, assim, os recursos de hardware (memória, HD, processador) ficam
+                                                                                                                                                                                                                                         mais otimizados.
+
+                                                                                                                                                                                                                                              Já no hospedado, temos o SO host para gerenciamento do hardware,
+                                                                                                                                                                                                                                         alocando recursos para ele. O hipervisor é instalado no SO, e a VM insta-
+                                                                                                                                                                                                                                         lada no SO, ocupando espaço e recursos do host. Ainda nessa situação,
+                                                                                                                                                                                                                                         note que o host também precisa atender a outros serviços solicitados, e
+                                                                                                                                                                                                                                         cada um deles necessita de recursos de hardware. Ou seja, os recursos
+                                                                                                                                                                                                                                         disponibilizados pelo host são compartilhados entre todo o software;
+                                                                                                                                                                                                                                         então, quanto mais VMs e mais aplicações estiverem rodando, mais len-
+                                                                                                                                                                                                                                         to ficará cada aplicativo aberto.
+
+                                                                                                                                                                                                                                         Conceitos de sistemas operacionais e virtualização de máquinas                             13
+                                                                                                           Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     Apesar de conhecermos as dificuldades do modelo de hipervisor
+hospedado, este será o modelo adotado para que possamos montar
+nosso ambiente. O modelo bare metal é mais usado em servidores e
+data centers, e também porque a grande maioria dos estudantes possui
+um equipamento (notebook ou desktop) com um SO já instalado.
+
+
+5.1 Placa de rede na VM
+
+     Uma parte importantíssima neste projeto é a comunicação das VM.
+Para isso, é necessário conhecer o conceito envolvido na escolha do
+tipo de placa de rede. De acordo com o que for escolhido, configurará e
+limitará os serviços oferecidos pelo virtualizador. No quadro 2, demons-
+tra-se o modo de rede e suas especificações.
+
+                     Quadro 2 – Característica de cada tipo de adaptador de rede
+
+
+                                           Comunica com o       Comunica com       Visível na rede do
+     Modo de rede     Acessa internet?
+                                                host?            outras VMs?             host?
+
+
+         NAT                Sim                 Sim                  Não                  Não
+
+
+     Rede somente
+                            Não                 Sim                  Sim                  Não
+         host
+
+
+     Rede em ponte          Sim                 Sim                  Sim                  Sim
+
+
+
+     Para cada caso, temos:
+
+     • NAT (network address translation): usa os próprios recursos
+          de rede do host para se conectar à rede externa. Por padrão, a
+          VM fica isolada das demais nesse modo. Outras máquinas que
+          hospedam no host da rede podem se comunicar com as VMs,
+          entretanto, as máquinas externas não podem iniciar a comunica-
+          ção com VMs se o encaminhamento da porta NAT também não
+          estiver sendo usado.
+
+
+
+14                                                                                 Sistema operacional I
+                                                                                                                                                                                                                                              • Rede somente host: usada em ambientes de teste selecionados,
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                   nos quais as VMs não precisam se comunicar com outros am-
+                                                                                                                                                                                                                                                   bientes. Outras máquinas hospedeiras na LAN não podem se co-
+                                                                                                                                                                                                                                                   municar com as VMs.
+
+                                                                                                                                                                                                                                              • Rede em ponte: usada em ambientes nos quais as VMs usam ser-
+                                                                                                                                                                                                                                                   viços ou participam de uma rede real. Conecta máquinas virtuais
+                                                                                                                                                                                                                                                   à rede local (LAN — local area network) de seu host de máquina,
+                                                                                                                                                                                                                                                   com ou sem fio, e permite que elas se conectem a qualquer outro
+                                                                                                                                                                                                                                                   host ou VM (se também for a ponte) da rede. Conecta o adapta-
+                                                                                                                                                                                                                                                   dor de rede virtual em uma VM, ao adaptador físico Ethernet na
+                                                                                                                                                                                                                                                   máquina host. Você pode configurar pontes virtuais para usar em
+                                                                                                                                                                                                                                                   configurações personalizadas que requerem conexão com um
+                                                                                                                                                                                                                                                   adaptador físico Ethernet no host do computador.
+
+
+                                                                                                                                                                                                                                         6 Instalando VMware no host
+                                                                                                                                                                                                                                              Após essa abordagem teórica, vamos instalar as VM de que necessi-
+                                                                                                                                                                                                                                         taremos durante o curso. Optaremos pela utilização da VMware, por se
+                                                                                                                                                                                                                                         tratar de um ambiente mais confiável para a utilização com Windows,
+                                                                                                                                                                                                                                         além das ferramentas disponibilizadas. Cada instalação acontecerá de
+                                                                                                                                                                                                                                         uma vez. Então, o processo será demonstrado passo a passo na primei-
+                                                                                                                                                                                                                                         ra vez e simplificado nas outras VMs.
+
+
+                                                                                                                                                                                                                                         6.1 Atividade 1 — Instalando VMware Workstation no
+                                                                                                                                                                                                                                         Host
+
+                                                                                                                                                                                                                                              Nesta etapa, vamos baixar e instalar o VMware Workstation 15 Player.
+
+                                                                                                                                                                                                                                              1. Acesse a página da VMwARE (2020) para instalar o VMware
+                                                                                                                                                                                                                                                   Workstation             Player:        <https://www.vmware.com/br/products/
+                                                                                                                                                                                                                                                   workstation-player/workstation-player-evaluation.html>.
+
+
+
+                                                                                                                                                                                                                                         Conceitos de sistemas operacionais e virtualização de máquinas                     15
+                                                                                   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     2. Se o seu SO for Windows, clique no botão Avaliar o Workstation
+        15.5 Player para Windows. O arquivo tem 138 MB. Baixe o software
+        e execute-o.
+
+     3. Serão demonstradas as telas a seguir.
+
+     a. Clique em Next.
+
+
+
+
+     b. Marque o item I accept the terms in the License Agreement e cli-
+        que em Next.
+
+
+
+
+16                                                         Sistema operacional I
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                              c. Marque o item Enhanced keyboard driver (a reboot will be required
+                                                                                                                                                                                                                                                   to use this feature). This feature requires 10MB on your host drive
+                                                                                                                                                                                                                                                   – que significa “driver de teclado avançado (será necessário reini-
+                                                                                                                                                                                                                                                   ciar para usar esse recurso). Esse recurso requer 10 MB na unida-
+                                                                                                                                                                                                                                                   de host”. Depois, clique em Next.
+
+
+
+
+                                                                                                                                                                                                                                              d. Marque Check for product updates on startup. When VMware
+                                                                                                                                                                                                                                                   Workstation 15 Player start, check for new version of the application
+                                                                                                                                                                                                                                                   and installed software component, pois essa opção deixará sempre
+                                                                                                                                                                                                                                                   atualizado o seu VMware. Deixe desmarcada a opção Join the
+                                                                                                                                                                                                                                                   VMware Customer Experience Improvement Program, pois ela soli-
+                                                                                                                                                                                                                                                   cita contribuições para o desenvolvimento da ferramenta.
+
+
+
+
+                                                                                                                                                                                                                                         Conceitos de sistemas operacionais e virtualização de máquinas               17
+18
+
+
+
+
+                                                                                                              o computador.
+
+
+
+
+                                                                                                                                                                                                                                                               e. Marque as duas opções apresentadas.
+
+
+
+
+                                                                                                                              demora um pouco. Ao término, será necessário reiniciar   f. Clique no botão Finalizar para dar início à instalação. O processo
+
+
+
+Sistema operacional I
+
+
+
+
+   Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                         6.1.1 Trabalhando com a VMware
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                              a. Após a instalação da VM, acesse-a por meio do ícone instalado
+                                                                                                                                                                                                                                                   no desktop do computador. Será mostrada a tela a seguir.
+
+
+
+
+                                                                                                                                                                                                                                              b. Escolha a primeira opção para garantir a gratuidade do uso do
+                                                                                                                                                                                                                                                   sistema. Na sequência, escolha os botões Continue e Finish. A
+                                                                                                                                                                                                                                                   tela principal da VMware é mostrada conforme figura a seguir.
+
+                                                                                                                                                                                                                                          Menu principal                                        Atalhos para iniciar
+                                                                                                                                                                                                                                          da VMWare                                             funções na VM
+
+
+
+
+                                                                                                                                                                                                                                                                                                                       Atalhos para
+                                                                                                                                                                                                                                                                                                                       configurar
+                                                                                                                                                                                                                                                                       Esta área mostra                                uma VM
+                                                                                                                                                                                                                                                                       as VM criadas
+
+
+
+
+                                                                                                                                                                                                                                         Conceitos de sistemas operacionais e virtualização de máquinas                           19
+6.2 Atividade 2 – Instalando e configurando o DC-01 VM
+
+
+
+
+                                                                                      Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     Para as práticas desta obra, teremos que instalar um Windows Server
+2019, nomeando-o como DC-01 (domain control 01). Um controlador de
+domínio é um servidor que armazena uma cópia do banco de dados
+de diretórios do AD e uma cópia da pasta SYSVOL. Os controladores
+de domínio — com exceção dos RODCs (read-only domain controller,
+controlador de domínio somente leitura) — armazenam uma cópia da
+gravação do NTDS.DIT e da pasta SYSVOL. Note que o NTDS.DIT é o
+próprio banco de dados, e a pasta SYSVOL tem todas as configurações
+de modelo para GPOs (group policies objects). Essa VM será utilizada
+para centralizar os processos, ou seja, será nosso servidor. Montaremos
+uma rede cliente-servidor.
+
+     Para instalar o servidor, será necessário baixar uma ISO (imagem de
+disco) do site da Microsoft e, assim, utilizar na VM. A imagem poderá
+ser instalada e tem 180 dias de validade.
+
+     Após baixar a imagem de disco, acesse a VMware para criar a VM.
+Siga os passos indicados na sequência.
+
+     a. Clique na área da direita, na opção create a new virtual machine.
+
+
+
+
+20                                                            Sistema operacional I
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                              b. Escolha a opção Installer disc image file (ISO). Com o botão
+                                                                                                                                                                                                                                                   Browse, localize a ISO que foi baixada do site da Microsoft.
+
+
+
+
+                                                                                                                                                                                                                                              c. Na tela seguinte, escolha, na parte superior, a opção Microsoft
+                                                                                                                                                                                                                                                   Windows. Localize a versão Windows Server 2019 ou, na ausên-
+                                                                                                                                                                                                                                                   cia desta, a versão 2016, o que não atrapalhará nosso processo
+                                                                                                                                                                                                                                                   de instalação.
+
+
+
+
+                                                                                                                                                                                                                                         Conceitos de sistemas operacionais e virtualização de máquinas           21
+                                                                                Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     d. Troque o nome da VM para DC-01 e escolha um local para que a
+       VM seja instalada.
+
+
+
+
+     e. Como o nosso servidor será utilizado para demonstração de
+       configuração, na opção de espaço em disco, deixe o default de
+       60 GB. Esse valor também poderá ser alterado de acordo com
+       a necessidade.
+
+
+
+
+22                                                      Sistema operacional I
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                              f. Na tela final do Wizard, será mostrado um resumo da instalação.
+                                                                                                                                                                                                                                                   Entretanto, observe que a VM está com 512 MB de memória – e
+                                                                                                                                                                                                                                                   seria insuficiente para a instalação do SO. Então, será preciso cus-
+                                                                                                                                                                                                                                                   tomizar o hardware. Nesse momento, pressione o botão
+                                                                                                                                                                                                                                                   Customize Hardware.
+
+
+
+
+                                                                                                                                                                                                                                              g. Será apresentada a tela com as configurações do Wizard. Selecione
+                                                                                                                                                                                                                                                   a opção Memory e altere para 2 GB (será mostrado com 2.048).
+
+
+
+
+                                                                                                                                                                                                                                         Conceitos de sistemas operacionais e virtualização de máquinas              23
+                                                                                       Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     Com a configuração concluída, ligue a VM clicando sobre o ícone
+DC-01 e inicie a instalação do Server 2019. Será instalado o Server 2019
+Datacenter (Desktop Experience). Na instalação do SO, aceite os termos.
+
+     Com a instalação já realizada, vamos partir para a configuração do
+DC-01.
+
+
+6.2.1 Nomeando o servidor
+
+     a. Vamos utilizar um atalho para acessar as Propriedades de
+        Sistema: pressione, ao mesmo tempo, as teclas  + R. Essas te-
+        clas combinadas resultam na tela Executar.
+
+
+
+
+     b. Digite: sysdm.cpl e, depois, a tecla Enter.
+
+     c. O servidor estará nomeado com um nome estranho – no meu
+        caso, apareceu como WIN-04AS3DN1U6Q. Então, deverá ser tro-
+        cado por DC-01. Para isso, na guia Nome do Computador, clique
+        no botão Alterar e finalize digitando DC-01.
+
+     d. Após finalizar, o sistema solicitará a reinicialização do SO.
+
+
+6.2.2 Definindo o IP (internet protocol) no servidor
+
+     O servidor deve ter um IP fixo para se comunicar com os outros equi-
+pamentos. Então, proceda conforme os passos a seguir.
+
+     a. Use o atalho pressionando ao mesmo tempo as teclas  e R.
+
+
+24                                                             Sistema operacional I
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                              b. Digite ncpa.cpl.
+
+                                                                                                                                                                                                                                              c. Será aberta uma tela para configurar a placa de rede. Dê um duplo
+                                                                                                                                                                                                                                                   clique sobre a placa de rede. Na tela Status de Ethernet, pressione
+                                                                                                                                                                                                                                                   o botão Propriedades.
+
+
+
+
+                                                                                                                                                                                                                                              d. Na tela Propriedades de Ethernet, selecione a opção Protocolo
+                                                                                                                                                                                                                                                   TCP/IP Versão 4 e, em seguida, Propriedades. Preencha os cam-
+                                                                                                                                                                                                                                                   pos a seguir com os valores indicados:
+
+                                                                                                                                                                                                                                              • Endereço IP: 10.0.0.100.
+
+                                                                                                                                                                                                                                              • Máscara de rede: 255.0.0.0.
+
+                                                                                                                                                                                                                                              • Gateway padrão: 10.0.0.1.
+
+                                                                                                                                                                                                                                              • DNS principal: 10.0.0.100.
+
+                                                                                                                                                                                                                                              • DNS secundário: 8.8.8.8.
+
+                                                                                                                                                                                                                                                   ◦ Finalize com OK.
+
+                                                                                                                                                                                                                                              e. Troque a senha do administrador para Senac@123.
+
+
+                                                                                                                                                                                                                                         Conceitos de sistemas operacionais e virtualização de máquinas             25
+6.3 Atividade 3 – Instalando e configurando o SVR-01 VM
+
+
+
+
+                                                                                  Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+   Nesta atividade 3, instalaremos o Windows Server 2019, como fize-
+mos na atividade 2. Para isso, crie uma VM e instale o SO. Como você já
+aprendeu como proceder com a instalação e a configuração, é hora de
+colocar esse conhecimento em prática.
+
+     Para esse servidor, faça a configuração com os seguintes dados:
+
+     • Nome da VM: SVR-01.
+
+     • Versão do SO: Windows Server 2019 Datacenter (Desktop
+       Experience).
+
+     • Memória: 2.048 MB.
+
+     • Tamanho do disco rígido: 50 GB.
+
+     • Adaptador de rede: somente host (clique em Personalizar hardware
+       antes de clicar no botão Concluir).
+
+     • Senha: Senac@123.
+
+   Após instalar a VM SVR-01 com as configurações anteriores, defina
+as seguintes configurações de TCP/IP:
+
+     • Endereço IP: 10.0.0.101.
+
+     • Máscara de sub-rede: 255.0.0.0.
+
+     • Gateway padrão: 10.0.0.1.
+
+     • Servidor DNS preferencial: 10.0.0.100.
+
+
+6.4 Atividade 4 – Instalando e configurando o CL1-01 VM
+
+    Esta estação será utilizada com um cliente para testes, ou seja, as
+configurações que realizaremos no servidor serão testadas em um
+cliente. O SO utilizado nesse curso será o Windows 10 Professional.
+
+26                                                        Sistema operacional I
+                                                                                                                                                                                                                                                        IMPORTANTE
+
+
+
+
+Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+                                                                                                                                                                                                                                                        Observação: a versão usada deve ser a Professional, pois ingressare-
+                                                                                                                                                                                                                                                        mos essa máquina no domínio. Outras versões (Starter Edition, Home)
+                                                                                                                                                                                                                                                        não conseguem ser inseridas em um domínio. Se você não possui a ver-
+                                                                                                                                                                                                                                                        são 10 do Windows, também poderá utilizar a Versão 7 ou 8.1; entretan-
+                                                                                                                                                                                                                                                        to, alguns passos serão diferentes dos mostrados, bem como algumas
+                                                                                                                                                                                                                                                        funcionalidades de políticas de grupos podem não funcionar.
+
+                                                                                                                                                                                                                                                                                                                                 
+
+                                                                                                                                                                                                                                              Como o objetivo deste capítulo não aborda a instalação desse clien-
+                                                                                                                                                                                                                                         te, crie uma VM vazia, faça a instalação-padrão, colocando como senha
+                                                                                                                                                                                                                                         Senac@123, e proceda com a configuração da seguinte maneira:
+
+                                                                                                                                                                                                                                              • Nome da VM: CL1-01.
+
+                                                                                                                                                                                                                                              • Versão do SO: Windows 10 Professional.
+
+                                                                                                                                                                                                                                              • Memória: 1024 MB.
+
+                                                                                                                                                                                                                                              • Tamanho do disco rígido: 50 GB.
+
+                                                                                                                                                                                                                                              • Adaptador de rede: somente host (clique em Personalizar hardware
+                                                                                                                                                                                                                                                   antes de clicar no botão Concluir).
+
+                                                                                                                                                                                                                                              • Senha: Senac@123.
+
+                                                                                                                                                                                                                                              Depois de instalar a VM CL1-01 com as configurações anteriores,
+                                                                                                                                                                                                                                         configure o TCP/IP:
+
+                                                                                                                                                                                                                                              • Endereço IP: 10.0.0.102.
+
+                                                                                                                                                                                                                                              • Máscara de sub-rede: 255.0.0.0.
+
+                                                                                                                                                                                                                                              • Gateway padrão: 10.0.0.1.
+
+                                                                                                                                                                                                                                              • Servidor DNS preferencial: 10.0.0.100.
+
+
+
+
+                                                                                                                                                                                                                                         Conceitos de sistemas operacionais e virtualização de máquinas                          27
+Considerações finais
+
+
+
+
+                                                                                    Material para uso exclusivo de aluno matriculado em curso de Educação a Distância da Rede Senac EAD, da disciplina correspondente. Proibida a reprodução e o compartilhamento digital, sob as penas da Lei. © Editora Senac São Paulo.
+     Ao longo desta obra, será implantada uma rede com SO, que pode
+ser replicada em qualquer empresa que trabalhe com cliente-servidor.
+Nesse sentido, este capítulo abordou a importância dos tipos de SO,
+trazendo informações para que você possa decidir sobre qual tipo deve
+ser implantado no contexto em que atua. A implantação foi explicada
+passo a passo, demonstrando sua facilidade.
+
+     Portanto, agora temos um cenário instalado, ou seja, um ambiente
+com servidores e cliente. Nas próximas aulas, serão configurados e
+testados os serviços, usando o cliente como base. Utilize as VMs para
+os exercícios.
+
+
+Referências
+MICROSOFT. Novidades no Windows Server 2019. Microsoft Docs, 2019.
+Disponível em: https://docs.microsoft.com/pt-br/windows-server/get-star-
+ted-19/whats-new-19. Acesso em: 10 jan. 2020
+
+SILBERSCHATZ, A.: GAGNE, G.; GALVIN, P. B. Fundamentos de sistemas opera-
+cionais. Tradução: Adriana Cashin Rieche. Rio de Janeiro: LTC, 2004.
+
+VMWARE. Workstation player documentation. Vmware Docs, 2020.
+Disponível em: https://docs.vmware.com/en/VMware-Workstation-Player/
+index.html. Acesso em: 10 jan. 2020
+
+TANENBAUM, A. S. Sistemas operacionais modernos. São Paulo: Pearson, 2016.
+
+
+
+
+28                                                          Sistema operacional I
+
